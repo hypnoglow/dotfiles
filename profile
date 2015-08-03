@@ -8,11 +8,21 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+################################################################################
+
+#!# -n - если не пустая строка (non-zero length)
+#!# -z - если пустая строка (zero length)
+#!# -f - если файл - обычный файл (regular file, не директория и не device)
+#!# -d - если файл - директория
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
+    	#!# Точка это алиас для source
+    	# source - Для bash, zsh, etc
+    	# . - даже для sh (universally portable)
+		. "$HOME/.bashrc"
     fi
 fi
 
@@ -21,6 +31,15 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
+################################################################################
+
+# WARNING! Following directives are for testing purposes!
+
+# Outputs in terminal login shells.
 echo "\"~/.profile\" loaded."
+
+# Outputs in DM logins.
 zenity --info --text "\"~/.profile\" loaded."
+
+# Wtf?
 export FDP="\".profile\" loaded."

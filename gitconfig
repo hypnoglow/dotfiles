@@ -1,0 +1,7 @@
+[user]
+	name = Igor Zibarev
+	email = zibarev.i@gmail.com
+[core]
+	editor = vim
+[push]
+	default = simple
