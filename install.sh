@@ -23,9 +23,17 @@ echo "...done."
 
 echo "Installing..."
 for file in $files; do
-    echo "Moving any existing $file from ~ to $backupDir"
-	[ -e ~/.$file ] && mv -f ~/.$file $backupDir
-    echo "Creating symlink to dotfile's $file in home directory"
-    ln -s $dotfilesDir/src/$file ~/.$file
+    if [ -h ~/.$file ]; then
+        echo "~/.$file is a symlink, deleting it."
+        rm ~/.$file
+    fi
+
+    if [ -e ~/.$file ]; then
+       echo "Moving existing .$file from ~/ to $backupDir"
+       mv -f ~/.$file $backupDir
+   fi
+
+   echo "Creating symlink to dotfile's $file in home directory"
+   ln -s $dotfilesDir/src/$file ~/.$file
 done
 echo "...done."

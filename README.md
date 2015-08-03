@@ -1,6 +1,9 @@
 This is mine dotfiles. ^^
 
-# Install on a new machine:
+# Installation
+
+Install script checks, if there is an existing destination file for each dotfile.
+If it is a symlink, script removes it, otherwise backup it do backupDir ("~/.dotfiles~" by default).
     
     cd
     git clone git@gitlab.com:hypnoglow/dotfiles.git dotfiles
@@ -8,4 +11,8 @@ This is mine dotfiles. ^^
     chmod +x install.sh
     ./install.sh
 
-Viola.
+# Updating
+
+    cd dotfiles
+    git pull origin
+    ./install.sh
