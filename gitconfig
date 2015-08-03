@@ -3,5 +3,21 @@
 	email = zibarev.i@gmail.com
 [core]
 	editor = vim
+	eol = lf
+	autocrlf = false
 [push]
 	default = simple
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+[color]
+	ui = auto
+[i18n]
+	commitencoding = utf-8
+	logoutputencoding = utf-8

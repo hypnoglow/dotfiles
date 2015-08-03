@@ -13,11 +13,11 @@ if [[ $- != *i* ]] ; then
 fi
 
 # Load all files from .bashrc.d directory
-if [ -d $HOME/.bashrc.d ] ; then
-	for file in $HOME/.bashrc.d/*.bash ; do
-		source $file
-	done
-fi
+#if [ -d $HOME/.bashrc.d ] ; then
+#	for file in $HOME/.bashrc.d/*.bash ; do
+#		source $file
+#	done
+#fi
 
 # Prevents from redirecting output to an existing file, or appending output to a non-existing file.
 # ref: http://www.xinotes.net/notes/note/57/
@@ -92,18 +92,13 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 
 
 # enable programmable completion features (you don't need to enable
@@ -129,9 +124,6 @@ if [ -f ~/.bash_bashit ]; then
 fi
 
 # Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
