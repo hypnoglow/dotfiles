@@ -5,7 +5,7 @@
 
 dotfilesDir=~/dotfiles
 backupDir=~/.dotfiles~
-files=$(ls -A | grep "^\." | grep -v ".git")
+files=$(ls src/)
 
 # create backupDir in homedir
 
@@ -24,8 +24,8 @@ echo "...done."
 echo "Installing..."
 for file in $files; do
     echo "Moving any existing $file from ~ to $backupDir"
-	[ -e ~/$file ] && mv ~/$file $backupDir
+	[ -e ~/.$file ] && mv -f ~/.$file $backupDir
     echo "Creating symlink to dotfile's $file in home directory"
-    ln -s $dotfilesDir/$file ~/$file
+    ln -s $dotfilesDir/src/$file ~/.$file
 done
 echo "...done."
