@@ -122,8 +122,8 @@ then
 fi
 
 # Bash-it
-if [ -f ~/.bash_bashit ]; then
-    . ~/.bash_bashit
+if [ -f ~/.bash_it ]; then
+    . ~/.bash_it
 fi
 
 # Alias definitions.
