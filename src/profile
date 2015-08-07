@@ -10,6 +10,15 @@
 
 ################################################################################
 
+### EXPORTS ###
+
+# golang path
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/projects/go
+export PATH=$PATH:$GOPATH/bin
+
+################################################################################
+
 #!# -n - если не пустая строка (non-zero length)
 #!# -z - если пустая строка (zero length)
 #!# -f - если файл - обычный файл (regular file, не директория и не device)
@@ -36,10 +45,13 @@ fi
 # WARNING! Following directives are for testing purposes!
 
 # Outputs in terminal login shells.
-echo "\"~/.profile\" loaded."
+#echo "\"~/.profile\" loaded."
 
 # Outputs in DM logins.
-zenity --info --text "\"~/.profile\" loaded."
+#zenity --info --text "\"~/.profile\" loaded."
 
 # Wtf?
-export FDP="\".profile\" loaded."
+#export FDP="\".profile\" loaded."
+
+
+
