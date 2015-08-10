@@ -7,3 +7,9 @@
 # Others will not run!
 
 . "$HOME/.profile"
+
+# Login shell does not include .bashrc,
+# so manually include it
+if [ -f "$HOME/.bashrc" ]; then
+	. "$HOME/.bashrc"
+fi
