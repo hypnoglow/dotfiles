@@ -1,0 +1,3 @@
+[submodule "src/bash_it.d"]
+	path = src/bash_it.d
+	url = https://github.com/Bash-it/bash-it.git

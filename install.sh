@@ -5,35 +5,35 @@
 
 dotfilesDir=~/dotfiles
 backupDir=~/.dotfiles~
-files=$(ls src/)
+files=$dotfilesDir/src/*
 
 # create backupDir in homedir
 
 echo "Creating $backupDir for backup of any existing dotfiles in ~"
 mkdir -p $backupDir
-echo "...done."
 
 # change to the dotfiles directory
 
 echo "Changing to the $dotfilesDir directory"
 cd $dotfilesDir
-echo "...done."
 
 # move any existing dotfiles (or symlinks) in homedir to backupDir, then create symlinks 
 
 echo "Installing..."
 for file in $files; do
-    if [ -h ~/.$file ]; then
-        echo "~/.$file is a symlink, deleting it."
-        rm ~/.$file
+    filename=`basename $file`
+
+    if [ -h ~/.$filename ]; then
+        echo "~/.$filename is a symlink, deleting it."
+        rm ~/.$filename
     fi
 
-    if [ -e ~/.$file ]; then
-       echo "Moving existing .$file from ~/ to $backupDir"
-       mv -f ~/.$file $backupDir
+    if [ -e ~/.$filename ]; then
+       echo "Moving existing ~/.$filename to $backupDir"
+       mv -f ~/.$filename $backupDir
    fi
 
-   echo "Creating symlink to dotfile's $file in home directory"
-   ln -s $dotfilesDir/src/$file ~/.$file
+   echo "Creating symlink to dotfile's $filename in home directory"
+   ln -s $file ~/.$filename
 done
 echo "...done."
