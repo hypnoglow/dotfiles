@@ -116,19 +116,23 @@ fi
 
 # All STDERR output is in red color.
 # https://github.com/sickill/stderred
-if [ -f /home/zibarev/utils/stderred/build/libstderred.so ]
-then
-    export LD_PRELOAD="/home/zibarev/utils/stderred/build/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"
+if [ -d /opt/stderred ] ; then
+    export LD_PRELOAD="/opt/stderred/build/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"
 fi
 
-# Bash-it
-if [ -f ~/.bash_it ]; then
-    . ~/.bash_it
+# Bash-it framework
+if [ -f $HOME/.bash_it ]; then
+    . $HOME/.bash_it
 fi
 
-# Alias definitions.
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+# Include all from ~/.bashrc.d
+if [ -d $HOME/.bashrc.d ]; then
+  for file in $HOME/.bashrc.d/* ; do
+    if [ -r $file ]; then
+      . $file
+    fi
+  done
+  unset file
 fi
 
 ################################################################################

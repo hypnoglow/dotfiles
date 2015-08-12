@@ -17,3 +17,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 alias duc='du -hd1'
 alias manru='man -L ru'
+alias mansearch='apropos'
+
+# FUCKING
+alias fucking_swap='vmstat 60 -S M'

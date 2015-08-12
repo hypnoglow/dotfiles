@@ -1,0 +1,22 @@
+# Functions for dotfiles operating
+
+#@todo
+function dfl_add {
+	if [ ! -f "$1" ] ; then
+		return
+	fi
+
+	FILENAME=${1}
+	FILEPATH=`readlink -f ${FILENAME}`
+	echo $FILEPATH
+	return
+    
+    echo ${FILE#.*}
+    echo ${FILE#*.}
+    echo ${FILE%.*}
+    echo ${FILE%*.}
+
+    #@todo backup file
+	#rm ~/$FILE
+	#ln -sv ~/dotfiles/$FILE ~
+}

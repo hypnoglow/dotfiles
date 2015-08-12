@@ -3,7 +3,7 @@ This is mine dotfiles. ^^
 # Installation
 
 Install script checks, if there is an existing destination file for each dotfile.
-If it is a symlink, script removes it, otherwise backup it do backupDir ("~/.dotfiles~" by default).
+If it is a symlink, script removes it, otherwise backup it to backup_dir ("~/.dotfiles~" by default).
     
     cd
     git clone git@gitlab.com:hypnoglow/dotfiles.git dotfiles
