@@ -1,3 +1,4 @@
+# ls
 alias   l='ls --color=always -F'
 alias  ll='ls --color=always -F -lh'
 alias   L='ls --color=always -F     -L'
@@ -21,3 +22,8 @@ alias mansearch='apropos'
 
 # FUCKING
 alias fucking_swap='vmstat 60 -S M'
+
+# apt-get
+alias agi='apt-get install'
+alias agu='apt-get update'
+alias agar='apt-get autoremove'
