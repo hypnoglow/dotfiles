@@ -28,9 +28,9 @@
 	# lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 
     # actual
-    lg  = log --graph       --date=relative --pretty=format:'%Cred%h %Creset%s %C(bold blue)<%an>%Creset %Cgreen(%cd)%Creset%C(auto)%d'
+    lg  = log --graph       --date=relative --pretty=format:'%Cred%h %Creset%<|(50,trunc)%s %C(bold blue)<%an>%Creset %Cgreen(%cd)%Creset%C(auto)%d'
     lgf = log --graph       --decorate=short --abbrev-commit
-    tr  = log --graph --all --date=relative --pretty=format:'%Cred%h %Creset%s %C(bold blue)<%an>%Creset %Cgreen(%cd)%Creset%C(auto)%d'
+    tr  = log --graph --all --date=relative --pretty=format:'%Cred%h %Creset%<|(50,trunc)%s %C(bold blue)<%an>%Creset %Cgreen(%cd)%Creset%C(auto)%d'
     trf = log --graph --all --decorate=short --abbrev-commit
     cinfo  = log -n1 --pretty=medium
 

@@ -6,13 +6,19 @@
 DOTFILES_DIR=`dirname $( readlink -f ${BASH_SOURCE[0]} )`
 backupDir=~/.dotfiles~
 files=$DOTFILES_DIR/src/*
-
 PULL=true
+
+# allow bash to find .dotfiles
+if ! shopt -q dotglob ; then
+	shopt -s dotglob
+fi
+
+# process params
 
 for i in "$@"
 do
 case $i in
-    -c|--no-pull)
+    --no-pull)
       PULL=false
     ;;
     *)
@@ -26,12 +32,10 @@ if [ $PULL = true ] ; then
     echo "done."
 fi
 
-# create backupDir in homedir
-
-echo "Creating $backupDir for backup of any existing dotfiles in ~"
-mkdir -p $backupDir
-
-# change to the dotfiles directory
+if [ ! -d $backupDir ] ; then 
+	echo "Creating $backupDir for backup of any existing dotfiles in ~"
+	mkdir -p $backupDir	
+fi
 
 echo "Changing to the $DOTFILES_DIR directory"
 cd $DOTFILES_DIR
@@ -40,27 +44,27 @@ cd $DOTFILES_DIR
 
 echo "Installation started."
 for file in $files; do
-    filename=`basename $file`
+    FILENAME=`basename $file`
 
     # dirs, prefixed with double underline should be symlinked resursively
-    if [[ ${filename} == __* ]] ; then
-        filename=`echo $filename | sed s/__//`
-        cp -sRf ${file}/* $HOME/.${filename}
+    if [[ ${FILENAME} == __* ]] ; then
+        FILENAME=`echo $FILENAME | sed s/__//`
+        cp -sRf ${file}/* $HOME/${FILENAME}
         
         continue
     fi
 
-    if [ -h ~/.$filename ]; then
-        echo "~/.$filename is a symlink, deleting it."
-        rm ~/.$filename
+    if [ -h $HOME/$FILENAME ]; then
+        echo "~/$FILENAME is a symlink, deleting it"
+        rm $HOME/$FILENAME
     fi
 
-    if [ -e ~/.$filename ]; then
-       echo "Moving existing ~/.$filename to $backupDir"
-       mv -f ~/.$filename $backupDir
+    if [ -e ~/$FILENAME ]; then
+       echo "Moving existing ~/$FILENAME to $backupDir"
+       mv -f ~/$FILENAME $backupDir
    fi
 
-   echo "Creating symlink to dotfile's $filename in home directory"
-   ln -s $file ~/.$filename
+   echo "Creating symlink to dotfile's $FILENAME in home directory"
+   ln -sfv $file ~/$FILENAME
 done
 echo "Installation finished."
