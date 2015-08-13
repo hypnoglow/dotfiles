@@ -1,14 +1,18 @@
 # /etc/inputrc - global inputrc for libreadline
 # See readline(3readline) and `info rluserman' for more information.
+# inputrc is for bash. For example, zsh has its own line editor (ZLE) and doesn't read readline's inputrc.
+# 
+# Some additional info:
+# http://www.gnu.org/software/bash/manual/html_node/Readline-Init-File-Syntax.html
 
-# Be 8 bit clean.
+# If set to ‘on’, Readline will enable eight-bit input (it will not clear the eighth bit in the characters it reads), regardless of what the terminal claims it can support.
 set input-meta on
+# If set to ‘on’, Readline will display characters with the eighth bit set directly rather than as a meta-prefixed escape sequence. 
 set output-meta on
 
 # To allow the use of 8bit-characters like the german umlauts, uncomment
 # the line below. However this makes the meta key not work as a meta key,
 # which is annoying to those which don't need to type in 8-bit characters.
-
 # set convert-meta off
 
 # try to enable the application keypad when it is called.  Some systems
@@ -65,12 +69,7 @@ $endif
 
 $endif
 
-#"\e[A": history-search-backward
-#"\e[B": history-search-forward
-
 ################################################################################
-
-# Кароче ввод в bash
 
 # Набор части команды, например, cd /, и последующий перебор стрелками <Up> и
 # <Down> истории команд повлечет извеление из буфера истории только тех из них,
@@ -83,6 +82,21 @@ set completion-ignore-case on
 
 # List all matches in case multiple possible completions are possible
 set show-all-if-ambiguous on
+
+# Immediately add a trailing slash when autocompleting symlinks to directories
+set mark-symlinked-directories on
+
+# If set to ‘on’, Readline uses an internal more-like pager to display a screenful of possible completions at a time. This variable is ‘on’ by default.
+set page-completions off
+
+# The number of possible completions that determines when the user is asked whether the list of possibilities should be displayed.
+set completion-query-items 200
+
+# If set to ‘on’, a character denoting a file’s type is appended to the filename when listing possible completions
+set visible-stats on
+
+# If set to ‘on’, this alters the default completion behavior when inserting a single match into the line. It’s only active when performing completion in the middle of a word. If enabled, readline does not insert characters from the completion that match characters after point in the word being completed, so portions of the word following the cursor are not duplicated. For instance, if this is enabled, attempting completion when the cursor is after the ‘e’ in ‘Makefile’ will result in ‘Makefile’ rather than ‘Makefilefile’, assuming there is a single possible completion.
+set skip-completed-text on
 
 # Flip through autocompletion matches with Shift-Tab.
 "\e[Z": menu-complete

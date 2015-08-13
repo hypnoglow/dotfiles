@@ -1,23 +1,42 @@
 [user]
 	name = Igor Zibarev
 	email = zibarev.i@gmail.com
+
 [core]
 	editor = vim
 	eol = lf
 	autocrlf = false
+
 [push]
 	default = simple
+    
 [alias]
 	co = checkout
 	ci = commit
 	st = status
 	br = branch
-	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    ds = diff --staged
+
+    # Shows current branch
+    cb = rev-parse --abbrev-ref HEAD
+	
 	type = cat-file -t
 	dump = cat-file -p
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+
+    # deprecated
+    # hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	# lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+
+    # actual
+    lg  = log --graph       --date=relative --pretty=format:'%Cred%h %Creset%s %C(bold blue)<%an>%Creset %Cgreen(%cd)%Creset%C(auto)%d'
+    lgf = log --graph       --decorate=short --abbrev-commit
+    tr  = log --graph --all --date=relative --pretty=format:'%Cred%h %Creset%s %C(bold blue)<%an>%Creset %Cgreen(%cd)%Creset%C(auto)%d'
+    trf = log --graph --all --decorate=short --abbrev-commit
+    cinfo  = log -n1 --pretty=medium
+
 [color]
 	ui = auto
+
 [i18n]
 	commitencoding = utf-8
 	logoutputencoding = utf-8

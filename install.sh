@@ -3,9 +3,28 @@
 
 # define variables
 
-dotfilesDir=~/dotfiles
+DOTFILES_DIR=`dirname $( readlink -f ${BASH_SOURCE[0]} )`
 backupDir=~/.dotfiles~
-files=$dotfilesDir/src/*
+files=$DOTFILES_DIR/src/*
+
+PULL=true
+
+for i in "$@"
+do
+case $i in
+    -c|--no-pull)
+      PULL=false
+    ;;
+    *)
+    ;;
+esac
+done
+
+if [ $PULL = true ] ; then
+    echo -n "Self updating... "
+    (cd ${DOTFILES_DIR} && git pull -q)
+    echo "done."
+fi
 
 # create backupDir in homedir
 
@@ -14,14 +33,22 @@ mkdir -p $backupDir
 
 # change to the dotfiles directory
 
-echo "Changing to the $dotfilesDir directory"
-cd $dotfilesDir
+echo "Changing to the $DOTFILES_DIR directory"
+cd $DOTFILES_DIR
 
 # move any existing dotfiles (or symlinks) in homedir to backupDir, then create symlinks 
 
-echo "Installing..."
+echo "Installation started."
 for file in $files; do
     filename=`basename $file`
+
+    # dirs, prefixed with double underline should be symlinked resursively
+    if [[ ${filename} == __* ]] ; then
+        filename=`echo $filename | sed s/__//`
+        cp -sRf ${file}/* $HOME/.${filename}
+        
+        continue
+    fi
 
     if [ -h ~/.$filename ]; then
         echo "~/.$filename is a symlink, deleting it."
@@ -36,4 +63,4 @@ for file in $files; do
    echo "Creating symlink to dotfile's $filename in home directory"
    ln -s $file ~/.$filename
 done
-echo "...done."
+echo "Installation finished."

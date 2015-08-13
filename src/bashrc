@@ -116,13 +116,8 @@ fi
 
 # All STDERR output is in red color.
 # https://github.com/sickill/stderred
-if [ -d /opt/stderred ] ; then
+if [ -f /opt/stderred/build/libstderred.so ] ; then
     export LD_PRELOAD="/opt/stderred/build/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"
-fi
-
-# Bash-it framework
-if [ -f $HOME/.bash_it ]; then
-    . $HOME/.bash_it
 fi
 
 # Include all from ~/.bashrc.d
