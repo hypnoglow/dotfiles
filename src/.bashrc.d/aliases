@@ -27,3 +27,6 @@ alias fucking_swap='vmstat 60 -S M'
 alias agi='apt-get install'
 alias agu='apt-get update'
 alias agar='apt-get autoremove'
+
+# bash-specific
+alias bashenv='bash -c set' 

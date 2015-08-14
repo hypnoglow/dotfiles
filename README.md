@@ -18,7 +18,7 @@ If it is a symlink, script removes it, otherwise backup it to backup_dir ("~/.do
 
 ## Updating
 
-Install script automatically does self-update by default, if no `--no-pull` specified.  
+Install script automatically does self-update by default, if no `--update=no` specified.  
 So the only thing you need to run is:
 
     cd dotfiles
