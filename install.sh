@@ -6,11 +6,12 @@
 DOTFILES_DIR=`dirname $( readlink -f ${BASH_SOURCE[0]} )`
 backupDir=~/.dotfiles~
 files=$DOTFILES_DIR/src/*
-PULL=true
+DO_UPDATE=true
+VERBOSE_FLAG=""
 
 # allow bash to find .dotfiles
 if ! shopt -q dotglob ; then
-	shopt -s dotglob
+    shopt -s dotglob
 fi
 
 # process params
@@ -18,23 +19,27 @@ fi
 for i in "$@"
 do
 case $i in
-    --no-pull)
-      PULL=false
+    --update=no*)
+        DO_UPDATE=false
+    ;;
+    -v|--verbose)
+        VERBOSE_FLAG="-v"
     ;;
     *)
     ;;
 esac
 done
 
-if [ $PULL = true ] ; then
+if [ $DO_UPDATE = true ] ; then
     echo -n "Self updating... "
-    (cd ${DOTFILES_DIR} && git pull -q)
+    git pull --quiet --recurse-submodules
+    git submodule update --quiet --init --recursive
     echo "done."
 fi
 
 if [ ! -d $backupDir ] ; then 
-	echo "Creating $backupDir for backup of any existing dotfiles in ~"
-	mkdir -p $backupDir	
+    echo "Creating $backupDir for backup of any existing dotfiles in ~"
+    mkdir -p $backupDir	
 fi
 
 echo "Changing to the $DOTFILES_DIR directory"
@@ -55,16 +60,13 @@ for file in $files; do
     fi
 
     if [ -h $HOME/$FILENAME ]; then
-        echo "~/$FILENAME is a symlink, deleting it"
-        rm $HOME/$FILENAME
+        rm $VERBOSE_FLAG $HOME/$FILENAME
     fi
 
     if [ -e ~/$FILENAME ]; then
-       echo "Moving existing ~/$FILENAME to $backupDir"
-       mv -f ~/$FILENAME $backupDir
-   fi
+       mv -f $VERBOSE_FLAG ~/$FILENAME $backupDir
+    fi
 
-   echo "Creating symlink to dotfile's $FILENAME in home directory"
-   ln -sfv $file ~/$FILENAME
+    ln -sf $VERBOSE_FLAG $file ~/$FILENAME
 done
 echo "Installation finished."
