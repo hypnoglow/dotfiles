@@ -1,0 +1,18 @@
+[
+	{
+		"keys": ["ctrl+w"],
+		"command": "expand_selection",
+		"args": {
+			"to": "word"
+		}
+	},
+	{
+		"keys": ["ctrl+alt+q"],
+		"command": "close_file"
+	},
+	{
+		// unset ctrl+q so Sublime Text can't be accidentally closet
+		"keys": ["ctrl+q"],
+		"command": "noop"
+	}
+]

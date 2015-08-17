@@ -4,8 +4,8 @@
 # define variables
 
 DOTFILES_DIR=`dirname $( readlink -f ${BASH_SOURCE[0]} )`
-backupDir=~/.dotfiles~
-files=$DOTFILES_DIR/src/*
+DOTFILES=$DOTFILES_DIR/src/*
+BACKUP_DIR=~/.dotfiles~
 DO_UPDATE=true
 VERBOSE_FLAG=""
 
@@ -37,25 +37,27 @@ if [ $DO_UPDATE = true ] ; then
     echo "done."
 fi
 
-if [ ! -d $backupDir ] ; then 
-    echo "Creating $backupDir for backup of any existing dotfiles in ~"
-    mkdir -p $backupDir	
+if [ ! -d $BACKUP_DIR ] ; then
+    echo "Creating $BACKUP_DIR for backup of any existing dotfiles in ~"
+    mkdir -p $BACKUP_DIR
 fi
 
 echo "Changing to the $DOTFILES_DIR directory"
 cd $DOTFILES_DIR
 
-# move any existing dotfiles (or symlinks) in homedir to backupDir, then create symlinks 
+# move any existing dotfiles (or symlinks) in homedir to BACKUP_DIR, then create symlinks
+
+# @todo make a mapper file to manage directories
 
 echo "Installation started."
-for file in $files; do
-    FILENAME=`basename $file`
+for FILE in $DOTFILES; do
+    FILENAME=`basename $FILE`
 
     # dirs, prefixed with double underline should be symlinked resursively
     if [[ ${FILENAME} == __* ]] ; then
         FILENAME=`echo $FILENAME | sed s/__//`
-        cp -sRf ${file}/* $HOME/${FILENAME}
-        
+        cp -sRf $VERBOSE_FLAG ${FILE}/* $HOME/${FILENAME}
+
         continue
     fi
 
@@ -64,9 +66,9 @@ for file in $files; do
     fi
 
     if [ -e ~/$FILENAME ]; then
-       mv -f $VERBOSE_FLAG ~/$FILENAME $backupDir
+       mv -f $VERBOSE_FLAG ~/$FILENAME $BACKUP_DIR
     fi
 
-    ln -sf $VERBOSE_FLAG $file ~/$FILENAME
+    ln -sf $VERBOSE_FLAG $FILE ~/$FILENAME
 done
 echo "Installation finished."
