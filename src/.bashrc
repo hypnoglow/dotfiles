@@ -130,5 +130,8 @@ if [ -d $HOME/.bashrc.d ]; then
   unset file
 fi
 
+# Enable FUCK
+eval "$(thefuck --alias)"
+
 ################################################################################
 
