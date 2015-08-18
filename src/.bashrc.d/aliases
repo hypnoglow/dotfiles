@@ -9,6 +9,8 @@ alias  l.='ls --color=always -F        -A --ignore=\*'
 alias ll.='ls --color=always -F -lh    -A --ignore=\*'
 alias treec="tree -C"
 
+alias ..="cd .."
+
 alias suka="sudo"
 alias plz="sudo"
 
@@ -29,4 +31,6 @@ alias agu='apt-get update'
 alias agar='apt-get autoremove'
 
 # bash-specific
-alias bashenv='bash -c set' 
+alias bashenv='bash -c set'
+
+#alias mdless="pandoc -s -f markdown -t man $1 | groff -T utf8 -man | less"
