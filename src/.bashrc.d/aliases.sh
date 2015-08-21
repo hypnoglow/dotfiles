@@ -1,18 +1,23 @@
-# ls
-alias   l='ls --color=always -F'
-alias  ll='ls --color=always -F -lh'
-alias   L='ls --color=always -F     -L'
-alias  LL='ls --color=always -F -lh -L'
-alias  la='ls --color=always -F        -a'
-alias lla='ls --color=always -F -lh    -a'
-alias  l.='ls --color=always -F        -A --ignore=\*'
-alias ll.='ls --color=always -F -lh    -A --ignore=\*'
+# This is an include file for .bashrc
+
+# listings
+alias   l='ls --color=auto -F'
+alias  ll='ls --color=auto -F -lh'
+alias   L='ls --color=auto -F     -L'
+alias  LL='ls --color=auto -F -lh -L'
+alias  la='ls --color=auto -F        -a'
+alias lla='ls --color=auto -F -lh    -a'
+alias  l.='ls --color=auto -F        -A --ignore=\*'
+alias ll.='ls --color=auto -F -lh    -A --ignore=\*'
 alias treec="tree -C"
 
+# common things
 alias ..="cd .."
+alias h='history'
+alias g='git'
 
+# >:]
 alias suka="sudo"
-alias plz="sudo"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -22,7 +27,7 @@ alias duc='du -hd1'
 alias manru='man -L ru'
 alias mansearch='apropos'
 
-# FUCKING
+# wtf
 alias fucking_swap='vmstat 60 -S M'
 
 # apt-get
@@ -32,5 +37,3 @@ alias agar='apt-get autoremove'
 
 # bash-specific
 alias bashenv='bash -c set'
-
-#alias mdless="pandoc -s -f markdown -t man $1 | groff -T utf8 -man | less"

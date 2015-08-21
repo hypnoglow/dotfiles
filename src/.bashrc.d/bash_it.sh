@@ -1,4 +1,5 @@
-#!# This is an include file for .bashrc #!#
+# This is an include file for .bashrc
+
 # Config for Bash-it framework
 
 # Path to the bash it configuration

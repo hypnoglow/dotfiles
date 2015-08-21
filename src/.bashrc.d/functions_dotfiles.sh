@@ -1,3 +1,5 @@
+# This is an include file for .bashrc
+
 # Functions for dotfiles operating
 
 # Adds file to dotfiles system

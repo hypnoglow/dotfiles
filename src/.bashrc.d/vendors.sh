@@ -1,3 +1,7 @@
+# This is an include file for .bashrc
+
+# Include all vendors stuff here.
+
 # All STDERR output is in red color.
 # https://github.com/sickill/stderred
 if [ -f /opt/stderred/build/libstderred.so ] ; then
@@ -5,4 +9,5 @@ if [ -f /opt/stderred/build/libstderred.so ] ; then
 fi
 
 # Enable FUCK
+# https://github.com/nvbn/thefuck
 eval "$(thefuck --alias)"

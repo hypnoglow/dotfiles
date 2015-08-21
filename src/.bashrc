@@ -21,13 +21,11 @@ HISTCONTROL=ignoreboth
 HISTSIZE=20000
 HISTFILESIZE=20000
 
-# SHELL BUILDIN CMDS
+# SHELL BUILTIN
 
 # Prevents from redirecting output to an existing file, or appending output to a non-existing file.
 # Remember you can override this with >|
 set -o noclobber
-
-# SHELL BUILDIN CMDS - OPTIONAL
 
 # append to the history file, don't overwrite it
 shopt -s histappend

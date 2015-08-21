@@ -1,37 +1,43 @@
 [user]
 	name = Igor Zibarev
 	email = zibarev.i@gmail.com
-
 [core]
 	editor = vim
 	eol = lf
 	autocrlf = false
-
 [push]
 	default = simple
-    
 [alias]
 	co = checkout
 	ci = commit
 	st = status
 	br = branch
-    ds = diff --staged
+	ds = diff --staged
 
-    # Shows current branch
-    cb = rev-parse --abbrev-ref HEAD
-	
+	# Shows current branch
+	cb = rev-parse --abbrev-ref HEAD
+
 	type = cat-file -t
 	dump = cat-file -p
 
-    lg  = log --graph       --date=relative --pretty=format:'%Cred%h %Creset%<|(50,trunc)%s %C(bold blue)<%an>%Creset %Cgreen(%cd)%Creset%C(auto)%d'
-    lgf = log --graph       --decorate=short --abbrev-commit
-    tr  = log --graph --all --date=relative --pretty=format:'%Cred%h %Creset%<|(50,trunc)%s %C(bold blue)<%an>%Creset %Cgreen(%cd)%Creset%C(auto)%d'
-    trf = log --graph --all --decorate=short --abbrev-commit
-    cinfo  = log -n1 --pretty=medium
+	lg  = log --graph       --date=relative --pretty=format:'%Cred%h %Creset%<|(50,trunc)%s %C(bold blue)<%an>%Creset %Cgreen(%cd)%Creset%C(auto)%d'
+	lgf = log --graph       --decorate=short --abbrev-commit
+	tr  = log --graph --all --date=relative --pretty=format:'%Cred%h %Creset%<|(50,trunc)%s %C(bold blue)<%an>%Creset %Cgreen(%cd)%Creset%C(auto)%d'
+	trf = log --graph --all --decorate=short --abbrev-commit
+	cinfo  = log -n1 --pretty=medium
 
 [color]
 	ui = auto
-
 [i18n]
 	commitencoding = utf-8
 	logoutputencoding = utf-8
+[merge]
+	tool = extMerge
+[mergetool "extMerge"]
+	cmd = extMerge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+[mergetool]
+	trustExitCode = false
+[diff]
+	tool = extDiff
+[difftool "extDiff"]
+	cmd = extDiff \"$LOCAL\" \"$REMOTE\"
