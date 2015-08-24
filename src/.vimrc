@@ -145,13 +145,13 @@ filetype plugin on
 set completeopt=menu
 
 
-call plug#begin('~/.vim/plugged')
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-call plug#end()
+"call plug#begin('~/.vim/plugged')
+"Plug 'SirVer/ultisnips'
+"Plug 'honza/vim-snippets'
+"call plug#end()
 
 " Pathogen setup
-execute pathogen#infect()
+"execute pathogen#infect()
 filetype plugin indent on
 
 function! SuperCleverTab()

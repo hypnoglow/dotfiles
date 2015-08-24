@@ -27,16 +27,18 @@ done
 
 # self-update if need
 if [ $DO_UPDATE = true ] ; then
-    echo -n "Self updating... "
-    git pull --quiet --recurse-submodules
-    git submodule update --quiet --init --recursive
-    echo "done."
+    if ! type -P gits > /dev/null ; then
+        echo "Git is not installed - not doing an update"
+    else
+        echo -n "Self updating... "
+        git pull --quiet --recurse-submodules
+        git submodule update --quiet --init --recursive
+        echo "done."
+    fi
 fi
 
 # create backup dir if need
-if [ ! -d $BACKUP_DIR ] ; then
-    mkdir -p $VERBOSE_FLAG $BACKUP_DIR
-fi
+mkdir -p $VERBOSE_FLAG $BACKUP_DIR
 
 # determine path variables
 DOTFILES_ROOT=`dirname $( readlink -f ${BASH_SOURCE[0]} )`
