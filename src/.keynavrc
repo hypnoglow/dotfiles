@@ -22,7 +22,7 @@
 #clear
 
 # Use 'daemonize' to background ourselves.
-#daemonize
+daemonize
 
 ctrl+semicolon start
 Escape end
@@ -54,6 +54,10 @@ semicolon warp,end
 1 click 1
 2 click 2
 3 click 3
+
+# Double click & right clich
+d warp,doubleclick 1,end
+apostrophe warp,click 3,end
 
 # Zoom to the current window
 w windowzoom
