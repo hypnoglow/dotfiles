@@ -31,9 +31,13 @@ alias mansearch='apropos'
 alias fucking_swap='vmstat 60 -S M'
 
 # apt-get
-alias agi='apt-get install'
-alias agu='apt-get update'
-alias agar='apt-get autoremove'
+alias agi='sudo apt-get install'
+alias agu='sudo apt-get update'
+alias agar='sudo apt-get autoremove'
 
 # bash-specific
 alias bashenv='bash -c set'
+
+#alias memory-usage=ps -e -orss=,pid=,args= | sort -nr | head | awk '{print $2"\t"$1/1024"\tMB\t"$3;}'
+
+alias realsync-status="ps u | grep realsync | grep -v grep"

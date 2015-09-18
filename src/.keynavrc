@@ -40,6 +40,10 @@ Left cut-left
 Right cut-right
 Up cut-up
 Down cut-down
+shift+Left move-left
+shift+Right move-right
+shift+Up move-up
+shift+Down move-down
 
 shift+h move-left
 shift+j move-down
