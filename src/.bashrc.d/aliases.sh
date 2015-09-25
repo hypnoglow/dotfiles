@@ -40,4 +40,23 @@ alias bashenv='bash -c set'
 
 #alias memory-usage=ps -e -orss=,pid=,args= | sort -nr | head | awk '{print $2"\t"$1/1024"\tMB\t"$3;}'
 
-alias realsync-status="ps u | grep realsync | grep -v grep"
+alias rs-status="ps u | grep realsync | grep -v grep"
+alias rs-kill="ps u | grep realsync | grep -v grep | grep -i $1 | awk '{print $2}'"
+
+rsstatus() {
+    ps u | grep realsync | grep -v grep
+}
+
+rskill() {
+    [ -z "$1" ] && >&2 echo "Expected param for grep in rs processes" && return 1
+    pgrep -f "realsync.*$1" | xargs kill -TERM
+    # Old:
+    # rsstatus | grep -i $1 | awk '{print $2}' | xargs kill
+    # @todo try this:
+    # rsstatus | grep -i $1 | awk '{system kill}' $2
+}
+
+alias clear-fonts-cache="sudo fc-cache -f -v"
+
+# Custom projects aliases
+alias n1-auth="bash <(curl -s http://git.rn/users/i.zibarev/repos/snippets/browse/n1/auth/n1-auth-token-claimant.bash?raw) z.d"
