@@ -11,8 +11,11 @@
 	co = checkout
 	ci = commit
 	st = status
+    s  = status -s -b
 	br = branch
 	ds = diff --staged
+
+	cat-blob = cat-file -p master^{tree}
 
 	# Shows current branch
 	cb = rev-parse --abbrev-ref HEAD

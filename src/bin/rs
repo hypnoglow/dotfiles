@@ -1,0 +1,64 @@
+#!/bin/bash
+# Simple binary for running realsync in background with logging.
+
+COLOR_ORANGE="\e[33m"
+COLOR_RESET="\e[0m"
+SCRIPT_ROOT=`dirname $( readlink -f ${BASH_SOURCE[0]} )`
+
+ACTION="$1"
+
+if [ -z "$ACTION" ] ; then
+    >&2 echo -e "Command is not specified.\nTo start use:\n\t${COLOR_ORANGE}rs start${COLOR_RESET}"
+    exit 1
+fi
+
+# Starting realsync in background.
+# Logging output to file.
+function rs_start {
+    PIDS=`pgrep -f "$PWD"`
+    if [ -n "$PIDS" ] ; then
+        >&2 echo -e "Realsync is already running:\n$PIDS"
+        >&2 echo -e "Please stop it before starting new process:\n\t${COLOR_ORANGE}rs stop${COLOR_RESET}"
+        return 2
+    fi
+
+    LOG_DIR="/var/log/realsync/"
+    LOG_FILENAME="$(basename $(pwd)).log"
+    LOG_FILE="$LOG_DIR$LOG_FILENAME"
+
+    [ ! -e $LOG_DIR ] && mkdir -p $LOG_DIR && chmod +rx $LOG_DIR
+    [ ! -e $LOG_FILE ] && touch $LOG_FILE && chmod +r $LOG_FILE
+
+    echo "Logging to $LOG_FILE"
+    nohup realsync $(pwd) &>> $LOG_FILE &
+
+    echo "Main process pid: $!"
+}
+
+# Stopping realsync if it is running.
+function rs_stop {
+    PIDS=`pgrep -f "$PWD"`
+    if [ -z "$PIDS" ] ; then
+        >&2 echo "Realsync process not found - nothing to stop."
+        return 3
+    fi
+
+    echo $PIDS | xargs kill -TERM
+}
+
+function rs_status {
+    ps u | grep realsync | grep -v grep
+}
+
+# Running action.
+if [ "$ACTION" = "start" ] ; then
+    rs_start
+elif [ "$ACTION" = "stop" ] ; then
+    rs_stop
+elif [ "$ACTION" = "status" ] ; then
+    rs_status
+fi
+
+exit $?
+
+# @todo make autocomplete?

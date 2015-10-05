@@ -1,0 +1,20 @@
+#!/bin/bash
+
+function _err {
+    >&2 echo "RUSTRUN * [ERROR] $1"
+}
+
+if [ -z "$1" ] ; then
+    _err "Argument source filename required."
+    exit 1
+fi
+
+# compile to bin/ dir
+rustc --out-dir $PWD/bin $1
+
+if [ $? -ne 0 ] ; then
+    _err "Compilation errors occured, not running anything."
+    exit 2
+fi
+
+exec bin/${1%.rs}
