@@ -1,0 +1,100 @@
+#!/bin/bash
+# Simple binary for dotfiles operating.
+################################################################################
+
+# For autocomplete. See $HOME/bin/autocomplete.sh
+if [ "$1" == "autocomplete" ] ; then
+    echo "add"
+    exit 0
+fi
+
+COLOR_ORANGE="\e[33m"
+COLOR_RESET="\e[0m"
+SCRIPT_ROOT=`dirname $( readlink -f ${BASH_SOURCE[0]} )`
+ACTION=""
+VERBOSE="-v"
+
+while [[ $# > 0 ]]
+do
+    case $1 in
+        -v)
+            VERBOSE="-v"
+        ;;
+        -q)
+            VERBOSE=""
+        ;;
+        -*)
+            echo "Error: unknown argument \"$1\"."
+            exit 1
+        ;;
+        *)
+            if [ -n "$ACTION" ] ; then
+                FILENAME=$1
+                break
+            else
+                ACTION=$1
+            fi
+        ;;
+    esac
+    shift
+done
+
+if [ -z "$ACTION" ] ; then
+    >&2 echo "Error: Command is not specified."
+    echo -e "To add file use:\n\t${COLOR_ORANGE}dfl add filename.ext${COLOR_RESET}"
+    exit 1
+fi
+
+
+# Adds file to dotfiles system
+function _dfl_add {
+    # @todo check if already exists or it is a symlink
+
+    if [ -z "$FILENAME" ] ; then
+        >&2 echo "Error: filename is not specified."
+        return 1
+    fi
+
+    if [ ! -e "$FILENAME" ] ; then
+        echo "Error: file does not exist."
+        return 1
+    fi
+
+    if [ -d "$FILENAME" ] ; then
+        echo "Error: directories are currently not supported."
+        return 1
+    fi
+
+    DOTFILES_DIR="$HOME/dotfiles/src"
+    BACKUP_DIR="$HOME/.dotfiles~"
+
+    FILEPATH=`readlink -f ${FILENAME}`
+    FILEPATH_RELATIVE_TO_HOME=`echo $FILEPATH | sed s:^$HOME\/::`
+
+    echo "Making backup"
+    # mkdir -p $(dirname $BACKUP_DIR/$FILEPATH_RELATIVE_TO_HOME)
+    #cp -f $VERBOSE $FILEPATH $BACKUP_DIR/$FILEPATH_RELATIVE_TO_HOME
+    cp -f $FILEPATH $FILEPATH~
+
+    echo "Moving to dotfiles dir"
+    mkdir -p $(dirname $DOTFILES_DIR/${FILEPATH_RELATIVE_TO_HOME})
+    mv -f $VERBOSE $FILEPATH $DOTFILES_DIR/${FILEPATH_RELATIVE_TO_HOME}
+
+    echo "Making symlink to home dir"
+    # @todo correct recursive adding of directories
+        #cp -sRf $VERBOSE $DOTFILES_DIR/${RECURSIVE_SYMLINK}${FILEPATH_RELATIVE_TO_HOME} $HOME/$FILEPATH_RELATIVE_TO_HOME
+    ln -sf $VERBOSE $DOTFILES_DIR/$FILEPATH_RELATIVE_TO_HOME $HOME/$FILEPATH_RELATIVE_TO_HOME
+}
+
+case $ACTION in
+    add)
+        _dfl_add
+    ;;
+
+    *)
+        >&2 echo "Error: unknown action."
+        exit 1
+    ;;
+esac
+
+exit $?

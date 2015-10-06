@@ -50,6 +50,10 @@ function rs_stop {
     fi
 
     echo $PIDS | xargs kill -TERM
+
+    # Old ways:
+    # rs_status | grep -i $1 | awk '{print $2}' | xargs kill
+    # rs_status | grep -i $1 | awk '{system kill}' $2
 }
 
 function rs_status {

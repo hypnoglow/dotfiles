@@ -3,10 +3,12 @@
 # listings
 alias   l='ls --color=auto -F'
 alias  ll='ls --color=auto -F -lh'
+alias  la='ls --color=auto -F        -A'
+alias lla='ls --color=auto -F -lh    -A'
 alias   L='ls --color=auto -F     -L'
 alias  LL='ls --color=auto -F -lh -L'
-alias  la='ls --color=auto -F        -a'
-alias lla='ls --color=auto -F -lh    -a'
+alias  LA='ls --color=auto -F     -L -A'
+alias LLA='ls --color=auto -F -lh -L -A'
 alias  l.='ls --color=auto -F        -A --ignore=\*'
 alias ll.='ls --color=auto -F -lh    -A --ignore=\*'
 alias treec="tree -C"
@@ -27,35 +29,14 @@ alias duc='du -hd1'
 alias manru='man -L ru'
 alias mansearch='apropos'
 
-# wtf
-alias fucking_swap='vmstat 60 -S M'
-
 # apt-get
 alias agi='sudo apt-get install'
 alias agu='sudo apt-get update'
 alias agar='sudo apt-get autoremove'
 
-# bash-specific
+# Some rarely used things that are not important to remember.
+alias fucking_swap='vmstat 60 -S M'
 alias bashenv='bash -c set'
-
-#alias memory-usage=ps -e -orss=,pid=,args= | sort -nr | head | awk '{print $2"\t"$1/1024"\tMB\t"$3;}'
-
-alias rs-status="ps u | grep realsync | grep -v grep"
-alias rs-kill="ps u | grep realsync | grep -v grep | grep -i $1 | awk '{print $2}'"
-
-rsstatus() {
-    ps u | grep realsync | grep -v grep
-}
-
-rskill() {
-    [ -z "$1" ] && >&2 echo "Expected param for grep in rs processes" && return 1
-    pgrep -f "realsync.*$1" | xargs kill -TERM
-    # Old:
-    # rsstatus | grep -i $1 | awk '{print $2}' | xargs kill
-    # @todo try this:
-    # rsstatus | grep -i $1 | awk '{system kill}' $2
-}
-
 alias clear-fonts-cache="sudo fc-cache -f -v"
 
 # Custom projects aliases
