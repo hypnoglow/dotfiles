@@ -23,7 +23,7 @@
 	type = cat-file -t
 	dump = cat-file -p
 
-	lg  = log --graph       --date=relative --pretty=format:'%Cred%h %Creset%<|(50,trunc)%s %C(bold blue)<%an>%Creset %Cgreen(%cd)%Creset%C(auto)%d'
+	lg  = log --graph       --date=format:%c --pretty=format:'%Cred%h %Creset%<|(50,trunc)%s %C(bold blue)<%an>%Creset %Cgreen(%cd)%Creset%C(auto)%d'
 	lgf = log --graph       --decorate=short --abbrev-commit
 	tr  = log --graph --all --date=relative --pretty=format:'%Cred%h %Creset%<|(50,trunc)%s %C(bold blue)<%an>%Creset %Cgreen(%cd)%Creset%C(auto)%d'
 	trf = log --graph --all --decorate=short --abbrev-commit
