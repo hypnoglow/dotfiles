@@ -1,0 +1,9 @@
+# If this commit is applied, it will...
+Correct the XML amounts in the refunds fixtures
+
+# Why is this change being made?
+This adjustment is needed to make the tests pass. Stricter amount
+validation must been put in place without updating these tests.
+
+# Any references to tickets, articles, etc?
+ISSUE-123

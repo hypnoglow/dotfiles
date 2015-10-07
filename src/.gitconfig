@@ -44,3 +44,5 @@
 	tool = extDiff
 [difftool "extDiff"]
 	cmd = extDiff \"$LOCAL\" \"$REMOTE\"
+[commit]
+	template = ~/.gitcommit
