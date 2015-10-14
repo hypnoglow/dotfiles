@@ -9,12 +9,20 @@
 	default = simple
 [alias]
 	co = checkout
+	cm = checkout master
 	ci = commit
+	au = add -u
+	s = status
 	st = status
-    s  = status -s -b
+	ssb  = status -s -b
 	br = branch
 	ds = diff --staged
+	dw = diff --word-diff
+	undo = reset --mixed HEAD~1
+	cleanup = !git remote prune origin && git gc && git clean -dfx && git stash clear
+	oneweek = log --format="%H" --since="1 week ago" --reverse | xargs -L 1 git show
 
+	who = shortlog -n -s --no-merges
 	cat-blob = cat-file -p master^{tree}
 
 	# Shows current branch

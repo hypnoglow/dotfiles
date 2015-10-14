@@ -5,6 +5,9 @@
 	],
 	"installed_packages":
 	[
+		"Git Config",
+		"Markdown Preview",
+		"Package Control",
 		"Rust",
 		"TOML"
 	]
