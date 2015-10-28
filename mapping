@@ -3,3 +3,4 @@
 .config/sublime-text-3/Packages/User -> .config/sublime-text-3/Packages/User
 .config/xfce4/terminal -> .config/xfce4/terminal
 .profile.d -> .profile.d
+bin -> bin

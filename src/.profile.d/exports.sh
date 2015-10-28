@@ -19,3 +19,8 @@ PATH="$PATH:$GOPATH/bin"
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
+
+# include applications binaries
+if [ -d "$HOME/apps/bin" ] ; then
+    PATH="$HOME/apps/bin:$PATH"
+fi

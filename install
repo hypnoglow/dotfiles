@@ -37,13 +37,13 @@ if [ $DO_UPDATE = true ] ; then
     fi
 fi
 
-# create backup dir if need
-mkdir -p $VERBOSE_FLAG $BACKUP_DIR
-
 # determine path variables
 DOTFILES_ROOT=`dirname $( readlink -f ${BASH_SOURCE[0]} )`
 DOTFILES_SRC="src"
 BACKUP_DIR=~/.dotfiles~
+
+# create backup dir if need
+mkdir -p $VERBOSE_FLAG $BACKUP_DIR
 
 # All regular files in $DOTFILES_SRC directory
 # should be symlinked directly to $HOME

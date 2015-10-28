@@ -3,28 +3,21 @@
 
 # @todo automatically load for each file in $HOME/bin ?
 
-_autocomplete_rs()
+_default_autocomplete()
 {
-    _script_commands=$($HOME/bin/rs autocomplete)
-
-    local cur prev
+    local cur prev opts
     COMPREPLY=()
     cur="${COMP_WORDS[COMP_CWORD]}"
-    COMPREPLY=( $(compgen -W "${_script_commands}" -- ${cur}) )
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+    cmd=$1
+    opts=$($HOME/bin/${cmd} autocomplete)
+
+    if [ -z "$prev" ] || [ "$prev" = "$cmd" ] ; then
+        COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+    fi
 
     return 0
 }
-complete -o nospace -F _autocomplete_rs rs
 
-_autocomplete_dfl()
-{
-    _script_commands=$($HOME/bin/dfl autocomplete)
-
-    local cur prev
-    COMPREPLY=()
-    cur="${COMP_WORDS[COMP_CWORD]}"
-    COMPREPLY=( $(compgen -W "${_script_commands}" -- ${cur}) )
-
-    return 0
-}
-complete -o nospace -F _autocomplete_dfl dfl
+complete -o nospace -F _default_autocomplete rs
+complete -o nospace -F _default_autocomplete dfl

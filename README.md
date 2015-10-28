@@ -1,9 +1,10 @@
 # .files
 
-These are mine dotfiles. \o/
-Take what you want, but know what you take.  
+These are mine dotfiles. \o/  
+Feel free to take anything from this.
 
-It targets Ubuntu Linux systems, but some things are unix-compatible.  
+It targets Ubuntu Linux systems, but some things are unix compatible or at least
+easy adaptable to it.
 
 ## Installation
 

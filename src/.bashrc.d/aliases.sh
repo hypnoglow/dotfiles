@@ -26,6 +26,7 @@ alias suka="sudo"
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 alias duc='du -hd1'
+alias dutop='du -d1 -BM | sort -n -k1 -r | head'
 alias manru='man -L ru'
 alias mansearch='apropos'
 

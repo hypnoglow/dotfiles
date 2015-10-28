@@ -3,5 +3,9 @@
 	[
 		"functions_dotfiles",
 		"mdless"
-	]
+	],
+    "rulers":
+    [
+        80
+    ],
 }
