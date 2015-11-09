@@ -1,0 +1,14 @@
+<application>
+  <component name="AbbreviationManager">
+    <abbreviations>
+      <action id="EditorIncreaseFontSize">
+        <abbreviation name="ifs" />
+        <abbreviation name="ifonts" />
+      </action>
+      <action id="EditorDecreaseFontSize">
+        <abbreviation name="dfs" />
+        <abbreviation name="dfonts" />
+      </action>
+    </abbreviations>
+  </component>
+</application>

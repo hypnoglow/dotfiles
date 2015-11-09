@@ -1,0 +1,8 @@
+<application>
+  <component name="UISettings">
+    <option name="HIDE_TOOL_STRIPES" value="false" />
+    <option name="SHOW_MEMORY_INDICATOR" value="true" />
+    <option name="ALLOW_MERGE_BUTTONS" value="false" />
+    <option name="MAX_LOOKUP_LIST_HEIGHT" value="12" />
+  </component>
+</application>

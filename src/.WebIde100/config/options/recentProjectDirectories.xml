@@ -1,0 +1,54 @@
+<application>
+  <component name="RecentDirectoryProjectsManager">
+    <option name="recentPaths">
+      <list>
+        <option value="$USER_HOME$/ngs/projects/n1.ru" />
+        <option value="$USER_HOME$/dotfiles" />
+        <option value="$USER_HOME$/ngs/projects/love.ngs.ru" />
+        <option value="$USER_HOME$/ngs/tools/atroshchenko-snippets" />
+        <option value="$USER_HOME$/ngs/projects/ngs/queue" />
+        <option value="$USER_HOME$/ngs/projects/n1/migration-api" />
+        <option value="$USER_HOME$/ngs/projects/n1.ru-api-tests" />
+        <option value="$USER_HOME$/ngs/tools/code_standarts" />
+        <option value="$USER_HOME$/ngs/projects/geo.ngs.ru" />
+        <option value="$USER_HOME$/ngs/projects/framework.ngs.ru" />
+        <option value="$USER_HOME$/ngs/tools/snippets" />
+        <option value="$USER_HOME$/ngs/tools/zibarev-snippets" />
+        <option value="$USER_HOME$/conf" />
+        <option value="/data/projects/n1.ru" />
+        <option value="/data/projects/love.ngs.ru" />
+        <option value="/data/projects/geo.ngs.ru" />
+        <option value="/data/releases/framework.ngs.ru/framework-dev" />
+        <option value="/data/projects/api.ngs.ru" />
+        <option value="/data/projects/rabota.ngs.ru" />
+        <option value="/data/releases/rabota.ngs.ru/rabota.ngs.ru-dev" />
+        <option value="$USER_HOME$/projects/php/example" />
+        <option value="$USER_HOME$/projects/php/lovebot" />
+        <option value="/data/projects/foto.ngs.ru" />
+        <option value="/data/projects/zibarev.love.ngs.ru" />
+        <option value="/data/projects/billing.ngs.ru" />
+      </list>
+    </option>
+    <option name="openPaths">
+      <list>
+        <option value="$USER_HOME$/ngs/projects/n1.ru" />
+      </list>
+    </option>
+    <option name="lastPath" value="$USER_HOME$/ngs/projects/n1.ru" />
+    <option name="additionalInfo">
+      <map>
+        <entry key="$USER_HOME$/ngs/projects/n1.ru">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PS-143.381" />
+              <option name="productionCode" value="PS" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1447073742792" />
+              <option name="buildTimestamp" value="1446228000000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</application>
