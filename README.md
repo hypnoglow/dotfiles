@@ -1,10 +1,12 @@
 # .files
 
 These are mine dotfiles. \o/  
-Feel free to take anything from this.
 
-It targets Ubuntu Linux systems, but some things are unix compatible or at least
-easy adaptable to it.
+If you barely understand what it is, or if you want an in-depth tutorial about organizing your dotfiles, 
+see [this blog post](http://www.anishathalye.com/2014/08/03/managing-your-dotfiles/).
+
+This targets Ubuntu Linux systems, but some things are unix compatible or at least
+easy adaptable to it. Feel free to take anything from this.
 
 ## Installation
 

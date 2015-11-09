@@ -4,7 +4,7 @@
 
 # define params
 DO_UPDATE=true
-VERBOSE_FLAG=""
+VERBOSE=""
 DRY_RUN=false
 
 # process params
@@ -15,7 +15,7 @@ case $param in
         DO_UPDATE=false
     ;;
     -v|--verbose)
-        VERBOSE_FLAG="-v"
+        VERBOSE="-v"
     ;;
     -d|--dry-run)
         DRY_RUN=true
@@ -27,9 +27,9 @@ done
 
 # self-update if need
 if [ $DO_UPDATE = true ] ; then
-    if ! type -P gits > /dev/null ; then
+    if ! type -P git > /dev/null ; then
         echo "Git is not installed - not doing an update"
-    else
+    elif [ `git rev-parse --abbrev-ref HEAD` = "master" ] ; then
         echo -n "Self updating... "
         git pull --quiet --recurse-submodules
         git submodule update --quiet --init --recursive
@@ -37,83 +37,56 @@ if [ $DO_UPDATE = true ] ; then
     fi
 fi
 
-# determine path variables
+# Determine path variables
 DOTFILES_ROOT=`dirname $( readlink -f ${BASH_SOURCE[0]} )`
-DOTFILES_SRC="src"
-BACKUP_DIR=~/.dotfiles~
+DOTFILES_DIR="${DOTFILES_ROOT}/src"
+BACKUP_DIR="~/.dotfiles~"
 
-# create backup dir if need
-mkdir -p $VERBOSE_FLAG $BACKUP_DIR
-
-# All regular files in $DOTFILES_SRC directory
-# should be symlinked directly to $HOME
-echo "Installing files"
-for FILE in `find $DOTFILES_ROOT/$DOTFILES_SRC -maxdepth 1 -mindepth 1 -type f`
-do
-    FILENAME=`basename $FILE`
-    FILEPATH=`readlink -f $FILE`
-
-    # if symlink - delete it; elseif exists - backup
-    if [ -h $HOME/$FILENAME ] ; then
-        if [ $DRY_RUN = true ] ; then
-            echo "Removing $HOME/$FILENAME"
-        else
-            rm $VERBOSE_FLAG $HOME/$FILENAME
-        fi
-    elif [ -e $HOME/$FILENAME ] ; then
-        if [ $DRY_RUN = true ] ; then
-            echo "Moving $HOME/$FILENAME to $BACKUP_DIR"
-        else
-            mv -f $VERBOSE_FLAG $HOME/$FILENAME $BACKUP_DIR
-        fi
-    fi
-
-    if [ $DRY_RUN = true ] ; then
-        echo "Symlinking $HOME/$FILENAME -> $FILEPATH"
-    else
-        ln -sf $VERBOSE_FLAG $FILEPATH $HOME/$FILENAME
-    fi
-done
-
-# define variables needed for further processing
+# Define variables needed for further processing
 MAPPING_DELIMETER="->"
 
-# All directories in $DOTFILES_SRC directory
+# All source files in ${DOTFILES_DIR} directory
 # should be symlinked to $HOME relatively,
 # according to the rules defined in mapper file.
 echo "Installing directories"
 while read line || [[ -n "$line" ]]; do
-    DIR_SRC=`echo ${line%$MAPPING_DELIMETER*}`
-    DIR_DEST=`echo ${line#*$MAPPING_DELIMETER}`
+    # skip comments - lines starting with #
+    [ "${line:0:1}" = "#" ] && continue
 
-    if [ ! -d $DOTFILES_ROOT/$DOTFILES_SRC/$DIR_SRC ] ; then
-        echo "Error: directory from mapping $DOTFILES_ROOT/$DOTFILES_SRC/$DIR_SRC does not exist"
+    # skip empty lines
+    [ "${line}" = "" ] && continue
+
+    SRC=`echo ${line%${MAPPING_DELIMETER}*}`
+    DEST=`echo ${line#*${MAPPING_DELIMETER}}`
+
+    # Check if source file exists
+    if [ ! -e "$DOTFILES_DIR/$SRC" ] ; then
+        echo >&2 "Error: source file from mapping $DOTFILES_DIR/$SRC does not exist."
         continue
     fi
 
-    # if symlink - delete it; elseif exists - backup
-    if [ -h $HOME/$DIR_DEST ] ; then
-        if [ $DRY_RUN = true ] ; then
-            echo "Removing $HOME/$DIR_DEST"
+    # if destination file is a symlink - delete it; elseif exists - backup
+    if [ -L "$HOME/$DEST" ] ; then
+        if [ ${DRY_RUN} = true ] ; then
+            echo "Removing $HOME/$DEST"
         else
-            rm $VERBOSE_FLAG $HOME/$DIR_DEST
+            rm ${VERBOSE} "$HOME/$DEST"
         fi
-    elif [ -e $HOME/$DIR_DEST ] ; then
-        if [ $DRY_RUN = true ] ; then
-            echo "Moving $HOME/$DIR_DEST to $BACKUP_DIR/$DIR_DEST"
+    elif [ -e "$HOME/$DEST" ] ; then
+        if [ ${DRY_RUN} = true ] ; then
+            echo "Moving $HOME/$DEST to $BACKUP_DIR/$DEST"
         else
-            [ ! -e `dirname $BACKUP_DIR/$DIR_DEST` ] && mkdir -p `dirname $BACKUP_DIR/$DIR_DEST`
-            mv -f $VERBOSE_FLAG $HOME/$DIR_DEST $BACKUP_DIR/$DIR_DEST
+            mkdir -p ${VERBOSE} `dirname "$BACKUP_DIR/$DEST"`
+            mv -f ${VERBOSE} "$HOME/$DEST" "$BACKUP_DIR/$DEST"
         fi
     fi
 
-    if [ $DRY_RUN = true ] ; then
-        echo "Symlinking $HOME/$DIR_DEST -> $DOTFILES_ROOT/$DOTFILES_SRC/$DIR_SRC"
+    if [ ${DRY_RUN} = true ] ; then
+        echo "Symlinking $HOME/$DEST -> $DOTFILES_DIR/$SRC"
     else
-        ln -sfn $VERBOSE_FLAG $DOTFILES_ROOT/$DOTFILES_SRC/$DIR_SRC $HOME/$DIR_DEST
+        ln -sfn ${VERBOSE} "$DOTFILES_DIR/$SRC" "$HOME/$DEST"
     fi
-done < $DOTFILES_ROOT/mapping
+done < "$DOTFILES_ROOT/mapping"
 
 echo "Installation finished."
-
 exit 0

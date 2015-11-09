@@ -1,6 +1,19 @@
+# Directories
 .bash_it.d -> .bash_it.d
 .bashrc.d -> .bashrc.d
 .config/sublime-text-3/Packages/User -> .config/sublime-text-3/Packages/User
 .config/xfce4/terminal -> .config/xfce4/terminal
 .profile.d -> .profile.d
 bin -> bin
+
+# Files
+.bash_logout -> .bash_logout
+.bash_profile -> .bash_profile
+.bashrc -> .bashrc
+.gitcommit -> .gitcommit
+.gitconfig ->.gitconfig
+.inputrc -> .inputrc
+.keynavrc -> .keynavrc
+.mongorc.js -> .mongorc.js
+.profile -> .profile
+.vimrc -> .vimrc

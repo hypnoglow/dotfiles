@@ -5,6 +5,7 @@
 	editor = vim
 	eol = lf
 	autocrlf = false
+	quotepath = false
 [push]
 	default = simple
 [alias]
@@ -37,6 +38,7 @@
 	trf = log --graph --all --decorate=short --abbrev-commit
 	cinfo  = log -n1 --pretty=medium
 
+	stash-unapply = !git stash show -p | git apply -R
 [color]
 	ui = auto
 [i18n]
