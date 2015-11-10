@@ -84,3 +84,16 @@ if [ -d $HOME/.bashrc.d ]; then
     done
     unset file
 fi
+
+case $TERM in
+    screen)
+        # In screen - override PROMT_COMMAND to make screen title work.
+        # ref:http://aperiodic.net/screen/title_examples
+        CURRENT_PROMPT_COMMAND="$PROMPT_COMMAND"
+        __prompt_command() {
+            echo -n -e '\033k\033\\'
+            $(echo $CURRENT_PROMPT_COMMAND)
+        }
+        PROMPT_COMMAND=__prompt_command
+    ;;
+esac

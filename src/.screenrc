@@ -1,0 +1,34 @@
+#ref:http://aperiodic.net/screen/start
+
+# Отключаем приветствие
+startup_message off
+
+# Включаем utf8
+defutf8 on
+
+# Использовать визуальный сигнал (мигание экрана) вместо писка динамика
+vbell on
+
+# Размер буфера прокрутки
+defscrollback 10000
+
+# Производить отключение сессии при разрыве связи с терминалом
+autodetach on
+
+# Открывать Login-шелл
+shell -$SHELL
+
+# Активировать возможность прокрутки в xterm (и других эмуляторах терминала)
+termcapinfo xterm* ti@:te@
+#termcapinfo xterm|xterms|xs|rxvt ti@:te@
+
+# Волшебная строка
+shelltitle '$|screen:'
+
+caption always "%{+b gk}$LOGNAME%{wk}@%{+b rk}%H %{wk}|%{gk} %c %{yk}%d.%m.%Y %{wk}| %{mk}<%n*%f %t> %{wk}%{ck} %=Load: %l %{wk}"
+
+# Строка состояния
+hardstatus alwayslastline "%?%{yk}%-Lw%?%{mk}%n*%f %t%?(%u)%?%?%{yk}%+Lw%?"
+
+# По клавише <Esc> создать окно и запустить в нем команду su
+bind \033 screen -ln -t root 9 su
