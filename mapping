@@ -28,6 +28,7 @@ bin -> bin
 .profile -> .profile
 .vimrc -> .vimrc
 .screenrc -> .screenrc
+.tmux.conf -> .tmux.conf
 
 # xfce4
 .config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml -> .config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
