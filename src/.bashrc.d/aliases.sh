@@ -26,14 +26,18 @@ alias suka="sudo"
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 alias duc='du -hd1'
-alias dutop='du -d1 -BM | sort -n -k1 -r | head'
+#alias dutop='du -d1 -BM | sort -n -k1 -r | head'
+dutop() {
+    du -d1 -BM  $1 | sort -n -k1 -r | head
+}
 alias manru='man -L ru'
 alias mansearch='apropos'
 
-# apt-get
-alias agi='sudo apt-get install'
-alias agu='sudo apt-get update'
-alias agar='sudo apt-get autoremove'
+# apt
+alias ap='sudo aptitude'
+alias apti='sudo aptitude install'
+alias aptu='sudo aptitude update'
+alias aptar='sudo aptitude autoremove'
 
 # Some rarely used things that are not important to remember.
 alias fucking_swap='vmstat 60 -S M'
