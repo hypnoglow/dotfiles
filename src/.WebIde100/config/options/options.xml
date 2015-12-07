@@ -11,7 +11,6 @@
     <property name="file.colors.enable.non.project" value="Yellow" />
     <property name="file.chooser.recent.files" value="$USER_HOME$/dotfiles&#10;/home/zibarev/Downloads/python-141.2428.zip&#10;/home/zibarev/ngs/projects/ngs/queue&#10;/home/zibarev/bin/composer&#10;/home/zibarev/ngs/projects/n1/migration-api&#10;/home/zibarev/Downloads/Bright Neon.jar&#10;/home/zibarev/Downloads/phpstorm-themes/Solarized Light (Alternate).jar&#10;/home/zibarev/Downloads&#10;/home/zibarev/Downloads/Base16 Ocean.jar&#10;/home/zibarev/Downloads/Obsidian.jar&#10;/home/zibarev/Downloads/yka_0.icl&#10;/home/zibarev/Downloads/Zenburn.jar&#10;/home/zibarev/Downloads/Wombat.jar&#10;/home/zibarev/Downloads/Tomorrow Night.jar&#10;/home/zibarev/Downloads/Retta.jar&#10;/home/zibarev/ngs/tools/code_standarts&#10;/home/zibarev/ngs/tools/code_standarts/CodeSniffer/Standards/NGS&#10;/home/zibarev/ngs/projects/n1.ru-api-tests&#10;/home/zibarev/ngs/projects/n1.ru/scripts/services/seo_templates/tmp/rent.json&#10;/home/zibarev/ngs/projects/framework.ngs.ru&#10;/home/zibarev/ngs/projects/geo.ngs.ru&#10;/home/zibarev/ngs/tools/zibarev-snippets&#10;/home/zibarev/ngs/tools/snippets&#10;/home/zibarev/ngs/tools/atroshchenko-snippets&#10;/home/zibarev/ngs/projects/love.ngs.ru&#10;/home/zibarev/conf&#10;/home/zibarev/ngs/projects/n1.ru&#10;/home/zibarev/projects/NGS/n1.ru/HTTP_plugin_for_Ngs_Debug_Panel.patch&#10;/data/projects/api.ngs.ru&#10;/home/zibarev/bin/mongo-2.6" />
     <property name="ChangesViewManager.DETAILS_SPLITTER_PROPORTION" value="0.5" />
-    <property name="FindSplitterProportion" value="0.25" />
     <property name="Copy.OpenInEditor" value="true" />
     <property name="PhpStorm.initialConfigurationShown" value="true" />
     <property name="Vcs.Log.Text.Filter.History" value="compos&#10;13092" />
@@ -34,7 +33,7 @@
     <property name="KEYMAP" value="refactor&#10;sort&#10;format&#10;select in&#10;navigate" />
     <property name="ShowDocumentationInToolWindow" value="false" />
     <property name="export.settings.path" value="$APPLICATION_CONFIG_DIR$/settings.jar" />
-    <property name="lastTip" value="40" />
+    <property name="lastTip" value="43" />
     <property name="MoveFile.OpenInEditor" value="true" />
     <property name="BEFORE.DISTRACTION.MODE.SHOW_STATUS_BAR" value="true" />
     <property name="BEFORE.DISTRACTION.MODE.SHOW_MAIN_TOOLBAR" value="false" />

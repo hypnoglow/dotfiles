@@ -11,3 +11,12 @@ Package Control.ca-bundle
 Package Control.user-ca-bundle
 Package Control.merged-ca-bundle
 Package Control.system-ca-bundle
+
+# phpstorm excludes
+/src/.WebIde100/config/options/dimensions.xml
+/src/.WebIde100/config/options/find.recents.xml
+/src/.WebIde100/config/options/recentProjectDirectories.xml
+/src/.WebIde100/config/options/statistics.application.usages.xml
+/src/.WebIde100/config/options/updates.xml
+/src/.WebIde100/config/options/feature.usage.statistics.xml
+/src/.WebIde100/config/options/window.state.xml

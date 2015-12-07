@@ -1,0 +1,60 @@
+<application>
+  <component name="TemplateSettings">
+    <option name="deletedKeys">
+      <list>
+        <TemplateKey>
+          <option name="groupName" value="PHP" />
+          <option name="key" value="fore" />
+        </TemplateKey>
+        <TemplateKey>
+          <option name="groupName" value="PHP" />
+          <option name="key" value="forek" />
+        </TemplateKey>
+        <TemplateKey>
+          <option name="groupName" value="PHP" />
+          <option name="key" value="thr" />
+        </TemplateKey>
+        <TemplateKey>
+          <option name="groupName" value="PHP" />
+          <option name="key" value="eco" />
+        </TemplateKey>
+        <TemplateKey>
+          <option name="groupName" value="PHP" />
+          <option name="key" value="rqr" />
+        </TemplateKey>
+        <TemplateKey>
+          <option name="groupName" value="PHP" />
+          <option name="key" value="rqro" />
+        </TemplateKey>
+        <TemplateKey>
+          <option name="groupName" value="PHP" />
+          <option name="key" value="inc" />
+        </TemplateKey>
+        <TemplateKey>
+          <option name="groupName" value="PHP" />
+          <option name="key" value="inco" />
+        </TemplateKey>
+        <TemplateKey>
+          <option name="groupName" value="PHP" />
+          <option name="key" value="pubf" />
+        </TemplateKey>
+        <TemplateKey>
+          <option name="groupName" value="PHP" />
+          <option name="key" value="pubsf" />
+        </TemplateKey>
+        <TemplateKey>
+          <option name="groupName" value="PHP" />
+          <option name="key" value="prosf" />
+        </TemplateKey>
+        <TemplateKey>
+          <option name="groupName" value="PHP" />
+          <option name="key" value="prif" />
+        </TemplateKey>
+        <TemplateKey>
+          <option name="groupName" value="PHP" />
+          <option name="key" value="prisf" />
+        </TemplateKey>
+      </list>
+    </option>
+  </component>
+</application>
