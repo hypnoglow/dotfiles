@@ -56,4 +56,9 @@
       <option name="PHP" value="true" />
     </context>
   </template>
+  <template name="prof" value="protected function _$FUNCNAME$($PARAMS$)&#10;{&#10;    $END$&#10;}" description="protected function" toReformat="true" toShortenFQNames="true">
+    <variable name="FUNCNAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PARAMS" expression="" defaultValue="" alwaysStopAt="true" />
+    <context />
+  </template>
 </templateSet>
