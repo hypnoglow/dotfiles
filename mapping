@@ -11,7 +11,7 @@ bin -> bin
 
 # PhpStorm 10
 .WebIde100/config/codestyles -> .WebIde100/config/codestyles
-.WebIde100/config/colors -> .WebIde100/config/colors
+#.WebIde100/config/colors -> .WebIde100/config/colors
 .WebIde100/config/keymaps -> .WebIde100/config/keymaps
 .WebIde100/config/options -> .WebIde100/config/options
 .WebIde100/config/templates -> .WebIde100/config/templates
@@ -21,7 +21,8 @@ bin -> bin
 .bash_profile -> .bash_profile
 .bashrc -> .bashrc
 .gitcommit -> .gitcommit
-.gitconfig ->.gitconfig
+.gitconfig -> .gitconfig
+.gitexcludes -> .gitexcludes
 .inputrc -> .inputrc
 .keynavrc -> .keynavrc
 .mongorc.js -> .mongorc.js

@@ -1,6 +1,3 @@
-.idea
-dotfiles.sublime-*
-
 # Sublime text 3 Package control
 # see https://packagecontrol.io/docs/syncing
 Package Control.cache/
