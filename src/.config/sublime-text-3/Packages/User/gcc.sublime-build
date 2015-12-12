@@ -1,0 +1,12 @@
+{
+    "shell_cmd" : "gcc $file_name -o ${file_base_name}",
+    "selector": "source.c",
+    "working_dir" : "$file_path",
+    "variants":
+    [
+        {
+            "name": "pthread",
+            "shell_cmd": "gcc -pthread $file_name -o ${file_base_name}"
+        }
+    ]
+}
