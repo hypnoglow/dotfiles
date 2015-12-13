@@ -6,7 +6,7 @@
 	eol = lf
 	autocrlf = false
 	quotepath = false
-	excludesfile = /home/hypnoglow/.gitexcludes
+	excludesfile = ~/.gitexcludes
 [push]
 	default = simple
 [alias]

@@ -1,6 +1,10 @@
 # Usage: indirect_expand PATH -> $PATH
 indirect_expand () {
-    env |sed -n "s/^$1=//p"
+    if [ -z "$1" ]; then
+        return 1;
+    fi
+
+    env | sed -n "s/^$1=//p"
 }
 
 # Usage: pathremove /path/to/bin [PATH]

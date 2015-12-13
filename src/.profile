@@ -10,11 +10,17 @@
 ################################################################################
 
 # Include everything from ~/.profile.d
+# `path_functions.sh` is loaded manually.
 if [ -d $HOME/.profile.d ]; then
-  for file in $HOME/.profile.d/* ; do
-    if [ -r $file ]; then
-      . $file
-    fi
-  done
-  unset file
+    . "$HOME/.profile.d/path_functions.sh"
+
+    files=$( find "$HOME/.profile.d/" -type f \
+        -name '*.sh' -a ! -name 'path_functions.sh' )
+
+    for file in "$files" ; do
+        [ -r "$file" ] && . "$file"
+    done
+
+    unset file files
 fi
+

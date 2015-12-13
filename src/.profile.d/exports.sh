@@ -10,17 +10,21 @@
 #
 ################################################################################
 
+# Check that path functions are defined.
+declare -f -F pathappend > /dev/null
+[ $? -ne 0 ] && echo "WARNING: path functions are not defined!" >&2
+
 # golang path
 export GOPATH="$HOME/projects/go"
-PATH="$PATH:/usr/local/go/bin"
-PATH="$PATH:$GOPATH/bin"
+pathappend "/usr/local/go/bin"
+pathappend "$GOPATH/bin"
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
+    pathprepend "$HOME/bin"
 fi
 
 # include applications binaries
 if [ -d "$HOME/apps/bin" ] ; then
-    PATH="$HOME/apps/bin:$PATH"
+    pathprepend "$HOME/apps/bin"
 fi
