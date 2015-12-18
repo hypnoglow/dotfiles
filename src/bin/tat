@@ -1,0 +1,27 @@
+#!/bin/bash
+#
+# Attach or create tmux session named the same as current directory by default.
+
+dir_name="$(basename "${PWD}" | tr . -)"
+session_name="${1-$path_name}"
+
+function session_exists() {
+    tmux list-sessions | sed -E 's/:.*$//' | grep -q "^$session_name$"
+}
+
+function create_detached_session() {
+  (TMUX='' tmux new-session -Ad -s "$session_name")
+}
+
+# If not im tmux - create new session
+if [ -z "${TMUX}" ]; then
+    tmux new-session -As "${session_name}"
+    exit 0
+fi
+
+if ! session_exists; then
+    create_detached_session
+fi
+
+tmux switch-client -t "$session_name"
+

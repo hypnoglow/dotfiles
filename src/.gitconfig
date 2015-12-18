@@ -13,6 +13,7 @@
 	co = checkout
 	cm = checkout master
 	ci = commit
+	ca = commit --amend -v --reset-author
 	au = add -u
 	s = status
 	st = status
@@ -28,7 +29,7 @@
 	cat-blob = cat-file -p master^{tree}
 
 	# Shows current branch
-	cb = rev-parse --abbrev-ref HEAD
+	current-branch = rev-parse --abbrev-ref HEAD
 
 	type = cat-file -t
 	dump = cat-file -p
