@@ -1,0 +1,13 @@
+"*":
+  "exception-reporting":
+    userId: "094ce7cd-aaa4-6a3d-8328-686afda11de7"
+  welcome:
+    showOnStartup: false
+  core:
+    autoHideMenuBar: true
+  editor:
+    invisibles: {}
+    fontFamily: "Hack"
+    showInvisibles: true
+    tabLength: 4
+    showIndentGuide: true
