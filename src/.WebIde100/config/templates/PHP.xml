@@ -33,7 +33,7 @@
       <option name="PHP" value="true" />
     </context>
   </template>
-  <template name="di" value="die('всё.');" description="die();" toReformat="true" toShortenFQNames="true">
+  <template name="di" value="die('всё.' . PHP_EOL);" description="die();" toReformat="true" toShortenFQNames="true">
     <context>
       <option name="PHP" value="true" />
     </context>
@@ -44,7 +44,7 @@
       <option name="PHP" value="true" />
     </context>
   </template>
-  <template name="ej" value="echo json_encode($VARIABLE$, JSON_PRETTY_PRINT) . PHP_EOL;&#10;die();" description="echo json_encode($var);" toReformat="true" toShortenFQNames="true">
+  <template name="ej" value="echo json_encode($VARIABLE$, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) . PHP_EOL;&#10;die();" description="echo json_encode($var);" toReformat="true" toShortenFQNames="true">
     <variable name="VARIABLE" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="PHP" value="true" />
