@@ -16,6 +16,13 @@ bin -> bin
 .WebIde100/config/options -> .WebIde100/config/options
 .WebIde100/config/templates -> .WebIde100/config/templates
 
+# Atom
+.atom/config.cson -> .atom/config.cson
+.atom/init.coffee -> .atom/init.coffee
+.atom/keymap.cson -> .atom/keymap.cson
+.atom/snippets.cson -> .atom/snippets.cson
+.atom/styles.less -> .atom/styles.less
+
 # Files
 .bash_logout -> .bash_logout
 .bash_profile -> .bash_profile
