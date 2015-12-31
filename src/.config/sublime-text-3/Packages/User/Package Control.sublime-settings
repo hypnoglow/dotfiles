@@ -6,6 +6,7 @@
 	"installed_packages":
 	[
 		"Git Config",
+		"GitGutter",
 		"Markdown Preview",
 		"Package Control",
 		"Rust",

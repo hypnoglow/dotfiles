@@ -17,6 +17,7 @@ alias treec="tree -C"
 alias ..="cd .."
 alias h='history'
 alias g='git'
+alias cb='xclip -selection clipboard'
 
 # >:]
 alias suka="sudo"
@@ -45,4 +46,4 @@ alias bashenv='bash -c set'
 alias clear-fonts-cache="sudo fc-cache -f -v"
 
 # Custom projects aliases
-alias n1-auth="bash <(curl -s http://git.rn/users/i.zibarev/repos/snippets/browse/n1/auth/n1-auth-token-claimant.bash?raw) z.d"
+alias n1-auth="bash <(curl -s http://git.rn/users/i.zibarev/repos/snippets/browse/n1/auth/n1-auth-token-claimant.bash?raw)"

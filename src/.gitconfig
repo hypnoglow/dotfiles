@@ -12,8 +12,10 @@
 [alias]
 	co = checkout
 	cm = checkout master
+	cb = checkout -b
 	ci = commit
 	ca = commit --amend -v --reset-author
+	cm = commit --all --message
 	au = add -u
 	s = status
 	st = status

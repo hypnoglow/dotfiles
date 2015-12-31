@@ -11,3 +11,8 @@
     showInvisibles: true
     tabLength: 4
     showIndentGuide: true
+    preferredLineLength: 80
+  "one-dark-ui": {}
+".dots.source":
+  editor:
+    preferredLineLength: 80
