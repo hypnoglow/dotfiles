@@ -1,0 +1,24 @@
+#!/bin/bash
+
+if [ "$#" = 0 ]; then
+    git clone
+    exit $?
+fi
+
+if [ "$#" > 1 ]; then
+    git clone "$@"
+    exit $?
+fi
+
+# 1 argument. Split repo path to directory path
+
+repo="$1"
+path=""
+
+if [[ "$repo" =~ "github.com" ]]; then
+    path="${repo#*:}"
+    path="${path%.git}"
+fi
+
+git clone "$repo" "$path"
+exit $?
