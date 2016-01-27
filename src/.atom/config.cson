@@ -4,15 +4,20 @@
   welcome:
     showOnStartup: false
   core:
-    autoHideMenuBar: true
+    disabledPackages: [
+      "linter-shellcheck"
+    ]
   editor:
     invisibles: {}
     fontFamily: "Hack"
     showInvisibles: true
     tabLength: 4
     showIndentGuide: true
-    preferredLineLength: 80
   "one-dark-ui": {}
+  minimap:
+    plugins:
+      "git-diff": true
+  "linter-rust": {}
 ".dots.source":
   editor:
     preferredLineLength: 80

@@ -22,6 +22,7 @@ bin -> bin
 .atom/keymap.cson -> .atom/keymap.cson
 .atom/snippets.cson -> .atom/snippets.cson
 .atom/styles.less -> .atom/styles.less
+.atom/packages.list -> .atom/packages.list
 
 # Files
 .bash_logout -> .bash_logout
