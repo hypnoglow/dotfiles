@@ -1,11 +1,13 @@
 #!/bin/bash
+#
+# Clone git repository considering username/repo_name directory hierarcy.
 
-if [ "$#" = 0 ]; then
+if [ $# -eq 0 ]; then
     git clone
     exit $?
 fi
 
-if [ "$#" > 1 ]; then
+if [ $# -gt 1 ]; then
     git clone "$@"
     exit $?
 fi

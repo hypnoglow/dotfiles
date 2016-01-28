@@ -1,23 +1,24 @@
 "*":
-  "exception-reporting":
-    userId: "094ce7cd-aaa4-6a3d-8328-686afda11de7"
-  welcome:
-    showOnStartup: false
   core:
     disabledPackages: [
       "linter-shellcheck"
     ]
   editor:
-    invisibles: {}
     fontFamily: "Hack"
+    invisibles: {}
+    showIndentGuide: true
     showInvisibles: true
     tabLength: 4
-    showIndentGuide: true
-  "one-dark-ui": {}
+  "exception-reporting":
+    userId: "094ce7cd-aaa4-6a3d-8328-686afda11de7"
+  linter: {}
+  "linter-rust": {}
   minimap:
     plugins:
       "git-diff": true
-  "linter-rust": {}
+  "one-dark-ui": {}
+  welcome:
+    showOnStartup: false
 ".dots.source":
   editor:
     preferredLineLength: 80
