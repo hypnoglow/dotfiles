@@ -17,9 +17,18 @@ fi
 repo="$1"
 path=""
 
-if [[ "$repo" =~ "github.com" ]]; then
+if [[ "$repo" =~ git(hub|lab).com ]]; then
     path="${repo#*:}"
     path="${path%.git}"
+fi
+
+if [[ "$repo" =~ git.rn ]]; then
+    path="${repo#*git.rn/}"
+    path="${path%.git}"
+
+    if [[ "$path" =~ \~* ]]; then
+        path="${path#*\~}"
+    fi
 fi
 
 git clone "$repo" "$path"

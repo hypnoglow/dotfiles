@@ -17,6 +17,8 @@
     plugins:
       "git-diff": true
   "one-dark-ui": {}
+  "rust-api-docs-helper":
+    enableBackgroundResolving: false
   welcome:
     showOnStartup: false
 ".dots.source":

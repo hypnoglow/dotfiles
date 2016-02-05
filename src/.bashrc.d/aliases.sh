@@ -40,6 +40,10 @@ alias apti='sudo aptitude install'
 alias aptu='sudo aptitude update'
 alias aptar='sudo aptitude autoremove'
 
+# atom sync
+alias atom-sync="apm list --bare --installed | tee ~/.atom/packages.list > /dev/null"
+alias atom-install="apm install -c --production --packages-file ~/.atom/packages.list"
+
 # Some rarely used things that are not important to remember.
 alias fucking_swap='vmstat 60 -S M'
 alias bashenv='bash -c set'
