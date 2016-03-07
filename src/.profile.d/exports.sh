@@ -28,3 +28,9 @@ fi
 if [ -d "$HOME/apps/bin" ] ; then
     pathprepend "$HOME/apps/bin"
 fi
+
+# n - Node.js version manager (see http://git.io/n-install-repo)
+if [ -d "$HOME/apps/n" ] ; then
+    export N_PREFIX="$HOME/apps/n";
+    pathprepend "$N_PREFIX/bin"
+fi
