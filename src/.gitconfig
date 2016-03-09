@@ -3,6 +3,7 @@
 	email = zibarev.i@gmail.com
 [core]
 	editor = vim
+	#editor = atom --wait
 	eol = lf
 	autocrlf = false
 	quotepath = false
@@ -23,6 +24,7 @@
 	br = branch
 	ds = diff --staged
 	dw = diff --word-diff
+	mp = !git checkout master && git pull
 	undo = reset --mixed HEAD~1
 	cleanup = !git remote prune origin && git gc && git clean -dfx && git stash clear
 	oneweek = log --format="%H" --since="1 week ago" --reverse | xargs -L 1 git show
@@ -60,3 +62,5 @@
 	cmd = extDiff \"$LOCAL\" \"$REMOTE\"
 [commit]
 	template = ~/.gitcommit
+[rebase]
+	autostash = true

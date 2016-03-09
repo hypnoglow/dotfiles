@@ -18,7 +18,6 @@
     <keyboard-shortcut first-keystroke="alt period" />
   </action>
   <action id="NextTab">
-    <keyboard-shortcut first-keystroke="alt right" />
     <keyboard-shortcut first-keystroke="ctrl page_down" />
   </action>
   <action id="OpenEditorInOppositeTabGroup">
@@ -29,7 +28,6 @@
     <keyboard-shortcut first-keystroke="alt comma" />
   </action>
   <action id="PreviousTab">
-    <keyboard-shortcut first-keystroke="alt left" />
     <keyboard-shortcut first-keystroke="ctrl page_up" />
   </action>
   <action id="SplitVertically">

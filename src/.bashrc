@@ -14,9 +14,6 @@ fi
 
 # VARIABLES
 
-# don't put duplicate lines or lines starting with space in the history.
-HISTCONTROL=ignoreboth
-
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=20000
 HISTFILESIZE=20000
@@ -97,3 +94,8 @@ case $TERM in
         PROMPT_COMMAND=__prompt_command
     ;;
 esac
+
+# Overwrites bash-it setups.
+
+# don't put duplicate lines or lines starting with space in the history.
+HISTCONTROL=ignoreboth
