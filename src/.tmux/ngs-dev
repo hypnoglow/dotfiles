@@ -1,0 +1,50 @@
+new-session -s "ngs-dev" -n "local"
+split-window -h
+
+# n1/api dev window
+################################################################################
+
+new-window -n "n1-api"
+
+# local repo pane
+send-keys 'p="${HOME}/ngs/projects/n1.ru"; test -d "$p" && cd "$p"; unset p' C-m
+send-keys C-l
+
+# env interactive pane
+split-window -h
+send-keys 'ssh ngs.ru.z.d' C-m
+run-shell 'sleep 2'
+send-keys C-l
+
+# env logs pane
+split-window -v
+send-keys 'ssh ngs.ru.z.d' C-m
+run-shell 'sleep 2'
+send-keys 'tail -f /data/soft/php54/var/log/php54-*' C-m C-m C-m C-m
+
+# db pane?
+select-pane -t 0
+split-window -v
+
+# finish bootstrapping this window by selecting first pane
+select-pane -t 0
+
+# n1/api-tests dev window
+################################################################################
+
+new-window -n "n1-api-tests"
+
+# local repo pane
+send-keys 'p="${HOME}/ngs/sources/n1/api-tests"; test -d "$p" && cd "$p"; unset p' C-m
+send-keys C-l
+
+split-window -h
+
+# finish bootstrapping this window by selecting first pane
+select-pane -t 0
+
+# Finish by selecting local window
+################################################################################
+
+select-window -t 1
+select-pane -t 0
