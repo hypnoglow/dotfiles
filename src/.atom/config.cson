@@ -5,13 +5,16 @@
     ]
   editor:
     fontFamily: "Hack"
+    fontSize: 16
     invisibles: {}
     showIndentGuide: true
     showInvisibles: true
     tabLength: 4
   "exception-reporting":
     userId: "094ce7cd-aaa4-6a3d-8328-686afda11de7"
-  linter: {}
+  linter:
+    showErrorPanel: false
+  "linter-jshint": {}
   "linter-rust": {}
   minimap:
     plugins:
