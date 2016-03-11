@@ -122,5 +122,32 @@ while read line || [[ -n "$line" ]]; do
     add_symlink "$src" "$dest"
 done < "$DOTFILES_ROOT/mapping"
 
+#TODO
+# xfce_dir="${HOME}/.config/xfce4/xfconf"
+# xfce_backup_dir="${HOME}/.config/xfce4/xfconf_backup"
+# xfce_dotfiles_dir="${DOTFILES_DIR}/.config/xfce4/xfconf"
+#
+# rm -rf $xfce_backup_dir
+# mv $xfce_dir $xfce_backup_dir
+# ln -sfvn $xfce_dotfiles_dir $xfce_dir
+#
+# # Fuck XFCE
+# for file in $( find -L ${xfce_backup_dir} -type f ) ; do
+#     f=${file#${xfce_backup_dir}/}
+#     #echo "File:" $file
+#     #echo "Relative:" $f
+#     #echo "Checking:" ${xfce_dotfiles_dir}/$f
+#
+#     if [ -e ${xfce_dotfiles_dir}/$f ]; then
+#         echo "FROM DOTFILES!"
+#         continue
+#     fi
+#
+#     echo "NOT FROM DOTFILES!"
+#     cp $file $xfce_dir/$f
+# done
+#
+# tree $xfce_dir*
+
 echo "Installation finished."
 exit 0

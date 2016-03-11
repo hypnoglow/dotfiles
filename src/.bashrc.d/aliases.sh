@@ -19,6 +19,8 @@ alias h='history'
 alias g='git'
 alias cb='xclip -selection clipboard'
 
+alias diffs="cdiff -s --ignore-all-space"
+
 # >:]
 alias suka="sudo"
 

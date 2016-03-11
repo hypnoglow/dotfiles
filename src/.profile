@@ -9,6 +9,13 @@
 
 ################################################################################
 
+# Monitor preferences
+# TODO: this should not be here.
+#       Move this to local rc files.
+if [ "${HOSTNAME}" = "procyon" ]; then
+    xrandr --output HDMI-0 --left-of DVI-I-1
+fi
+
 # Include everything from ~/.profile.d
 # `path_functions.sh` is loaded manually.
 if [ -d $HOME/.profile.d ]; then
@@ -23,4 +30,3 @@ if [ -d $HOME/.profile.d ]; then
 
     unset file files
 fi
-

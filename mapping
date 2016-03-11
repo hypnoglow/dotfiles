@@ -37,6 +37,12 @@ bin -> bin
 .profile -> .profile
 .vimrc -> .vimrc
 .screenrc -> .screenrc
+
+# i3
+i3/config -> .config/i3/config
+
+# tmux
+.tmux/ngs-dev -> .tmux/ngs-dev
 .tmux.conf -> .tmux.conf
 
 # xfce4
