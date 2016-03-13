@@ -27,3 +27,6 @@
 ".dots.source":
   editor:
     preferredLineLength: 80
+".html.js.text":
+  editor:
+    tabLength: 2

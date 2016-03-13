@@ -17,6 +17,7 @@ linter-xo@0.12.0
 merge-conflicts@1.3.7
 minimap@4.19.0
 minimap-git-diff@4.1.8
+pigments@0.24.5
 rust-api-docs-helper@0.5.1
 seti-syntax@0.4.1
 seti-ui@0.8.1
