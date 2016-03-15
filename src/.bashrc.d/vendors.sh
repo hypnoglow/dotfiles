@@ -10,6 +10,6 @@ fi
 
 # Enable FUCK
 # https://github.com/nvbn/thefuck
-if which thefuck > /dev/null ; then
+if [ -x "$(which thefuck 2>/dev/null)" ]; then
     eval "$(thefuck --alias)"
 fi

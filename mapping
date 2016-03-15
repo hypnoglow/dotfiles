@@ -1,17 +1,24 @@
-# Directories
+### BASH ###
+
+# dirs
 .bash_it.d -> .bash_it.d
 .bashrc.d -> .bashrc.d
-
-.config/sublime-text-3/Packages/User -> .config/sublime-text-3/Packages/User
-.config/xfce4/terminal -> .config/xfce4/terminal
-.config/synapse -> .config/synapse
-
 .profile.d -> .profile.d
+
+# files
+.bash_logout -> .bash_logout
+.bash_profile -> .bash_profile
+.bashrc -> .bashrc
+.profile -> .profile
+
+### BINARIES ###
+
 bin -> bin
+
+### EDITORS ###
 
 # PhpStorm 10
 .WebIde100/config/codestyles -> .WebIde100/config/codestyles
-#.WebIde100/config/colors -> .WebIde100/config/colors
 .WebIde100/config/keymaps -> .WebIde100/config/keymaps
 .WebIde100/config/options -> .WebIde100/config/options
 .WebIde100/config/templates -> .WebIde100/config/templates
@@ -24,34 +31,40 @@ bin -> bin
 .atom/styles.less -> .atom/styles.less
 .atom/packages.list -> .atom/packages.list
 
-# Files
-.bash_logout -> .bash_logout
-.bash_profile -> .bash_profile
-.bashrc -> .bashrc
+# Vim
+#.vimrc -> .vimrc
+
+### VARIOUS RCs ###
+
+.xprofile -> .xprofile
 .gitcommit -> .gitcommit
 .gitconfig -> .gitconfig
 .gitexcludes -> .gitexcludes
 .inputrc -> .inputrc
 .keynavrc -> .keynavrc
 .mongorc.js -> .mongorc.js
-.profile -> .profile
-.vimrc -> .vimrc
 .screenrc -> .screenrc
 
 # i3
-i3/config -> .config/i3/config
+#i3/config -> .config/i3/config
 
 # tmux
-.tmux/ngs-dev -> .tmux/ngs-dev
-.tmux.conf -> .tmux.conf
+#.tmux/ngs-dev -> .tmux/ngs-dev
+#.tmux.conf -> .tmux.conf
+
+### OTHER ###
+
+#.config/sublime-text-3/Packages/User -> .config/sublime-text-3/Packages/User
+#.config/xfce4/terminal -> .config/xfce4/terminal
+#.config/synapse -> .config/synapse
 
 # xfce4
-.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml -> .config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
-.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml -> .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml
-.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml -> .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
-.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-notifyd.xml -> .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-notifyd.xml
-.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml -> .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
-.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml -> .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml
-.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-settings-manager.xml -> .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-settings-manager.xml
-.config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml -> .config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
-.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml -> .config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
+#.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml -> .config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
+#.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml -> .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml
+#.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml -> .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
+#.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-notifyd.xml -> .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-notifyd.xml
+#.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml -> .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
+#.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml -> .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml
+#.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-settings-manager.xml -> .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-settings-manager.xml
+#.config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml -> .config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
+#.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml -> .config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml

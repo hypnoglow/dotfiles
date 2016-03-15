@@ -4,12 +4,18 @@
 # so, actually, it IS executed for login shells also.
 #
 # See bash(1) for more options you can set.
+# For a system-wide bashrc look at /etc/bash.bashrc
 #
 ################################################################################
 
 # If not running interactively, don't do anything.
 if [[ $- != *i* ]] ; then
     return
+fi
+
+# Include local bashrc first
+if [ -r "${HOME}/.bashrc.local" ]; then
+    . "${HOME}/.bashrc.local"
 fi
 
 # VARIABLES
@@ -22,7 +28,7 @@ HISTFILESIZE=20000
 
 # Prevents from redirecting output to an existing file, or appending output to a non-existing file.
 # Remember you can override this with >|
-set -o noclobber
+# set -o noclobber
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -33,9 +39,11 @@ shopt -s checkwinsize
 
 # MISC
 
+# TODO: deprecated?
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
+# TODO: deprecated?
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
@@ -50,10 +58,12 @@ C_RESET="\[\033[00m\]"
 PS1="${debian_chroot:+($debian_chroot)}$C_GREEN\u$C_RESET@$C_MAGENTA\h$C_RESET:$C_CIAN\w$C_RESET$C_REDɀ$C_RESET "
 unset C_RED C_GREEN C_MAGENTA C_CIAN C_RESET debian_chroot
 
+# TODO: I think this is loaded in /etc/bash.bashrc
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if ! shopt -oq posix && [ -z "$BASH_COMPLETION_COMPAT_DIR" ] ; then
+    echo "TRYING TO LOAD BASH COMPLETIONS";
     if [ -f /usr/share/bash-completion/bash_completion ]; then
         . /usr/share/bash-completion/bash_completion
     elif [ -f /etc/bash_completion ]; then

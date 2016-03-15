@@ -1,0 +1,25 @@
+#
+# ~/.xprofile
+#
+# sourced by /etc/lxdm/Xsession or /etc/lightdm/Xsession
+#
+# Allows you to execute commands at the beginning
+# of the X user session - before the WM is started.
+#
+
+if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
+    eval "$(dbus-launch --sh-syntax --exit-with-session)"
+fi
+
+# Environment variables
+#
+export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+
+########## ########## ########## ########## ##########
+
+echo "Loading xprofile" > /tmp/xprofile.log
+
+# Load display settings
+if [ -d "${HOME}/.autorandr/hypnoglow" ]; then
+    autorandr.sh --change --default hypnoglow
+fi

@@ -1,6 +1,7 @@
 # This is an include file for .bashrc
 
 # listings
+alias  ls='ls --color=auto -F --group-directories-first --time-style=+"%d.%m.%Y %H:%M"'
 alias   l='ls --color=auto -F'
 alias  ll='ls --color=auto -F -lh'
 alias  la='ls --color=auto -F        -A'
@@ -36,11 +37,12 @@ dutop() {
 alias manru='man -L ru'
 alias mansearch='apropos'
 
-# apt
-alias ap='sudo aptitude'
-alias apti='sudo aptitude install'
-alias aptu='sudo aptitude update'
-alias aptar='sudo aptitude autoremove'
+if [ "$(lsb_release)" = "Ubuntu" ]; then
+    alias ap='sudo aptitude'
+    alias apti='sudo aptitude install'
+    alias aptu='sudo aptitude update'
+    alias aptar='sudo aptitude autoremove'
+fi
 
 # atom sync
 alias atom-sync="apm list --bare --installed | tee ~/.atom/packages.list > /dev/null"

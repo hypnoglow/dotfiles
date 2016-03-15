@@ -12,12 +12,14 @@
 
 # Check that path functions are defined.
 declare -f -F pathappend > /dev/null
-[ $? -ne 0 ] && echo "WARNING: path functions are not defined!" >&2
+[ $? -ne 0 ] && echo "WARNING: path functions are not defined!" | tee -a /tmp/profile.log >&2
 
 # golang path
-export GOPATH="$HOME/projects/go"
-pathappend "/usr/local/go/bin"
-pathappend "$GOPATH/bin"
+if [ -x "$(which go 2>/dev/null)" ]; then
+    export GOPATH="$HOME/projects/go"
+    pathappend "/usr/local/go/bin"
+    pathappend "$GOPATH/bin"
+fi
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
