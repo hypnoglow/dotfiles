@@ -22,8 +22,13 @@
 	st = status
 	ssb  = status -s -b
 	br = branch
+
+	# diff
 	ds = diff --staged
 	dw = diff --word-diff
+	dt = difftool
+	dts = difftool --staged
+
 	mp = !git checkout master && git pull
 	undo = reset --mixed HEAD~1
 	cleanup = !git remote prune origin && git gc && git clean -dfx && git stash clear
@@ -57,9 +62,11 @@
 [mergetool]
 	trustExitCode = false
 [diff]
-	tool = extDiff
-[difftool "extDiff"]
-	cmd = extDiff \"$LOCAL\" \"$REMOTE\"
+	tool = cdiff
+[difftool "cdiff"]
+	cmd = cdiff -s -w 0 \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
 [commit]
 	template = ~/.gitcommit
 [rebase]
