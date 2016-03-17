@@ -2,6 +2,7 @@
   core:
     disabledPackages: [
       "linter-shellcheck"
+      "linter-php"
     ]
   editor:
     fontFamily: "Hack"
