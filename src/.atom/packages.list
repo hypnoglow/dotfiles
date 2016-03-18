@@ -1,6 +1,9 @@
 atom-easy-jsdoc@4.2.1
+atom-ternjs@0.13.2
 emmet@2.4.2
 git-blame@0.4.8
+hyperclick@0.0.35
+js-hyperclick@1.4.1
 language-dots@0.0.4
 language-ejs@0.2.0
 language-rust@0.4.6

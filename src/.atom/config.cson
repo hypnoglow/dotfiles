@@ -1,4 +1,5 @@
 "*":
+  "autocomplete-plus": {}
   core:
     disabledPackages: [
       "linter-shellcheck"
@@ -11,16 +12,21 @@
     tabLength: 4
   "exception-reporting":
     userId: "094ce7cd-aaa4-6a3d-8328-686afda11de7"
+  "js-hyperclick": {}
   linter:
     showErrorPanel: false
   "linter-jshint": {}
+  "linter-php": {}
   "linter-rust": {}
   minimap:
+    absoluteMode: true
     plugins:
       "git-diff": true
   "one-dark-ui": {}
   "rust-api-docs-helper":
     enableBackgroundResolving: false
+  "tree-view":
+    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
 ".dots.source":
