@@ -5,8 +5,6 @@
       "linter-php"
     ]
   editor:
-    fontFamily: "Hack"
-    fontSize: 16
     invisibles: {}
     showIndentGuide: true
     showInvisibles: true
