@@ -10,6 +10,7 @@
 .bash_profile -> .bash_profile
 .bashrc -> .bashrc
 .profile -> .profile
+.inputrc -> .inputrc
 
 ### BINARIES ###
 
@@ -40,7 +41,6 @@ bin -> bin
 .gitcommit -> .gitcommit
 .gitconfig -> .gitconfig
 .gitexcludes -> .gitexcludes
-.inputrc -> .inputrc
 .keynavrc -> .keynavrc
 .mongorc.js -> .mongorc.js
 .screenrc -> .screenrc

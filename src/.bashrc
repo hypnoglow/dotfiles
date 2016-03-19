@@ -40,10 +40,6 @@ shopt -s checkwinsize
 # MISC
 
 # TODO: deprecated?
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
-# TODO: deprecated?
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
@@ -58,19 +54,6 @@ C_RESET="\[\033[00m\]"
 PS1="${debian_chroot:+($debian_chroot)}$C_GREEN\u$C_RESET@$C_MAGENTA\h$C_RESET:$C_CIAN\w$C_RESET$C_REDɀ$C_RESET "
 unset C_RED C_GREEN C_MAGENTA C_CIAN C_RESET debian_chroot
 
-# TODO: I think this is loaded in /etc/bash.bashrc
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if ! shopt -oq posix && [ -z "$BASH_COMPLETION_COMPAT_DIR" ] ; then
-    echo "TRYING TO LOAD BASH COMPLETIONS";
-    if [ -f /usr/share/bash-completion/bash_completion ]; then
-        . /usr/share/bash-completion/bash_completion
-    elif [ -f /etc/bash_completion ]; then
-        . /etc/bash_completion
-    fi
-fi
-
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -84,7 +67,7 @@ fi
 
 # And finally include all from ~/.bashrc.d
 if [ -d $HOME/.bashrc.d ]; then
-    for file in $HOME/.bashrc.d/* ; do
+    for file in $HOME/.bashrc.d/*.sh ; do
         if [ -r $file ]; then
             . $file
         fi
