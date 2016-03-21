@@ -14,9 +14,13 @@
 	co = checkout
 	cm = checkout master
 	cb = checkout -b
+
+	# commit
 	ci = commit
 	ca = commit --amend -v --reset-author
 	cm = commit --all --message
+	cv = commit -v
+
 	au = add -u
 	s = status
 	st = status
