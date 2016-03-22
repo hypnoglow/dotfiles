@@ -2,6 +2,12 @@
 # Simple binary for running realsync in background with logging.
 ################################################################################
 
+# TODO:
+# 0) refactor
+# 1) move autocomplete in separate file
+# 2) make readme
+# 3) make help
+
 # For autocomplete. See $HOME/bin/autocomplete.sh
 if [ "$1" == "autocomplete" ] ; then
     echo "start stop status"
@@ -12,6 +18,13 @@ COLOR_ORANGE="\e[33m"
 COLOR_RESET="\e[0m"
 SCRIPT_ROOT=`dirname $( readlink -f ${BASH_SOURCE[0]} )`
 ACTION="$1"
+
+# Check if realsync config exists
+if [ ! -r "${PWD}/.realsync" ]
+then
+    echo "Realsync config not found in current directory" >&2
+    exit 64
+fi
 
 if [ -z "$ACTION" ] ; then
     >&2 echo -e "Command is not specified.\nTo start use:\n\t${COLOR_ORANGE}rs start${COLOR_RESET}"
@@ -28,12 +41,22 @@ function rs_start {
         return 2
     fi
 
-    LOG_DIR="/var/log/realsync/"
+    LOG_DIR="/var/log/realsync"
     LOG_FILENAME="$(basename $(pwd)).log"
-    LOG_FILE="$LOG_DIR$LOG_FILENAME"
+    LOG_FILE="$LOG_DIR/$LOG_FILENAME"
 
-    [ ! -e $LOG_DIR ] && mkdir -p $LOG_DIR && chmod +rx $LOG_DIR
-    [ ! -e $LOG_FILE ] && touch $LOG_FILE && chmod +r $LOG_FILE
+    if [ ! -e $LOG_DIR ]
+    then
+        # TODO: fix this permission issues
+        sudo mkdir -p $LOG_DIR
+        sudo chmod a+rwx $LOG_DIR
+     fi
+
+    if [ ! -e $LOG_FILE ]
+    then
+        touch $LOG_FILE
+        chmod +r $LOG_FILE
+    fi
 
     echo "Logging to $LOG_FILE"
     nohup realsync $(pwd) &>> $LOG_FILE &
@@ -70,5 +93,3 @@ elif [ "$ACTION" = "status" ] ; then
 fi
 
 exit $?
-
-# @todo make autocomplete?
