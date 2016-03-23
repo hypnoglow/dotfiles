@@ -37,6 +37,9 @@ dutop() {
 alias manru='man -L ru'
 alias mansearch='apropos'
 
+# X
+alias reload-xresources="xrdb -merge ~/.Xresources"
+
 if [ "$(lsb_release)" = "Ubuntu" ]; then
     alias ap='sudo aptitude'
     alias apti='sudo aptitude install'

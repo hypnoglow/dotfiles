@@ -38,9 +38,12 @@ bin -> bin
 ### VARIOUS RCs ###
 
 .xprofile -> .xprofile
+.Xresources -> .Xresources
+
 .gitcommit -> .gitcommit
 .gitconfig -> .gitconfig
 .gitexcludes -> .gitexcludes
+
 .keynavrc -> .keynavrc
 .mongorc.js -> .mongorc.js
 .screenrc -> .screenrc
