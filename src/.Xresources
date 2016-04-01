@@ -1,7 +1,18 @@
 ! URxvt.font: 9x15
-URxvt.font: xft:Terminus:size=12
+! URxvt.font: xft:Terminus:size=12
 ! URxvt.font: xft:Source Code Pro:Medium:pixelsize=12:antialias=true:hinting=true
-! URxvt.letterSpace: -1
+
+! Font settings
+URxvt.font: -misc-tamzen-medium-r-normal--16-116-100-100-c-80-iso8859-1,\
+            -misc-tamzenforpowerline-medium-r-normal--16-116-100-100-c-80-iso10646-1,\
+            9x15
+URxvt.boldFont: -misc-tamzen-bold-r-normal--16-116-100-100-c-80-iso8859-1,\
+                -misc-tamzenforpowerline-bold-r-normal--16-116-100-100-c-80-iso10646-1,\
+                9x15
+URxvt.italicFont:
+URxvt.boldItalicFont:
+
+URxvt.letterSpace: 0
 Xft.dpi: 96
 Xft.antialias: true
 Xft.hinting: true
