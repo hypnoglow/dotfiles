@@ -6,12 +6,15 @@
       "linter-php"
     ]
   editor:
+    fontSize: 16
     invisibles: {}
     showIndentGuide: true
     showInvisibles: true
     tabLength: 4
   "exception-reporting":
     userId: "094ce7cd-aaa4-6a3d-8328-686afda11de7"
+  fonts:
+    fontFamily: "Anonymous Pro"
   "js-hyperclick": {}
   linter:
     showErrorPanel: false
