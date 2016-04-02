@@ -1,0 +1,31 @@
+#!/bin/bash
+
+self_dir="$(dirname $(readlink -e ${BASH_SOURCE[0]}))"
+workstation_name="$1"
+filename=""
+
+load_base_only() {
+    echo "Use base config only."
+    cp "${self_dir}/config.base" "${self_dir}/config"
+    echo "Config .i3/config is ready."
+}
+
+if [ -z "${workstation_name}" ]; then
+    echo "Workstation name does not specified."
+    load_base_only
+    exit 0
+fi
+
+if [ ! -d "${self_dir}/${workstation_name}" ]; then
+    echo "Config directory for workstation name ${workstation_name} not found."
+    load_base_only
+    exit 0
+fi
+
+for filename in "${self_dir}/config.base" "${self_dir}/${workstation_name}/"*; do
+    echo "### --- ${filename#$(dirname ${self_dir})/*} --- ###"
+    cat "${filename}"
+done > "${self_dir}/config"
+
+echo "Config .i3/config is ready."
+exit 0
