@@ -17,8 +17,12 @@ if [ -d $HOME/.profile.d ]; then
     files=$( find "$HOME/.profile.d/" -type f \
         -name '*.sh' -a ! -name 'path_functions.sh' )
 
-    for file in "$files" ; do
-        [ -r "$file" ] && . "$file"
+    for file in ${files} ; do
+        echo "[$(date)] loading file ${file}" >> /tmp/dot_profile.log
+        if [ -r "${file}" ]; then
+            echo "[$(date)] reading file ${file}" >> /tmp/dot_profile.log
+            . "$file"
+        fi
     done
 
     unset file files
