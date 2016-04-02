@@ -15,6 +15,7 @@
     userId: "094ce7cd-aaa4-6a3d-8328-686afda11de7"
   fonts:
     fontFamily: "Anonymous Pro"
+    preview: "[Hello, world!] {Привет, как дела?}"
   "js-hyperclick": {}
   linter:
     showErrorPanel: false
@@ -25,11 +26,11 @@
     absoluteMode: true
     plugins:
       "git-diff": true
+      "git-diffDecorationsZIndex": 0
   "one-dark-ui": {}
   "rust-api-docs-helper":
     enableBackgroundResolving: false
-  "tree-view":
-    hideVcsIgnoredFiles: true
+  "tree-view": {}
   welcome:
     showOnStartup: false
 ".dots.source":
