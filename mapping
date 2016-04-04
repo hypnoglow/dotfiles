@@ -23,6 +23,7 @@ bin -> bin
 .WebIde100/config/keymaps -> .WebIde100/config/keymaps
 .WebIde100/config/options -> .WebIde100/config/options
 .WebIde100/config/templates -> .WebIde100/config/templates
+.WebIde100/phpstorm64.vmoptions -> .WebIde100/phpstorm64.vmoptions
 
 # Atom
 .atom/config.cson -> .atom/config.cson
