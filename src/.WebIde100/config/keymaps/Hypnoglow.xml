@@ -13,6 +13,7 @@
   <action id="MoveEditorToOppositeTabGroup">
     <keyboard-shortcut first-keystroke="shift alt period" />
   </action>
+  <action id="NewElementSamePlace" />
   <action id="NextSplitter">
     <keyboard-shortcut first-keystroke="alt close_bracket" />
     <keyboard-shortcut first-keystroke="alt period" />
