@@ -19,6 +19,7 @@ bin -> bin
 ### EDITORS ###
 
 # PhpStorm 10
+.WebIde100/config/colors -> .WebIde100/config/colors
 .WebIde100/config/codestyles -> .WebIde100/config/codestyles
 .WebIde100/config/keymaps -> .WebIde100/config/keymaps
 .WebIde100/config/options -> .WebIde100/config/options

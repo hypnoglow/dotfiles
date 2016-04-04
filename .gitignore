@@ -20,3 +20,6 @@ Package Control.system-ca-bundle
 
 # some exports are generated dynamically when executing install script
 /src/.profile.d/dotfiles.sh
+
+# Some local bashrc includes
+/src/.bashrc.d/*.local.sh

@@ -51,6 +51,9 @@ fi
 alias atom-sync="apm list --bare --installed | tee ~/.atom/packages.list > /dev/null"
 alias atom-install="apm install --production --packages-file ~/.atom/packages.list"
 
+# Apps shortcuts
+alias snd="alsamixer"
+
 # Some rarely used things that are not important to remember.
 alias fucking_swap='vmstat 60 -S M'
 alias bashenv='bash -c set'
