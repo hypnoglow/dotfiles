@@ -10,4 +10,4 @@ workspace 8 output DVI-I-1
 
 # Startup applications
 exec --no-startup-id ~/.i3/runner.sh telegram-desktop -startintray
-exec --no-startup-id ~/.i3/runner.sh gajim
+exec --no-startup-id ~/.i3/runner.sh psi
