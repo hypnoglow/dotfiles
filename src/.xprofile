@@ -38,6 +38,8 @@ case "$HOSTNAME" in
     rigel)
         i3_profile="vm"
     ;;
+    vega)
+        i3_profile="job"
     *)
         i3_profile=""
     ;;
