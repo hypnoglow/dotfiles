@@ -5,6 +5,10 @@
       "linter-shellcheck"
       "linter-php"
     ]
+    themes: [
+      "seti-ui"
+      "seti-syntax"
+    ]
   editor:
     fontSize: 16
     invisibles: {}
