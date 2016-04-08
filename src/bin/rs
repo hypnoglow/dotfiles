@@ -31,6 +31,13 @@ if [ -z "$ACTION" ] ; then
     exit 1
 fi
 
+get_log_filepath() {
+    local dir="/var/log/realsync"
+    local filename="$(basename $(pwd)).log"
+    local filepath="${dir}/${filename}"
+    echo ${filepath}
+}
+
 # Starting realsync in background.
 # Logging output to file.
 function rs_start {
@@ -83,6 +90,11 @@ function rs_status {
     ps u | grep realsync | grep -v grep
 }
 
+function rs_log {
+    local log_filepath="$(get_log_filepath)"
+    tail -f ${log_filepath}
+}
+
 # Running action.
 if [ "$ACTION" = "start" ] ; then
     rs_start
@@ -90,6 +102,8 @@ elif [ "$ACTION" = "stop" ] ; then
     rs_stop
 elif [ "$ACTION" = "status" ] ; then
     rs_status
+elif [ "$ACTION" = "log" ] ; then
+    rs_log
 fi
 
 exit $?
