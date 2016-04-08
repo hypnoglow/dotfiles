@@ -35,7 +35,7 @@ bin -> bin
 .atom/packages.list -> .atom/packages.list
 
 # Vim
-#.vimrc -> .vimrc
+.vimrc -> .vimrc
 
 ### VARIOUS RCs ###
 
