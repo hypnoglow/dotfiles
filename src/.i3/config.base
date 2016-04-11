@@ -21,8 +21,7 @@ bindsym $mod+n border normal
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-# TODO: play with fonts ;)
-font pango:DejaVu Sans Mono,Cantarell 10
+font pango:Iosevka, DejaVu Sans Mono, Cantarell 12
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
@@ -273,7 +272,7 @@ bar {
 	status_command i3status
 #	wheel_up_cmd nop
 #	wheel_down_cmd nop
-	font pango:DejaVu Sans Mono,Cantarell,Icons 10
+	font pango:Iosevka, DejaVu Sans Mono, Cantarell, Icons 12
 	colors {
 		separator #2ECC71
 		background #000000
@@ -310,6 +309,8 @@ exec --no-startup-id compton -b
 exec --no-startup-id start_conky_grey
 # exec --no-startup-id start_conky_green
 exec --no-startup-id xautolock -time 10 -locker blurlock
+
+#exec --no-startup-id feh --bg-scale /path/to/image.file
 
 # Theme colors
 client.focused #2ECC71 #2ECC71 #000000 #FFFFFF
