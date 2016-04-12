@@ -17,10 +17,11 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
 ########## ########## ########## ########## ##########
 
-echo "[$(date)] Loading xprofile" >> /tmp/dot_xprofile.log
+_ddebug "Loading ~/.xprofile"
 
 # Load display settings
 if [ -d "${HOME}/.autorandr/hypnoglow" ]; then
+    #TODO: rework profiles based on WS_PROFILE
     autorandr.sh --change --default hypnoglow
 fi
 
@@ -28,23 +29,9 @@ fi
 xset +fp /usr/share/fonts/local
 xset fp rehash
 
-### Prepare i3 config based on workstation profile ###
-echo "[$(date)] Executing i3 config preparation" >> /tmp/dot_xprofile.log
+# Prepare i3 config based on workstation profile
 i3_loader="${HOME}/.i3/prepare-conf"
-
-# TODO: rework this - use env variable for determinining workstation
-i3_profile=""
-case "$HOSTNAME" in
-    rigel)
-        i3_profile="vm"
-    ;;
-    vega)
-        i3_profile="job"
-    *)
-        i3_profile=""
-    ;;
-esac
-
 if [ -x "${i3_loader}" ]; then
-    "${i3_loader}" "${i3_profile}" &>> /tmp/dot_xprofile.log
+    _ddebug "Executing i3 config preparation: ${i3_loader} with profile ${WS_PROFILE}"
+    "${i3_loader}" "${WS_PROFILE}" &>> "$(_getlogfile)"
 fi

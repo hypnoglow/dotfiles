@@ -12,6 +12,7 @@
 
 # Check that path functions are defined.
 declare -f -F pathappend > /dev/null
+# TODO log properly
 [ $? -ne 0 ] && echo "WARNING: path functions are not defined!" | tee -a /tmp/profile.log >&2
 
 # golang path
@@ -36,3 +37,18 @@ if [ -d "$HOME/apps/n" ] ; then
     export N_PREFIX="$HOME/apps/n";
     pathprepend "$N_PREFIX/bin"
 fi
+
+# Workstation profile
+WS_PROFILE="default"
+case "$HOSTNAME" in
+    rigel)
+        WS_PROFILE="vm"
+    ;;
+    vega)
+        WS_PROFILE="job"
+    ;;
+    naos)
+        WS_PROFILE="laptop"
+    ;;
+esac
+export WS_PROFILE

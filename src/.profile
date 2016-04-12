@@ -9,21 +9,26 @@
 
 ################################################################################
 
-# Include everything from ~/.profile.d
-# `path_functions.sh` is loaded manually.
-if [ -d $HOME/.profile.d ]; then
-    . "$HOME/.profile.d/path_functions.sh"
-
-    files=$( find "$HOME/.profile.d/" -type f \
-        -name '*.sh' -a ! -name 'path_functions.sh' )
-
-    for file in ${files} ; do
-        echo "[$(date)] loading file ${file}" >> /tmp/dot_profile.log
-        if [ -r "${file}" ]; then
-            echo "[$(date)] reading file ${file}" >> /tmp/dot_profile.log
-            . "$file"
-        fi
-    done
-
-    unset file files
+if [ ! -d "${HOME}/.profile.d" ]; then
+    echo "WARNING! ~/.profile.d not found." >> "${HOME}/DOTS_ERRORS.log"
+    return
 fi
+
+# Include everything from ~/.profile.d
+# `(path|log)_functions.sh` are loaded manually.
+. "${HOME}/.profile.d/path_functions.sh"
+. "${HOME}/.profile.d/log_functions.sh"
+
+_ddebug "Loading ~/.profile"
+
+files=$( find "${HOME}/.profile.d/" -type f \
+    -name '*.sh' -a ! -name '*_functions.sh' )
+
+for file in ${files} ; do
+    if [ -r "${file}" ]; then
+        _ddebug "Reading file ${file}"
+        . "${file}"
+    fi
+done
+
+unset file files
