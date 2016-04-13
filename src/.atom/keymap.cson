@@ -31,3 +31,5 @@
 '.platform-linux .find-and-replace .replace-container atom-text-editor':
   'ctrl-r': 'find-and-replace:replace-next'
   'ctrl-shift-r': 'find-and-replace:replace-all'
+
+# ctrl-t and ctrl-p are the same

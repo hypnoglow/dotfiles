@@ -2,14 +2,15 @@
   "autocomplete-plus": {}
   core:
     disabledPackages: [
-      "linter-shellcheck"
       "linter-php"
+      "fonts"
     ]
     themes: [
       "seti-ui"
       "seti-syntax"
     ]
   editor:
+    fontFamily: "Iosevka"
     fontSize: 16
     invisibles: {}
     showIndentGuide: true
@@ -26,6 +27,7 @@
   "linter-jshint": {}
   "linter-php": {}
   "linter-rust": {}
+  "linter-shellcheck": {}
   minimap:
     absoluteMode: true
     plugins:
