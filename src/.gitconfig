@@ -18,6 +18,7 @@
 	# commit
 	ci = commit
 	ca = commit --amend -v --reset-author
+	caf = commit --amend --reset-author --no-edit
 	cm = commit --all --message
 	cv = commit -v
 

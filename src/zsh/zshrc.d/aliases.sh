@@ -12,6 +12,7 @@ alias cp="cp -i"
 #
 alias h='history'
 alias cb='xclip -selection clipboard'
+alias tarls='tar t --exclude="*/*" -f'
 
 #
 # Atom
