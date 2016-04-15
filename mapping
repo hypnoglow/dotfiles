@@ -12,6 +12,13 @@
 .profile -> .profile
 .inputrc -> .inputrc
 
+### ZSH ###
+
+zsh/zprofile -> .zprofile
+zsh/zshrc -> .zshrc
+zsh/zimrc -> .zimrc
+zsh/zlogin -> .zlogin
+
 ### BINARIES ###
 
 bin -> bin

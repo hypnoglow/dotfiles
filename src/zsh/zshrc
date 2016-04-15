@@ -1,0 +1,20 @@
+#
+# User configuration sourced by interactive shells
+#
+
+# Emacs mode
+bindkey -e
+
+# Source zim framework
+if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
+  source ${ZDOTDIR:-${HOME}}/.zim/init.zsh
+fi
+
+#
+# Rewrite zim settings below
+#
+
+# MORE history
+HISTFILE=~/.zhistory
+HISTSIZE=100000
+SAVEHIST=100000
