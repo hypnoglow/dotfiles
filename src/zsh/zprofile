@@ -1,2 +1,10 @@
+#
+# ~/.zprofile is executed by zsh at login.
+#
+
 typeset -U path
 path=(~/bin ~/apps/bin $path[@])
+
+if [ -r "${HOME}/.profile" ]; then
+	. "${HOME}/.profile"
+fi

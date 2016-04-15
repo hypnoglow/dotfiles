@@ -1,7 +1,6 @@
 ### BASH ###
 
 # dirs
-.bash_it.d -> .bash_it.d
 .bashrc.d -> .bashrc.d
 .profile.d -> .profile.d
 
@@ -16,6 +15,7 @@
 
 zsh/zprofile -> .zprofile
 zsh/zshrc -> .zshrc
+zsh/zshrc.d -> .zshrc.d
 zsh/zimrc -> .zimrc
 zsh/zlogin -> .zlogin
 

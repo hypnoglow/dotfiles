@@ -1,26 +1,32 @@
 # This is an include file for .bashrc
 
-# listings
-alias  ls='ls --color=auto -F --group-directories-first --time-style=+"%d.%m.%Y %H:%M"'
-alias   l='ls --color=auto -F'
-alias  ll='ls --color=auto -F -lh'
-alias  la='ls --color=auto -F        -A'
-alias lla='ls --color=auto -F -lh    -A'
-alias   L='ls --color=auto -F     -L'
-alias  LL='ls --color=auto -F -lh -L'
-alias  LA='ls --color=auto -F     -L -A'
-alias LLA='ls --color=auto -F -lh -L -A'
-alias  l.='ls --color=auto -F        -A --ignore=\*'
-alias ll.='ls --color=auto -F -lh    -A --ignore=\*'
-alias treec="tree -C"
+#
+# Listings
+#
 
-# common things
+alias  ls='ls --color=auto -F --group-directories-first --time-style=+"%d.%m.%Y %H:%M"'
+alias   l='ls -lh -A'
+alias  ll='ls -lh'
+alias  la='ls     -A'
+
+alias   L='ls -lh -A -L'
+alias  LL='ls -lh    -L'
+alias  LA='ls     -A -L'
+
+alias  l.='ls     -A    --ignore=\*'
+alias ll.='ls -lh -A    --ignore=\*'
+
+#
+# Navigation
+#
 alias ..="cd .."
+
+#
+# Shortcuts
+#
 alias h='history'
 alias g='git'
 alias cb='xclip -selection clipboard'
-
-alias diffs="cdiff -s --ignore-all-space"
 
 # TODO move outside of aliases
 merge() {
@@ -78,6 +84,7 @@ alias snd="alsamixer"
 alias fucking_swap='vmstat 60 -S M'
 alias bashenv='bash -c set'
 alias clear-fonts-cache="sudo fc-cache -f -v"
+alias kc="xmodmap -pke"
 
 # Custom projects aliases
 alias n1-auth="bash <(curl -s http://git.rn/users/i.zibarev/repos/snippets/browse/n1/auth/n1-auth-token-claimant.bash?raw)"

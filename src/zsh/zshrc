@@ -18,3 +18,15 @@ fi
 HISTFILE=~/.zhistory
 HISTSIZE=100000
 SAVEHIST=100000
+
+#
+# Custom
+#
+
+# Include all from ~/.bashrc.d
+if [ -d ${HOME}/.zshrc.d ]; then
+    for file in ${HOME}/.zshrc.d/*.sh ; do
+        [ -r ${file} ] && . ${file}
+    done
+    unset file
+fi
