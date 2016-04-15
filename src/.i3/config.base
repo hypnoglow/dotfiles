@@ -7,6 +7,8 @@ set $mod Mod4
 # set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
 
+### Window ###
+
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 new_window pixel 2
 new_float normal
@@ -104,10 +106,10 @@ bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
 # split in horizontal orientation
-bindsym $mod+g split h;exec notify-send 'tile horizontally'
+bindsym $mod+g split h; exec notify-send 'tile horizontally'
 
 # split in vertical orientation
-bindsym $mod+v split v;exec notify-send 'tile vertically'
+bindsym $mod+v split v; exec notify-send 'tile vertically'
 
 # toggle fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -179,10 +181,14 @@ bindsym $mod+Shift+7 move container to workspace number 7; workspace 7
 bindsym $mod+Shift+8 move container to workspace number 8; workspace 8
 
 # Open applications on specific workspaces
-# assign [class="Thunderbird"] 1
+assign [class="Firefox"] 2
+assign [class="jetbrains-phpstorm"] 5
+assign [class="google-chrome"] 6
+assign [class="Thunderbird"] 7
+assign [class="Telegram"] 7
+# assign [class="Skype"] 7
 # assign [class="Pale moon"] 2
 # assign [class="Pcmanfm"] 3
-# assign [class="Skype"] 5
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 2
@@ -218,7 +224,7 @@ for_window [urgent=latest] focus
 bindsym $mod+Shift+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+r exec --no-startup-id ~/.i3/prepare-conf ; reload ; restart
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
@@ -296,6 +302,9 @@ mode "$mode_launcher" {
     bindsym Return mode "default"
 }
 
+### Custom apps bindings ###
+bindsym --release $mod+x exec --no-startup-id import /tmp/latest-screenshot.png
+
 ### Autostart applications ###
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore
@@ -310,7 +319,8 @@ exec --no-startup-id start_conky_grey
 # exec --no-startup-id start_conky_green
 exec --no-startup-id xautolock -time 10 -locker blurlock
 
-#exec --no-startup-id feh --bg-scale /path/to/image.file
+# Wallpaper
+exec --no-startup-id feh --bg-scale ~/Dropbox/Wallpapers/wp1.jpg
 
 # Theme colors
 client.focused #2ECC71 #2ECC71 #000000 #FFFFFF
