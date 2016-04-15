@@ -2,34 +2,22 @@
 #
 # Clone git repository considering username/repo_name directory hierarcy.
 
-if [ $# -eq 0 ]; then
-    git clone
-    exit $?
-fi
-
-if [ $# -gt 1 ]; then
+if [ $# -eq 0 ] || [ $# -gt 1 ]; then
     git clone "$@"
     exit $?
 fi
 
 # 1 argument. Split repo path to directory path
 
-repo="$1"
-path=""
+url="$1"
+url_without_suffix="${url%.*}"
+reponame="$(basename "${url_without_suffix}")"
+hostname="$(basename "${url_without_suffix%/${reponame}}")"
 
-if [[ "$repo" =~ git(hub|lab).com ]]; then
-    path="${repo#*:}"
-    path="${path%.git}"
+# BitBucket fix
+if [[ "$url" =~ git.rn && "$hostname" =~ \~* ]]; then
+    hostname="${hostname#~*}"
 fi
 
-if [[ "$repo" =~ git.rn ]]; then
-    path="${repo#*git.rn/}"
-    path="${path%.git}"
-
-    if [[ "$path" =~ \~* ]]; then
-        path="${path#*\~}"
-    fi
-fi
-
-git clone "$repo" "$path"
+git clone "$url" "${hostname}/${reponame}"
 exit $?
