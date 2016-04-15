@@ -33,3 +33,8 @@
   'ctrl-shift-r': 'find-and-replace:replace-all'
 
 # ctrl-t and ctrl-p are the same
+
+
+".platform-linux atom-workspace atom-text-editor:not([mini])":
+  "ctrl-shift-up": "editor:move-line-up"
+  "ctrl-shift-down": "editor:move-line-down"
