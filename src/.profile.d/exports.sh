@@ -16,9 +16,8 @@ fi
 
 # golang path
 if [ -x "$(which go 2>/dev/null)" ]; then
-    export GOPATH="$HOME/projects/go"
-    pathappend "/usr/local/go/bin"
-    pathappend "$GOPATH/bin"
+    export GOPATH="${HOME}/go"
+    pathappend "${GOPATH}/bin"
 fi
 
 # n - Node.js version manager (see http://git.io/n-install-repo)
