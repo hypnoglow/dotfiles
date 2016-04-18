@@ -14,6 +14,8 @@ alias h='history'
 alias cb='xclip -selection clipboard'
 alias tarls='tar t --exclude="*/*" -f'
 
+alias reload-xresources="xrdb -load -quiet ~/.Xresources"
+
 #
 # Atom
 #

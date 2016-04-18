@@ -6,9 +6,10 @@
 bindkey -e
 
 # Source zim framework
-if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
-  source ${ZDOTDIR:-${HOME}}/.zim/init.zsh
-fi
+[[ -d ~/.zim ]] || {
+    git clone --recursive https://github.com/Eriner/zim.git ${ZDOTDIR:-${HOME}}/.zim
+}
+source ${ZDOTDIR:-${HOME}}/.zim/init.zsh
 
 #
 # Rewrite zim settings below
@@ -20,10 +21,33 @@ HISTSIZE=100000
 SAVEHIST=100000
 
 #
+# Plugins
+#
+
+[[ -d ~/.zplug ]] || {
+    curl -fLo ~/.zplug/zplug --create-dirs git.io/zplug
+    source ~/.zplug/zplug
+    zplug update --self
+}
+
+source ~/.zplug/zplug
+
+zplug "seletskiy/zsh-ssh-urxvt"
+
+if ! zplug check --verbose; then
+  printf "Install? [y/N]: "
+  if read -q; then
+    echo; zplug install
+  fi
+fi
+
+zplug load --verbose
+
+#
 # Custom
 #
 
-# Include all from ~/.bashrc.d
+# Include all from ~/.zshrc.d
 if [ -d ${HOME}/.zshrc.d ]; then
     for file in ${HOME}/.zshrc.d/*.sh ; do
         [ -r ${file} ] && . ${file}
