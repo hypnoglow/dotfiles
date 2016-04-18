@@ -17,7 +17,9 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
 ########## ########## ########## ########## ##########
 
-_ddebug "Loading ~/.xprofile"
+. "${HOME}/.sh/dot_logger.sh"
+
+dot_logger::log "Loading ~/.xprofile"
 
 # Load display settings
 if [ -d "${HOME}/.autorandr/hypnoglow" ]; then
@@ -32,6 +34,6 @@ xset fp rehash
 # Prepare i3 config based on workstation profile
 i3_loader="${HOME}/.i3/prepare-conf"
 if [ -x "${i3_loader}" ]; then
-    _ddebug "Executing i3 config preparation: ${i3_loader} with profile ${WS_PROFILE}"
-    "${i3_loader}" "${WS_PROFILE}" &>> "$(_getlogfile)"
+    dot_logger::log "Executing i3 config preparation: ${i3_loader} with profile ${WS_PROFILE}"
+    "${i3_loader}" "${WS_PROFILE}" &>> "$(dot_logger::getlogfile)"
 fi

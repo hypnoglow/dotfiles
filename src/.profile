@@ -13,26 +13,19 @@
 
 ################################################################################
 
+. "${HOME}/.sh/dot_logger.sh"
+
 if [ ! -d "${HOME}/.profile.d" ]; then
     echo "WARNING! ~/.profile.d not found." >> "${HOME}/DOTS_ERRORS.log"
     return
 fi
 
-# Include everything from ~/.profile.d
-# `(path|log)_functions.sh` are loaded manually.
-. "${HOME}/.profile.d/path_functions.sh"
-. "${HOME}/.profile.d/log_functions.sh"
+dot_logger::log "Loading ~/.profile"
 
-_ddebug "Loading ~/.profile"
-
-files=$( find "${HOME}/.profile.d/" -type f \
-    -name '*.sh' -a ! -name '*_functions.sh' )
-
-for file in ${files} ; do
+for file in ${HOME}/.profile.d/*.sh ; do
     if [ -r "${file}" ]; then
-        _ddebug "Reading file ${file}"
+        dot_logger::log "Reading file ${file}"
         . "${file}"
     fi
 done
-
-unset file files
+unset file
