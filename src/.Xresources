@@ -1,6 +1,7 @@
 ! URxvt.font: 9x15
 ! URxvt.font: xft:Terminus:size=12
 ! URxvt.font: xft:Source Code Pro:Medium:pixelsize=12:antialias=true:hinting=true
+! xft:Iosevka Term:size=12:antialias=true:hinting=true
 
 ! Font settings
 URxvt.font: -misc-tamzen-medium-r-normal--16-116-100-100-c-80-iso8859-1,\
@@ -23,12 +24,10 @@ Xft.lcdfilter: lcddefault
 Xcursor.theme: Chameleon-Pearl-Regular-0.5
 Xcursor.size:  0
 URxvt.depth: 32
-URxvt.background: [62]#000000
 URxvt*scrollBar:                      false
 URxvt*mouseWheelScrollPage:           false
 URxvt*cursorBlink:                    true
-URxvt*background:                     black
-URxvt*foreground:                     white
+
 URxvt*saveLines:                      5000
 
 ! for 'fake' transparency (without Compton) uncomment the following three lines
@@ -71,22 +70,6 @@ URxvt*saveLines:                      5000
 ! URxvt*insecure:                       boolean
 ! URxvt*cursorUnderline:                boolean
 ! URxvt*pointerBlank:                   boolean
-! URxvt*color0:                         color
-! URxvt*color1:                         color
-! URxvt*color2:                         color
-! URxvt*color3:                         color
-! URxvt*color4:                         color
-! URxvt*color5:                         color
-! URxvt*color6:                         color
-! URxvt*color7:                         color
-! URxvt*color8:                         color
-! URxvt*color9:                         color
-! URxvt*color10:                        color
-! URxvt*color11:                        color
-! URxvt*color12:                        color
-! URxvt*color13:                        color
-! URxvt*color14:                        color
-! URxvt*color15:                        color
 ! URxvt*colorBD:                        color
 ! URxvt*colorIT:                        color
 ! URxvt*colorUL:                        color
@@ -96,8 +79,6 @@ URxvt*saveLines:                      5000
 ! URxvt*troughColor:                    color
 ! URxvt*highlightColor:                 color
 ! URxvt*highlightTextColor:             color
-! URxvt*cursorColor:                    color
-! URxvt*cursorColor2:                   color
 ! URxvt*pointerColor:                   color
 ! URxvt*pointerColor2:                  color
 ! URxvt*borderColor:                    color
@@ -164,3 +145,15 @@ URxvt*saveLines:                      5000
 ! URxvt*tabbar-bg:                      colour
 ! URxvt*tabbar-fg:                      colour
 ! URxvt*url-launcher:                   string
+
+!
+! Color Scheme
+!
+
+! DEFAULTS.
+*.background: [62]#000000
+*.foreground:     #FFFFFF
+
+#include ".Xresources.d/scheme.dark.tomorrow_night"
+!#include ".Xresources.d/scheme.dark.tomorrow_night_bright"
+!#include ".Xresources.d/scheme.dark.tomorrow_night_eighties"
