@@ -26,6 +26,7 @@
   <action id="NextSplitter">
     <keyboard-shortcut first-keystroke="alt close_bracket" />
     <keyboard-shortcut first-keystroke="alt period" />
+    <keyboard-shortcut first-keystroke="alt right" />
   </action>
   <action id="NextTab">
     <keyboard-shortcut first-keystroke="ctrl page_down" />
@@ -36,6 +37,7 @@
   <action id="PrevSplitter">
     <keyboard-shortcut first-keystroke="alt open_bracket" />
     <keyboard-shortcut first-keystroke="alt comma" />
+    <keyboard-shortcut first-keystroke="alt left" />
   </action>
   <action id="PreviousTab">
     <keyboard-shortcut first-keystroke="ctrl page_up" />
