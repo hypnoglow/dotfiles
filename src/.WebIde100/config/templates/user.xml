@@ -1,0 +1,7 @@
+<templateSet group="user">
+  <template name="/" value="/**&#10; * $END$&#10; */" description="phpdoc" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+</templateSet>
