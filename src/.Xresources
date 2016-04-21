@@ -30,6 +30,10 @@ URxvt*cursorBlink:                    true
 
 URxvt*saveLines:                      5000
 
+
+URxvt.keysym.Shift-Up: command:\033]720;1\007
+URxvt.keysym.Shift-Down: command:\033]721;1\007
+
 ! for 'fake' transparency (without Compton) uncomment the following three lines
 ! URxvt*inheritPixmap:                  true
 ! URxvt*transparent:                    true
