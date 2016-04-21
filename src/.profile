@@ -13,18 +13,18 @@
 
 ################################################################################
 
-. "${HOME}/.sh/dot_logger.sh"
+. "${HOME}/.sh/POSIX/dot_logger.sh"
 
 if [ ! -d "${HOME}/.profile.d" ]; then
     echo "WARNING! ~/.profile.d not found." >> "${HOME}/DOTS_ERRORS.log"
     return
 fi
 
-dot_logger::log "Loading ~/.profile"
+dot_logger_log "Loading ~/.profile"
 
 for file in ${HOME}/.profile.d/*.sh ; do
     if [ -r "${file}" ]; then
-        dot_logger::log "Reading file ${file}"
+        dot_logger_log "Reading file ${file}"
         . "${file}"
     fi
 done

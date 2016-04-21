@@ -1,11 +1,15 @@
 #
 # ~/.xprofile
 #
-# sourced by /etc/lxdm/Xsession or /etc/lightdm/Xsession
+# sourced by /etc/lxdm/Xsession or /etc/lightdm/Xsession.
 #
 # Allows you to execute commands at the beginning
 # of the X user session - before the WM is started.
 #
+# WARNING! This file should only contain
+# POSIX-compliant commands and directives.
+# Providing, for example, bash-specific commands will result
+# in X server crash.
 
 if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
     eval "$(dbus-launch --sh-syntax --exit-with-session)"
@@ -17,9 +21,9 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
 ########## ########## ########## ########## ##########
 
-. "${HOME}/.sh/dot_logger.sh"
+. "${HOME}/.sh/POSIX/dot_logger.sh"
 
-dot_logger::log "Loading ~/.xprofile"
+dot_logger_log "Loading ~/.xprofile"
 
 # Load display settings
 if [ -d "${HOME}/.autorandr/hypnoglow" ]; then
@@ -34,6 +38,6 @@ xset fp rehash
 # Prepare i3 config based on workstation profile
 i3_loader="${HOME}/.i3/prepare-conf"
 if [ -x "${i3_loader}" ]; then
-    dot_logger::log "Executing i3 config preparation: ${i3_loader} with profile ${WS_PROFILE}"
-    "${i3_loader}" "${WS_PROFILE}" &>> "$(dot_logger::getlogfile)"
+    dot_logger_log "Executing i3 config preparation: ${i3_loader} with profile ${WS_PROFILE}"
+    "${i3_loader}" "${WS_PROFILE}" &>> "$(dot_logger_getlogfile)"
 fi
