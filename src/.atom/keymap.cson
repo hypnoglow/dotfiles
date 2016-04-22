@@ -38,3 +38,6 @@
 ".platform-linux atom-workspace atom-text-editor:not([mini])":
   "ctrl-shift-up": "editor:move-line-up"
   "ctrl-shift-down": "editor:move-line-down"
+
+'.tree-view':
+  'r': 'tree-view:rename'

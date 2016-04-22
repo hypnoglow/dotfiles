@@ -1,5 +1,5 @@
-atom-easy-jsdoc@4.4.0
-atom-ternjs@0.13.2
+atom-easy-jsdoc@4.5.0
+atom-ternjs@0.14.0
 emmet@2.4.3
 fonts@1.2.0
 git-blame@0.4.8
@@ -14,11 +14,11 @@ less-than-slash@0.13.0
 linter@1.11.4
 linter-csslint@1.3.2
 linter-jshint@2.1.0
-linter-jsonlint@1.2.4
+linter-jsonlint@1.2.5
 linter-php@1.2.0
 linter-rust@0.4.5
 linter-shellcheck@1.1.0
-linter-xo@0.14.1
+linter-xo@0.14.2
 merge-conflicts@1.4.1
 minimap@4.22.1
 minimap-git-diff@4.3.0
@@ -27,6 +27,6 @@ rust-api-docs-helper@0.5.1
 script@3.7.0
 seti-syntax@0.4.2
 seti-ui@0.9.2
-split-diff@0.7.4
+split-diff@0.7.5
 
 

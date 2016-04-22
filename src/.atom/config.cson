@@ -45,3 +45,9 @@
 ".html.js.text":
   editor:
     tabLength: 2
+".shell-session.text":
+  editor:
+    tabLength: 4
+".shell.source":
+  editor:
+    tabLength: 4

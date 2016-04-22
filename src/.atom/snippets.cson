@@ -17,7 +17,10 @@
 # If you are unfamiliar with CSON, you can read more about it here:
 # https://github.com/bevry/cson#what-is-cson
 
-##### javascript #####
+#
+# javascript
+#
+
 '.source.js':
   'Console Log':
     'prefix': 'cl'
@@ -26,8 +29,26 @@
     'prefix': 'fu'
     'body': 'function() {$1}'
 
- ##### php #####
+ #
+ # php
+ #
+
 '.source.php':
   'Public Function':
     'prefix': 'pubf'
     'body': 'public function $1($2)\n{$3}'
+  'echo json_encode':
+    'prefix': 'ej'
+    'body': 'echo json_encode($1, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) . PHP_EOL;\ndie();'
+
+#
+# shell script
+#
+
+'.source.shell':
+  'Direct execution warning':
+    'prefix': '#WD'
+    'body': '# WARNING! This file should not be executed directly.'
+  'Full comment line':
+    'prefix': '#80'
+    'body': '################################################################################'
