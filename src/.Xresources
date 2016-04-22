@@ -28,11 +28,36 @@ URxvt*scrollBar:                      false
 URxvt*mouseWheelScrollPage:           false
 URxvt*cursorBlink:                    true
 
-URxvt*saveLines:                      5000
+!
+! Scroll
+!
 
+! Scroll when output come but not when you go back in to the buffer.
+! Scroll back to the end on key press
+! (on program stop running and prompt is back it go back to the end too).
+URxvt*saveLines:                      50000
+URxvt*scrollTtyOutput:                false
+URxvt*scrollWithBuffer:               true
+URxvt*scrollTtyKeypress:              true
 
+! Keybindings for 1-line scrolling
 URxvt.keysym.Shift-Up: command:\033]720;1\007
 URxvt.keysym.Shift-Down: command:\033]721;1\007
+
+!
+! Urls
+!
+
+URxvt.perl-ext-common: default,matcher
+URxvt.perl-ext: default,url-select
+URxvt.url-launcher: google-chrome-stable
+URxvt.matcher.button: 1
+URxvt.matcher.rend.0: Uline Bold fg5
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: google-chrome-stable
+URxvt.url-select.underline: true
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 ! for 'fake' transparency (without Compton) uncomment the following three lines
 ! URxvt*inheritPixmap:                  true
@@ -58,9 +83,6 @@ URxvt.keysym.Shift-Down: command:\033]721;1\007
 ! URxvt*scrollBar_floating:             true
 ! URxvt*scrollBar_align:                mode
 ! URxvt*thickness:                      number
-! URxvt*scrollTtyOutput:                boolean
-! URxvt*scrollTtyKeypress:              boolean
-! URxvt*scrollWithBuffer:               boolean
 ! URxvt*tintColor:                      !7DA55
 ! URxvt*blurRadius:                     HxV
 ! URxvt*fading:                         number
