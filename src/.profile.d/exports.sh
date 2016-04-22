@@ -42,3 +42,6 @@ export WS_PROFILE
 
 # Browser is already exported
 BROWSER=""
+
+SOURCES_ROOT="${HOME}/sources"
+export SOURCES_ROOT

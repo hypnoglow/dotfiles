@@ -12,3 +12,4 @@ workspace 8 output DVI-I-1
 exec --no-startup-id ~/.i3/runner.sh telegram -startintray
 exec --no-startup-id ~/.i3/runner.sh psi
 exec --no-startup-id ~/.i3/runner.sh dropbox-cli start
+exec --no-startup-id ~/.i3/runner.sh thunderbird

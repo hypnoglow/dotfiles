@@ -14,6 +14,8 @@ URxvt.italicFont:
 URxvt.boldItalicFont:
 
 URxvt.letterSpace: 0
+URxvt.lineSpace: 0
+
 Xft.dpi: 96
 Xft.antialias: true
 Xft.hinting: true
@@ -129,8 +131,6 @@ URxvt.url-select.underline: true
 ! URxvt*externalBorder:                 number
 ! URxvt*internalBorder:                 number
 ! URxvt*borderLess:                     true
-! URxvt*lineSpace:                      number
-! URxvt*letterSpace:                    number
 ! URxvt*skipBuiltinGlyphs:              boolean
 ! URxvt*pointerBlankDelay:              number
 ! URxvt*backspacekey:                   string
