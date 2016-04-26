@@ -4,4 +4,10 @@
       <option name="PHP" value="true" />
     </context>
   </template>
+  <template name="r" value="return $VALUE$;" description="return" toReformat="true" toShortenFQNames="true">
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
 </templateSet>
