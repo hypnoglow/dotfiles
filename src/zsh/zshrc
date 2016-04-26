@@ -33,6 +33,7 @@ SAVEHIST=100000
 source ~/.zplug/zplug
 
 zplug "seletskiy/zsh-ssh-urxvt"
+zplug "zsh-users/zsh-autosuggestions"
 
 if ! zplug check --verbose; then
   printf "Install? [y/N]: "

@@ -50,8 +50,7 @@ URxvt.keysym.Shift-Down: command:\033]721;1\007
 ! Urls
 !
 
-URxvt.perl-ext-common: default,matcher
-URxvt.perl-ext: default,url-select
+URxvt.perl-ext-common: default,matcher,url-select,selection-to-clipboard
 URxvt.url-launcher: google-chrome-stable
 URxvt.matcher.button: 1
 URxvt.matcher.rend.0: Uline Bold fg5
