@@ -19,7 +19,8 @@
 	ci = commit
 	ca = commit --amend -v --reset-author
 	caf = commit --amend --reset-author --no-edit
-	cm = commit --all --message
+	cm = commit --message
+	calm = commit --all --message
 	cv = commit -v
 
 	au = add -u
@@ -29,6 +30,7 @@
 	br = branch
 
 	# diff
+    d = diff
 	ds = diff --staged
 	dw = diff --word-diff
 	dt = difftool
