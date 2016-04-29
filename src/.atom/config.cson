@@ -4,10 +4,11 @@
     disabledPackages: [
       "linter-php"
       "fonts"
+      "linter-csslint"
     ]
     themes: [
-      "seti-ui"
-      "seti-syntax"
+      "dracula-ui"
+      "dracula-theme"
     ]
   editor:
     fontFamily: "Iosevka"
@@ -23,7 +24,8 @@
     preview: "[Hello, world!] {Привет, как дела?}"
   "js-hyperclick": {}
   linter:
-    showErrorPanel: false
+    errorPanelHeight: 58
+    lintOnFlyInterval: 1000
   "linter-jshint": {}
   "linter-php": {}
   "linter-rust": {}
@@ -45,6 +47,15 @@
 ".html.js.text":
   editor:
     tabLength: 2
+".js.regexp.replacement.source":
+  editor:
+    tabLength: 4
+".js.regexp.source":
+  editor:
+    tabLength: 4
+".js.source":
+  editor:
+    tabLength: 4
 ".shell-session.text":
   editor:
     tabLength: 4

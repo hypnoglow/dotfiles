@@ -41,3 +41,5 @@
 
 '.tree-view':
   'r': 'tree-view:rename'
+  'c': 'tree-view:copy'
+  'p': 'tree-view:paste'

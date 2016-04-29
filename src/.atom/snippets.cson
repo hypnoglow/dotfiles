@@ -28,6 +28,9 @@
   'Function Short':
     'prefix': 'fu'
     'body': 'function() {$1}'
+  'Process Exit':
+    'prefix': 'pe'
+    'body': 'process.exit(1);'
 
  #
  # php
