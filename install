@@ -96,12 +96,6 @@ DOTFILES_DIR="${DOTFILES_ROOT}/src"
 BACKUP_DIR="$HOME/.dotfiles~"
 MAPPING_DELIMETER="->"
 
-echo "Saving DOTFILES_ROOT to .profile.d/dotfiles"
-cat <<EOF > "${DOTFILES_DIR}/.profile.d/dotfiles.sh"
-# THIS FILE IS GENERATED DYNAMICALLY, DO NOT CHANGE IT.
-export DOTFILES_ROOT="${DOTFILES_ROOT}"
-EOF
-
 # All source files in ${DOTFILES_DIR} directory
 # should be symlinked to $HOME relatively,
 # according to the rules defined in mapper file.
