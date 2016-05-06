@@ -1,9 +1,12 @@
+!
+! Font
+!
+
+! Font Examples:
 ! URxvt.font: 9x15
 ! URxvt.font: xft:Terminus:size=12
 ! URxvt.font: xft:Source Code Pro:Medium:pixelsize=12:antialias=true:hinting=true
-! xft:Iosevka Term:size=12:antialias=true:hinting=true
-
-! Font settings
+! URxvt.font: xft:Iosevka Term:size=12:antialias=true:hinting=true
 URxvt.font: -misc-tamzen-medium-r-normal--16-116-100-100-c-80-iso8859-1,\
             -misc-tamzenforpowerline-medium-r-normal--16-116-100-100-c-80-iso10646-1,\
             9x15
@@ -16,19 +19,30 @@ URxvt.boldItalicFont:
 URxvt.letterSpace: 0
 URxvt.lineSpace: 0
 
-Xft.dpi: 96
-Xft.antialias: true
 Xft.hinting: true
-Xft.rgba: rgb
 Xft.autohint: false
 Xft.hintstyle: hintslight
+
+! Xft.dpi: 96
+Xft.antialias: true
+Xft.rgba: rgb
 Xft.lcdfilter: lcddefault
+
+!
+! Opts
+!
+
 Xcursor.theme: Chameleon-Pearl-Regular-0.5
 Xcursor.size:  0
+
 URxvt.depth: 32
 URxvt*scrollBar:                      false
 URxvt*mouseWheelScrollPage:           false
 URxvt*cursorBlink:                    true
+
+URxvt*urgentOnBell:                   true
+URxvt*visualBell:                     false
+URxvt*mapAlert:                       false
 
 !
 ! Scroll
@@ -92,14 +106,10 @@ URxvt.keysym.M-C-space: perl:aAtt:fuzzy-complete
 ! URxvt*fading:                         number
 ! URxvt*fadeColor:                      color
 ! URxvt*utmpInhibit:                    boolean
-! URxvt*urgentOnBell:                   boolean
-! URxvt*visualBell:                     boolean
-! URxvt*mapAlert:                       boolean
 ! URxvt*meta8:                          boolean
 ! URxvt*tripleclickwords:               boolean
 ! URxvt*insecure:                       boolean
 ! URxvt*cursorUnderline:                boolean
-! URxvt*pointerBlank:                   boolean
 ! URxvt*colorBD:                        color
 ! URxvt*colorIT:                        color
 ! URxvt*colorUL:                        color
@@ -109,14 +119,7 @@ URxvt.keysym.M-C-space: perl:aAtt:fuzzy-complete
 ! URxvt*troughColor:                    color
 ! URxvt*highlightColor:                 color
 ! URxvt*highlightTextColor:             color
-! URxvt*pointerColor:                   color
-! URxvt*pointerColor2:                  color
-! URxvt*borderColor:                    color
 ! URxvt*iconFile:                       file
-! URxvt*font:                           fontname
-! URxvt*boldFont:                       fontname
-! URxvt*italicFont:                     fontname
-! URxvt*boldItalicFont:                 fontname
 ! URxvt*intensityStyles:                boolean
 ! URxvt*inputMethod:                    name
 ! URxvt*preeditType:                    style
@@ -130,11 +133,7 @@ URxvt.keysym.M-C-space: perl:aAtt:fuzzy-complete
 ! URxvt*transient-for:                  windowid
 ! URxvt*override-redirect:              boolean
 ! URxvt*hold:                           boolean
-! URxvt*externalBorder:                 number
-! URxvt*internalBorder:                 number
-! URxvt*borderLess:                     true
 ! URxvt*skipBuiltinGlyphs:              boolean
-! URxvt*pointerBlankDelay:              number
 ! URxvt*backspacekey:                   string
 ! URxvt*deletekey:                      string
 ! URxvt*print-pipe:                     string
