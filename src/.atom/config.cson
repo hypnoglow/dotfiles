@@ -1,10 +1,18 @@
 "*":
-  "autocomplete-plus": {}
+  "autocomplete-plus":
+    backspaceTriggersAutocomplete: true
+    fileBlacklist: [
+      "*.md"
+      "*.txt"
+    ]
+    minimumWordLength: 2
   core:
     disabledPackages: [
       "linter-php"
       "fonts"
       "linter-csslint"
+      "js-hyperclick"
+      "linter-xo"
     ]
     themes: [
       "dracula-ui"
@@ -22,6 +30,8 @@
   fonts:
     fontFamily: "Iosevka"
     preview: "[Hello, world!] {Привет, как дела?}"
+  gofmt:
+    formatOnSave: false
   "js-hyperclick": {}
   linter:
     errorPanelHeight: 58
@@ -31,7 +41,6 @@
   "linter-rust": {}
   "linter-shellcheck": {}
   minimap:
-    absoluteMode: true
     plugins:
       "git-diff": true
       "git-diffDecorationsZIndex": 0
