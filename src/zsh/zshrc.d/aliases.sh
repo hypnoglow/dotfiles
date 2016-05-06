@@ -14,6 +14,7 @@ alias h='history'
 alias cb='xclip -selection clipboard'
 alias tarls='tar t --exclude="*/*" -f'
 
+alias reload-zsh=". ~/.zshrc"
 alias reload-xresources="xrdb -load -quiet ~/.Xresources"
 
 #
@@ -21,3 +22,9 @@ alias reload-xresources="xrdb -load -quiet ~/.Xresources"
 #
 alias atom-sync="apm list --bare --installed | tee ~/.atom/packages.list > /dev/null"
 alias atom-install="apm install --production --packages-file ~/.atom/packages.list"
+
+#
+# Git
+#
+alias gst="git status"
+alias gcb="git checkout -b"

@@ -15,6 +15,11 @@ if [ -d "${HOME}/apps/n" ] ; then
     pathf_prepend "$N_PREFIX/bin"
 fi
 
+# NGS binaries
+if [ -d "${HOME}/ngs/bin" ] ; then
+    pathf_prepend "${HOME}/ngs/bin"
+fi
+
 # include applications binaries
 if [ -d "${HOME}/apps/bin" ] ; then
     pathf_prepend "${HOME}/apps/bin"

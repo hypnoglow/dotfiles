@@ -71,7 +71,7 @@
 [diff]
 	tool = cdiff
 [difftool "cdiff"]
-	cmd = cdiff -s -w 0 \"$LOCAL\" \"$REMOTE\"
+	cmd = LESS=-SXR cdiff -s -c always -w 0 \"$LOCAL\" \"$REMOTE\"
 [difftool]
 	prompt = false
 [commit]
