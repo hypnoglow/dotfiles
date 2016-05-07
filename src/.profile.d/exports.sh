@@ -50,5 +50,5 @@ BROWSER=""
 
 SOURCES_ROOT="${HOME}/sources"
 export SOURCES_ROOT
-DOTFILES_ROOT="$(dirname $(dirname $(readlink -e ${0%/*})))"
+DOTFILES_ROOT="$(dirname $(dirname $(readlink -e "${HOME}/.profile")))"
 export DOTFILES_ROOT

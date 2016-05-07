@@ -5,6 +5,8 @@
 # Emacs mode
 bindkey -e
 
+PURE_PROMPT_SYMBOL="ή"
+
 # Source zim framework
 [[ -d ~/.zim ]] || {
     git clone --recursive https://github.com/Eriner/zim.git ${ZDOTDIR:-${HOME}}/.zim
