@@ -26,17 +26,17 @@ SAVEHIST=100000
 
 [[ -d ~/.zplug ]] || {
     git clone https://github.com/zplug/zplug ${ZPLUG_HOME:-"${HOME}/.zplug"}
-    source ~/.zplug/zplug
-    zplug update --self
 }
 
-source ~/.zplug/zplug
+source ~/.zplug/init.zsh
 
 zplug "seletskiy/zsh-ssh-urxvt"
-zplug "zsh-users/zsh-autosuggestions"
+if [ "$TERM" != "linux" ]; then
+    zplug "zsh-users/zsh-autosuggestions"
+fi
 
 if ! zplug check --verbose; then
-  printf "Install? [y/N]: "
+  printf "Install zsh plugins? [y/N]: "
   if read -q; then
     echo; zplug install
   fi
