@@ -28,26 +28,6 @@ alias h='history'
 alias g='git'
 alias cb='xclip -selection clipboard'
 
-# TODO move outside of aliases
-merge() {
-    local empty_file="empty"
-    local merge_file="merge"
-
-    if [ -z "$1" ] || [ -z "$2" ]; then
-        echo >&2 "Not enough arguments"
-        return 1
-    fi
-
-    if [ -e "./${merge_file}" ] || [ -e "./${empty_file}" ]; then
-        echo >&2 "File with name \"${merge_file}\" or \"${empty_file}\" exists."
-        return 1
-    fi
-
-    touch "${empty_file}"
-    git merge-file -p "$1" "${empty_file}" "$2" > ${merge_file}
-    rm "${empty_file}"
-}
-
 # >:]
 alias suka="sudo"
 

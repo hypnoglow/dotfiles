@@ -1,0 +1,19 @@
+#!/bin/bash
+
+empty_file="empty"
+merge_file="merge"
+
+if [ -z "$1" ] || [ -z "$2" ]; then
+    echo >&2 "Not enough arguments"
+    echo "Usage:\n\tmerge-file file1 file2"
+    return 1
+fi
+
+if [ -e "./${merge_file}" ] || [ -e "./${empty_file}" ]; then
+    echo >&2 "File with name \"${merge_file}\" or \"${empty_file}\" exists."
+    return 1
+fi
+
+touch "${empty_file}"
+git merge-file -p "$1" "${empty_file}" "$2" > ${merge_file}
+rm "${empty_file}"
