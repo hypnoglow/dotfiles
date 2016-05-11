@@ -1,0 +1,82 @@
+#!/bin/bash
+
+export TMUX=
+
+terminal_name=RECORD_TERMINAL
+
+if [ "${@}" ]; then
+    initial_command="-e ""${@}"
+else
+    initial_command="-e tmux new -s record-terminal"
+fi
+urxvt -name $terminal_name $initial_command &
+
+urxvt_pid=$!
+
+attempts=10
+while ! urxvt_window_id=$(xdotool search --pid $urxvt_pid 2>/dev/null); do
+    tmux set-window-option -t record-terminal set-titles-string $terminal_name
+
+    attempts=$(($attempts-1))
+
+    if [ $attempts -le 0 ]; then
+        echo cannot find window with name $terminal_name
+        exit 2
+    fi
+
+    sleep 0.5
+done
+
+current_window_id=$(xdotool getactivewindow)
+
+if [ $? -gt 0 ]; then
+    exit 1
+fi
+
+i3-msg -q floating enable
+i3-msg resize grow width 100 px
+i3-msg resize grow height 100 px
+
+geometry=$(
+    xwininfo -id "$urxvt_window_id" | \
+    awk '/Width|Height|Corners/{print $2}' | \
+    paste -sdx | \
+    sed s/x+/+/
+)
+
+if [ "$BACKGROUND" == "dark" ]; then
+    bg_color=0
+    fg_color=15
+else
+    bg_color=15
+    fg_color=0
+fi
+
+# bg_color=$(awk "/color$bg_color:/{print \$2}" ~/.Xresources.$BACKGROUND)
+# fg_color=$(awk "/color$fg_color:/{print \$2}" ~/.Xresources.$BACKGROUND)
+fg_color=#000000
+bg_color=#AAAAAA
+echo $fg_color $bg_color
+
+screenkey \
+    --bg-color $bg_color --font-color $fg_color \
+    -f 'DejaVu Sans Bold' --no-detach -g $geometry \
+    --opacity 0.3 \
+    --ignore ISO_Level5_Shift &
+screenkey_pid=$!
+
+xdotool windowfocus $current_window_id
+
+output_video=$(mktemp --suffix .avi)
+urxvt -e record-cast -w $urxvt_window_id $output_video &
+
+ffmpeg_pid=$!
+
+wait $urxvt_pid
+
+kill $ffmpeg_pid
+kill $screenkey_pid
+
+tmux kill-session -t record-terminal
+
+cp "$output_video" ~/

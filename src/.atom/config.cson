@@ -19,12 +19,14 @@
       "dracula-theme"
     ]
   editor:
+    autoIndentOnPaste: false
     fontFamily: "Iosevka"
     fontSize: 16
     invisibles: {}
     showIndentGuide: true
     showInvisibles: true
     tabLength: 4
+  emmet: {}
   "exception-reporting":
     userId: "094ce7cd-aaa4-6a3d-8328-686afda11de7"
   fonts:
@@ -32,6 +34,7 @@
     preview: "[Hello, world!] {Привет, как дела?}"
   gofmt:
     formatOnSave: false
+  "git-blame": {}
   "js-hyperclick": {}
   linter:
     errorPanelHeight: 58

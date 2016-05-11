@@ -14,6 +14,7 @@ alias free="free -m"
 alias h='history'
 alias cb='xclip -selection clipboard'
 alias tarls='tar t --exclude="*/*" -f'
+alias cdd='cd $DOTFILES_ROOT'
 
 alias reload-zsh=". ~/.zshrc"
 alias reload-xresources="xrdb -load -quiet ~/.Xresources"
@@ -29,12 +30,13 @@ alias atom-install="apm install --production --packages-file ~/.atom/packages.li
 #
 alias gst="git status"
 alias gcb="git checkout -b"
+alias gdt="git difftool"
 
 #
 # Simple functions
 #
 
-ex () {
+ex() {
     if [ -z "$1" ] ; then
         echo >&2 'File not specified'
         return 1
