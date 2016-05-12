@@ -61,3 +61,11 @@ ex() {
         *)           echo "'$1' cannot be extracted via ex()" ;;
     esac
 }
+
+dfi() {
+    cd $DOTFILES_ROOT
+    git checkout master
+    git pull
+    ./install
+    cd -
+}

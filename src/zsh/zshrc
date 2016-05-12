@@ -36,6 +36,7 @@ zplug "seletskiy/zsh-ssh-urxvt"
 if [ "$TERM" != "linux" ]; then
     zplug "zsh-users/zsh-autosuggestions"
 fi
+zplug "felixr/docker-zsh-completion"
 
 if ! zplug check --verbose; then
   printf "Install zsh plugins? [y/N]: "
@@ -49,6 +50,8 @@ zplug load
 #
 # Custom
 #
+
+setopt INTERACTIVE_COMMENTS
 
 # Include all from ~/.zshrc.d
 if [ -d ${HOME}/.zshrc.d ]; then

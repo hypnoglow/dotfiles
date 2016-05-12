@@ -2,6 +2,8 @@
 # ~/.zprofile is executed by zsh at login.
 #
 
+rm -f ${HOME}/.zcompdump ${HOME}/.zcompdump.zwc
+
 if [ -r "${HOME}/.profile" ]; then
 	. "${HOME}/.profile"
 fi
