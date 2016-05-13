@@ -33,6 +33,13 @@ alias gcb="git checkout -b"
 alias gdt="git difftool"
 
 #
+# Docker
+#
+alias d="docker"
+alias dm="docker-machine"
+dme() { test -z "$1" && return 1 ; eval $(dm env $1) }
+
+#
 # Simple functions
 #
 
