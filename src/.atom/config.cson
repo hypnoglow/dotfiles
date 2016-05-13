@@ -32,12 +32,12 @@
   fonts:
     fontFamily: "Iosevka"
     preview: "[Hello, world!] {Привет, как дела?}"
+  "git-blame": {}
   gofmt:
     formatOnSave: false
-  "git-blame": {}
   "js-hyperclick": {}
   linter:
-    errorPanelHeight: 58
+    errorPanelHeight: 88
     lintOnFlyInterval: 1000
   "linter-jshint": {}
   "linter-php": {}
@@ -56,6 +56,15 @@
 ".dots.source":
   editor:
     preferredLineLength: 80
+".go.source":
+  editor:
+    tabLength: 4
+".gohtml.html.text":
+  editor:
+    tabLength: 4
+".gotemplate.source":
+  editor:
+    tabLength: 4
 ".html.js.text":
   editor:
     tabLength: 2

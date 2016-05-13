@@ -5,6 +5,7 @@ atom-ternjs@0.14.1
 autocomplete-go@1.0.8
 builder-go@1.0.0
 cake-syntax@0.5.0
+dockerletion@0.2.0
 dracula-theme@1.2.5
 dracula-ui@0.3.0
 emmet@2.4.3
@@ -18,6 +19,7 @@ gometalinter-linter@1.1.0
 gorename@1.0.2
 hyperclick@0.0.36
 js-hyperclick@1.4.2
+language-docker@1.1.6
 language-dotfiles@0.2.0
 language-dots@0.0.4
 language-ejs@0.2.0
@@ -26,6 +28,7 @@ language-tmux@0.4.0
 less-than-slash@0.13.0
 linter@1.11.4
 linter-csslint@1.3.2
+linter-docker@0.1.2
 linter-jshint@2.1.0
 linter-jsonlint@1.2.5
 linter-php@1.2.0
