@@ -97,6 +97,7 @@ bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart du
 bindsym Print exec "scrot -e 'mv $f ~/Screenshots'; sleep 1; exec notify-send 'screenshot has been saved to ~/Screenshots'"
 bindsym $mod+Print --release exec "scrot -ue 'mv $f ~/Screenshots'; sleep 1; exec notify-send 'screenshot has been saved to ~/Screenshots'"
 bindsym $mod+Shift+Print --release exec "notify-send 'selection will be saved to ~/Screenshots'; scrot -se 'mv $f ~/Screenshots'"
+bindsym --release $mod+x exec --no-startup-id import /tmp/latest-screenshot.png
 #bindsym $mod+Shift+h exec qpdfview i3_help.pdf
 bindsym $mod+Ctrl+x exec xkill
 
@@ -285,17 +286,17 @@ bar {
 set $mode_launcher <span bgcolor='#2ECC71FF' fgcolor='#000000AA'>Launch: [f]irefox [t]hunderbird [c]hrome</span>
 bindsym $mod+z mode $mode_launcher
 mode --pango_markup "$mode_launcher" {
-    bindsym f exec firefox
-    bindsym t exec thunderbird
-    bindsym c exec google-chrome
+    bindsym f exec firefox, mode "default"
+    bindsym t exec thunderbird, mode "default"
+    bindsym c exec google-chrome, mode "default"
 
-    bindsym Escape mode "default"
     bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
 # Set shut down, restart and locking features
-bindsym $mod+0 mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+bindsym $mod+0 mode "$mode_system"
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3exit lock, mode "default"
     bindsym s exec --no-startup-id i3exit suspend, mode "default"
@@ -308,11 +309,6 @@ mode "$mode_system" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-
-
-
-### Custom apps bindings ###
-bindsym --release $mod+x exec --no-startup-id import /tmp/latest-screenshot.png
 
 ### Autostart applications ###
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
