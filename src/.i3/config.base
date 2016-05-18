@@ -256,11 +256,13 @@ mode "resize" {
 # Lock screen
 bindsym $mod+9 exec --no-startup-id blurlock
 
-# Start i3bar to display a workspace bar (plus the system information i3status if available)
+#
+# i3bar
+#
+
 bar {
-	status_command i3status
-#	wheel_up_cmd nop
-#	wheel_down_cmd nop
+	mode dock
+	status_command i3status -c ~/.i3/i3status.conf
 	font pango:Iosevka, DejaVu Sans Mono, Cantarell, Icons 12
 	colors {
 		separator #2ECC71
@@ -271,6 +273,8 @@ bar {
 		inactive_workspace #A4A28D #000000 #DDDDDD
 		urgent_workspace #2ECC71 #900000 #FFFFFF
 	}
+    separator_symbol " | "
+    tray_output primary
 }
 
 #
