@@ -11,9 +11,13 @@
 [push]
 	default = simple
 [alias]
-	co = checkout
-	cm = checkout master
-	cb = checkout -b
+	C = checkout
+	Cm = checkout master
+	Cb = checkout -b
+
+	a = add
+	ap = add --patch
+	au = add -u
 
 	# commit
 	ci = commit
@@ -23,7 +27,6 @@
 	calm = commit --all --message
 	cv = commit -v
 
-	au = add -u
 	s = status
 	st = status
 	ssb  = status -s -b
@@ -57,6 +60,18 @@
 	cinfo  = log -n1 --pretty=medium
 
 	stash-unapply = !git stash show -p | git apply -R
+
+	# Tricks
+
+	assume   = update-index --assume-unchanged
+	unassume = update-index --no-assume-unchanged
+	assumed  = "!git ls-files -v | grep ^h | cut -c 3-"
+
+	snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
+	snapshots = !git stash list --grep snapshot
+
+	recent-branches = !git for-each-ref --count=15 --sort=-committerdate refs/heads/ --format='%(refname:short)'
+
 [color]
 	ui = auto
 [i18n]
@@ -69,6 +84,7 @@
 [mergetool]
 	trustExitCode = false
 [diff]
+	mnemonicprefix = true
 	tool = cdiff
 [difftool "cdiff"]
 	cmd = LESS=-SXR cdiff -s -c always -w 0 \"$LOCAL\" \"$REMOTE\"
@@ -78,3 +94,5 @@
 	template = ~/.gitcommit
 [rebase]
 	autostash = true
+
+# TODO: inspect https://www.kernel.org/pub/software/scm/git/docs/git-rerere.html
