@@ -14,10 +14,25 @@ alias free="free -m"
 alias h='history'
 alias cb='xclip -selection clipboard'
 alias tarls='tar t --exclude="*/*" -f'
+alias du1='du -d 1'
+alias du2='du -d 2'
+alias tf='tail -f'
+alias 1='watch -n1'
+
+alias -g C='| wc -l'
+alias -g H='| head'
+alias -g T='| tail'
+alias -g L='| less'
+alias -g S='| sort'
+alias -g G='| grep'
+
 alias cdd='cd $DOTFILES_ROOT'
 
 alias reload-zsh=". ~/.zshrc"
 alias reload-xresources="xrdb -load -quiet ~/.Xresources"
+
+alias psa="ps aux"
+alias psg="ps aux | grep"
 
 #
 # Atom
@@ -36,12 +51,19 @@ alias gdt="git difftool"
 # Docker
 #
 alias d="docker"
+alias dpa="docker ps -a"
 alias dm="docker-machine"
-dme() { test -z "$1" && return 1 ; eval $(dm env $1) }
+alias dme="docker-machine-env"
+docker-machine-env() { test -z "$1" && return 1 ; eval $(dm env $1) }
 
 #
 # Simple functions
 #
+
+fnd() {
+    [ -z "$1" ] && echo "Pattern not specified." && return 1
+    ls **/*$1*
+}
 
 ex() {
     if [ -z "$1" ] ; then
