@@ -53,7 +53,9 @@ set laststatus=2
 set statusline=%<%f%h%m%r%=format=%{&fileformat}\ file=%{&fileencoding}\ enc=%{&encoding}\ %b\ 0x%B\ %l,%c%V\ %P
 set ruler
 set showcmd
+set showmode
 
+" Completion
 set wildmenu
 
 "
@@ -83,13 +85,20 @@ highlight SpecialKey term=bold cterm=bold ctermfg=red ctermbg=none " space, tab,
 " History
 "
 
-set history=200
+set history=1000
 
 "
 " Evil
 "
 
 set mouse=a
+
+"
+" Navigating, scrolling
+"
+set scrolloff=8
+set sidescrolloff=15
+set sidescroll=1
 
 "
 " Insert mode

@@ -11,9 +11,9 @@
 [push]
 	default = simple
 [alias]
-	C = checkout
-	Cm = checkout master
-	Cb = checkout -b
+	co = checkout
+	com = checkout master
+	cob = checkout -b
 
 	a = add
 	ap = add --patch
