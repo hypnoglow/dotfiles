@@ -1,7 +1,7 @@
+atom-beautify@0.29.7
 atom-easy-jsdoc@4.5.0
 atom-material-syntax@0.4.6
 atom-material-ui@1.2.11
-atom-scrolloff@0.2.0
 atom-ternjs@0.14.1
 aural-coding@1.0.1
 autocomplete-go@1.0.8
@@ -11,6 +11,7 @@ dockerletion@0.2.0
 dracula-theme@1.2.5
 dracula-ui@0.3.0
 emmet@2.4.3
+environment@1.2.0
 expand-region@0.2.4
 fonts@1.2.0
 git-blame@0.4.8
@@ -30,10 +31,10 @@ language-rust@0.4.6
 language-tmux@0.4.0
 less-than-slash@0.13.0
 linter@1.11.4
+linter-coffeelint@1.1.2
 linter-csslint@1.3.2
 linter-docker@0.1.2
 linter-eslint@7.2.2
-linter-jshint@2.1.0
 linter-jsonlint@1.2.5
 linter-php@1.2.0
 linter-rust@0.4.6
@@ -49,5 +50,4 @@ seti-syntax@1.0.1
 seti-ui@1.0.4
 split-diff@0.7.5
 tester-go@1.0.4
-
 

@@ -1,4 +1,54 @@
 "*":
+  "atom-beautify":
+    apex: {}
+    arduino: {}
+    c: {}
+    cfml: {}
+    coffeescript:
+      indent_size: 2
+    cpp: {}
+    cs: {}
+    css: {}
+    d: {}
+    ejs: {}
+    erb: {}
+    fortran: {}
+    general:
+      analytics: false
+      beautifyEntireFileOnSave: false
+    gherkin: {}
+    handlebars: {}
+    html: {}
+    jade: {}
+    java: {}
+    js: {}
+    json: {}
+    jsx: {}
+    latex: {}
+    less: {}
+    marko: {}
+    mustache: {}
+    objectivec: {}
+    pawn: {}
+    perl: {}
+    php: {}
+    python: {}
+    riot: {}
+    ruby: {}
+    rust: {}
+    sass: {}
+    scss: {}
+    spacebars: {}
+    sql: {}
+    svg: {}
+    swig: {}
+    tss: {}
+    twig: {}
+    typescript: {}
+    vala: {}
+    visualforce: {}
+    xml: {}
+    xtemplate: {}
   "atom-scrolloff":
     scrolloff: 20
   "autocomplete-plus":
@@ -14,9 +64,6 @@
       "fonts"
       "linter-csslint"
       "js-hyperclick"
-      "linter-xo"
-      "atom-scrolloff"
-      "linter-jshint"
       "emmet"
     ]
     ignoredNames: [
@@ -42,7 +89,6 @@
     showIndentGuide: true
     showInvisibles: true
     tabLength: 4
-  emmet: {}
   "exception-reporting":
     userId: "094ce7cd-aaa4-6a3d-8328-686afda11de7"
   "expand-region": {}
