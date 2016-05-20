@@ -1,4 +1,6 @@
 "*":
+  "atom-scrolloff":
+    scrolloff: 20
   "autocomplete-plus":
     backspaceTriggersAutocomplete: true
     fileBlacklist: [
@@ -13,6 +15,8 @@
       "linter-csslint"
       "js-hyperclick"
       "linter-xo"
+      "atom-scrolloff"
+      "linter-jshint"
     ]
     themes: [
       "dracula-ui"
@@ -20,9 +24,11 @@
     ]
   editor:
     autoIndentOnPaste: false
+    backUpBeforeSaving: true
     fontFamily: "Iosevka"
     fontSize: 16
     invisibles: {}
+    lineHeight: 1.25
     showIndentGuide: true
     showInvisibles: true
     tabLength: 4
@@ -33,8 +39,7 @@
     fontFamily: "Iosevka"
     preview: "[Hello, world!] {Привет, как дела?}"
   "git-blame": {}
-  gofmt:
-    formatOnSave: false
+  gofmt: {}
   "js-hyperclick": {}
   linter:
     errorPanelHeight: 88

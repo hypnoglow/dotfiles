@@ -1,6 +1,7 @@
 atom-easy-jsdoc@4.5.0
 atom-material-syntax@0.4.6
 atom-material-ui@1.2.11
+atom-scrolloff@0.2.0
 atom-ternjs@0.14.1
 autocomplete-go@1.0.8
 builder-go@1.0.0
@@ -29,6 +30,7 @@ less-than-slash@0.13.0
 linter@1.11.4
 linter-csslint@1.3.2
 linter-docker@0.1.2
+linter-eslint@7.2.2
 linter-jshint@2.1.0
 linter-jsonlint@1.2.5
 linter-php@1.2.0
