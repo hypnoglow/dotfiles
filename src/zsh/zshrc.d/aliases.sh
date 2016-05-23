@@ -35,12 +35,6 @@ alias psa="ps aux"
 alias psg="ps aux | grep"
 
 #
-# Atom
-#
-alias atom-sync="apm list --bare --installed | tee ~/.atom/packages.list > /dev/null"
-alias atom-install="apm install --production --packages-file ~/.atom/packages.list"
-
-#
 # Git
 #
 alias gst="git status"

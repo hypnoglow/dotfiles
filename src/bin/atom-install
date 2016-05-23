@@ -1,0 +1,31 @@
+#!/bin/bash
+#
+# Fast Atom packages update.
+
+if [ ! -r "${HOME}/.atom/packages.list" ] ; then
+    exit 1
+fi
+
+apm list --bare --installed > /tmp/atom-packages.list
+
+# Check if some currently installed packages should be removed.
+for package in $(cat /tmp/atom-packages.list) ; do
+    if ! grep -q ${package} ${HOME}/.atom/packages.list; then
+        read -n 1 -p "Delete package ${package}? [y/n]: " answer
+        echo
+        if [ "${answer}" = "y" ] || [ "${answer}" = "Y" ] ; then
+            apm uninstall ${package%@*}
+        fi
+    fi
+done
+
+# Check if some packages listed in ~/.atom/packages.list
+# should be installed or updated.
+for package in $(cat ${HOME}/.atom/packages.list) ; do
+    if ! grep -q ${package} /tmp/atom-packages.list; then
+        apm install --production ${package}
+    fi
+done
+
+echo "Atom packages are consistent with the ~/.atom/packages.list"
+exit 0

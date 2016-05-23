@@ -1,0 +1,3 @@
+#!/bin/bash
+
+apm list --bare --installed | tee ~/.atom/packages.list > /dev/null
