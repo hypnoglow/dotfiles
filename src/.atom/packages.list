@@ -3,6 +3,7 @@ atom-material-syntax@0.4.6
 atom-material-ui@1.2.11
 atom-scrolloff@0.2.0
 atom-ternjs@0.14.1
+aural-coding@1.0.1
 autocomplete-go@1.0.8
 builder-go@1.0.0
 cake-syntax@0.5.0
@@ -10,6 +11,7 @@ dockerletion@0.2.0
 dracula-theme@1.2.5
 dracula-ui@0.3.0
 emmet@2.4.3
+expand-region@0.2.4
 fonts@1.2.0
 git-blame@0.4.8
 go-config@1.1.4

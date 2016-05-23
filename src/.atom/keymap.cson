@@ -32,8 +32,22 @@
   'ctrl-r': 'find-and-replace:replace-next'
   'ctrl-shift-r': 'find-and-replace:replace-all'
 
-# ctrl-t and ctrl-p are the same
+'atom-text-editor':
+  'ctrl-alt-l': 'custom:reformat'
+  'ctrl-alt-\' \'': 'custom:replace-surrounding'
+  'ctrl-alt-\' "': 'custom:replace-surrounding'
+  'ctrl-alt-\' {': 'custom:replace-surrounding'
+  'ctrl-alt-\' }': 'custom:replace-surrounding'
+  'ctrl-alt-\' [': 'custom:replace-surrounding'
+  'ctrl-alt-\' ]': 'custom:replace-surrounding'
+  'ctrl-alt-\' (': 'custom:replace-surrounding'
+  'ctrl-alt-\' )': 'custom:replace-surrounding'
+  'ctrl-h': 'custom:swap'
+  # Requires 'expand-region' package
+  'alt-up': 'expand-region:expand'
+  'alt-down': 'expand-region:shrink'
 
+# TODO: ctrl-t and ctrl-p are the same
 
 ".platform-linux atom-workspace atom-text-editor:not([mini])":
   "ctrl-shift-up": "editor:move-line-up"

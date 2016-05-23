@@ -17,6 +17,16 @@
       "linter-xo"
       "atom-scrolloff"
       "linter-jshint"
+      "emmet"
+    ]
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      ".tags"
     ]
     themes: [
       "dracula-ui"
@@ -35,6 +45,7 @@
   emmet: {}
   "exception-reporting":
     userId: "094ce7cd-aaa4-6a3d-8328-686afda11de7"
+  "expand-region": {}
   fonts:
     fontFamily: "Iosevka"
     preview: "[Hello, world!] {Привет, как дела?}"
