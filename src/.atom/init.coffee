@@ -80,3 +80,25 @@ atom.commands.add 'atom-text-editor', 'custom:swap': (event) ->
   text = text[1] + text[0]
   editor.setTextInBufferRange(range, text, {normalizeLineEndings: false})
   editor.setCursorBufferPosition(cursorPoint, {autoscroll: false})
+
+# Generate ctags on opening and closing projects
+atom.project.onDidChangePaths (projectPaths) ->
+  {Task} = require 'atom'
+
+  for projectPath in  projectPaths
+    console.log projectPath
+    cmd = 'ctags'
+    args = [
+        '-f', '.tags', '--verbose', '--recurse', projectPath, '>/tmp/ctags.log'
+    ]
+    task = require('child_process').spawn cmd, args, {cwd: projectPath}
+    # task.stdout.on 'data', (msg) ->
+    #   atom.notifications.addInfo msg + ''
+    # task.stderr.on 'data', (msg) ->
+    #   atom.notifications.addWarning msg + ''
+    projectName = require('path').basename projectPath
+    task.on 'close', (code) ->
+      if code != 0
+        atom.notifications.addWarning "Ctags problem for #{projectName} (#{code})"
+      else
+        atom.notifications.addInfo "Ctags generated for #{projectName} (#{code})"
