@@ -14,7 +14,7 @@ alias free="free -m"
 alias h='history'
 alias cb='xclip -selection clipboard'
 alias tarls='tar t --exclude="*/*" -f'
-alias du1='du -d 1'
+alias du1='du -d 1 -BM | sort -n -k1 -r | less -XSF'
 alias du2='du -d 2'
 alias tf='tail -f'
 alias 1='watch -n1'
@@ -33,6 +33,8 @@ alias reload-xresources="xrdb -load -quiet ~/.Xresources"
 
 alias psa="ps aux"
 alias psg="ps aux | grep"
+
+alias dss="cdiff -s -w 0 -c auto HEAD"
 
 #
 # Git
