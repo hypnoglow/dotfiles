@@ -36,8 +36,7 @@ xset +fp /usr/share/fonts/local
 xset fp rehash
 
 # Prepare i3 config based on workstation profile
-i3_loader="${HOME}/.i3/prepare-conf"
-if [ -x "${i3_loader}" ]; then
-    dot_logger_log "Executing i3 config preparation: ${i3_loader} with profile ${WS_PROFILE}"
-    "${i3_loader}" "${WS_PROFILE}" &>> "$(dot_logger_getlogfile)"
+if [ -x "$(which i3-generate-config 2>/dev/null)" ]; then
+    dot_logger_log "Executing i3-generate-config with profile ${WS_PROFILE}"
+    i3-generate-config "${WS_PROFILE}" &>> "$(dot_logger_getlogfile)"
 fi

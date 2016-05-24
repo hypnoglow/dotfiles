@@ -157,7 +157,7 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 bindsym $mod+Shift+c reload
-bindsym $mod+Shift+r exec --no-startup-id ~/.i3/prepare-conf ; reload ; restart
+bindsym $mod+Shift+r exec --no-startup-id i3-generate-config ; reload ; restart
 
 #
 ### WORKSPACES ###

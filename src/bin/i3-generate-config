@@ -1,12 +1,12 @@
 #!/bin/bash
 
-self_dir="$(dirname "$(readlink -e "${BASH_SOURCE[0]}")")"
+i3_dir="${HOME}/.i3"
 workstation_name="$1"
 filename=""
 
 load_base_only() {
     echo "Use base config only."
-    cp "${self_dir}/config.base" "${self_dir}/config"
+    cp "${i3_dir}/config.base" "${i3_dir}/config"
     echo "Config .i3/config is ready."
 }
 
@@ -25,16 +25,16 @@ if [ -z "${workstation_name}" ]; then
 fi
 
 
-if [ ! -d "${self_dir}/${workstation_name}" ]; then
+if [ ! -d "${i3_dir}/${workstation_name}" ]; then
     echo "Config directory for workstation name '${workstation_name}' not found."
     load_base_only
     exit 0
 fi
 
-for filename in "${self_dir}/config.base" "${self_dir}/${workstation_name}/"*; do
-    echo "### --- ${filename#$(dirname ${self_dir})/*} --- ###"
+for filename in "${i3_dir}/config.base" "${i3_dir}/${workstation_name}/"*; do
+    echo "### --- ${filename#$(dirname ${i3_dir})/*} --- ###"
     cat "${filename}"
-done > "${self_dir}/config"
+done > "${i3_dir}/config"
 
 echo "Config .i3/config is ready (based on profile '${workstation_name}')."
 exit 0
