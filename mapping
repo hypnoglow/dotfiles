@@ -63,7 +63,7 @@ Xresources.d -> .Xresources.d
 .ctags -> .ctags
 
 # i3
-.i3 -> .i3
+i3 -> .i3
 
 # tmux
 #.tmux/ngs-dev -> .tmux/ngs-dev

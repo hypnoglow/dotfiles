@@ -16,7 +16,7 @@ Package Control.system-ca-bundle
 !/src/WebIde100/config/options/keymap.xml
 
 # i3 config is generated dynamically
-/src/.i3/config
+/src/i3/config
 
 # Some local bashrc includes
 /src/.bashrc.d/*.local.sh
