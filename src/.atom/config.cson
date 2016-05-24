@@ -75,6 +75,9 @@
       "Thumbs.db"
       ".tags"
     ]
+    packagesWithKeymapsDisabled: [
+      "fuzzy-finder"
+    ]
     themes: [
       "dracula-ui"
       "dracula-theme"
@@ -95,6 +98,7 @@
   fonts:
     fontFamily: "Iosevka"
     preview: "[Hello, world!] {Привет, как дела?}"
+  "fuzzy-finder": {}
   "git-blame": {}
   gofmt: {}
   "js-hyperclick": {}
