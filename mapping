@@ -60,6 +60,7 @@ Xresources.d -> .Xresources.d
 .keynavrc -> .keynavrc
 .mongorc.js -> .mongorc.js
 .screenrc -> .screenrc
+.ctags -> .ctags
 
 # i3
 .i3 -> .i3

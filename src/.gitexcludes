@@ -2,3 +2,4 @@
 .idea/
 *.sublime-project
 *.sublime-workspace
+.tags
