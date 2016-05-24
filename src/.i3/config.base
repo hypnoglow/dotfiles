@@ -176,7 +176,7 @@ workspace_layout default
 # set $ws3 3:
 # set $ws3 4:
 
-# switch to workspace
+# Switch to workspace
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
 bindsym $mod+3 workspace number 3
@@ -185,6 +185,8 @@ bindsym $mod+5 workspace number 5
 bindsym $mod+6 workspace number 6
 bindsym $mod+7 workspace number 7
 bindsym $mod+8 workspace number 8
+# Lock screen
+bindsym $mod+9 exec --no-startup-id blurlock
 
 #navigate workspaces next / previous
 bindsym $mod+Ctrl+Right workspace next
@@ -213,18 +215,6 @@ bindsym $mod+Shift+5 move container to workspace number 5; workspace 5
 bindsym $mod+Shift+6 move container to workspace number 6; workspace 6
 bindsym $mod+Shift+7 move container to workspace number 7; workspace 7
 bindsym $mod+Shift+8 move container to workspace number 8; workspace 8
-
-# Open applications on specific workspaces
-assign [class="Firefox"] 2
-assign [class="jetbrains-phpstorm"] 5
-assign [class="google-chrome"] 6
-assign [class="Thunderbird"] 7
-assign [class="Telegram"] 7
-# assign [class="Skype"] 7
-# assign [class="Pale moon"] 2
-# assign [class="Pcmanfm"] 3
-
-
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -258,8 +248,7 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-# Lock screen
-bindsym $mod+9 exec --no-startup-id blurlock
+
 
 #
 # i3bar
@@ -268,9 +257,9 @@ bindsym $mod+9 exec --no-startup-id blurlock
 bar {
 	mode dock
 	status_command i3status -c ~/.i3/i3status.conf
-	font pango:Iosevka, DejaVu Sans Mono, Cantarell, Icons 12
-	colors {
-		separator #2ECC71
+    font pango: Iosevka, DejaVu Sans Mono, Cantarell, FontAwesome, Icons 12
+    colors {
+    separator #2ECC71
 		background #000000
 		statusline #DDDDDD
 		focused_workspace #FFFFFF #2ECC71 #000000
@@ -314,14 +303,16 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 
-### Autostart applications ###
+#
+# Startup
+#
+
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore
+#exec --no-startup-id nitrogen --restore
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
-# exec --no-startup-id blueman
 # exec_always --no-startup-id sbxkb
 exec --no-startup-id compton -b
 # exec --no-startup-id start_conky_grey
