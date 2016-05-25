@@ -75,4 +75,3 @@ i3 -> .i3
 .config/conky -> .config/conky
 
 #.config/sublime-text-3/Packages/User -> .config/sublime-text-3/Packages/User
-#.config/synapse -> .config/synapse
