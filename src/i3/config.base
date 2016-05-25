@@ -105,8 +105,8 @@ bindsym $mod+Ctrl+x exec xkill
 
 # change focus
 bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
+bindsym $mod+j focus left
+bindsym $mod+k focus right
 bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
