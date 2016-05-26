@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+# Runs i3status with workstation profile config.
+
+if [ -z "${WS_PROFILE}" ]; then
+    exec i3status -c ${HOME}/.i3/i3status.conf
+elif [ ! -r "${HOME}/.i3/${WS_PROFILE}/i3status.conf" ]; then
+    exec i3status -c ${HOME}/.i3/i3status.conf
+else
+    exec i3status -c ${HOME}/.i3/${WS_PROFILE}/i3status.conf
+fi

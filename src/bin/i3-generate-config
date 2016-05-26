@@ -32,6 +32,10 @@ if [ ! -d "${i3_dir}/${workstation_name}" ]; then
 fi
 
 for filename in "${i3_dir}/config.base" "${i3_dir}/${workstation_name}/"*; do
+    if [ "$(basename ${filename})" = "i3status.conf" ]; then
+        continue
+    fi
+
     echo "### --- ${filename#$(dirname ${i3_dir})/*} --- ###"
     cat "${filename}"
 done > "${i3_dir}/config"

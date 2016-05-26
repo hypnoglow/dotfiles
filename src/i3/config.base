@@ -256,7 +256,7 @@ mode "resize" {
 
 bar {
 	mode dock
-	status_command i3status -c ~/.i3/i3status.conf
+	status_command i3status-profilized
 	font pango: Iosevka, DejaVu Sans Mono, Cantarell, FontAwesome, Icons 12
 	colors {
 	separator #2ECC71
