@@ -1,0 +1,93 @@
+# Configuration file.
+# Note that you can use $ENV_VARIABLE in paths.
+
+[directories]
+
+# Directory where your dotfiles repository is stored.
+# Default: directory of this config.
+dotfiles = "$DOTFILES_ROOT"
+
+# Directory relative to 'dotfiles_root' where dotfiles are stored.
+# You want to set this variable if you keep your dotfiles in a subdirectory
+# of your repo. By default this is empty, assuming your dotfiles are on the
+# first level of 'dotfiles_root' directory.
+sources = "src"
+
+# Destination directory - your dotfiles will be linked there.
+destination = "$HOME"
+
+# Backup directory - your original files will be backuped here.
+backup = "$HOME/.dotfiles~"
+
+[mapping]
+
+# Binaries
+"bin" = "bin"
+
+#
+# Shell
+#
+
+".profile.d" = ".profile.d"
+".profile" = ".profile"
+
+# Libraries
+"sh" = ".sh"
+
+# BASH
+".bashrc.d" = ".bashrc.d"
+".bashrc" = ".bashrc"
+".bash_logout" = ".bash_logout"
+".bash_profile" = ".bash_profile"
+".inputrc" = ".inputrc"
+
+# ZSH
+"zsh/zprofile" = ".zprofile"
+"zsh/zshrc" = ".zshrc"
+"zsh/zshrc.d" = ".zshrc.d"
+"zsh/zimrc" = ".zimrc"
+"zsh/zlogin" = ".zlogin"
+
+#
+# Editors
+#
+
+# PhpStorm 10
+"WebIde100/config/colors" = ".WebIde100/config/colors"
+"WebIde100/config/codestyles" = ".WebIde100/config/codestyles"
+"WebIde100/config/keymaps" = ".WebIde100/config/keymaps"
+"WebIde100/config/options" = ".WebIde100/config/options"
+"WebIde100/config/templates" = ".WebIde100/config/templates"
+"WebIde100/phpstorm64.vmoptions" = ".WebIde100/phpstorm64.vmoptions"
+
+# Atom
+".atom/config.cson" = ".atom/config.cson"
+".atom/init.coffee" = ".atom/init.coffee"
+".atom/keymap.cson" = ".atom/keymap.cson"
+".atom/snippets.cson" = ".atom/snippets.cson"
+".atom/styles.less" = ".atom/styles.less"
+".atom/packages.list" = ".atom/packages.list"
+
+# Vim
+".vimrc" = ".vimrc"
+
+#
+# Other
+#
+
+".xprofile" = ".xprofile"
+".Xresources" = ".Xresources"
+"Xresources.d" = ".Xresources.d"
+
+".gitcommit" = ".gitcommit"
+".gitconfig" = ".gitconfig"
+".gitexcludes" = ".gitexcludes"
+
+".keynavrc" = ".keynavrc"
+".mongorc.js" = ".mongorc.js"
+".screenrc" = ".screenrc"
+
+"i3" = ".i3"
+".config/conky" = ".config/conky"
+
+".ctags" = ".ctags"
