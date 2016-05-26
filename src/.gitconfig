@@ -96,3 +96,5 @@
 	autostash = true
 
 # TODO: inspect https://www.kernel.org/pub/software/scm/git/docs/git-rerere.html
+[credential]
+	helper = cache --timeout=3600
