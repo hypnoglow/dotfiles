@@ -114,8 +114,12 @@
       "git-diff": true
       "git-diffDecorationsZIndex": 0
   "one-dark-ui": {}
+  "package-generator":
+    packageSyntax: "coffeescript"
   "rust-api-docs-helper":
     enableBackgroundResolving: false
+  scrolloff:
+    verticalMargin: 8
   "tree-view": {}
   welcome:
     showOnStartup: false
@@ -147,5 +151,8 @@
   editor:
     tabLength: 4
 ".shell.source":
+  editor:
+    tabLength: 4
+".source.tmux":
   editor:
     tabLength: 4

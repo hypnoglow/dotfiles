@@ -46,8 +46,10 @@ navigator-godef@1.0.3
 pigments@0.26.0
 rust-api-docs-helper@0.5.1
 script@3.7.1
+scrolloff@0.1.2
 seti-syntax@1.0.1
 seti-ui@1.0.4
 split-diff@0.7.5
 tester-go@1.0.4
+
 

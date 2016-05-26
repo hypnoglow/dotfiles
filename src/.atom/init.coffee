@@ -1,3 +1,4 @@
+
 # Your init script
 #
 # Atom will evaluate this file each time a new window is opened. It is run
@@ -10,10 +11,6 @@
 #   editor.onDidSave ->
 #     console.log "Saved! #{editor.getPath()}"
 ################################################################################
-
-# vim-like scrolloff
-atom.workspace.observeTextEditors (editor) ->
-  editor.setVerticalScrollMargin 8
 
 # Notify about font size
 atom.config.onDidChange 'editor.fontSize', (value) ->
