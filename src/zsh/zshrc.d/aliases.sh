@@ -27,6 +27,7 @@ alias -g S='| sort'
 alias -g G='| grep'
 
 alias cdd='cd $DOTFILES_ROOT'
+alias cdg='cd $GOPATH/src/github.com/hypnoglow'
 
 alias reload-zsh=". ~/.zshrc"
 alias reload-xresources="xrdb -load -quiet ~/.Xresources"

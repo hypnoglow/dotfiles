@@ -75,6 +75,7 @@ backup = "$HOME/.dotfiles~"
 # Other
 #
 
+".xinitrc" = ".xinitrc"
 ".xprofile" = ".xprofile"
 ".Xresources" = ".Xresources"
 "Xresources.d" = ".Xresources.d"
