@@ -105,8 +105,8 @@ bindsym $mod+Ctrl+x exec xkill
 
 # change focus
 bindsym $mod+h focus left
-bindsym $mod+j focus left
-bindsym $mod+k focus right
+bindsym $mod+j focus down
+bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
@@ -186,7 +186,7 @@ bindsym $mod+6 workspace number 6
 bindsym $mod+7 workspace number 7
 bindsym $mod+8 workspace number 8
 # Lock screen
-bindsym $mod+9 exec --no-startup-id blurlock
+bindsym $mod+9 exec --no-startup-id "xkb-switch -s us ; blurlock"
 
 #navigate workspaces next / previous
 bindsym $mod+Ctrl+Right workspace next
@@ -291,7 +291,7 @@ mode --pango_markup "$mode_launcher" {
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 bindsym $mod+0 mode "$mode_system"
 mode "$mode_system" {
-	bindsym l exec --no-startup-id i3exit lock, mode "default"
+	bindsym l exec --no-startup-id "xkb-switch -s us ; i3exit lock", mode "default"
 	bindsym s exec --no-startup-id i3exit suspend, mode "default"
 	bindsym u exec --no-startup-id i3exit switch_user, mode "default"
 	bindsym e exec --no-startup-id i3exit logout, mode "default"
@@ -309,6 +309,7 @@ mode "$mode_system" {
 
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #exec --no-startup-id nitrogen --restore
+# Network tray applet
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
