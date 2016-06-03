@@ -10,13 +10,13 @@ Package Control.merged-ca-bundle
 Package Control.system-ca-bundle
 
 # phpstorm excludes
-/src/WebIde100/config/options/*
-!/src/WebIde100/config/options/code.style.schemes.xml
-!/src/WebIde100/config/options/colors.scheme.xml
-!/src/WebIde100/config/options/keymap.xml
+/WebIde100/config/options/*
+!/WebIde100/config/options/code.style.schemes.xml
+!/WebIde100/config/options/colors.scheme.xml
+!/WebIde100/config/options/keymap.xml
 
 # i3 config is generated dynamically
-/src/i3/config
+/i3/config
 
 # Some local shell includes
 **/*.local.sh

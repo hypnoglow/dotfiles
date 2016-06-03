@@ -7,12 +7,6 @@
 # Default: directory of this config.
 dotfiles = "$DOTFILES_ROOT"
 
-# Directory relative to 'dotfiles_root' where dotfiles are stored.
-# You want to set this variable if you keep your dotfiles in a subdirectory
-# of your repo. By default this is empty, assuming your dotfiles are on the
-# first level of 'dotfiles_root' directory.
-sources = "src"
-
 # Destination directory - your dotfiles will be linked there.
 destination = "$HOME"
 
