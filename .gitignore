@@ -18,5 +18,5 @@ Package Control.system-ca-bundle
 # i3 config is generated dynamically
 /src/i3/config
 
-# Some local bashrc includes
-/src/.bashrc.d/*.local.sh
+# Some local shell includes
+**/*.local.sh

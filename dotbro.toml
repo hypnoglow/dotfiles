@@ -28,17 +28,17 @@ backup = "$HOME/.dotfiles~"
 # Shell
 #
 
-".profile.d" = ".profile.d"
-".profile" = ".profile"
+"shell/profile.d" = ".profile.d"
+"shell/profile" = ".profile"
 
 # Libraries
-"sh" = ".sh"
+"shell/libraries" = ".sh"
 
 # BASH
-".bashrc.d" = ".bashrc.d"
-".bashrc" = ".bashrc"
-".bash_logout" = ".bash_logout"
-".bash_profile" = ".bash_profile"
+"bash/bashrc.d" = ".bashrc.d"
+"bash/bashrc" = ".bashrc"
+"bash/bash_logout" = ".bash_logout"
+"bash/bash_profile" = ".bash_profile"
 ".inputrc" = ".inputrc"
 
 # ZSH
@@ -61,15 +61,15 @@ backup = "$HOME/.dotfiles~"
 "WebIde100/phpstorm64.vmoptions" = ".WebIde100/phpstorm64.vmoptions"
 
 # Atom
-".atom/config.cson" = ".atom/config.cson"
-".atom/init.coffee" = ".atom/init.coffee"
-".atom/keymap.cson" = ".atom/keymap.cson"
-".atom/snippets.cson" = ".atom/snippets.cson"
-".atom/styles.less" = ".atom/styles.less"
-".atom/packages.list" = ".atom/packages.list"
+"atom/config.cson" = ".atom/config.cson"
+"atom/init.coffee" = ".atom/init.coffee"
+"atom/keymap.cson" = ".atom/keymap.cson"
+"atom/snippets.cson" = ".atom/snippets.cson"
+"atom/styles.less" = ".atom/styles.less"
+"atom/packages.list" = ".atom/packages.list"
 
 # Vim
-".vimrc" = ".vimrc"
+"vim/vimrc" = ".vimrc"
 
 #
 # Other
@@ -89,6 +89,6 @@ backup = "$HOME/.dotfiles~"
 ".screenrc" = ".screenrc"
 
 "i3" = ".i3"
-".config/conky" = ".config/conky"
+"conky" = ".config/conky"
 
 ".ctags" = ".ctags"
