@@ -53,6 +53,12 @@ backup = "$HOME/.dotfiles~"
 "WebIde100/config/options" = ".WebIde100/config/options"
 "WebIde100/config/templates" = ".WebIde100/config/templates"
 "WebIde100/phpstorm64.vmoptions" = ".WebIde100/phpstorm64.vmoptions"
+"PhpStorm2016/config/colors" = ".PhpStorm2016.1/config/colors"
+"PhpStorm2016/config/codestyles" = ".PhpStorm2016.1/config/codestyles"
+"PhpStorm2016/config/keymaps" = ".PhpStorm2016.1/config/keymaps"
+"PhpStorm2016/config/options" = ".PhpStorm2016.1/config/options"
+"PhpStorm2016/config/templates" = ".PhpStorm2016.1/config/templates"
+"PhpStorm2016/phpstorm64.vmoptions" = ".PhpStorm2016.1/phpstorm64.vmoptions"
 
 # Atom
 "atom/config.cson" = ".atom/config.cson"

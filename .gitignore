@@ -14,6 +14,10 @@ Package Control.system-ca-bundle
 !/WebIde100/config/options/code.style.schemes.xml
 !/WebIde100/config/options/colors.scheme.xml
 !/WebIde100/config/options/keymap.xml
+/PhpStorm2016/config/options/*
+!/PhpStorm2016/config/options/code.style.schemes.xml
+!/PhpStorm2016/config/options/colors.scheme.xml
+!/PhpStorm2016/config/options/keymap.xml
 
 # i3 config is generated dynamically
 /i3/config

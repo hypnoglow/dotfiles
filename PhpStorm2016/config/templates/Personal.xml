@@ -1,0 +1,5 @@
+<templateSet group="Personal">
+  <template name="au" value="@author Igor Zibarev &lt;i.zibarev@office.ngs.ru&gt;" description="Author tag" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+</templateSet>
