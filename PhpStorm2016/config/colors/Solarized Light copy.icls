@@ -1863,9 +1863,6 @@
         <option name="FOREGROUND" value="d33682" />
       </value>
     </option>
-    <option name="STATIC_METHOD_ATTRIBUTES">
-      <value />
-    </option>
     <option name="STRUCT_LIKE">
       <value>
         <option name="FOREGROUND" value="b58900" />
