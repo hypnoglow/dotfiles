@@ -99,7 +99,6 @@
     fontFamily: "Iosevka"
     preview: "[Hello, world!] {Привет, как дела?}"
   "fuzzy-finder": {}
-  "git-blame": {}
   gofmt: {}
   "js-hyperclick": {}
   linter:

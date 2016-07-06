@@ -5,6 +5,7 @@ atom-material-ui@1.2.13
 atom-ternjs@0.14.2
 aural-coding@1.0.1
 autocomplete-go@1.1.0
+blame@0.10.0
 builder-go@1.0.0
 cake-syntax@0.5.3
 dockerletion@0.2.0
@@ -14,7 +15,6 @@ emmet@2.4.3
 environment@1.2.0
 expand-region@0.2.4
 fonts@1.5.0
-git-blame@0.4.8
 go-config@1.2.1
 go-get@1.0.3
 go-plus@4.1.0
