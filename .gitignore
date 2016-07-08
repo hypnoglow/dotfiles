@@ -18,6 +18,7 @@ Package Control.system-ca-bundle
 !/PhpStorm2016/config/options/code.style.schemes.xml
 !/PhpStorm2016/config/options/colors.scheme.xml
 !/PhpStorm2016/config/options/keymap.xml
+!/PhpStorm2016/config/options/editor.xml
 
 # i3 config is generated dynamically
 /i3/config
