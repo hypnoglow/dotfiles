@@ -31,21 +31,25 @@ if [ -d "${HOME}/bin" ] ; then
 fi
 
 # Workstation profile
-WS_PROFILE="default"
-case "$HOSTNAME" in
-    rigel)
-        WS_PROFILE="vm"
-    ;;
-    vega)
-        WS_PROFILE="job"
-    ;;
-    naos)
-        WS_PROFILE="laptop"
-    ;;
-esac
-export WS_PROFILE
+if [ -z "${WS_PROFILE}" ]; then
+    WS_PROFILE="default"
+    case "$HOSTNAME" in
+        rigel)
+            WS_PROFILE="vm"
+        ;;
+        vega)
+            WS_PROFILE="job"
+        ;;
+        naos)
+            WS_PROFILE="laptop"
+        ;;
+    esac
+    export WS_PROFILE
+fi
 
-# Browser is already exported
+# This is to stop xdg-open from going to
+# infinite loop when trying to open an URL.
+# This variable is already exported.
 BROWSER=""
 
 SOURCES_ROOT="${HOME}/sources"
