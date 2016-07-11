@@ -36,8 +36,6 @@ Xcursor.theme: Chameleon-Pearl-Regular-0.5
 Xcursor.size:  0
 
 URxvt.depth: 32
-URxvt*scrollBar:                      false
-URxvt*mouseWheelScrollPage:           false
 URxvt*cursorBlink:                    true
 
 URxvt*urgentOnBell:                   true
@@ -51,10 +49,17 @@ URxvt*mapAlert:                       false
 ! Scroll when output come but not when you go back in to the buffer.
 ! Scroll back to the end on key press
 ! (on program stop running and prompt is back it go back to the end too).
-URxvt*saveLines:                      50000
 URxvt*scrollTtyOutput:                false
 URxvt*scrollWithBuffer:               true
 URxvt*scrollTtyKeypress:              true
+
+URxvt*saveLines:                      50000
+URxvt*mouseWheelScrollPage:           false
+
+URxvt*scrollBar:                      true
+URxvt*scrollstyle:                    plain
+URxvt*scrollBar_right:                true
+URxvt*scrollColor:                    #2ECC71
 
 ! Keybindings for 1-line scrolling
 URxvt.keysym.Shift-Up: command:\033]720;1\007
@@ -96,10 +101,6 @@ URxvt.keysym.M-C-space: perl:aAtt:fuzzy-complete
 ! URxvt*jumpScroll:                     boolean
 ! URxvt*skipScroll:                     boolean
 ! URxvt*pastableTabs:                   boolean
-! URxvt*scrollstyle:                    plain
-! URxvt*scrollBar_right:                boolean
-! URxvt*scrollBar_floating:             true
-! URxvt*scrollBar_align:                mode
 ! URxvt*thickness:                      number
 ! URxvt*tintColor:                      !7DA55
 ! URxvt*blurRadius:                     HxV
@@ -115,7 +116,6 @@ URxvt.keysym.M-C-space: perl:aAtt:fuzzy-complete
 ! URxvt*colorUL:                        color
 ! URxvt*colorRV:                        color
 ! URxvt*underlineColor:                 color
-! URxvt*scrollColor:                    color
 ! URxvt*troughColor:                    color
 ! URxvt*highlightColor:                 color
 ! URxvt*highlightTextColor:             color
@@ -128,7 +128,6 @@ URxvt.keysym.M-C-space: perl:aAtt:fuzzy-complete
 ! URxvt*title:                          string
 ! URxvt*iconName:                       string
 ! URxvt*buffered:                       boolean
-! URxvt*depth:                          number
 ! URxvt*visual:                         number
 ! URxvt*transient-for:                  windowid
 ! URxvt*override-redirect:              boolean
@@ -142,10 +141,6 @@ URxvt.keysym.M-C-space: perl:aAtt:fuzzy-complete
 ! URxvt*answerbackString:               string
 ! URxvt*secondaryScreen:                boolean
 ! URxvt*secondaryScroll:                boolean
-! URxvt*perl-lib:                       string
-! URxvt*perl-eval:                      perl-eval
-! URxvt*perl-ext-common:                string
-! URxvt*perl-ext:                       string
 ! URxvt*iso14755:                       boolean
 ! URxvt*iso14755_52:                    boolean
 ! URxvt*xrm:                            string
@@ -171,7 +166,6 @@ URxvt.keysym.M-C-space: perl:aAtt:fuzzy-complete
 ! URxvt*tab-fg:                         colour
 ! URxvt*tabbar-bg:                      colour
 ! URxvt*tabbar-fg:                      colour
-! URxvt*url-launcher:                   string
 
 !
 ! Color Scheme
