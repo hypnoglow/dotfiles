@@ -43,7 +43,7 @@ merge-conflicts@1.4.4
 minimap@4.24.6
 minimap-git-diff@4.3.1
 navigator-godef@1.0.3
-pigments@0.31.0
+pigments@0.31.1
 rust-api-docs-helper@0.5.1
 script@3.7.3
 scrolloff@0.1.2

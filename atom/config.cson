@@ -115,6 +115,7 @@
   "one-dark-ui": {}
   "package-generator":
     packageSyntax: "coffeescript"
+  pigments: {}
   "rust-api-docs-helper":
     enableBackgroundResolving: false
   scrolloff:
