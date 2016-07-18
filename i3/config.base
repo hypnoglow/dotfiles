@@ -28,6 +28,7 @@ font pango:Iosevka, DejaVu Sans Mono, Cantarell 12
 # Window: applications
 #
 
+# Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 2
 for_window [class="Calamares"] floating enable border normal
 for_window [class="Clipgrab"] floating enable
@@ -37,7 +38,7 @@ for_window [class="GParted"] floating enable border normal
 for_window [title="i3_help"] floating enable sticky enable border normal
 for_window [class="Lightdm-gtk-greeter-settings"] floating enable
 for_window [class="Lxappearance"] floating enable sticky enable border normal
-for_window [class="manjaro-settings-manager-gui"] floating enable border normal
+for_window [class="Manjaro Settings Manager"] floating enable border normal
 for_window [class="Manjaro Welcome"] floating enable
 for_window [title="MuseScore: Play Panel"] floating enable
 for_window [class="Nitrogen"] floating enable sticky enable border normal
@@ -53,6 +54,7 @@ for_window [class="Skype"] floating enable border normal
 for_window [class="Thus"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
+for_window [class="Xfburn"] floating enable
 
 # start a terminal
 bindsym $mod+Return exec terminal
@@ -67,6 +69,8 @@ bindsym $mod+d exec --no-startup-id dmenu_recency
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# Categorized menu
+bindsym $mod+z exec --no-startup-id morc_menu
 
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
@@ -80,12 +84,17 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 
 ################################################################################################
 
+#
+# BINDINGS
+#
+
 # Screen brightness controls
 # bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
 # bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
+bindsym $mod+F1 exec epdfview /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+F2 exec palemoon
 bindsym $mod+F3 exec pcmanfm
 # bindsym $mod+F3 exec ranger
@@ -94,12 +103,15 @@ bindsym $mod+F5 exec terminal -e 'mocp'
 bindsym $mod+t exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+t exec --no-startup-id compton -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym Print exec "scrot -e 'mv $f ~/Screenshots'; sleep 1; exec notify-send 'screenshot has been saved to ~/Screenshots'"
-bindsym $mod+Print --release exec "scrot -ue 'mv $f ~/Screenshots'; sleep 1; exec notify-send 'screenshot has been saved to ~/Screenshots'"
-bindsym $mod+Shift+Print --release exec "notify-send 'selection will be saved to ~/Screenshots'; scrot -se 'mv $f ~/Screenshots'"
+
+# Screenshots
+bindsym Print exec --no-startup-id i3-scrot
+bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
+bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 bindsym --release $mod+x exec --no-startup-id import /tmp/latest-screenshot.png
-#bindsym $mod+Shift+h exec qpdfview i3_help.pdf
-bindsym $mod+Ctrl+x exec xkill
+
+# App killer
+bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 # focus_follows_mouse no
 
@@ -156,11 +168,25 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+# reload the configuration file
 bindsym $mod+Shift+c reload
+# restart i3 inplace
 bindsym $mod+Shift+r exec --no-startup-id i3-generate-config ; reload ; restart
 
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# TODO: try scratchpad?
+# https://i3wm.org/docs/userguide.html#_scratchpad
+
+# move the currently focused window to the scratchpad
+#bindsym $mod+Shift+minus move scratchpad
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+#bindsym $mod+minus scratchpad show
+
 #
-### WORKSPACES ###
+# WORKSPACES
 #
 
 # Default is tiling, available: stacking|tabbed
@@ -219,11 +245,6 @@ bindsym $mod+Shift+8 move container to workspace number 8; workspace 8
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
 
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
-
-
 # Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
 mode "resize" {
@@ -259,13 +280,28 @@ bar {
 	status_command i3status-profilized
 	font pango: Iosevka, DejaVu Sans Mono, Cantarell, FontAwesome, Icons 12
 	colors {
-	separator #2ECC71
-		background #000000
-		statusline #DDDDDD
-		focused_workspace #FFFFFF #2ECC71 #000000
-		active_workspace #000000 #A4A28D #FFFFFF
-		inactive_workspace #A4A28D #000000 #DDDDDD
-		urgent_workspace #2ECC71 #900000 #FFFFFF
+		# THIS IS AN OLD COLOR SCHEME
+		# background #000000
+		# statusline #DDDDDD
+		# separator  #2ECC71
+
+		#                  border  backgr. text
+		# focused_workspace  #FFFFFF #2ECC71 #000000
+		# active_workspace   #000000 #A4A28D #FFFFFF
+		# inactive_workspace #A4A28D #000000 #DDDDDD
+		# urgent_workspace   #2ECC71 #900000 #FFFFFF
+
+		# background $transparent
+		background #2B2C2B
+		statusline #F9FAF9
+		separator  #454947
+
+		#                  border  backgr. text
+		focused_workspace  #F9FAF9 #16A085 #2B2C2B
+		active_workspace   #595B5B #353836 #FDF6E3
+		inactive_workspace #595B5B #353836 #EEE8D5
+		urgent_workspace   #16A085 #FDF6E3 #E5201D
+
 	}
 	separator_symbol " | "
 	tray_output primary
@@ -277,7 +313,7 @@ bar {
 
 # Launcher
 set $mode_launcher <span bgcolor='#2ECC71FF' fgcolor='#000000AA'>Launch: [f]irefox [t]hunderbird [c]hrome</span>
-bindsym $mod+z mode $mode_launcher
+#bindsym $mod+z mode $mode_launcher
 mode --pango_markup "$mode_launcher" {
 	bindsym f exec firefox, mode "default"
 	bindsym t exec thunderbird, mode "default"
@@ -308,37 +344,56 @@ mode "$mode_system" {
 #
 
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-#exec --no-startup-id nitrogen --restore
+#exec --no-startup-id nitrogen --restore; sleep 1; compton -b
+exec --no-startup-id compton -b
+
 # Network tray applet
 exec --no-startup-id nm-applet
+
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
+
 # exec_always --no-startup-id sbxkb
-exec --no-startup-id compton -b
-# exec --no-startup-id start_conky_grey
-exec --no-startup-id conky -c ~/.config/conky/monitor_green.conf
-exec --no-startup-id conky -c /usr/share/conky/conky1.10_shortcuts_green
+
+# Conky monitor & helper
+exec --no-startup-id conky -c ~/.config/conky/monitor_maia.conf
+exec --no-startup-id conky -c /usr/share/conky/conky1.10_shortcuts_maia
+
+# Autolocker
 exec --no-startup-id xautolock -time 10 -locker blurlock
 
 # Wallpaper
 exec --no-startup-id feh --bg-scale ~/Dropbox/Wallpapers/wp1.jpg
 
+#
 # Theme colors
-client.focused #2ECC71 #2ECC71 #000000 #FFFFFF
-client.unfocused #222222 #222222 #2ECC71 #222222
-client.urgent #274D01 #900000 #FFFFFF #900000
+#
+
+# THIS IS AN OLD THEME
+#client.focused #2ECC71 #2ECC71 #000000 #FFFFFF
+#client.unfocused #222222 #222222 #2ECC71 #222222
+#client.urgent #274D01 #900000 #FFFFFF #900000
+
+# class                 border  backgr. text    indic.  child_border
+client.focused          #16A085 #808280 #80FFF9 #FDF6E3
+client.focused_inactive #434745 #434745 #16A085 #454948
+client.unfocused        #434745 #434745 #16A085 #454948
+client.urgent           #CB4B16 #FDF6E3 #16A085 #268BD2
+client.placeholder      #000000 #0c0c0c #ffffff #000000 #0c0c0c
+client.background       #2B2C2B
 
 #############################
 ### settings for i3-gaps: ###
 #############################
 
 # Disable window titlebars entirely
-for_window [class="^.*"] border pixel 2
+#for_window [class="^.*"] border pixel 2
 
 # Set inner/outer gaps
 gaps inner 10
 gaps outer 0
+# gaps outer -4
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
