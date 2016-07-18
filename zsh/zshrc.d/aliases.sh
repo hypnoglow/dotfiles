@@ -28,6 +28,7 @@ alias -g G='| grep'
 
 alias cdd='cd $DOTFILES_ROOT'
 alias cdg='cd $GOPATH/src/github.com/hypnoglow'
+alias cdb='cd $SOURCES_ROOT/hypnoglow/manjaro-bootstrap'
 
 alias reload-zsh=". ~/.zshrc"
 alias reload-xresources="xrdb -load -quiet ~/.Xresources"
@@ -36,6 +37,10 @@ alias psa="ps aux"
 alias psg="ps aux | grep"
 
 alias dss="cdiff -s -w 0 -c auto HEAD"
+
+# Atom
+alias a="atom ."
+alias aa="atom -a ."
 
 #
 # Git
