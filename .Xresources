@@ -178,3 +178,9 @@ URxvt.keysym.M-C-space: perl:aAtt:fuzzy-complete
 #include ".Xresources.d/scheme.dark.tomorrow_night"
 !#include ".Xresources.d/scheme.dark.tomorrow_night_bright"
 !#include ".Xresources.d/scheme.dark.tomorrow_night_eighties"
+
+XTerm*background: #272827
+XTerm*foreground: #fdf6e3
+XTerm*reverseVideo: on
+XTerm*faceName: Terminus:size=11:antialias=true
+XTerm*selectToClipboard: true
