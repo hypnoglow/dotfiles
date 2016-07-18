@@ -82,6 +82,9 @@ atom.commands.add 'atom-text-editor', 'custom:swap': (event) ->
 atom.project.onDidChangePaths (projectPaths) ->
   {Task} = require 'atom'
 
+  # temporary disable
+  return
+
   for projectPath in  projectPaths
     console.log projectPath
     cmd = 'ctags'
