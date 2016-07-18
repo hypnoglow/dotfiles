@@ -1,4 +1,6 @@
 #!/bin/sh
+# WARNING! This file should not be executed directly.
+# Shebang here is for shellcheck.
 #
 # ~/.xinitrc
 #

@@ -43,6 +43,9 @@ if [ -z "${WS_PROFILE}" ]; then
         naos)
             WS_PROFILE="laptop"
         ;;
+        sirius)
+            WS_PROFILE="desktop"
+        ;;
     esac
     export WS_PROFILE
 fi
