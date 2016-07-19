@@ -60,7 +60,9 @@
   <template name="prof" value="protected function _$FUNCNAME$($PARAMS$)&#10;{&#10;    $END$&#10;}" description="protected function" toReformat="true" toShortenFQNames="true">
     <variable name="FUNCNAME" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="PARAMS" expression="" defaultValue="" alwaysStopAt="true" />
-    <context />
+    <context>
+      <option name="PHP Class Member" value="true" />
+    </context>
   </template>
   <template name="je" value="json_encode($VARIABLE$, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) . PHP_EOL" description="echo json_encode($var);" toReformat="true" toShortenFQNames="true">
     <variable name="VARIABLE" expression="" defaultValue="" alwaysStopAt="true" />
