@@ -11,6 +11,7 @@ workspace 8 output DVI-I-1
 # Assign applications to specific workspaces
 assign [class="Firefox"] 2
 assign [class="Pale moon"] 2
+assign [class="Atom"] 5
 assign [class="jetbrains-phpstorm"] 5
 assign [class="google-chrome"] 6
 assign [class="Thunderbird"] 7
@@ -26,3 +27,4 @@ exec --no-startup-id run-if-exists psi
 exec --no-startup-id run-if-exists dropbox-cli start
 exec --no-startup-id run-if-exists thunderbird
 exec --no-startup-id run-if-exists gitter
+exec --no-startup-id run-if-exists slack
