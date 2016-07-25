@@ -50,10 +50,15 @@ if [ -z "${WS_PROFILE}" ]; then
     export WS_PROFILE
 fi
 
-# This is to stop xdg-open from going to
-# infinite loop when trying to open an URL.
+
 # This variable is already exported.
-BROWSER=""
+if [ -x "$(which google-chrome-stable 2>/dev/null)" ]; then
+    BROWSER="$(which google-chrome-stable)"
+else
+    # This is to stop xdg-open from going to
+    # infinite loop when trying to open an URL.
+    BROWSER=""
+fi
 
 SOURCES_ROOT="${HOME}/sources"
 export SOURCES_ROOT
