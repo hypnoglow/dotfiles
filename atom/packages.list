@@ -1,7 +1,7 @@
-atom-beautify@0.29.9
+atom-beautify@0.29.10
 atom-easy-jsdoc@4.6.0
 atom-material-syntax@0.4.6
-atom-material-ui@1.2.13
+atom-material-ui@1.3.3
 atom-ternjs@0.14.2
 aural-coding@1.0.1
 autocomplete-go@1.1.0
@@ -14,7 +14,7 @@ dracula-ui@0.3.0
 emmet@2.4.3
 environment@1.2.0
 expand-region@0.2.4
-fonts@1.5.0
+fonts@1.6.0
 go-config@1.2.1
 go-get@1.0.3
 go-plus@4.1.0
@@ -27,9 +27,10 @@ language-docker@1.1.6
 language-dotfiles@0.4.1
 language-dots@0.0.4
 language-ejs@0.2.0
+language-pug@0.0.17
 language-rust@0.4.6
 language-tmux@0.4.0
-less-than-slash@0.13.0
+less-than-slash@0.16.0
 linter@1.11.14
 linter-coffeelint@1.1.2
 linter-csslint@1.3.2
@@ -40,15 +41,15 @@ linter-php@1.2.0
 linter-rust@0.4.6
 linter-shellcheck@1.2.0
 merge-conflicts@1.4.4
-minimap@4.24.6
+minimap@4.24.7
 minimap-git-diff@4.3.1
 navigator-godef@1.0.3
-pigments@0.31.1
+pigments@0.31.2
 rust-api-docs-helper@0.5.1
-script@3.7.3
+script@3.8.3
 scrolloff@0.1.2
 seti-syntax@1.0.1
-seti-ui@1.3.1
+seti-ui@1.3.2
 split-diff@1.0.3
 tester-go@1.0.4
 
