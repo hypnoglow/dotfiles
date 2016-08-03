@@ -107,7 +107,8 @@
   "linter-jshint": {}
   "linter-php": {}
   "linter-rust": {}
-  "linter-shellcheck": {}
+  "linter-shellcheck":
+    userParameters: "-e SC1090,SC2164"
   minimap:
     plugins:
       "git-diff": true
