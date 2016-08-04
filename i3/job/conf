@@ -11,7 +11,8 @@ workspace 8 output DVI-I-1
 # Assign applications to specific workspaces
 assign [class="Firefox"] 2
 assign [class="Pale moon"] 2
-assign [class="Atom"] 5
+assign [class="Slack"] 2
+#assign [class="Atom"] 5
 assign [class="jetbrains-phpstorm"] 5
 assign [class="google-chrome"] 6
 assign [class="Thunderbird"] 7
@@ -22,9 +23,9 @@ assign [class="Skype"] 7
 for_window [title=Gitter] move window to workspace 7
 
 # Startup applications
-exec --no-startup-id run-if-exists telegram -startintray
+exec --no-startup-id run-if-exists telegram-desktop -startintray
 exec --no-startup-id run-if-exists psi
 exec --no-startup-id run-if-exists dropbox-cli start
 exec --no-startup-id run-if-exists thunderbird
-exec --no-startup-id run-if-exists gitter
+#exec --no-startup-id run-if-exists gitter
 exec --no-startup-id run-if-exists slack
