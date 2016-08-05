@@ -365,7 +365,7 @@ exec --no-startup-id conky -c /usr/share/conky/conky1.10_shortcuts_maia
 exec --no-startup-id xautolock -time 10 -locker blurlock
 
 # Wallpaper
-exec --no-startup-id feh --bg-scale ~/Dropbox/Wallpapers/wp1.jpg
+exec --no-startup-id ~/bin/wallpaper
 
 #
 # Theme colors
