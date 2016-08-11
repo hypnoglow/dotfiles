@@ -29,8 +29,11 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 dot_logger_log "Loading ~/.xprofile"
 
 # Load display settings
-if [ -d "${HOME}/.autorandr/hypnoglow" ]; then
-    #TODO: rework profiles based on WS_PROFILE
+if [ -d "${HOME}/.autorandr/${WS_PROFILE}" ]; then
+    dot_logger_log "Loading display profile '${WS_PROFILE}'"
+    autorandr.sh --change --default ${WS_PROFILE}
+elif [ -d "${HOME}/.autorandr/hypnoglow" ]; then
+    dot_logger_log "Loading display profile 'hypnoglow'"
     autorandr.sh --change --default hypnoglow
 fi
 
