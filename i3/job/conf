@@ -29,3 +29,6 @@ exec --no-startup-id run-if-exists dropbox-cli start
 exec --no-startup-id run-if-exists thunderbird
 #exec --no-startup-id run-if-exists gitter
 exec --no-startup-id run-if-exists slack
+
+# Wallpaper
+exec --no-startup-id feh --bg-fill ~/Dropbox/Wallpapers/Current/arch-demon.jpg

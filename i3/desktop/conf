@@ -23,3 +23,6 @@ for_window [title=Gitter] move window to workspace 7
 
 # Startup applications
 exec --no-startup-id run-if-exists dropbox-cli start
+
+# Wallpaper
+exec --no-startup-id feh --bg-fill ~/Dropbox/Wallpapers/Current/arch-demon.jpg
