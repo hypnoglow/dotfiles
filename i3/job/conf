@@ -32,3 +32,10 @@ exec --no-startup-id run-if-exists slack
 
 # Wallpaper
 exec --no-startup-id feh --bg-fill ~/Dropbox/Wallpapers/Current/arch-demon.jpg
+
+# Quick Jump to specific window
+bindsym KP_1 exec i3-msg '[class="Firefox"] focus'
+bindsym KP_2 exec i3-msg '[class="google-chrome" title="Google Chrome$"] focus'
+bindsym KP_4 exec i3-msg '[class="jetbrains-phpstorm"] focus'
+bindsym KP_5 exec i3-msg '[class="Atom"] focus'
+bindsym KP_7 exec i3-msg '[class="Slack"] focus'
