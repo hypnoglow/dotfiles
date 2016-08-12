@@ -41,7 +41,7 @@ if [ -z "${WS_PROFILE}" ]; then
         rigel)
             WS_PROFILE="vm"
         ;;
-        vega)
+        vega|procyon)
             WS_PROFILE="job"
         ;;
         naos)
