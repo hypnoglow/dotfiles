@@ -37,7 +37,7 @@ fi
 # Workstation profile
 if [ -z "${WS_PROFILE}" ]; then
     WS_PROFILE="default"
-    case "$HOSTNAME" in
+    case "$(hostname)" in
         rigel)
             WS_PROFILE="vm"
         ;;
