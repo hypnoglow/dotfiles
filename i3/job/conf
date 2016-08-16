@@ -9,14 +9,14 @@ workspace 7 output DVI-I-1
 workspace 8 output DVI-I-1
 
 # Assign applications to specific workspaces
-assign [class="Firefox"] 2
-assign [class="Pale moon"] 2
-assign [class="Slack"] 2
 #assign [class="Atom"] 5
 assign [class="jetbrains-phpstorm"] 5
+assign [class="Pale moon"] 6
+assign [class="Firefox"] 6
 assign [class="google-chrome"] 6
+assign [class="Slack"] 7
 assign [class="Thunderbird"] 7
-assign [class="Telegram"] 7
+assign [class="Telegram|telegram-desktop"] 7
 assign [class="psi"] 7
 assign [class="Skype"] 7
 # Gitter currenlty has no WM_CLASS, so use this workaround:
@@ -39,3 +39,4 @@ bindsym KP_2 exec i3-msg '[class="google-chrome" title="Google Chrome$"] focus'
 bindsym KP_4 exec i3-msg '[class="jetbrains-phpstorm"] focus'
 bindsym KP_5 exec i3-msg '[class="Atom"] focus'
 bindsym KP_7 exec i3-msg '[class="Slack"] focus'
+bindsym KP_9 exec i3-msg '[class="Telegram|telegram-desktop"] focus'

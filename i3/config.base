@@ -57,6 +57,8 @@ for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
 for_window [class="com-intellij-updater-Runner"] floating enable
 for_window [class="jetbrains-phpstorm" title="Complete Installation"] floating enable
+for_window [class="Keybase" title="Pinentry|UnlockFolders"] floating enable
+for_window [class="Keybase" title="^tracker - "] floating enable
 
 # start a terminal
 bindsym $mod+Return exec terminal
