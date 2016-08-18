@@ -49,8 +49,6 @@
     visualforce: {}
     xml: {}
     xtemplate: {}
-  "atom-scrolloff":
-    scrolloff: 20
   "autocomplete-plus":
     backspaceTriggersAutocomplete: true
     fileBlacklist: [
@@ -124,6 +122,10 @@
   "tree-view": {}
   welcome:
     showOnStartup: false
+".coffee.source":
+  editor:
+    preferredLineLength: 80
+    tabLength: 4
 ".dots.source":
   editor:
     preferredLineLength: 80
@@ -146,6 +148,9 @@
   editor:
     tabLength: 4
 ".js.source":
+  editor:
+    tabLength: 4
+".litcoffee.source":
   editor:
     tabLength: 4
 ".shell-session.text":

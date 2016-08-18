@@ -74,6 +74,10 @@ atom.commands.add 'atom-text-editor', 'custom:swap': (event) ->
   nextCharPoint = new Point(cursorPoint.row, cursorPoint.column + 1)
   range = new Range(prevCharPoint, nextCharPoint)
   text = editor.getTextInBufferRange(range)
+
+  # Prevent swap if cursor is at the beginning or at the end of line.
+  return if text.length is 1
+
   text = text[1] + text[0]
   editor.setTextInBufferRange(range, text, {normalizeLineEndings: false})
   editor.setCursorBufferPosition(cursorPoint, {autoscroll: false})

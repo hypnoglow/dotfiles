@@ -88,6 +88,7 @@ backup = "$HOME/.dotfiles~"
 ".keynavrc" = ".keynavrc"
 ".mongorc.js" = ".mongorc.js"
 ".screenrc" = ".screenrc"
+"coffeelint.json" = "coffeelint.json"
 
 "i3" = ".i3"
 "conky" = ".config/conky"
