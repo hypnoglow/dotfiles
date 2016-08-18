@@ -102,6 +102,8 @@
   linter:
     errorPanelHeight: 88
     lintOnFlyInterval: 1000
+  "linter-eslint":
+    fixOnSave: true
   "linter-jshint": {}
   "linter-php": {}
   "linter-rust": {}
