@@ -3,6 +3,7 @@
     <variable name="table" expression="complete()" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="SQL" value="true" />
+      <option name="SQL" value="true" />
     </context>
   </template>
 </templateSet>

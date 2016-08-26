@@ -70,4 +70,16 @@
       <option name="PHP" value="true" />
     </context>
   </template>
+  <template name="elj" value="error_log(json_encode($VARIABLE$, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));&#10;" description="error_log(json_encode($var));" toReformat="true" toShortenFQNames="true">
+    <variable name="VARIABLE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="elv" value="error_log(var_dump($VARIABLE$, true));&#10;" description="error_log(var_dump($var, true));" toReformat="true" toShortenFQNames="true">
+    <variable name="VARIABLE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
 </templateSet>
