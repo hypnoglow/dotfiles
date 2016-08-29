@@ -1,2 +1,4 @@
 -Xms128m
 -Xmx750m
+-Dswing.aatext=true
+-Dawt.useSystemAAFontSettings=on
