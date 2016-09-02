@@ -37,6 +37,7 @@ if [ "$TERM" != "linux" ]; then
     zplug "zsh-users/zsh-autosuggestions"
 fi
 zplug "felixr/docker-zsh-completion"
+zplug "plugins/golang", from:oh-my-zsh
 
 if ! zplug check --verbose; then
   printf "Install zsh plugins? [y/N]: "
