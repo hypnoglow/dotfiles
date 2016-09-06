@@ -29,6 +29,11 @@ if [ -d "${HOME}/apps/bin" ] ; then
     pathf_prepend "${HOME}/apps/bin"
 fi
 
+# Composer global binaries
+if [ -d "${HOME}/.config/composer/vendor/bin" ] ; then
+    pathf_prepend "${HOME}/.config/composer/vendor/bin"
+fi
+
 # set PATH so it includes user's private bin if it exists
 if [ -d "${HOME}/bin" ] ; then
     pathf_prepend "${HOME}/bin"
