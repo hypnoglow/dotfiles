@@ -20,6 +20,7 @@ assign [class="Telegram|telegram-desktop"] 7
 assign [class="psi"] 7
 assign [class="Skype"] 7
 # Gitter currenlty has no WM_CLASS, so use this workaround:
+assign [title="Gitter"] 7
 for_window [title=Gitter] move window to workspace 7
 
 # Startup applications
@@ -29,9 +30,19 @@ exec --no-startup-id run-if-exists dropbox-cli start
 exec --no-startup-id feh --bg-fill ~/Dropbox/Wallpapers/Current/arch-demon.jpg
 
 # Quick Jump to specific window
-bindsym KP_1 exec i3-msg '[class="Firefox"] focus'
-bindsym KP_2 exec i3-msg '[class="google-chrome" title="Google Chrome$"] focus'
-bindsym KP_4 exec i3-msg '[class="jetbrains-phpstorm"] focus'
-bindsym KP_5 exec i3-msg '[class="Atom"] focus'
-bindsym KP_7 exec i3-msg '[class="Slack"] focus'
-bindsym KP_9 exec i3-msg '[class="Telegram|telegram-desktop"] focus'
+#bindsym KP_1 exec i3-msg '[class="Firefox"] focus'
+#bindsym KP_2 exec i3-msg '[class="google-chrome" title="Google Chrome$"] focus'
+#bindsym KP_4 exec i3-msg '[class="jetbrains-phpstorm"] focus'
+#bindsym KP_5 exec i3-msg '[class="Atom"] focus'
+#bindsym KP_7 exec i3-msg '[class="Slack"] focus'
+#bindsym KP_9 exec i3-msg '[class="Telegram|telegram-desktop"] focus'
+
+# Quick Switch to workspace
+bindsym KP_1 workspace number 1
+bindsym KP_2 workspace number 2
+bindsym KP_3 workspace number 3
+bindsym KP_4 workspace number 4
+bindsym KP_5 workspace number 5
+bindsym KP_6 workspace number 6
+bindsym KP_7 workspace number 7
+bindsym KP_8 workspace number 8
