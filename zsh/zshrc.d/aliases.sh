@@ -54,10 +54,12 @@ alias gdt="git difftool"
 # Docker
 #
 alias d="docker"
+alias dri="docker run -ti"
 alias dpa="docker ps -a"
+alias drmf="docker rm -f"
+
 alias dm="docker-machine"
-alias dme="docker-machine-env"
-docker-machine-env() { test -z "$1" && return 1 ; eval $(dm env $1) }
+alias dme="docker-machine env"
 
 #
 # Simple functions
