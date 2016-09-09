@@ -60,7 +60,6 @@ if [ -z "${WS_PROFILE}" ]; then
 fi
 
 
-# This variable is already exported.
 if [ -x "$(which google-chrome-stable 2>/dev/null)" ]; then
     BROWSER="$(which google-chrome-stable)"
 else
@@ -68,6 +67,7 @@ else
     # infinite loop when trying to open an URL.
     BROWSER=""
 fi
+export BROWSER
 
 SOURCES_ROOT="${HOME}/sources"
 export SOURCES_ROOT

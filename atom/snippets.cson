@@ -64,3 +64,6 @@
   'os.Exit()':
     'prefix': 'ex'
     'body': 'os.Exit($1)'
+  'package main':
+    'prefix': 'pm'
+    'body': 'package main\n\nfunc main() {\n\t$1\n}'

@@ -59,6 +59,7 @@ for_window [class="com-intellij-updater-Runner"] floating enable
 for_window [class="jetbrains-phpstorm" title="Complete Installation"] floating enable
 for_window [class="Keybase" title="Pinentry|UnlockFolders"] floating enable
 for_window [class="Keybase" title="^tracker - "] floating enable
+for_window [class="Thunderbird" title="Message Filters"] floating enable
 
 # start a terminal
 bindsym $mod+Return exec terminal
@@ -282,6 +283,7 @@ mode "resize" {
 bar {
 	mode dock
 	status_command i3status-profilized
+	#status_command i3blocks
 	font pango: Iosevka, DejaVu Sans Mono, Cantarell, FontAwesome, Icons 11
 	colors {
 		# THIS IS AN OLD COLOR SCHEME
