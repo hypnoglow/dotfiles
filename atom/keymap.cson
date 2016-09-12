@@ -28,6 +28,11 @@
 #'atom-workspace atom-text-editor':
 #  'ctrl-a': 'editor:move-to-first-character-of-line'
 
+'.platform-linux atom-text-editor':
+  # Golang binginds
+  'ctrl-b': 'golang:godef'
+  'ctrl-shift-B': 'golang:godef-return'
+
 '.platform-linux':
   'ctrl-p': 'fuzzy-finder:toggle-file-finder'
   'ctrl-b': 'fuzzy-finder:toggle-buffer-finder'
@@ -51,6 +56,7 @@
   # Requires 'expand-region' package
   'alt-up': 'expand-region:expand'
   'alt-down': 'expand-region:shrink'
+
 
 # TODO: ctrl-t and ctrl-p are the same
 
