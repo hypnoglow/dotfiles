@@ -31,6 +31,7 @@ alias cdg='cd $GOPATH/src/github.com/hypnoglow'
 alias cdb='cd $SOURCES_ROOT/hypnoglow/manjaro-bootstrap'
 alias cds='cd $SOURCES_ROOT/hypnoglow'
 
+alias bootstrap='(cdb && ./bootstrap ${WS_PROFILE})'
 alias reload-zsh=". ~/.zshrc"
 alias reload-xresources="xrdb -load -quiet ~/.Xresources"
 
