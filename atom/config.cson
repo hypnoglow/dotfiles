@@ -77,8 +77,8 @@
       "fuzzy-finder"
     ]
     themes: [
-      "dracula-ui"
-      "dracula-theme"
+      "atom-material-ui"
+      "atom-material-syntax"
     ]
   editor:
     autoIndentOnPaste: false
@@ -121,6 +121,7 @@
     enableBackgroundResolving: false
   scrolloff:
     verticalMargin: 8
+  "split-diff": {}
   "tree-view": {}
   welcome:
     showOnStartup: false
