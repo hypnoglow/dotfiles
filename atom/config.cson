@@ -63,6 +63,7 @@
       "linter-csslint"
       "js-hyperclick"
       "emmet"
+      "atom-easy-jsdoc"
     ]
     ignoredNames: [
       ".git"
