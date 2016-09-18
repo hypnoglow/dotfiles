@@ -19,12 +19,16 @@ alias du2='du -d 2'
 alias tf='tail -f'
 alias 1='watch -n1'
 
+alias ccat='grep -v -e "^#" -e "^$"t'
+
 alias -g C='| wc -l'
 alias -g H='| head'
 alias -g T='| tail'
 alias -g L='| less'
 alias -g S='| sort'
 alias -g G='| grep'
+alias -g N1='| cat -n'
+alias -g N2='| cat -b'
 
 alias cdd='cd $DOTFILES_ROOT'
 alias cdg='cd $GOPATH/src/github.com/hypnoglow'
