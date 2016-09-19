@@ -20,8 +20,8 @@ assign [class="Telegram|telegram-desktop"] 7
 assign [class="psi"] 7
 assign [class="Skype"] 7
 # Gitter currenlty has no WM_CLASS, so use this workaround:
-assign [title="Gitter"] 7
-for_window [title=Gitter] move window to workspace 7
+assign [title="^Gitter$"] 7
+for_window [title="^Gitter$"] move window to workspace 7
 
 # Startup applications
 exec --no-startup-id run-if-exists dropbox-cli start
