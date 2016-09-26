@@ -49,6 +49,9 @@
     visualforce: {}
     xml: {}
     xtemplate: {}
+  "atom-easy-jsdoc":
+    contextMenu:
+      addAJSDocComment: false
   "autocomplete-plus":
     backspaceTriggersAutocomplete: true
     fileBlacklist: [
@@ -100,8 +103,10 @@
   "fuzzy-finder": {}
   gofmt: {}
   "js-hyperclick": {}
+  "language-archlinux":
+    checkPKGBUILDOnSave: true
   linter:
-    errorPanelHeight: 88
+    errorPanelHeight: 99
     lintOnFlyInterval: 1000
   "linter-eslint":
     fixOnSave: true
@@ -155,6 +160,9 @@
   editor:
     tabLength: 4
 ".litcoffee.source":
+  editor:
+    tabLength: 4
+".raml.source":
   editor:
     tabLength: 4
 ".shell-session.text":

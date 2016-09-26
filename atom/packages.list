@@ -25,6 +25,7 @@ gometalinter-linter@1.1.1
 gorename@1.0.3
 hyperclick@0.0.37
 js-hyperclick@1.4.2
+language-archlinux@0.9.1
 language-docker@1.1.7
 language-dotfiles@0.4.1
 language-dots@0.0.4
@@ -47,6 +48,7 @@ minimap@4.24.7
 minimap-git-diff@4.3.1
 navigator-godef@1.0.4
 pigments@0.34.0
+raml@0.2.0
 rust-api-docs-helper@0.5.1
 script@3.9.0
 scrolloff@0.1.2
