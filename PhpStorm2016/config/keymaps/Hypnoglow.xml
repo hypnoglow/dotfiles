@@ -4,6 +4,7 @@
     <keyboard-shortcut first-keystroke="ctrl alt q" />
     <keyboard-shortcut first-keystroke="ctrl w" />
   </action>
+  <action id="CompareTwoFiles" />
   <action id="EditorCloneCaretAbove">
     <keyboard-shortcut first-keystroke="shift alt k" />
   </action>
