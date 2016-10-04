@@ -94,6 +94,5 @@ backup = "$HOME/.dotfiles~"
 "i3" = ".i3"
 "conky" = ".config/conky"
 "i3-scrot.conf" = ".config/i3-scrot.conf"
-"i3blocks.conf" = ".i3blocks.conf"
 
 ".ctags" = ".ctags"
