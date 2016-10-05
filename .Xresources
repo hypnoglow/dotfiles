@@ -175,9 +175,9 @@ URxvt.keysym.M-C-space: perl:aAtt:fuzzy-complete
 *.background: [62]#000000
 *.foreground:     #FFFFFF
 
-#include ".Xresources.d/scheme.dark.tomorrow_night"
-!#include ".Xresources.d/scheme.dark.tomorrow_night_bright"
-!#include ".Xresources.d/scheme.dark.tomorrow_night_eighties"
+! #include ".Xresources.d/scheme.dark.tomorrow_night"
+! #include ".Xresources.d/scheme.dark.tomorrow_night_bright"
+#include ".Xresources.d/scheme.dark.tomorrow_night_eighties"
 
 XTerm*background: #272827
 XTerm*foreground: #fdf6e3

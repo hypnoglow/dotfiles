@@ -49,6 +49,6 @@
 *.color7:       t_selection
 *.color15:      t_current_line
 
-URxvt*borderColor:    [75]t_current_line
+URxvt*borderColor:    t_background
 URxvt*externalBorder: 0
-URxvt*internalBorder: 8
+URxvt*internalBorder: 2
