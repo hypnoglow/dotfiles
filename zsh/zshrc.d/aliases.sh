@@ -54,6 +54,7 @@ alias aa="atom -a ."
 alias gst="git status"
 alias gcb="git checkout -b"
 alias gdt="git difftool"
+alias gpf="git push --force-with-lease"
 
 #
 # Docker
@@ -65,6 +66,8 @@ alias drmf="docker rm -f"
 
 alias dm="docker-machine"
 alias dme="docker-machine env"
+
+alias dc="docker-compose"
 
 #
 # Simple functions
