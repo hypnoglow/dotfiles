@@ -69,6 +69,8 @@ bindsym $mod+Return exec terminal
 bindsym $mod+Shift+q kill
 
 # start program launcher
+bindsym $mod+p exec rofi -show combi
+bindsym $mod+c exec rofi -show window
 bindsym $mod+d exec --no-startup-id dmenu_recency
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
