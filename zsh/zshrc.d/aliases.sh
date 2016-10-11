@@ -64,6 +64,13 @@ alias dri="docker run -ti"
 alias dpa="docker ps -a"
 alias drmf="docker rm -f"
 
+alias dvl="docker volume ls"
+alias dvc="docker volume create"
+alias dvi="docker volume inspect"
+
+alias docker-clean-containers='docker ps --filter "status=Exited" -a -q | xargs docker rm'
+alias docker-clean-images='docker images --filter "dangling=true" -q | xargs docker rmi'
+
 alias dm="docker-machine"
 alias dme="docker-machine env"
 
