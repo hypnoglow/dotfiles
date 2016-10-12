@@ -10,7 +10,12 @@ fi
 # 1 argument. Split repo path to directory path
 
 url="$1"
-url_without_suffix="${url%.*}"
+
+url_without_suffix="$url"
+if [[ "$url" =~ (.git)$ ]]; then
+    url_without_suffix="${url%.*}"
+fi
+
 reponame="$(basename "${url_without_suffix}")"
 hostname="$(basename "${url_without_suffix%/${reponame}}")"
 
