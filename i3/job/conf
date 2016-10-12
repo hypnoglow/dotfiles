@@ -10,7 +10,7 @@ workspace 8 output DVI-I-1
 
 # Assign applications to specific workspaces
 #assign [class="Atom"] 5
-assign [class="jetbrains-phpstorm"] 5
+#assign [class="jetbrains-phpstorm"] 5
 assign [class="Pale moon"] 6
 assign [class="Firefox"] 6
 assign [class="google-chrome"] 6
