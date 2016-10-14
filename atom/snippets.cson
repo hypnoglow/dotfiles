@@ -67,3 +67,6 @@
   'package main':
     'prefix': 'pm'
     'body': 'package main\n\nfunc main() {\n\t$1\n}'
+  'fmt.Fscanf()':
+    'prefix': 'fsc'
+    'body': 'fmt.Scanf("%$1", $2)'

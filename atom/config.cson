@@ -60,6 +60,10 @@
     ]
     minimumWordLength: 2
   core:
+    autoHideMenuBar: true
+    automaticallyUpdate: false
+    closeEmptyWindows: false
+    destroyEmptyPanes: false
     disabledPackages: [
       "linter-php"
       "fonts"
@@ -80,10 +84,12 @@
     packagesWithKeymapsDisabled: [
       "fuzzy-finder"
     ]
+    telemetryConsent: "limited"
     themes: [
       "atom-material-ui"
       "atom-material-syntax"
     ]
+    warnOnLargeFileLimit: 8
   editor:
     autoIndentOnPaste: false
     backUpBeforeSaving: true
@@ -174,3 +180,6 @@
 ".source.tmux":
   editor:
     tabLength: 4
+".source.yaml":
+  editor:
+    tabLength: 2
