@@ -366,7 +366,7 @@ exec --no-startup-id clipit
 
 # Conky monitor & helper
 exec --no-startup-id conky -c ~/.config/conky/monitor_maia.conf
-exec --no-startup-id conky -c /usr/share/conky/conky1.10_shortcuts_maia
+#exec --no-startup-id conky -c /usr/share/conky/conky1.10_shortcuts_maia
 
 # Autolocker
 exec --no-startup-id xautolock -time 10 -locker blurlock
