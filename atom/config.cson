@@ -1,4 +1,7 @@
 "*":
+  Zen:
+    gutter: true
+    width: 160
   "atom-beautify":
     apex: {}
     arduino: {}
@@ -97,6 +100,7 @@
     fontSize: 16
     invisibles: {}
     lineHeight: 1.25
+    scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
     tabLength: 4
