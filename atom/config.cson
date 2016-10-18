@@ -68,12 +68,13 @@
     closeEmptyWindows: false
     destroyEmptyPanes: false
     disabledPackages: [
-      "linter-php"
       "fonts"
       "linter-csslint"
       "js-hyperclick"
       "emmet"
       "atom-easy-jsdoc"
+      "aural-coding"
+      "atom-ternjs"
     ]
     ignoredNames: [
       ".git"
@@ -184,6 +185,3 @@
 ".source.tmux":
   editor:
     tabLength: 4
-".source.yaml":
-  editor:
-    tabLength: 2

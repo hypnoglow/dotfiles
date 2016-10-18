@@ -13,7 +13,6 @@ dockerletion@0.2.0
 dracula-theme@1.2.8
 dracula-ui@0.3.0
 emmet@2.4.3
-environment@1.2.0
 expand-region@0.2.4
 fonts@1.6.0
 go-config@1.2.4
@@ -41,7 +40,6 @@ linter-csslint@1.3.3
 linter-docker@0.1.2
 linter-eslint@7.3.2
 linter-jsonlint@1.3.0
-linter-php@1.2.0
 linter-rust@0.5.6
 linter-shellcheck@1.4.1
 merge-conflicts@1.4.4
@@ -50,7 +48,6 @@ minimap-git-diff@4.3.1
 navigator-godef@1.1.0
 pigments@0.35.2
 raml@0.2.0
-rust-api-docs-helper@0.5.1
 script@3.10.1
 scrolloff@0.1.2
 seti-syntax@1.0.1
