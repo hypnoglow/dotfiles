@@ -1,0 +1,7 @@
+<templateSet group="Go">
+  <template name="lfe" value="log.Fatalln(err)" description="log.Fatalln(err)" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GO" value="true" />
+    </context>
+  </template>
+</templateSet>

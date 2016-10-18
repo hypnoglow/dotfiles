@@ -70,3 +70,6 @@
   'fmt.Fscanf()':
     'prefix': 'fsc'
     'body': 'fmt.Scanf("%$1", $2)'
+  'fmt.Errorf()':
+    'prefix': 'fe'
+    'body': 'fmt.Errorf($1)'
