@@ -3,6 +3,10 @@
 # This script simply runs command if it exists.
 # This is used for example in i3 config when executing startup applications.
 
-if [ -x "$(which $1 2>/dev/null)" ]; then
-    exec "$@"
+cmd="$(which $1 2>/dev/null)"
+
+if [ ! -x "$cmd" ]; then
+    exit 1
 fi
+
+exec "$@"
