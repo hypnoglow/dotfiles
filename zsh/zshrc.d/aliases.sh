@@ -52,9 +52,10 @@ alias aa="atom -a ."
 # Git
 #
 alias gst="git status"
-alias gcb="git checkout -b"
 alias gdt="git difftool"
 alias gpf="git push --force-with-lease"
+alias gcx="git commit --amend --reset-author --no-edit"
+alias gtr="git log --graph --all --date=relative --pretty=format:'%Cred%h %Creset%<|(50,trunc)%s %C(bold blue)<%an>%Creset %Cgreen(%cd)%Creset%C(auto)%d'"
 
 #
 # Docker

@@ -98,5 +98,6 @@
   </action>
   <action id="ToggleDistractionFreeMode">
     <keyboard-shortcut first-keystroke="alt f5" />
+    <keyboard-shortcut first-keystroke="shift ctrl f11" />
   </action>
 </keymap>
