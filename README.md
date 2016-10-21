@@ -1,6 +1,6 @@
 # .files
 
-These are mine dotfiles. \o/ :metal:
+My dotfiles. \o/ :metal:
 
 If you barely understand what it is, or if you want an in-depth tutorial about organizing your dotfiles,
 see [this post](https://medium.com/@webprolific/getting-started-with-dotfiles-43c3602fd789#.j9vtwid73) as an example.
@@ -15,10 +15,7 @@ See that repository for an easy way to install dotfiles.
 
 Installation commands:
 
-    export $GOPATH="$HOME/go"
+    yaourt -S dotbro --noconfirm
     export $DOTFILES_ROOT="$HOME/sources/hypnoglow/dotfiles"
-    go get github.com/hypnoglow/dotbro
     git clone https://github.com/hypnoglow/dotfiles "$DOTFILES_ROOT"
-    ~/go/bin/dotbro -c $DOTFIELS_ROOT/dotbro.toml
-
-
+    dotbro -c $DOTFIELS_ROOT/dotbro.toml
