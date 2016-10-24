@@ -111,6 +111,8 @@
     fontFamily: "Iosevka"
     preview: "[Hello, world!] {Привет, как дела?}"
   "fuzzy-finder": {}
+  "go-plus":
+    panelDisplayMode: "closed"
   gofmt: {}
   "js-hyperclick": {}
   "language-archlinux":
