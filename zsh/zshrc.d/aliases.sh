@@ -81,6 +81,11 @@ alias dc="docker-compose"
 # Simple functions
 #
 
+unzipr() {
+    [ -z "$1" ] && echo "Directory not specified." && return 1
+    find "$1" -type f -name '*.zip' -print0 | xargs -P 5 -I fileName sh -c 'unzip -o -d "$(dirname "fileName")/$(basename -s .zip "fileName")" "fileName"'
+}
+
 fnd() {
     [ -z "$1" ] && echo "Pattern not specified." && return 1
     ls **/*$1*
