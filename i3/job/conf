@@ -13,7 +13,7 @@ workspace 8 output DVI-I-1
 #assign [class="jetbrains-phpstorm"] 5
 assign [class="Pale moon"] 6
 assign [class="Firefox"] 6
-assign [class="google-chrome"] 6
+assign [class="(?i)google-chrome"] 6
 assign [class="Slack"] 7
 assign [class="Thunderbird"] 7
 assign [class="Telegram|telegram-desktop"] 7
