@@ -33,13 +33,13 @@ super+bracketleft end
 #
 
 q cell-select 1x1
-w cell-select 1x2
-e cell-select 1x3
-a cell-select 2x1
+w cell-select 2x1
+e cell-select 3x1
+a cell-select 1x2
 s cell-select 2x2
-d cell-select 2x3
-z cell-select 3x1
-x cell-select 3x3
+d cell-select 3x2
+z cell-select 1x3
+x cell-select 2x3
 c cell-select 3x3
 
 ###
