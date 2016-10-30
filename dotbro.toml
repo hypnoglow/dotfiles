@@ -46,13 +46,7 @@ backup = "$HOME/.dotfiles~"
 # Editors
 #
 
-# PhpStorm 10
-"WebIde100/config/colors" = ".WebIde100/config/colors"
-"WebIde100/config/codestyles" = ".WebIde100/config/codestyles"
-"WebIde100/config/keymaps" = ".WebIde100/config/keymaps"
-"WebIde100/config/options" = ".WebIde100/config/options"
-"WebIde100/config/templates" = ".WebIde100/config/templates"
-"WebIde100/phpstorm64.vmoptions" = ".WebIde100/phpstorm64.vmoptions"
+# PhpStorm
 "PhpStorm2016/config/colors" = ".PhpStorm2016.2/config/colors"
 "PhpStorm2016/config/codestyles" = ".PhpStorm2016.2/config/codestyles"
 "PhpStorm2016/config/keymaps" = ".PhpStorm2016.2/config/keymaps"
