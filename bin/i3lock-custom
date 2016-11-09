@@ -1,0 +1,27 @@
+#!/bin/bash
+
+current_layout=$(xkb-switch -p)
+current_sound="unmute"
+if amixer -D default get Master | tail -n1 | grep -q '\[off\]'; then
+    current_sound="mute"
+fi
+
+before() {
+    xkb-switch -s us
+    amixer -q -D default set Master mute
+}
+
+after() {
+    xkb-switch -s ${current_layout}
+    amixer -q -D default set Master ${current_sound}
+}
+
+import -window root /tmp/screenshot.png
+convert /tmp/screenshot.png -blur 0x5 /tmp/screenshotblur.png
+rm /tmp/screenshot.png
+
+trap after SIGHUP SIGINT SIGTERM
+
+before
+i3lock -n -i /tmp/screenshotblur.png
+after
