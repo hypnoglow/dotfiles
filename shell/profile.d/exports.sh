@@ -13,6 +13,11 @@ if [ -x "$(which go 2>/dev/null)" ]; then
     pathf_prepend "${GOPATH}/bin"
 fi
 
+# Rust binaries path
+if [ -x "$(which cargo 2>/dev/null)" ] ; then
+    pathf_prepend "${HOME}/.cargo/bin"
+fi
+
 # n - Node.js version manager (see http://git.io/n-install-repo)
 if [ -d "${HOME}/apps/n" ] ; then
     export N_PREFIX="${HOME}/apps/n";
