@@ -54,6 +54,7 @@ backup = "$HOME/.dotfiles~"
 "PhpStorm2016/config/templates" = ".PhpStorm2016.2/config/templates"
 "PhpStorm2016/phpstorm64.vmoptions" = ".PhpStorm2016.2/phpstorm64.vmoptions"
 "PhpStorm2016/idea.properties" = ".PhpStorm2016.2/idea.properties"
+"PhpStorm2016/watchers.xml" = ".PhpStorm2016.2/watchers.xml"
 
 # Atom
 "atom/config.cson" = ".atom/config.cson"
