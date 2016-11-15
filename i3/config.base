@@ -285,7 +285,7 @@ mode "resize" {
 bar {
 	mode dock
 	#status_command i3status-profilized
-	status_command i3blocks -c ~/.i3/i3blocks.conf
+	status_command i3blocks-profilized
 	font pango: Iosevka, DejaVu Sans Mono, Cantarell, FontAwesome, Icons 11
 	colors {
 		# THIS IS AN OLD COLOR SCHEME

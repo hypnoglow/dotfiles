@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+# Runs i3blocks with workstation profile config.
+
+if [ -z "${WS_PROFILE}" ]; then
+    exec i3blocks -c ${HOME}/.i3/i3blocks.conf
+elif [ ! -r "${HOME}/.i3/${WS_PROFILE}/i3blocks.conf" ]; then
+    exec i3blocks -c ${HOME}/.i3/i3blocks.conf
+else
+    exec i3blocks -c ${HOME}/.i3/${WS_PROFILE}/i3blocks.conf
+fi
