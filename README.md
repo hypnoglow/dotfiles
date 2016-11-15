@@ -16,6 +16,6 @@ See that repository for an easy way to install dotfiles.
 Installation commands:
 
     yaourt -S dotbro --noconfirm
-    export $DOTFILES_ROOT="$HOME/sources/hypnoglow/dotfiles"
+    export DOTFILES_ROOT="$HOME/sources/hypnoglow/dotfiles"
     git clone https://github.com/hypnoglow/dotfiles "$DOTFILES_ROOT"
-    dotbro -c $DOTFIELS_ROOT/dotbro.toml
+    dotbro -c $DOTFILES_ROOT/dotbro.toml

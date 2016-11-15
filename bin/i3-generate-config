@@ -36,6 +36,11 @@ for filename in "${i3_dir}/config.base" "${i3_dir}/${workstation_name}/"*; do
         continue
     fi
 
+    # TODO: refactor to more elegant solution
+    if [ "$(basename ${filename})" = "i3blocks.conf" ]; then
+        continue
+    fi
+
     echo "### --- ${filename#$(dirname ${i3_dir})/*} --- ###"
     cat "${filename}"
 done > "${i3_dir}/config"
