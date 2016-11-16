@@ -19,6 +19,9 @@ alias du2='du -d 2'
 alias tf='tail -f'
 alias 1='watch -n1'
 
+alias wfl='nmcli device wifi list'
+alias wfc='nmcli device wifi con'
+
 alias ccat='grep -v -e "^#" -e "^$"t'
 
 alias -g C='| wc -l'
