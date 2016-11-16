@@ -74,6 +74,7 @@ alias dvi="docker volume inspect"
 
 alias docker-clean-containers='docker ps --filter "status=Exited" -a -q | xargs docker rm'
 alias docker-clean-images='docker images --filter "dangling=true" -q | xargs docker rmi'
+alias docker-clean-volumes='docker volume ls --filter dangling=true | xargs docker volume rm'
 
 alias dm="docker-machine"
 alias dme="docker-machine env"
