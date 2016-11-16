@@ -81,6 +81,12 @@ alias dme="docker-machine env"
 alias dc="docker-compose"
 
 #
+# Go tools
+#
+alias goml='gometalinter --concurrency=1 --deadline=30s ./...'
+alias gocov='go-carpet -256colors | less -R'
+
+#
 # Simple functions
 #
 
