@@ -67,13 +67,7 @@
     automaticallyUpdate: false
     closeEmptyWindows: false
     disabledPackages: [
-      "fonts"
-      "linter-csslint"
-      "js-hyperclick"
       "emmet"
-      "atom-easy-jsdoc"
-      "aural-coding"
-      "atom-ternjs"
     ]
     ignoredNames: [
       ".git"
