@@ -8,6 +8,9 @@ mapkey('<Ctrl-y>', 'Show me the money', function() {
 
 mapkey('u', '#2Scroll a page up', 'Normal.scroll("pageUp")', {repeatIgnore: true});
 
+mapkey('J', '#3Go one tab left', 'RUNTIME("previousTab")');
+mapkey('K', '#3Go one tab right', 'RUNTIME("nextTab")');
+
 // an example to remove mapkey `Ctrl-i`
 unmap('<Ctrl-i>');
 
