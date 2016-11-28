@@ -47,14 +47,14 @@ backup = "$HOME/.dotfiles~"
 #
 
 # PhpStorm
-"PhpStorm2016/config/colors" = ".PhpStorm2016.2/config/colors"
-"PhpStorm2016/config/codestyles" = ".PhpStorm2016.2/config/codestyles"
-"PhpStorm2016/config/keymaps" = ".PhpStorm2016.2/config/keymaps"
-"PhpStorm2016/config/options" = ".PhpStorm2016.2/config/options"
-"PhpStorm2016/config/templates" = ".PhpStorm2016.2/config/templates"
-"PhpStorm2016/phpstorm64.vmoptions" = ".PhpStorm2016.2/phpstorm64.vmoptions"
-"PhpStorm2016/idea.properties" = ".PhpStorm2016.2/idea.properties"
-"PhpStorm2016/watchers.xml" = ".PhpStorm2016.2/watchers.xml"
+"PhpStorm2016/config/colors" = ".PhpStorm2016.3/config/colors"
+"PhpStorm2016/config/codestyles" = ".PhpStorm2016.3/config/codestyles"
+"PhpStorm2016/config/keymaps" = ".PhpStorm2016.3/config/keymaps"
+"PhpStorm2016/config/options" = ".PhpStorm2016.3/config/options"
+"PhpStorm2016/config/templates" = ".PhpStorm2016.3/config/templates"
+"PhpStorm2016/phpstorm64.vmoptions" = ".PhpStorm2016.3/phpstorm64.vmoptions"
+"PhpStorm2016/idea.properties" = ".PhpStorm2016.3/idea.properties"
+"PhpStorm2016/watchers.xml" = ".PhpStorm2016.3/watchers.xml"
 
 # Atom
 "atom/config.cson" = ".atom/config.cson"
