@@ -86,6 +86,8 @@ alias dc="docker-compose"
 #
 alias goml='gometalinter --concurrency=1 --deadline=30s ./...'
 alias gocov='go-carpet -256colors | less -R'
+alias gofw='goimports -local ${PWD##$GOPATH/src/} -l -w .'
+alias gofd='goimports -local ${PWD##$GOPATH/src/} -l -d .'
 
 #
 # Simple functions
