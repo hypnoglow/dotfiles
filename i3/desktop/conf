@@ -40,10 +40,19 @@ exec --no-startup-id feh --bg-fill ~/Dropbox/Wallpapers/Current/arch-demon.jpg
 
 # Quick Switch to workspace
 bindsym KP_1 workspace number 1
+bindsym KP_End workspace number 1
 bindsym KP_2 workspace number 2
+bindsym KP_Down workspace number 2
 bindsym KP_3 workspace number 3
+bindsym KP_Next workspace number 3
 bindsym KP_4 workspace number 4
+bindsym KP_Left workspace number 4
 bindsym KP_5 workspace number 5
+bindsym KP_Begin workspace number 5
 bindsym KP_6 workspace number 6
+bindsym KP_Right workspace number 6
 bindsym KP_7 workspace number 7
+bindsym KP_Home workspace number 7
 bindsym KP_8 workspace number 8
+bindsym KP_Up workspace number 8
+#bindsym KP_Prior
