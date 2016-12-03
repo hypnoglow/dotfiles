@@ -59,6 +59,7 @@ alias gdt="git difftool"
 alias gpf="git push --force-with-lease"
 alias gcx="git commit --amend --reset-author --no-edit"
 alias gtr="git log --graph --all --date=relative --pretty=format:'%Cred%h %Creset%<|(50,trunc)%s %C(bold blue)<%an>%Creset %Cgreen(%cd)%Creset%C(auto)%d'"
+alias git-clean-merged-branches='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d'
 
 #
 # Docker
@@ -85,7 +86,11 @@ alias dc="docker-compose"
 # Go tools
 #
 alias goml='gometalinter --concurrency=1 --deadline=30s ./...'
-alias gocov='go-carpet -256colors | less -R'
+gocov() {
+    go-carpet "$@" | less -R
+}
+alias gocoh='go test -coverprofile cover.out && go tool cover -html=cover.out'
+alias gocof='go test -coverprofile cover.out && go tool cover -func=cover.out'
 alias gofw='goimports -local ${PWD##$GOPATH/src/} -l -w .'
 alias gofd='goimports -local ${PWD##$GOPATH/src/} -l -d .'
 
