@@ -55,6 +55,7 @@
   "atom-easy-jsdoc":
     contextMenu:
       addAJSDocComment: false
+  "autocomplete-go": {}
   "autocomplete-plus":
     backspaceTriggersAutocomplete: true
     fileBlacklist: [
@@ -68,6 +69,7 @@
     closeEmptyWindows: false
     disabledPackages: [
       "emmet"
+      "go-debug"
     ]
     ignoredNames: [
       ".git"
@@ -80,11 +82,12 @@
     ]
     packagesWithKeymapsDisabled: [
       "fuzzy-finder"
+      "go-debug"
     ]
     telemetryConsent: "limited"
     themes: [
-      "atom-material-ui"
-      "atom-material-syntax"
+      "atom-dark-ui"
+      "atom-dark-syntax"
     ]
     warnOnLargeFileLimit: 8
   editor:
@@ -109,6 +112,21 @@
   "go-plus":
     panelDisplayMode: "closed"
   gofmt: {}
+  "gometalinter-linter":
+    args: [
+      "--concurrency=1"
+      "--deadline=30s"
+      "--vendor"
+      "--disable-all"
+      "--enable=vet"
+      "--enable=vetshadow"
+      "--enable=golint"
+      "--enable=ineffassign"
+      "--enable=goconst"
+      "--tests"
+      "--json"
+      "."
+    ]
   "js-hyperclick": {}
   "language-archlinux":
     checkPKGBUILDOnSave: true
@@ -134,7 +152,11 @@
     enableBackgroundResolving: false
   scrolloff:
     verticalMargin: 8
+  "seti-syntax": {}
+  "seti-ui": {}
   "split-diff": {}
+  "tester-go":
+    coverageHighlightMode: "covered-and-uncovered"
   "tree-view": {}
   welcome:
     showOnStartup: false
