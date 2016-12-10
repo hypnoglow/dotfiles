@@ -75,7 +75,7 @@
     'body': 'fmt.Errorf($1)'
   'fmt.Debug()':
     'prefix': 'fpd'
-    'body': 'fmt.Printf("@@@ DEBUG @@@ : %#v\\n", $1)'
+    'body': 'fmt.Printf("@@@ DEBUG @@@ : %#v\\\\n", $1)'
   'json':
     'prefix': 'json'
     'body': '`json:"$1"`'
