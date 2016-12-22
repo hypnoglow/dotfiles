@@ -32,6 +32,9 @@
   # Golang binginds
   'ctrl-b': 'golang:godef'
   'ctrl-shift-B': 'golang:godef-return'
+  'ctrl-t d': 'go-guru:describe'
+  'ctrl-t c': 'go-guru:callers'
+  'ctrl-t r': 'golang:gorename'
 
 '.platform-linux':
   'ctrl-p': 'fuzzy-finder:toggle-file-finder'
