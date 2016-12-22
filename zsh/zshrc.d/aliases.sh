@@ -11,6 +11,7 @@ alias free="free -m"
 #
 # Shortcuts
 #
+alias als='less ${HOME}/.zshrc.d/aliases.sh'
 alias h='history'
 alias cb='xclip -selection clipboard'
 alias tarls='tar t --exclude="*/*" -f'
