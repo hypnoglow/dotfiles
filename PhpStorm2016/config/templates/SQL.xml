@@ -1,9 +1,6 @@
 <templateSet group="SQL">
   <template name="sel" value="select * from $table$;" description="select all rows from a table" toReformat="true" toShortenFQNames="false">
     <variable name="table" expression="complete()" defaultValue="" alwaysStopAt="true" />
-    <context>
-      <option name="SQL" value="true" />
-      <option name="SQL" value="true" />
-    </context>
+    <context />
   </template>
 </templateSet>
