@@ -5,6 +5,12 @@
 !/PhpStorm2016/config/options/keymap.xml
 !/PhpStorm2016/config/options/editor.xml
 
+# gogland excludes
+/Gogland/config/options/*
+!/Gogland/config/options/colors.scheme.xml
+!/Gogland/config/options/editor.codeinsight.xml
+!/Gogland/config/options/keymap.xml
+
 # i3 config is generated dynamically
 /i3/config
 

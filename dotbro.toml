@@ -59,6 +59,16 @@ backup = "$HOME/.dotfiles~"
 "PhpStorm2016/idea.properties" = ".PhpStorm2016.3/idea.properties"
 "PhpStorm2016/watchers.xml" = ".PhpStorm2016.3/watchers.xml"
 
+# Gogland
+"Gogland/config/colors" = ".Gogland1.0/config/colors"
+"Gogland/config/keymaps" = ".Gogland1.0/config/keymaps"
+"Gogland/config/options/colors.scheme.xml" = ".Gogland1.0/config/options/colors.scheme.xml"
+"Gogland/config/options/editor.codeinsight.xml" = ".Gogland1.0/config/options/editor.codeinsight.xml"
+"Gogland/config/options/keymap.xml" = ".Gogland1.0/config/options/keymap.xml"
+"Gogland/config/templates" = ".Gogland1.0/config/templates"
+"Gogland/gogland64.vmoptions" = ".Gogland1.0/gogland64.vmoptions"
+"Gogland/idea.properties" = ".Gogland1.0/idea.properties"
+
 # Atom
 "atom/config.cson" = ".atom/config.cson"
 "atom/init.coffee" = ".atom/init.coffee"
