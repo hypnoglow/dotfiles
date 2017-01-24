@@ -1,0 +1,20 @@
+<templateSet group="Go">
+  <template name="fpd" value="fmt.Printf(&quot;DEBUG: %#v\n&quot;, $ITEM$)&#10;os.Exit(1)" description="Printf debug" toReformat="false" toShortenFQNames="true">
+    <variable name="ITEM" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO" value="true" />
+    </context>
+  </template>
+  <template name="lfl" value="log.Fatalln($ITEM$)" description="log.Fatalln()" toReformat="false" toShortenFQNames="true">
+    <variable name="ITEM" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO" value="true" />
+    </context>
+  </template>
+  <template name="fpl" value="fmt.Println($ITEM$)" description="fmt.Println" toReformat="false" toShortenFQNames="true">
+    <variable name="ITEM" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO" value="true" />
+    </context>
+  </template>
+</templateSet>
