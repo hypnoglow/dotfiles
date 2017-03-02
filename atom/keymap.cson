@@ -60,6 +60,8 @@
   'alt-up': 'expand-region:expand'
   'alt-down': 'expand-region:shrink'
 
+  # TODO: only for GO files
+  'ctrl-t': 'golang:toggle-panel'
 
 # TODO: ctrl-t and ctrl-p are the same
 

@@ -2,6 +2,8 @@
 assign [class="Pale moon"] 6
 assign [class="Firefox"] 6
 assign [class="(?i)google-chrome"] 6
+assign [class="^Opera$"] 6
+
 assign [class="Slack"] 7
 assign [class="Thunderbird"] 7
 assign [class="Telegram|telegram-desktop"] 7
