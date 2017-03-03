@@ -99,6 +99,12 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 # bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
 # bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
+# Multimedia control
+bindsym XF86AudioNext exec --no-startup-id "mocp --next"
+bindsym XF86AudioPrev exec --no-startup-id "mocp --prev"
+bindsym XF86AudioPlay exec --no-startup-id "mocp --toggle-pause"
+bindsym XF86AudioStop exec --no-startup-id "mocp --info | grep -q 'STOP' && mocp --play || mocp --stop"
+
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 bindsym $mod+F1 exec epdfview /usr/share/doc/manjaro/i3_help.pdf
