@@ -2,8 +2,6 @@
   <template name="T" value="&lt;$TAG$&gt;$SELECTION$&lt;/$TAGNAME$&gt;&#10;" description="Surround with &lt;tag&gt;&lt;/tag&gt;" toReformat="true" toShortenFQNames="true">
     <variable name="TAG" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="TAGNAME" expression="firstWord(TAG)" defaultValue="&quot;&quot;" alwaysStopAt="false" />
-    <context>
-      <option name="XML_TEXT" value="true" />
-    </context>
+    <context />
   </template>
 </templateSet>

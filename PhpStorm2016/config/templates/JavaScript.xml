@@ -2,4 +2,58 @@
   <template name="func" value="function($PARAM$) {&#10;  $END$&#10;}" description="Inserts function expression" toReformat="true" toShortenFQNames="true">
     <variable name="PARAM" expression="" defaultValue="&quot;&quot;" alwaysStopAt="true" />
   </template>
+  <template name="react-page" value="import React from 'react';&#10;&#10;export default class $NAME$ extends React.Component {&#10;    static path = '/$PATH$';&#10;&#10;    render() {&#10;        return (&#10;            $END$&#10;        )&#10;    }&#10;}&#10;" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PATH" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="react-routes" value="import React from 'react';&#10;import {Route} from 'react-router';&#10;import $PAGECLASS$ from './$PAGEFILE$';&#10;&#10;export default (&#10;    &lt;Route&gt;&#10;        &lt;Route component={$PAGECLASS$} path={$PAGECLASS$.path}/&gt;&#10;    &lt;/Route&gt;&#10;)&#10;" toReformat="false" toShortenFQNames="true">
+    <variable name="PAGECLASS" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PAGEFILE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="react-comp" value="import React from 'react';&#10;&#10;export default class $NAME$ extends React.Component {&#10;&#10;    render() {&#10;        return (&#10;            $END$&#10;        )&#10;    }&#10;}&#10;" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="imps" value="import {$END$} from '$LIB$';" toReformat="false" toShortenFQNames="true">
+    <variable name="LIB" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="imp" value="import $END$ from '$LIB$';" toReformat="false" toShortenFQNames="true">
+    <variable name="LIB" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="constru" value="constructor(props) {&#10;        super(props);&#10;&#10;        this.state = {&#10;            $END$&#10;        };&#10;    }" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="cl" value="console.log($END$);" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="ass" value="Object.assign({}, state, {&#10;    $END$&#10;});" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="react-comp-smart" value="import React, {PropTypes} from 'react';&#10;import {connect} from 'react-redux';&#10;&#10;class $NAME$ extends React.Component {&#10;&#10;    static propTypes = {&#10;        dispatch: PropTypes.func.isRequired,&#10;        $STORE_FIELD$: PropTypes.object.isRequired,&#10;    };&#10;&#10;    render() {&#10;        return (&#10;            &lt;div&gt;&#10;                $END$&#10;            &lt;/div&gt;&#10;        )&#10;    }&#10;}&#10;&#10;function mapStateToProps(state) {&#10;    return {&#10;        $STORE_FIELD$: state.$STORE_FIELD$&#10;    };&#10;}&#10;&#10;export default connect(mapStateToProps)($NAME$);&#10;" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="STORE_FIELD" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
 </templateSet>
