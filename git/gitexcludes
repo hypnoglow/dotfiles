@@ -5,3 +5,4 @@
 .tags
 .realsync
 application-build-*
+npm-debug.log
