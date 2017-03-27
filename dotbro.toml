@@ -47,17 +47,17 @@ backup = "$HOME/.dotfiles~"
 #
 
 # PhpStorm
-"PhpStorm2016/config/colors" = ".PhpStorm2016.3/config/colors"
-"PhpStorm2016/config/codestyles" = ".PhpStorm2016.3/config/codestyles"
-"PhpStorm2016/config/keymaps" = ".PhpStorm2016.3/config/keymaps"
-"PhpStorm2016/config/options/code.style.schemes.xml" = ".PhpStorm2016.3/config/options/code.style.schemes.xml"
-"PhpStorm2016/config/options/colors.scheme.xml" = ".PhpStorm2016.3/config/options/colors.scheme.xml"
-"PhpStorm2016/config/options/editor.xml" = ".PhpStorm2016.3/config/options/editor.xml"
-"PhpStorm2016/config/options/keymap.xml" = ".PhpStorm2016.3/config/options/keymap.xml"
-"PhpStorm2016/config/templates" = ".PhpStorm2016.3/config/templates"
-"PhpStorm2016/phpstorm64.vmoptions" = ".PhpStorm2016.3/phpstorm64.vmoptions"
-"PhpStorm2016/idea.properties" = ".PhpStorm2016.3/idea.properties"
-"PhpStorm2016/watchers.xml" = ".PhpStorm2016.3/watchers.xml"
+"PhpStorm2017/config/colors" = ".PhpStorm2017.1/config/colors"
+"PhpStorm2017/config/codestyles" = ".PhpStorm2017.1/config/codestyles"
+"PhpStorm2017/config/keymaps" = ".PhpStorm2017.1/config/keymaps"
+"PhpStorm2017/config/options/code.style.schemes.xml" = ".PhpStorm2017.1/config/options/code.style.schemes.xml"
+"PhpStorm2017/config/options/colors.scheme.xml" = ".PhpStorm2017.1/config/options/colors.scheme.xml"
+"PhpStorm2017/config/options/editor.xml" = ".PhpStorm2017.1/config/options/editor.xml"
+"PhpStorm2017/config/options/keymap.xml" = ".PhpStorm2017.1/config/options/keymap.xml"
+"PhpStorm2017/config/templates" = ".PhpStorm2017.1/config/templates"
+"PhpStorm2017/phpstorm64.vmoptions" = ".PhpStorm2017.1/phpstorm64.vmoptions"
+"PhpStorm2017/idea.properties" = ".PhpStorm2017.1/idea.properties"
+"PhpStorm2017/watchers.xml" = ".PhpStorm2017.1/watchers.xml"
 
 # Gogland
 "Gogland/config/colors" = ".Gogland1.0/config/colors"

@@ -1,9 +1,9 @@
 # phpstorm excludes
-/PhpStorm2016/config/options/*
-!/PhpStorm2016/config/options/code.style.schemes.xml
-!/PhpStorm2016/config/options/colors.scheme.xml
-!/PhpStorm2016/config/options/keymap.xml
-!/PhpStorm2016/config/options/editor.xml
+/PhpStorm2017/config/options/*
+!/PhpStorm2017/config/options/code.style.schemes.xml
+!/PhpStorm2017/config/options/colors.scheme.xml
+!/PhpStorm2017/config/options/keymap.xml
+!/PhpStorm2017/config/options/editor.xml
 
 # gogland excludes
 /Gogland/config/options/*
