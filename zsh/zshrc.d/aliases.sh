@@ -90,6 +90,7 @@ alias goml='gometalinter --concurrency=1 --deadline=30s ./...'
 gocov() {
     go-carpet "$@" | less -R
 }
+alias gota='go test -v ./...'
 alias gocoh='go test -coverprofile cover.out && go tool cover -html=cover.out'
 alias gocof='go test -coverprofile cover.out && go tool cover -func=cover.out'
 alias gofw='goimports -local ${PWD##$GOPATH/src/} -l -w .'
