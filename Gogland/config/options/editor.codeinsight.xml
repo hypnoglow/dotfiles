@@ -1,5 +1,6 @@
 <application>
   <component name="Go">
+    <option name="formatOnSave" value="GOIMPORTS" />
     <option name="importSorting" value="GOIMPORTS" />
   </component>
 </application>

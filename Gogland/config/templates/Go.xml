@@ -17,4 +17,10 @@
       <option name="GO" value="true" />
     </context>
   </template>
+  <template name="lpf" value="log.Printf($ITEM$)" description="log.Printf()" toReformat="true" toShortenFQNames="true">
+    <variable name="ITEM" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO" value="true" />
+    </context>
+  </template>
 </templateSet>
