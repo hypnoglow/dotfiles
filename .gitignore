@@ -16,3 +16,6 @@
 
 # Some local shell includes
 **/*.local.sh
+
+# Dynamically generated files for multi OS purposes
+/zsh/zshrc.d/plugins/list.sh

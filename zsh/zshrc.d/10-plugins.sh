@@ -11,6 +11,8 @@ source ~/.zplug/init.zsh
 ### plug ###
 if [ -e "${HOME}/.zshrc.d/plugins/list.sh" ]; then
     . "${HOME}/.zshrc.d/plugins/list.sh"
+else
+    echo "WARNING: no plugins file for zplug."
 fi
 ############
 

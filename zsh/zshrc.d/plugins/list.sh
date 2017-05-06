@@ -1,1 +1,0 @@
-/home/hypnoglow/sources/hypnoglow/dotfiles/zsh/plugins/list.sh#linux
