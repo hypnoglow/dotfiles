@@ -30,6 +30,7 @@ backup = "$HOME/.dotfiles~"
 "zsh/zlogin" = ".zlogin"
 "zsh/zshrc.d" = ".zshrc.d"
 "zsh/plugins/list.sh#macos" = ".zshrc.d/plugins/list.sh"
+"zsh/aliases/list.sh#macos" = ".zshrc.d/aliases/list.sh"
 
 #
 # Other

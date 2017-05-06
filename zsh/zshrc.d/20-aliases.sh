@@ -155,3 +155,8 @@ dfi() {
     ./install
     cd -
 }
+
+# OS-specific aliases
+if [ -e "${HOME}/.zshrc.d/aliases/list.sh" ]; then
+    . "${HOME}/.zshrc.d/aliases/list.sh"
+fi

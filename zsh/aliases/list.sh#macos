@@ -1,0 +1,12 @@
+#
+# Homebrew
+#
+
+alias brup="brew update"
+alias brug="brew upgrade"
+alias brl="brew list --versions"
+alias brcl="brew cask list --versions"
+alias brs="brew search"
+alias brcs="brew cask search"
+alias bri="brew install"
+alias brci="brew cask install"
