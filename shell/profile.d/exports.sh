@@ -5,8 +5,6 @@
 ### EXPORTS & VARIABLES ###
 ################################################################################
 
-. "${HOME}/.sh/POSIX/pathf.sh"
-
 # golang path
 if [ -x "$(which go 2>/dev/null)" ]; then
     export GOPATH="${HOME}/go"
@@ -76,5 +74,5 @@ export BROWSER
 
 SOURCES_ROOT="${HOME}/sources"
 export SOURCES_ROOT
-DOTFILES_ROOT="$(dirname $(dirname $(readlink -e "${HOME}/.profile")))"
+DOTFILES_ROOT="$(dirname "$(dirname "$(dirname "$(__symlink_resolve $0)")")")"
 export DOTFILES_ROOT

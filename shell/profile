@@ -14,13 +14,15 @@
 ################################################################################
 
 . "${HOME}/.sh/POSIX/dot_logger.sh"
-
-if [ ! -d "${HOME}/.profile.d" ]; then
-    echo "WARNING! ~/.profile.d not found." >> "${HOME}/DOTS_ERRORS.log"
-    return
-fi
+. "${HOME}/.sh/POSIX/pathf.sh"
+. "${HOME}/.sh/POSIX/symlink.sh"
 
 dot_logger_log "Loading ~/.profile"
+
+if [ ! -d "${HOME}/.profile.d" ]; then
+    echo "WARNING! ~/.profile.d not found." | tee -a "${HOME}/DOTS_ERRORS.log"
+    return
+fi
 
 for file in ${HOME}/.profile.d/*.sh ; do
     if [ -r "${file}" ]; then
@@ -29,3 +31,5 @@ for file in ${HOME}/.profile.d/*.sh ; do
     fi
 done
 unset file
+
+# TODO: unset POSIX libs functions so they won't litter interactive shell.
