@@ -38,9 +38,10 @@ backup = "$HOME/.dotfiles~"
 # ZSH
 "zsh/zprofile" = ".zprofile"
 "zsh/zshrc" = ".zshrc"
-"zsh/zshrc.d" = ".zshrc.d"
 "zsh/zimrc" = ".zimrc"
 "zsh/zlogin" = ".zlogin"
+"zsh/zshrc.d" = ".zshrc.d"
+"zsh/plugins/list.sh#linux" = ".zshrc.d/plugins/list.sh"
 
 #
 # Editors

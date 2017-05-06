@@ -86,11 +86,23 @@ alias dc="docker-compose"
 #
 # Go tools
 #
+
+alias gob='go build'
+alias goc='go clean'
+alias god='go doc'
+alias gof='go fmt'
+alias gofa='go fmt . ./...'
+alias gog='go get'
+alias goi='go install'
+alias gol='go list'
+alias gor='go run'
+alias got='go test'
+alias gota='go test -v ./...'
+alias gov='go vet'
 alias goml='gometalinter --concurrency=1 --deadline=30s ./...'
 gocov() {
     go-carpet "$@" | less -R
 }
-alias gota='go test -v ./...'
 alias gocoh='go test -coverprofile cover.out && go tool cover -html=cover.out'
 alias gocof='go test -coverprofile cover.out && go tool cover -func=cover.out'
 alias gofw='goimports -local ${PWD##$GOPATH/src/} -l -w .'

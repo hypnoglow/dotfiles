@@ -23,38 +23,12 @@ HISTSIZE=100000
 SAVEHIST=100000
 
 #
-# Plugins
-#
-
-[[ -d ~/.zplug ]] || {
-    git clone https://github.com/zplug/zplug ${ZPLUG_HOME:-"${HOME}/.zplug"}
-}
-
-source ~/.zplug/init.zsh
-
-zplug "seletskiy/zsh-ssh-urxvt"
-if [ "$TERM" != "linux" ]; then
-    zplug "zsh-users/zsh-autosuggestions"
-fi
-zplug "felixr/docker-zsh-completion"
-zplug "plugins/golang", from:oh-my-zsh
-
-if ! zplug check --verbose; then
-  printf "Install zsh plugins? [y/N]: "
-  if read -q; then
-    echo; zplug install
-  fi
-fi
-
-zplug load
-
-#
 # Custom
 #
 
 setopt INTERACTIVE_COMMENTS
 
-# Include all from ~/.zshrc.d
+# Include all .sh files from ~/.zshrc.d
 if [ -d ${HOME}/.zshrc.d ]; then
     for file in ${HOME}/.zshrc.d/*.sh ; do
         [ -r ${file} ] && . ${file}
