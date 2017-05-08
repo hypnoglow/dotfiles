@@ -62,7 +62,7 @@ backup = "$HOME/.dotfiles~"
 
 # Gogland
 "Gogland/config/colors" = ".Gogland1.0/config/colors"
-"Gogland/config/keymaps" = ".Gogland1.0/config/keymaps"
+"Gogland/config/keymaps/Hypnoglow.xml#linux" = ".Gogland1.0/config/keymaps/Hypnoglow.xml"
 "Gogland/config/options/colors.scheme.xml" = ".Gogland1.0/config/options/colors.scheme.xml"
 "Gogland/config/options/editor.codeinsight.xml" = ".Gogland1.0/config/options/editor.codeinsight.xml"
 "Gogland/config/options/keymap.xml" = ".Gogland1.0/config/options/keymap.xml"

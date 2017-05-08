@@ -15,6 +15,9 @@ backup = "$HOME/.dotfiles~"
 
 [mapping]
 
+# Binaries
+"bin" = "bin"
+
 #
 # Shell
 #
@@ -31,6 +34,22 @@ backup = "$HOME/.dotfiles~"
 "zsh/zshrc.d" = ".zshrc.d"
 "zsh/plugins/list.sh#macos" = ".zshrc.d/plugins/list.sh"
 "zsh/aliases/list.sh#macos" = ".zshrc.d/aliases/list.sh"
+
+#
+# Editors
+#
+
+# Gogland
+"Gogland/config/options/editor.codeinsight.xml" = "Library/Preferences/Gogland1.0/options/editor.codeinsight.xml"
+"Gogland/config/templates" = "Library/Preferences/Gogland1.0/templates"
+
+# Atom
+"atom/config.cson" = ".atom/config.cson"
+"atom/init.coffee" = ".atom/init.coffee"
+"atom/keymap.cson" = ".atom/keymap.cson"
+"atom/snippets.cson" = ".atom/snippets.cson"
+"atom/styles.less" = ".atom/styles.less"
+"atom/packages.list" = ".atom/packages.list"
 
 #
 # Other

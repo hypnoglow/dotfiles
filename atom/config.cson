@@ -2,59 +2,6 @@
   Zen:
     gutter: true
     width: 160
-  "atom-beautify":
-    apex: {}
-    arduino: {}
-    c: {}
-    cfml: {}
-    coffeescript:
-      indent_size: 2
-    cpp: {}
-    cs: {}
-    css: {}
-    d: {}
-    ejs: {}
-    erb: {}
-    fortran: {}
-    general:
-      analytics: false
-      beautifyEntireFileOnSave: false
-    gherkin: {}
-    handlebars: {}
-    html: {}
-    jade: {}
-    java: {}
-    js: {}
-    json: {}
-    jsx: {}
-    latex: {}
-    less: {}
-    marko: {}
-    mustache: {}
-    objectivec: {}
-    pawn: {}
-    perl: {}
-    php: {}
-    python: {}
-    riot: {}
-    ruby: {}
-    rust: {}
-    sass: {}
-    scss: {}
-    spacebars: {}
-    sql: {}
-    svg: {}
-    swig: {}
-    tss: {}
-    twig: {}
-    typescript: {}
-    vala: {}
-    visualforce: {}
-    xml: {}
-    xtemplate: {}
-  "atom-easy-jsdoc":
-    contextMenu:
-      addAJSDocComment: false
   "autocomplete-go": {}
   "autocomplete-plus":
     backspaceTriggersAutocomplete: true
@@ -69,9 +16,6 @@
     closeEmptyWindows: false
     disabledPackages: [
       "emmet"
-      "go-debug"
-      "go-guru"
-      "atom-beautify"
     ]
     ignoredNames: [
       ".git"
@@ -103,8 +47,6 @@
     showIndentGuide: true
     showInvisibles: true
     tabLength: 4
-  "exception-reporting":
-    userId: "094ce7cd-aaa4-6a3d-8328-686afda11de7"
   "expand-region": {}
   fonts:
     fontFamily: "Iosevka"
@@ -132,9 +74,7 @@
   "js-hyperclick": {}
   "language-archlinux":
     checkPKGBUILDOnSave: true
-  linter:
-    errorPanelHeight: 99
-    lintOnFlyInterval: 1000
+  linter: {}
   "linter-eslint":
     fixOnSave: true
   "linter-jshint": {}
@@ -142,6 +82,8 @@
   "linter-rust": {}
   "linter-shellcheck":
     userParameters: "-e SC1090,SC2164"
+  "linter-ui-default":
+    showPanel: true
   minimap:
     plugins:
       "git-diff": true
