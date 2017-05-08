@@ -70,6 +70,11 @@ alias dri="docker run -ti"
 alias dpa="docker ps -a"
 alias drmf="docker rm -f"
 
+# docker search tags
+dst() {
+    curl -sS "https://registry.hub.docker.com/v2/repositories/$1/tags/" | jq '."results"[]["name"]' |sort
+}
+
 alias dvl="docker volume ls"
 alias dvc="docker volume create"
 alias dvi="docker volume inspect"
