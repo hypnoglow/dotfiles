@@ -1,4 +1,4 @@
-<keymap version="1" name="Hypnoglow" parent="Default for XWin">
+<keymap version="1" name="Hypnoglow-Linux" parent="Default for XWin">
   <action id="ActivateProjectToolWindow">
     <keyboard-shortcut first-keystroke="alt 1" />
     <keyboard-shortcut first-keystroke="ctrl back_slash" />
