@@ -32,21 +32,22 @@
     ]
     telemetryConsent: "limited"
     themes: [
-      "atom-dark-ui"
-      "atom-dark-syntax"
+      "atom-light-ui"
+      "atom-light-syntax"
     ]
     warnOnLargeFileLimit: 8
   editor:
     autoIndentOnPaste: false
     backUpBeforeSaving: true
-    fontFamily: "Iosevka"
-    fontSize: 16
+    fontFamily: "Fira Code"
     invisibles: {}
     lineHeight: 1.25
     scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
     tabLength: 4
+  "exception-reporting":
+    userId: "e64440d0-5c7e-4fd3-a5db-5b7c0a25c6e7"
   "expand-region": {}
   fonts:
     fontFamily: "Iosevka"
