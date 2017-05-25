@@ -1,3 +1,11 @@
 #!/bin/bash
+set -euo pipefail
 
-apm list --bare --installed | tee ~/.atom/packages.list > /dev/null
+echo "--> Importing packages ..."
+atom-import
+
+echo "--> Updating packages ..."
+apm update -c
+
+echo "--> Exporting packages ..."
+atom-export

@@ -1,0 +1,5 @@
+#!/bin/bash
+#
+# Atom packages export.
+
+apm list --bare --installed | tee ~/.atom/packages.list > /dev/null

@@ -1,8 +1,14 @@
 #!/bin/bash
 #
-# Fast Atom packages update.
+# Fast Atom packages import.
+#
+# This script reads packages list from the file `~/.atom/packages.list`.
+# If a package from the list is not installed - installs it.
+# Also, this script deletes all packages that are installed but not present
+# in the packages list.
 
 if [ ! -r "${HOME}/.atom/packages.list" ] ; then
+    echo "No ~/.atom/packages.list file present." >&2
     exit 1
 fi
 

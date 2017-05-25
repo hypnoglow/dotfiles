@@ -53,10 +53,6 @@ if [[ "$(lsb_release -i)" =~ "Ubuntu" ]]; then
     alias aptar='sudo aptitude autoremove'
 fi
 
-# atom sync
-alias atom-sync="apm list --bare --installed | tee ~/.atom/packages.list > /dev/null"
-alias atom-install="apm install --production --packages-file ~/.atom/packages.list"
-
 # Apps shortcuts
 alias snd="alsamixer"
 
