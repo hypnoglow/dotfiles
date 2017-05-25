@@ -20,3 +20,4 @@
 # Dynamically generated files for multi OS purposes
 /zsh/zshrc.d/plugins/list.sh
 /zsh/zshrc.d/aliases/list.sh
+/atom/packages.list

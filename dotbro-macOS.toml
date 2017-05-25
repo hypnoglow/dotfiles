@@ -49,7 +49,7 @@ backup = "$HOME/.dotfiles~"
 "atom/keymap.cson" = ".atom/keymap.cson"
 "atom/snippets.cson" = ".atom/snippets.cson"
 "atom/styles.less" = ".atom/styles.less"
-"atom/packages.list" = ".atom/packages.list"
+"atom/packages.list#macos" = ".atom/packages.list"
 
 #
 # Other
