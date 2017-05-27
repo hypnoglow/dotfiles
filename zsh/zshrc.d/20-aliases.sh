@@ -20,6 +20,9 @@ alias du2='du -d 2'
 alias tf='tail -f'
 alias 1='watch -n1'
 
+alias tr1='tree -L 1'
+alias tr2='tree -L 2'
+
 alias wfl='nmcli device wifi list'
 alias wfc='nmcli device wifi con'
 
@@ -33,6 +36,7 @@ alias -g S='| sort'
 alias -g G='| grep'
 alias -g N1='| cat -n'
 alias -g N2='| cat -b'
+alias -g PHPG='| egrep -v "^(;|$)"'
 
 alias cdd='cd $DOTFILES_ROOT'
 alias cdg='cd $GOPATH/src/github.com/hypnoglow'
@@ -67,23 +71,32 @@ alias gtr="git log --graph --all --date=relative --pretty=format:'%Cred%h %Crese
 alias git-clean-merged-branches='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d'
 
 #
+# Composer
+#
+alias cri='composer install --ignore-platform-reqs'
+alias crr='composer require --ignore-platform-reqs'
+alias crd='composer require --dev --ignore-platform-reqs'
+
+#
 # Docker
 #
 alias d="docker"
 alias dri="docker run -ti"
 alias dpa="docker ps -a"
 alias drmf="docker rm -f"
-
-# docker search tags
 dst() {
+    # docker search tags
     curl -sS "https://registry.hub.docker.com/v2/repositories/$1/tags/" | jq '."results"[]["name"]' |sort
 }
-
+dgi() {
+    # docker go into container
+    docer exec -i -t "$1" /bin/sh
+}
 alias dvl="docker volume ls"
 alias dvc="docker volume create"
 alias dvi="docker volume inspect"
 
-alias docker-clean-containers='docker ps --filter "status=Exited" -a -q | xargs docker rm'
+alias docker-clean-containers='docker ps --filter "status=exited" -a -q | xargs docker rm'
 alias docker-clean-images='docker images --filter "dangling=true" -q | xargs docker rmi'
 alias docker-clean-volumes='docker volume ls --filter dangling=true | xargs docker volume rm'
 

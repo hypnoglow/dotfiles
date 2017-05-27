@@ -4,9 +4,15 @@
 
 alias brup="brew update"
 alias brug="brew upgrade"
+
 alias brl="brew list --versions"
 alias brcl="brew cask list --versions"
+
 alias brs="brew search"
 alias brcs="brew cask search"
+
+alias brif="brew info"
+alias brcif="brew cask info"
+
 alias bri="brew install"
 alias brci="brew cask install"
