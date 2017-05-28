@@ -66,10 +66,8 @@ backup = "$HOME/.dotfiles~"
 "PhpStorm2017/watchers.xml" = ".PhpStorm2017.1/watchers.xml"
 
 # Gogland
-"Gogland/config/colors" = ".Gogland1.0/config/colors"
 "Gogland/config/keymaps" = ".Gogland1.0/config/keymaps"
 
-"Gogland/config/options/colors.scheme.xml" = ".Gogland1.0/config/options/colors.scheme.xml"
 "Gogland/config/options/editor.codeinsight.xml" = ".Gogland1.0/config/options/editor.codeinsight.xml"
 "Gogland/config/options/keymap.xml#linux" = ".Gogland1.0/config/options/keymap.xml"
 
