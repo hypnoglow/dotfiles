@@ -148,3 +148,9 @@
 ".source.tmux":
   editor:
     tabLength: 4
+".text.xml":
+  editor:
+    tabLength: 2
+".text.xml.xsl":
+  editor:
+    tabLength: 2
