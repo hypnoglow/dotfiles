@@ -51,6 +51,7 @@ backup = "$HOME/.dotfiles~"
 "PhpStorm2017/config/colors" = ".PhpStorm2017.1/config/colors"
 "PhpStorm2017/config/codestyles" = ".PhpStorm2017.1/config/codestyles"
 "PhpStorm2017/config/keymaps" = ".PhpStorm2017.1/config/keymaps"
+
 "PhpStorm2017/config/options/code.style.schemes.xml" = ".PhpStorm2017.1/config/options/code.style.schemes.xml"
 "PhpStorm2017/config/options/colors.scheme.xml" = ".PhpStorm2017.1/config/options/colors.scheme.xml"
 "PhpStorm2017/config/options/editor.xml" = ".PhpStorm2017.1/config/options/editor.xml"
@@ -66,11 +67,14 @@ backup = "$HOME/.dotfiles~"
 
 # Gogland
 "Gogland/config/colors" = ".Gogland1.0/config/colors"
-"Gogland/config/keymaps/Hypnoglow.xml#linux" = ".Gogland1.0/config/keymaps/Hypnoglow.xml"
+"Gogland/config/keymaps" = ".Gogland1.0/config/keymaps"
+
 "Gogland/config/options/colors.scheme.xml" = ".Gogland1.0/config/options/colors.scheme.xml"
 "Gogland/config/options/editor.codeinsight.xml" = ".Gogland1.0/config/options/editor.codeinsight.xml"
-"Gogland/config/options/keymap.xml" = ".Gogland1.0/config/options/keymap.xml"
-"Gogland/config/templates" = ".Gogland1.0/config/templates"
+"Gogland/config/options/keymap.xml#linux" = ".Gogland1.0/config/options/keymap.xml"
+
+"Gogland/config/templates/Go.xml" = ".Gogland1.0/config/templates/Go.xml"
+
 "Gogland/gogland64.vmoptions" = ".Gogland1.0/gogland64.vmoptions"
 "Gogland/idea.properties" = ".Gogland1.0/idea.properties"
 
