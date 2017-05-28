@@ -66,12 +66,11 @@ backup = "$HOME/.dotfiles~"
 "PhpStorm2017/watchers.xml" = ".PhpStorm2017.1/watchers.xml"
 
 # Gogland
-"Gogland/config/keymaps" = ".Gogland1.0/config/keymaps"
-
-"Gogland/config/options/editor.codeinsight.xml" = ".Gogland1.0/config/options/editor.codeinsight.xml"
-"Gogland/config/options/keymap.xml#linux" = ".Gogland1.0/config/options/keymap.xml"
-
-"Gogland/config/templates/Go.xml" = ".Gogland1.0/config/templates/Go.xml"
+# NOTICE: Configs are now saved to settingsRepository. WIP, investigating.
+# "Gogland/config/keymaps" = ".Gogland1.0/config/keymaps"
+# "Gogland/config/options/editor.codeinsight.xml" = ".Gogland1.0/config/options/editor.codeinsight.xml"
+# "Gogland/config/options/keymap.xml#linux" = ".Gogland1.0/config/options/keymap.xml"
+# "Gogland/config/templates/Go.xml" = ".Gogland1.0/config/templates/Go.xml"
 
 "Gogland/gogland64.vmoptions" = ".Gogland1.0/gogland64.vmoptions"
 "Gogland/idea.properties" = ".Gogland1.0/idea.properties"
