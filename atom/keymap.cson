@@ -76,3 +76,7 @@
   'r': 'tree-view:rename'
   'c': 'tree-view:copy'
   'p': 'tree-view:paste'
+
+".platform-darwin atom-workspace atom-text-editor:not([mini])":
+  "cmd-shift-up": "editor:move-line-up"
+  "cmd-shift-down": "editor:move-line-down"
