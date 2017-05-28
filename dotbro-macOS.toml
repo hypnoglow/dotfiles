@@ -39,9 +39,17 @@ backup = "$HOME/.dotfiles~"
 # Editors
 #
 
-# Gogland
-"Gogland/config/options/editor.codeinsight.xml" = "Library/Preferences/Gogland1.0/options/editor.codeinsight.xml"
-"Gogland/config/templates" = "Library/Preferences/Gogland1.0/templates"
+# Gogland.
+# NOTICE: Configs are now saved to settingsRepository. WIP, investigating.
+# "Gogland/config/keymaps/Hypnoglow-macOS.xml" = "Library/Preferences/Gogland1.0/keymaps/Hypnoglow-macOS.xml"
+# "Gogland/config/keymaps/Hypnoglow-macOS.xml" = "Library/Preferences/Gogland1.0/settingsRepository/repository/keymaps/Hypnoglow-macOS.xml"
+# "Gogland/config/options/editor.codeinsight.xml" = "Library/Preferences/Gogland1.0/options/editor.codeinsight.xml"
+# "Gogland/config/options/editor.codeinsight.xml" = "Library/Preferences/Gogland1.0/settingsRepository/repository/editor.codeinsight.xml"
+# "Gogland/config/templates/Go.xml" = "Library/Preferences/Gogland1.0/templates/Go.xml"
+# "Gogland/config/templates/Go.xml" = "Library/Preferences/Gogland1.0/settingsRepository/repository/templates/Go.xml"
+
+# PhpStorm
+#"PhpStorm2017/config/templates" = "Library/Preferences/PhpStorm2017.1/templates"
 
 # Atom
 "atom/config.cson" = ".atom/config.cson"

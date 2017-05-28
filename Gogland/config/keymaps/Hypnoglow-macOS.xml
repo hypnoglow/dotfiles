@@ -1,0 +1,13 @@
+<keymap version="1" name="Hypnoglow-macOS" parent="Mac OS X 10.5+">
+  <action id="Console.Execute.Multiline" />
+  <action id="EditorCompleteStatement">
+    <keyboard-shortcut first-keystroke="meta semicolon" />
+  </action>
+  <action id="EditorSplitLine" />
+  <action id="EditorStartNewLine">
+    <keyboard-shortcut first-keystroke="meta enter" />
+  </action>
+  <action id="EditorStartNewLineBefore">
+    <keyboard-shortcut first-keystroke="shift meta enter" />
+  </action>
+</keymap>
