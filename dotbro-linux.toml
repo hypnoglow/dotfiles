@@ -48,25 +48,27 @@ backup = "$HOME/.dotfiles~"
 #
 
 # PhpStorm
-"PhpStorm2017/config/colors" = ".PhpStorm2017.1/config/colors"
-"PhpStorm2017/config/codestyles" = ".PhpStorm2017.1/config/codestyles"
-"PhpStorm2017/config/keymaps" = ".PhpStorm2017.1/config/keymaps"
+# NOTICE: Configs are now saved to settingsRepository. WIP, investigating.
 
-"PhpStorm2017/config/options/code.style.schemes.xml" = ".PhpStorm2017.1/config/options/code.style.schemes.xml"
-"PhpStorm2017/config/options/colors.scheme.xml" = ".PhpStorm2017.1/config/options/colors.scheme.xml"
-"PhpStorm2017/config/options/editor.xml" = ".PhpStorm2017.1/config/options/editor.xml"
-"PhpStorm2017/config/options/keymap.xml" = ".PhpStorm2017.1/config/options/keymap.xml"
-
-"PhpStorm2017/config/templates/JavaScript.xml" = ".PhpStorm2017.1/config/templates/JavaScript.xml"
-"PhpStorm2017/config/templates/Markdown.xml" = ".PhpStorm2017.1/config/templates/Markdown.xml"
-"PhpStorm2017/config/templates/PHP.xml" = ".PhpStorm2017.1/config/templates/PHP.xml"
+# "PhpStorm2017/config/colors" = ".PhpStorm2017.1/config/colors"
+# "PhpStorm2017/config/codestyles" = ".PhpStorm2017.1/config/codestyles"
+# "PhpStorm2017/config/keymaps" = ".PhpStorm2017.1/config/keymaps"
+#
+# "PhpStorm2017/config/options/code.style.schemes.xml" = ".PhpStorm2017.1/config/options/code.style.schemes.xml"
+# "PhpStorm2017/config/options/colors.scheme.xml" = ".PhpStorm2017.1/config/options/colors.scheme.xml"
+# "PhpStorm2017/config/options/editor.xml" = ".PhpStorm2017.1/config/options/editor.xml"
+# "PhpStorm2017/config/options/keymap.xml" = ".PhpStorm2017.1/config/options/keymap.xml"
+#
+# "PhpStorm2017/config/templates/JavaScript.xml" = ".PhpStorm2017.1/config/templates/JavaScript.xml"
+# "PhpStorm2017/config/templates/Markdown.xml" = ".PhpStorm2017.1/config/templates/Markdown.xml"
+# "PhpStorm2017/config/templates/PHP.xml" = ".PhpStorm2017.1/config/templates/PHP.xml"
 
 "PhpStorm2017/phpstorm64.vmoptions" = ".PhpStorm2017.1/phpstorm64.vmoptions"
 "PhpStorm2017/idea.properties" = ".PhpStorm2017.1/idea.properties"
-"PhpStorm2017/watchers.xml" = ".PhpStorm2017.1/watchers.xml"
 
 # Gogland
 # NOTICE: Configs are now saved to settingsRepository. WIP, investigating.
+
 # "Gogland/config/keymaps" = ".Gogland1.0/config/keymaps"
 # "Gogland/config/options/editor.codeinsight.xml" = ".Gogland1.0/config/options/editor.codeinsight.xml"
 # "Gogland/config/options/keymap.xml#linux" = ".Gogland1.0/config/options/keymap.xml"
