@@ -7,9 +7,40 @@
 # Also, this script deletes all packages that are installed but not present
 # in the packages list.
 
-is_version_lower() {
-    [ "$1" = "$2" ] && return 1
-    [ "$1" = "$(echo -e "$1\n$2" | sort -V | head -n1)" ]
+# Function that compares versions.
+# Returns:
+# 0 if equal
+# 1 if $1 > $2
+# 2 if $1 < $2
+vercomp() {
+    if [[ "$1" == "$2" ]]
+    then
+        return 0
+    fi
+    local IFS=.
+    local i ver1=($1) ver2=($2)
+    # fill empty fields in ver1 with zeros
+    for ((i=${#ver1[@]}; i<${#ver2[@]}; i++))
+    do
+        ver1[i]=0
+    done
+    for ((i=0; i<${#ver1[@]}; i++))
+    do
+        if [[ -z ${ver2[i]} ]]
+        then
+            # fill empty fields in ver2 with zeros
+            ver2[i]=0
+        fi
+        if ((10#${ver1[i]} > 10#${ver2[i]}))
+        then
+            return 1
+        fi
+        if ((10#${ver1[i]} < 10#${ver2[i]}))
+        then
+            return 2
+        fi
+    done
+    return 0
 }
 
 if [ ! -r "${HOME}/.atom/packages.list" ] ; then
@@ -37,7 +68,7 @@ for package in $(cat "${HOME}/.atom/packages.list") ; do
     packageName=${package%@*}
     packageVersion=${package#*@}
 
-    installedPackage=$(grep ${packageName} /tmp/atom-packages.list)
+    installedPackage=$(grep "${packageName}@" /tmp/atom-packages.list)
     if [ -z "${installedPackage}" ]; then
         echo "Install new package ${package}"
         apm install --production "${package}"
@@ -46,8 +77,9 @@ for package in $(cat "${HOME}/.atom/packages.list") ; do
 
     # In installed package has lower version - update.
     installedPackageVersion=${installedPackage#*@}
-    if is_version_lower "$installedPackageVersion" "$packageVersion"; then
-        echo "Update installed package $package"
+    vercomp "$installedPackageVersion" "$packageVersion"
+    if [[ $? == 2 ]]; then
+        echo "Update installed package $installedPackage"
         apm install --production "${package}"
         continue
     fi
