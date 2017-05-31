@@ -7,6 +7,11 @@
 # Also, this script deletes all packages that are installed but not present
 # in the packages list.
 
+is_version_lower() {
+    [ "$1" = "$2" ] && return 1
+    [ "$1" = "$(echo -e "$1\n$2" | sort -V | head -n1)" ]
+}
+
 if [ ! -r "${HOME}/.atom/packages.list" ] ; then
     echo "No ~/.atom/packages.list file present." >&2
     exit 1
@@ -29,8 +34,22 @@ done
 # Check if some packages listed in ~/.atom/packages.list
 # should be installed or updated.
 for package in $(cat "${HOME}/.atom/packages.list") ; do
-    if ! grep -q ${package} /tmp/atom-packages.list; then
+    packageName=${package%@*}
+    packageVersion=${package#*@}
+
+    installedPackage=$(grep ${packageName} /tmp/atom-packages.list)
+    if [ -z "${installedPackage}" ]; then
+        echo "Install new package ${package}"
         apm install --production "${package}"
+        continue
+    fi
+
+    # In installed package has lower version - update.
+    installedPackageVersion=${installedPackage#*@}
+    if is_version_lower "$installedPackageVersion" "$packageVersion"; then
+        echo "Update installed package $package"
+        apm install --production "${package}"
+        continue
     fi
 done
 
