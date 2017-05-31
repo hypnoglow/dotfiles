@@ -2,6 +2,20 @@
   Zen:
     gutter: true
     width: 160
+  "atom-material-ui":
+    colors:
+      abaseColor: "#aad875"
+      accentColor: "#6f8853"
+      predefinedColor: "Green"
+    fonts:
+      fontSize: 13
+    tabs:
+      compactTabs: true
+      tintedTabBar: true
+    treeView: {}
+    ui:
+      panelContrast: true
+      panelShadows: true
   "autocomplete-go": {}
   "autocomplete-plus":
     backspaceTriggersAutocomplete: true
@@ -14,9 +28,6 @@
     autoHideMenuBar: true
     automaticallyUpdate: false
     closeEmptyWindows: false
-    disabledPackages: [
-      "emmet"
-    ]
     ignoredNames: [
       ".git"
       ".hg"
@@ -32,14 +43,15 @@
     ]
     telemetryConsent: "limited"
     themes: [
-      "atom-light-ui"
-      "atom-light-syntax"
+      "atom-material-ui"
+      "solarized-light-syntax"
     ]
     warnOnLargeFileLimit: 8
   editor:
     autoIndentOnPaste: false
     backUpBeforeSaving: true
     fontFamily: "Fira Code"
+    fontSize: 13
     invisibles: {}
     lineHeight: 1.25
     scrollPastEnd: true
@@ -49,6 +61,9 @@
   "exception-reporting":
     userId: "e64440d0-5c7e-4fd3-a5db-5b7c0a25c6e7"
   "expand-region": {}
+  "file-icons":
+    onChanges: true
+    strategies: {}
   fonts:
     fontFamily: "Iosevka"
     preview: "[Hello, world!] {Привет, как дела?}"
@@ -108,7 +123,7 @@
 ".coffee.source":
   editor:
     preferredLineLength: 80
-    tabLength: 4
+    tabLength: 2
 ".dots.source":
   editor:
     preferredLineLength: 80
@@ -148,9 +163,3 @@
 ".source.tmux":
   editor:
     tabLength: 4
-".text.xml":
-  editor:
-    tabLength: 2
-".text.xml.xsl":
-  editor:
-    tabLength: 2

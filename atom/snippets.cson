@@ -79,3 +79,18 @@
   'json':
     'prefix': 'json'
     'body': '`json:"$1"`'
+
+#
+# markdown
+#
+
+'.source.gfm':
+  'js code':
+    'prefix': 'jsc'
+    'body': '```js\n$1\n```\n'
+  'sql code':
+    'prefix': 'sqlc'
+    'body': '```sql\n$1\n```\n'
+  'go code':
+    'prefix': 'goc'
+    'body': '```go\n$1\n```\n'

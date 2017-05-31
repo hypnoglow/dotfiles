@@ -80,3 +80,5 @@
 ".platform-darwin atom-workspace atom-text-editor:not([mini])":
   "cmd-shift-up": "editor:move-line-up"
   "cmd-shift-down": "editor:move-line-down"
+  "cmd-space": "autocomplete-plus:activate"
+  "cmd-shift-m": "markdown-preview:toggle"
