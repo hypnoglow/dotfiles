@@ -59,6 +59,7 @@ alias dss="cdiff -s -w 0 -c auto HEAD"
 # Atom
 alias a="atom ."
 alias aa="atom -a ."
+alias aaw="atom -a -n ."
 
 #
 # Git
@@ -73,8 +74,9 @@ alias git-clean-merged-branches='git branch --merged | egrep -v "(^\*|master)" |
 #
 # Composer
 #
-alias cri='composer install --ignore-platform-reqs'
-alias crr='composer require --ignore-platform-reqs'
+alias cri='composer install       --ignore-platform-reqs'
+alias cru='composer update        --ignore-platform-reqs'
+alias crr='composer require       --ignore-platform-reqs'
 alias crd='composer require --dev --ignore-platform-reqs'
 
 #
