@@ -2,7 +2,7 @@ Zen@0.18.0
 atom-material-syntax@1.0.6
 atom-material-ui@2.0.4
 blame@0.12.0
-busy-signal@1.4.1
+busy-signal@1.4.3
 dockerletion@0.2.0
 emmet@2.4.3
 expand-region@0.3.0
@@ -22,6 +22,7 @@ linter-eslint@8.2.1
 linter-jsonlint@1.3.0
 linter-shellcheck@1.4.4
 linter-ui-default@1.6.0
+linter-xmllint@1.4.3
 merge-conflicts@1.4.5
 minimap@4.28.2
 minimap-git-diff@4.3.1

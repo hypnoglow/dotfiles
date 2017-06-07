@@ -94,3 +94,6 @@
   'go code':
     'prefix': 'goc'
     'body': '```go\n$1\n```\n'
+  'php code':
+    'prefix': 'phpc'
+    'body': '```php\n<?php\n$1\n```\n'
