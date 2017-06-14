@@ -16,3 +16,8 @@ alias brcif="brew cask info"
 
 alias bri="brew install"
 alias brci="brew cask install"
+
+#
+# macOS specific versions of commands
+#
+alias dateiso='date -u +"%Y-%m-%dT%H:%M:%SZ"'
