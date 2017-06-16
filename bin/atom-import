@@ -68,7 +68,7 @@ for package in $(cat "${HOME}/.atom/packages.list") ; do
     packageName=${package%@*}
     packageVersion=${package#*@}
 
-    installedPackage=$(grep "${packageName}@" /tmp/atom-packages.list)
+    installedPackage=$(egrep "^${packageName}@" /tmp/atom-packages.list)
     if [ -z "${installedPackage}" ]; then
         echo "Install new package ${package}"
         apm install --production "${package}"

@@ -85,6 +85,9 @@
 #
 
 '.source.gfm':
+  'code':
+    'prefix': 'co'
+    'body': '```\n$1\n```\n'
   'js code':
     'prefix': 'jsc'
     'body': '```js\n$1\n```\n'

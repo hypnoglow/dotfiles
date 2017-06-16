@@ -97,13 +97,16 @@
   "linter-php": {}
   "linter-rust": {}
   "linter-shellcheck":
-    userParameters: "-e SC1090,SC2164"
+    userParameters: "-e SC1090,SC2164,SC2148"
   "linter-ui-default":
+    panelHeight: 81
     showPanel: true
   minimap:
     plugins:
       "git-diff": true
       "git-diffDecorationsZIndex": 0
+      "split-diff": true
+      "split-diffDecorationsZIndex": 0
   "one-dark-ui": {}
   "package-generator":
     packageSyntax: "coffeescript"
