@@ -79,6 +79,8 @@
 
 '.platform-darwin atom-workspace':
   'alt-\\': 'tree-view:toggle-focus'
+  'alt-|': 'github:toggle-git-tab-focus'
+  'cmd-|': 'github:toggle-git-tab'
 
 ".platform-darwin atom-workspace atom-text-editor:not([mini])":
   "cmd-shift-up": "editor:move-line-up"

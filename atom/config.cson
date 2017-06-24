@@ -100,7 +100,6 @@
     userParameters: "-e SC1090,SC2164,SC2148"
   "linter-ui-default":
     panelHeight: 81
-    showPanel: true
   minimap:
     plugins:
       "git-diff": true
