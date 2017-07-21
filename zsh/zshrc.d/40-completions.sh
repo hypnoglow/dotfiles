@@ -9,3 +9,7 @@ gcloud_completion="/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/
 if [ -e "$gcloud_completion" ]; then
     source "$gcloud_completion"
 fi
+
+if type -f kubectl &> /dev/null; then
+    source <(kubectl completion zsh)
+fi
