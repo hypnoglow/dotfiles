@@ -100,3 +100,9 @@
   'php code':
     'prefix': 'phpc'
     'body': '```php\n<?php\n$1\n```\n'
+  'yaml code':
+    'prefix': 'yc'
+    'body': '```yaml\n$1\n```\n'
+  'bash code':
+    'prefix': 'bc'
+    'body': '```bash\n$1\n```\n'
