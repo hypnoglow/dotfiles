@@ -13,3 +13,7 @@ fi
 if type -f kubectl &> /dev/null; then
     source <(kubectl completion zsh)
 fi
+
+if type -f helm &> /dev/null; then
+    source <(helm completion zsh)
+fi
