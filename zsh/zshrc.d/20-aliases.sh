@@ -23,9 +23,6 @@ alias 1='watch -n1'
 alias tr1='tree -L 1'
 alias tr2='tree -L 2'
 
-alias wfl='nmcli device wifi list'
-alias wfc='nmcli device wifi con'
-
 alias ccat='grep -v -e "^#" -e "^$"t'
 
 alias -g C='| wc -l'
@@ -65,8 +62,10 @@ alias aaw="atom -a -n ."
 # Git
 #
 alias gst="git status"
+alias gbC="git checkout -B"
 alias gdt="git difftool"
 alias gpf="git push --force-with-lease"
+alias gpff="git push --force"
 alias gcx="git commit --amend --reset-author --no-edit"
 alias gtr="git log --graph --all --date=relative --pretty=format:'%Cred%h %Creset%<|(50,trunc)%s %C(bold blue)<%an>%Creset %Cgreen(%cd)%Creset%C(auto)%d'"
 alias git-clean-merged-branches='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d'
@@ -90,15 +89,16 @@ dst() {
     # docker search tags
     curl -sS "https://registry.hub.docker.com/v2/repositories/$1/tags/" | jq '."results"[]["name"]' |sort
 }
+alias dex="docker exec -i -t"
 dgi() {
     # docker go into container
-    docer exec -i -t "$1" /bin/sh
+    docker exec -i -t "$1" /bin/sh
 }
 alias dvl="docker volume ls"
 alias dvc="docker volume create"
 alias dvi="docker volume inspect"
 
-alias docker-clean-containers='docker ps --filter "status=exited" -a -q | xargs docker rm'
+alias docker-clean-containers='docker ps --filter "status=exited" -a -q | xargs docker rm -v'
 alias docker-clean-images='docker images --filter "dangling=true" -q | xargs docker rmi'
 alias docker-clean-volumes='docker volume ls --filter dangling=true | xargs docker volume rm'
 
@@ -106,6 +106,28 @@ alias dm="docker-machine"
 alias dme="docker-machine env"
 
 alias dc="docker-compose"
+
+#
+# k8s
+#
+
+alias k="kubectl" # hardcore
+alias ku="kubectl"
+alias kucv="kubectl config view"
+kusp() {
+    # kubectl service port
+    kubectl describe service $1 | grep "NodePort:" | cut -f 4 | cut -d "/" -f 1
+}
+kuns() {
+    # kubectl namespace set
+    kubectl config set-context $(kubectl config current-context) --namespace $1
+}
+
+alias mik='minikube'
+alias miks='minikube start --vm-driver xhyve'
+alias mikdb='chrome-cli open $(minikube dashboard --url)'
+alias mik-docker-set='eval $(minikube docker-env)'
+alias mik-docker-unset='eval $(minikube docker-env -u)'
 
 #
 # Go tools

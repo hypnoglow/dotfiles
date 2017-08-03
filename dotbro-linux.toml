@@ -42,6 +42,7 @@ backup = "$HOME/.dotfiles~"
 "zsh/zlogin" = ".zlogin"
 "zsh/zshrc.d" = ".zshrc.d"
 "zsh/plugins/list.sh#linux" = ".zshrc.d/plugins/list.sh"
+"zsh/aliases/list.sh#linux" = ".zshrc.d/aliases/list.sh"
 
 #
 # Editors
