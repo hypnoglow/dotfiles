@@ -18,6 +18,15 @@
 # https://github.com/bevry/cson#what-is-cson
 
 #
+# any source
+#
+
+'.source':
+  'tab':
+    'prefix': 'tab'
+    'body': '\t'
+
+#
 # javascript
 #
 

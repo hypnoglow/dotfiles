@@ -25,7 +25,7 @@
     ]
     minimumWordLength: 2
   core:
-    autoHideMenuBar: true
+    autoHideMenuBar: false
     automaticallyUpdate: false
     closeEmptyWindows: false
     ignoredNames: [
@@ -156,6 +156,9 @@
 ".raml.source":
   editor:
     tabLength: 4
+".ruby.source":
+  editor:
+    tabLength: 2
 ".shell-session.text":
   editor:
     tabLength: 4
@@ -165,3 +168,6 @@
 ".source.tmux":
   editor:
     tabLength: 4
+".source.yaml":
+  editor:
+    tabLength: 2

@@ -87,3 +87,9 @@
   "cmd-shift-down": "editor:move-line-down"
   "cmd-space": "autocomplete-plus:activate"
   "cmd-shift-m": "markdown-preview:toggle"
+  # Navigate
+  "cmd-left": "editor:move-to-previous-word-boundary"
+  "cmd-right": "editor:move-to-next-word-boundary"
+  # Select
+  "cmd-shift-left": "editor:select-to-previous-word-boundary"
+  "cmd-shift-right": "editor:select-to-next-word-boundary"
