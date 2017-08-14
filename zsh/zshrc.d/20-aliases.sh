@@ -36,13 +36,14 @@ alias -g N2='| cat -b'
 alias -g PHPG='| egrep -v "^(;|$)"'
 
 alias cdd='cd $DOTFILES_ROOT'
-alias cdg='cd $GOPATH/src/github.com/hypnoglow'
+alias cdg='cd $GOPATH/src'
 if [[ "$OSTYPE" = *darwin* ]]; then
     alias cdb='cd $SOURCES_ROOT/hypnoglow/macOS-bootstrap'
 else
     alias cdb='cd $SOURCES_ROOT/hypnoglow/manjaro-bootstrap'
 fi
-alias cds='cd $SOURCES_ROOT/hypnoglow'
+alias cds='cd $SOURCES_ROOT'
+alias cdsh='cd $SOURCES_ROOT/hypnoglow'
 
 alias bootstrap='(cdb && ./bootstrap ${WS_PROFILE})'
 alias reload-zsh=". ~/.zshrc"
@@ -77,6 +78,15 @@ alias cri='composer install       --ignore-platform-reqs'
 alias cru='composer update        --ignore-platform-reqs'
 alias crr='composer require       --ignore-platform-reqs'
 alias crd='composer require --dev --ignore-platform-reqs'
+
+#
+# Vagrant
+#
+alias vg='vagrant'
+alias vgu='vagrant up'
+alias vgh='vagrant halt'
+alias vgd='vagrant destroy --force'
+alias vgs='vagrant ssh'
 
 #
 # Docker
