@@ -6,9 +6,9 @@ busy-signal@1.4.3
 dockerletion@0.2.0
 emmet@2.4.3
 expand-region@0.3.1
-file-icons@2.1.10
+file-icons@2.1.11
 go-plus@5.5.5
-go-signature-statusbar@1.2.1
+go-signature-statusbar@1.2.3
 hyperclick@0.1.3
 intentions@1.1.5
 language-docker@1.1.8
@@ -17,12 +17,12 @@ language-dots@0.0.4
 language-nginx@0.8.0
 less-than-slash@0.17.0
 linter@2.2.0
-linter-coffeelint@1.2.1
-linter-docker@0.2.0
+linter-coffeelint@1.3.1
+linter-docker@0.2.1
 linter-eslint@8.2.1
 linter-jsonlint@1.3.0
-linter-shellcheck@1.4.4
-linter-ui-default@1.6.5
+linter-shellcheck@1.4.6
+linter-ui-default@1.6.8
 linter-xmllint@1.4.3
 merge-conflicts@1.4.5
 minimap@4.29.6
@@ -32,5 +32,5 @@ pigments@0.40.2
 raml@0.2.0
 script@3.15.0
 scrolloff@0.2.0
-split-diff@1.4.3
+split-diff@1.5.1
 

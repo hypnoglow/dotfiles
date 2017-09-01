@@ -98,8 +98,7 @@
   "linter-rust": {}
   "linter-shellcheck":
     userParameters: "-e SC1090,SC2164,SC2148"
-  "linter-ui-default":
-    panelHeight: 81
+  "linter-ui-default": {}
   minimap:
     plugins:
       "git-diff": true
