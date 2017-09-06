@@ -59,6 +59,9 @@ backup = "$HOME/.dotfiles~"
 "atom/styles.less" = ".atom/styles.less"
 "atom/packages.list#macos" = ".atom/packages.list"
 
+# Vim
+"vim/vimrc" = ".vimrc"
+
 #
 # Other
 #
