@@ -69,7 +69,7 @@ alias gpf="git push --force-with-lease"
 alias gpff="git push --force"
 alias gcx="git commit --amend --reset-author --no-edit"
 alias gtr="git log --graph --all --date=relative --pretty=format:'%Cred%h %Creset%<|(50,trunc)%s %C(bold blue)<%an>%Creset %Cgreen(%cd)%Creset%C(auto)%d'"
-alias git-clean-merged-branches='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d'
+alias git-clean-merged-branches='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d ; git remote prune origin'
 
 #
 # Composer
@@ -129,15 +129,25 @@ kusp() {
     kubectl describe service $1 | grep "NodePort:" | cut -f 4 | cut -d "/" -f 1
 }
 kuns() {
-    # kubectl namespace set
-    kubectl config set-context $(kubectl config current-context) --namespace $1
+    if [ -z "$1" ]; then
+        kubectl config get-contexts | egrep "\*" | awk '{print $NF}'
+    else
+        kubectl config set-context $(kubectl config current-context) --namespace $1
+    fi
+}
+kuctx() {
+    if [ -z "$1" ]; then
+        kubectl config get-contexts
+    else
+        kubectl config use-context $1
+    fi
 }
 
 alias mik='minikube'
 alias miks='minikube start --vm-driver xhyve'
 alias mikdb='chrome-cli open $(minikube dashboard --url)'
-alias mik-docker-set='eval $(minikube docker-env)'
-alias mik-docker-unset='eval $(minikube docker-env -u)'
+alias mikds='eval $(minikube docker-env)'
+alias mikdu='eval $(minikube docker-env -u)'
 
 #
 # Go tools
