@@ -2,6 +2,10 @@
   Zen:
     gutter: true
     width: 160
+  "atom-ide-ui":
+    "atom-ide-code-format":
+      formatOnSave: true
+      formatOnType: false
   "atom-material-ui":
     colors:
       abaseColor: "#aad875"
@@ -28,6 +32,9 @@
     autoHideMenuBar: false
     automaticallyUpdate: false
     closeEmptyWindows: false
+    disabledPackages: [
+      "linter"
+    ]
     ignoredNames: [
       ".git"
       ".hg"
