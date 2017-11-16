@@ -35,3 +35,11 @@ if [ -d ${HOME}/.zshrc.d ]; then
     done
     unset file
 fi
+
+# Include local files if any exist.
+if [ -d ${HOME}/.zshrc.d/local ]; then
+    for file in ${HOME}/.zshrc.d/local/*.sh ; do
+        [ -r ${file} ] && . ${file}
+    done
+    unset file
+fi
