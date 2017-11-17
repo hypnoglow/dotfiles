@@ -77,6 +77,10 @@
   "fuzzy-finder": {}
   "go-guru": {}
   "go-plus":
+    disabledBundledPackages: [
+      "linter"
+      "go-debug"
+    ]
     panelDisplayMode: "closed"
   gofmt: {}
   "gometalinter-linter":
@@ -105,7 +109,8 @@
   "linter-rust": {}
   "linter-shellcheck":
     userParameters: "-e SC1090,SC2164,SC2148"
-  "linter-ui-default": {}
+  "linter-ui-default":
+    panelHeight: 81
   minimap:
     plugins:
       "git-diff": true

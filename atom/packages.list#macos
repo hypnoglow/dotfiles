@@ -1,14 +1,14 @@
 Zen@0.18.0
-atom-ide-ui@0.5.1
+atom-ide-ui@0.5.4
 atom-material-syntax@1.0.7
 atom-material-ui@2.0.6
 blame@0.12.0
 busy-signal@1.4.3
 dockerletion@0.2.0
 emmet@2.4.3
-expand-region@0.3.2
+expand-region@0.4.0
 file-icons@2.1.13
-go-plus@5.5.5
+go-plus@5.6.0
 go-signature-statusbar@1.2.3
 hyperclick@0.1.5
 ide-go@0.4.0
@@ -21,7 +21,7 @@ less-than-slash@0.17.0
 linter@2.2.0
 linter-coffeelint@1.3.1
 linter-docker@0.2.1
-linter-eslint@8.3.2
+linter-eslint@8.4.0
 linter-jsonlint@1.3.0
 linter-shellcheck@1.4.6
 linter-ui-default@1.6.10
@@ -32,7 +32,8 @@ minimap-git-diff@4.3.1
 minimap-split-diff@0.3.7
 pigments@0.40.2
 raml@0.2.0
-script@3.17.2
+script@3.17.3
 scrolloff@0.2.0
 split-diff@1.5.1
+teletype@0.1.3
 
