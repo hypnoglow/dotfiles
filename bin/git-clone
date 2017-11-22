@@ -2,27 +2,45 @@
 #
 # Clone git repository considering username/repo_name directory hierarcy.
 
-if [ $# -eq 0 ] || [ $# -gt 1 ]; then
-    git clone "$@"
-    exit $?
-fi
+trimSchemaAndSuffix() {
+    path="$1"
 
-# 1 argument. Split repo path to directory path
+    # strip scheme
+    if [[ "$path" =~ ^(https?://) ]]; then
+        path="${path#https://*}"
+    fi
 
-url="$1"
+    if [[ "$path" =~ (.git)$ ]]; then
+        path="${path%.*}"
+    fi
 
-url_without_suffix="$url"
-if [[ "$url" =~ (.git)$ ]]; then
-    url_without_suffix="${url%.*}"
-fi
+    echo $path
+}
 
-reponame="$(basename "${url_without_suffix}")"
-hostname="$(basename "${url_without_suffix%/${reponame}}")"
+main() {
+    if [ $# -eq 0 ] || [ $# -gt 1 ]; then
+        git clone "$@"
+        exit $?
+    fi
 
-# BitBucket fix
-if [[ "$url" =~ git.rn && "$hostname" =~ \~* ]]; then
-    hostname="${hostname#~*}"
-fi
+    url="$1"
+    path="$(trimSchemaAndSuffix $url)"
 
-git clone "$url" "${hostname}/${reponame}"
-exit $?
+    reponame="$(basename "${path}")"
+    path="${path%/${reponame}}"
+
+    namespace="${path##*/}"
+    path="${path%/${namespace}}"
+    if [ "$path" = "$namespace" ]; then
+        namespace="${namespace##*:}"
+        path="${path%:${namespace}}"
+    fi
+
+    hostname="${path##*@}"
+
+    git clone "$url" "~/sources/${hostname}/${namespace}/${reponame}"
+    echo cd "~/sources/${hostname}/${namespace}/${reponame}"
+}
+
+main "$@"
+exit 0
