@@ -38,7 +38,7 @@ main() {
 
     hostname="${path##*@}"
 
-    git clone "$url" "~/sources/${hostname}/${namespace}/${reponame}"
+    git clone "$url" "${HOME}/sources/${hostname}/${namespace}/${reponame}"
     echo cd "~/sources/${hostname}/${namespace}/${reponame}"
 }
 
