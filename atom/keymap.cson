@@ -93,3 +93,5 @@
   # Select
   "cmd-shift-left": "editor:select-to-previous-word-boundary"
   "cmd-shift-right": "editor:select-to-next-word-boundary"
+  "cmd-ctrl-alt-up": "editor:add-selection-above"
+  "cmd-ctrl-alt-down": "editor:add-selection-below"
