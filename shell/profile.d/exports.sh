@@ -12,7 +12,7 @@ if [ -x "$(which go 2>/dev/null)" ]; then
 fi
 
 # Rust binaries path
-if [ -x "$(which cargo 2>/dev/null)" ] ; then
+if [ -d "${HOME}/.cargo/bin" ] ; then
     pathf_prepend "${HOME}/.cargo/bin"
 fi
 

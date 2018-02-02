@@ -32,8 +32,9 @@ backup = "$HOME/.dotfiles~"
 "zsh/zimrc" = ".zimrc"
 "zsh/zlogin" = ".zlogin"
 "zsh/zshrc.d" = ".zshrc.d"
-"zsh/plugins/list.sh#macos" = ".zshrc.d/plugins/list.sh"
-"zsh/aliases/list.sh#macos" = ".zshrc.d/aliases/list.sh"
+"zsh/os-specific/plugins.sh#macos" = ".zshrc.d/11-plugins-macos.sh"
+"zsh/os-specific/aliases.sh#macos" = ".zshrc.d/21-aliases-macos.sh"
+"zsh/os-specific/keybindings.sh#macos" = ".zshrc.d/31-keybindings-macos.sh"
 
 #
 # Editors

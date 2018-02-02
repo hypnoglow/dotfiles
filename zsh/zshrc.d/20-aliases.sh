@@ -149,6 +149,9 @@ alias mikdb='chrome-cli open $(minikube dashboard --url)'
 alias mikds='eval $(minikube docker-env)'
 alias mikdu='eval $(minikube docker-env -u)'
 
+alias hel='helm list'
+alias hedp='helm delete --purge'
+
 #
 # Go tools
 #
@@ -224,8 +227,3 @@ dfi() {
     ./install
     cd -
 }
-
-# OS-specific aliases
-if [ -e "${HOME}/.zshrc.d/aliases/list.sh" ]; then
-    . "${HOME}/.zshrc.d/aliases/list.sh"
-fi

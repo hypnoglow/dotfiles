@@ -14,11 +14,16 @@
 # i3 config is generated dynamically
 /i3/config
 
-# Some local shell includes
-**/*.local.sh
-/zsh/zshrc.d/local/*
 
 # Dynamically generated files for multi OS purposes
-/zsh/zshrc.d/plugins/list.sh
-/zsh/zshrc.d/aliases/list.sh
 /atom/packages.list
+
+#
+# bash & zsh symlinks and local includes
+#
+
+**/*.local.sh
+/zsh/zshrc.d/local/*
+/zsh/zshrc.d/11-plugins-macos.sh
+/zsh/zshrc.d/21-aliases-macos.sh
+/zsh/zshrc.d/31-keybindings-macos.sh
