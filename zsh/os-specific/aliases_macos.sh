@@ -25,3 +25,5 @@ alias dateiso='date -u +"%Y-%m-%dT%H:%M:%SZ"'
 
 alias tlis="lsof -iTCP -sTCP:LISTEN -n -P"
 alias stlis="sudo lsof -iTCP -sTCP:LISTEN -n -P"
+
+alias dns-flush="sudo killall -HUP mDNSResponder"

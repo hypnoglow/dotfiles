@@ -5,7 +5,7 @@
 # Emacs mode
 bindkey -e
 
-PURE_PROMPT_SYMBOL="ή"
+#PURE_PROMPT_SYMBOL="ή"
 
 # Source zim framework
 [[ -d ~/.zim ]] || {
@@ -43,3 +43,4 @@ if [ -d ${HOME}/.zshrc.d/local ]; then
     done
     unset file
 fi
+
