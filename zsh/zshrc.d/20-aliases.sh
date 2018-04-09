@@ -55,9 +55,13 @@ alias psg="ps aux | grep"
 alias dss="cdiff -s -w 0 -c auto HEAD"
 
 # Atom
-alias a="atom ."
-alias aa="atom -a ."
-alias aaw="atom -a -n ."
+alias ed="atom ."
+alias eda="atom -a ."
+alias edw="atom -a -n ."
+
+# Gogland
+alias ged='goland $PWD'
+alias edg='golang $PWD'
 
 #
 # Git
@@ -73,6 +77,15 @@ alias gtr="git log --graph --all --date=relative --pretty=format:'%Cred%h %Crese
 alias git-clean-merged-branches='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d ; git remote prune origin'
 alias gwds="cdiff -s -c always -w 0"
 alias gids="cdiff -s -c always -w 0 --staged"
+alias grm="git rebase master"
+
+# gron: git rebase --onto $target HEAD~$number <current_branch>
+#
+# Example:
+#     gron MY-BRANCH 1
+gron() {
+    git rebase --onto $1 HEAD~$2 $(git branch | grep -e "^\*" | cut -d' ' -f 2)
+}
 
 #
 # Composer
@@ -132,13 +145,15 @@ kusp() {
     kubectl describe service $1 | grep "NodePort:" | cut -f 4 | cut -d "/" -f 1
 }
 
-alias mik='minikube'
+alias minikube="KUBECONFIG=$HOME/.kube/conf.d/minikube minikube"
+alias mik='KUBECONFIG=$HOME/.kube/conf.d/minikube minikube'
 alias miks='minikube start --vm-driver xhyve'
 alias mikdb='chrome-cli open $(minikube dashboard --url)'
 alias mikds='eval $(minikube docker-env)'
 alias mikdu='eval $(minikube docker-env -u)'
 
-alias hel='helm list'
+alias hel="helm list -a -d -r"
+alias heln='helm list -a -d -r --namespace $(kubectl config get-contexts | egrep "\*" | awk '"'"'{print $NF}'"'"')'
 alias hedp='helm delete --purge'
 
 #

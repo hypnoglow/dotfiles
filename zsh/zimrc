@@ -17,6 +17,7 @@ zmodules=(
     utility
     archive
     custom
+    fasd
 
     #spectrum
     #ssh
