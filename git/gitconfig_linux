@@ -1,0 +1,19 @@
+[core]
+	include = .gitconfig_base
+[credential]
+	helper = cache --timeout=3600
+
+[merge]
+	tool = extMerge
+[mergetool "extMerge"]
+	cmd = extMerge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+[mergetool]
+	trustExitCode = false
+
+[diff]
+	mnemonicprefix = true
+	tool = cdiff
+[difftool "cdiff"]
+	cmd = LESS=-SR cdiff -s -c always -w 0 \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false

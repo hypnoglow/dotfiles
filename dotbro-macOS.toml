@@ -67,7 +67,8 @@ backup = "$HOME/.dotfiles~"
 # Other
 #
 
+"git/gitconfig_macos" = ".gitconfig"
+"git/gitconfig_base" = ".gitconfig_base"
 "git/gitcommit" = ".gitcommit"
-"git/gitconfig" = ".gitconfig"
 "git/gitexcludes" = ".gitexcludes"
 "surfingkeys.js" = ".surfingkeys.js"

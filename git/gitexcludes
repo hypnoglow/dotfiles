@@ -2,9 +2,11 @@
 .idea/
 *.sublime-project
 *.sublime-workspace
+.vscode
 
 .tags
 .realsync
+.magicindex.json
 application-build-*
 npm-debug.log
 .DS_Store

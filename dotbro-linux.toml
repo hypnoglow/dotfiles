@@ -99,8 +99,9 @@ backup = "$HOME/.dotfiles~"
 ".Xresources" = ".Xresources"
 "Xresources.d" = ".Xresources.d"
 
+"git/gitconfig_linux" = ".gitconfig"
+"git/gitconfig_base" = ".gitconfig_base"
 "git/gitcommit" = ".gitcommit"
-"git/gitconfig" = ".gitconfig"
 "git/gitexcludes" = ".gitexcludes"
 
 ".keynavrc" = ".keynavrc"

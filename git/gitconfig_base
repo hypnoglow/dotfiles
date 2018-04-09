@@ -1,0 +1,25 @@
+[user]
+	name = Igor Zibarev
+	email = zibarev.i@gmail.com
+[core]
+	editor = vim
+	eol = lf
+	autocrlf = false
+	quotepath = false
+	excludesfile = ~/.gitexcludes
+#[commit]
+#	template = ~/.gitcommit
+[push]
+	default = simple
+[color]
+	ui = auto
+[i18n]
+	commitencoding = utf-8
+	logoutputencoding = utf-8
+[rebase]
+	autostash = true
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process

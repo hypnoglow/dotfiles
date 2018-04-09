@@ -66,13 +66,15 @@ alias edg='golang $PWD'
 #
 # Git
 #
+alias gsh="git status --short --branch"
 alias gst="git status"
 alias gbC="git checkout -B"
 alias gcom="git checkout master"
 alias gdt="git difftool"
 alias gpf="git push --force-with-lease"
 alias gpff="git push --force"
-alias gcx="git commit --amend --reset-author --no-edit"
+alias gcf="git commit --amend --reset-author --no-edit"
+alias gcF="git commit --amend --reset-author --verbose"
 alias gtr="git log --graph --all --date=relative --pretty=format:'%Cred%h %Creset%<|(50,trunc)%s %C(bold blue)<%an>%Creset %Cgreen(%cd)%Creset%C(auto)%d'"
 alias git-clean-merged-branches='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d ; git remote prune origin'
 alias gwds="cdiff -s -c always -w 0"
