@@ -6,6 +6,7 @@
     "atom-ide-code-format":
       formatOnSave: true
       formatOnType: false
+    use: {}
   "atom-material-ui":
     colors:
       abaseColor: "#aad875"
@@ -34,6 +35,7 @@
     closeEmptyWindows: false
     disabledPackages: [
       "linter"
+      "ghost-text"
     ]
     ignoredNames: [
       ".git"
@@ -47,6 +49,7 @@
     packagesWithKeymapsDisabled: [
       "fuzzy-finder"
       "go-debug"
+      "python-import-magic"
     ]
     telemetryConsent: "limited"
     themes: [
@@ -81,6 +84,7 @@
       "linter"
       "go-debug"
     ]
+    lint: {}
     panelDisplayMode: "closed"
   gofmt: {}
   "gometalinter-linter":
@@ -98,6 +102,7 @@
       "--json"
       "."
     ]
+  "ide-go": {}
   "js-hyperclick": {}
   "language-archlinux":
     checkPKGBUILDOnSave: true
@@ -120,6 +125,9 @@
   "package-generator":
     packageSyntax: "coffeescript"
   pigments: {}
+  "python-import-magic":
+    pythonPaths: "/usr/local/bin/python3"
+    reindexOnSave: true
   "rust-api-docs-helper":
     enableBackgroundResolving: false
   scrolloff:
@@ -139,6 +147,9 @@
 ".dots.source":
   editor:
     preferredLineLength: 80
+".git-config.source":
+  editor:
+    tabType: "hard"
 ".go.source":
   editor:
     tabLength: 4

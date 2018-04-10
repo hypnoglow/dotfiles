@@ -66,6 +66,15 @@
     'body': '################################################################################'
 
 #
+# python
+#
+
+'.source.python':
+  'print to stderr':
+    'prefix': 'pe'
+    'body': 'print($1, file=sys.stderr)'
+
+#
 # golang
 #
 

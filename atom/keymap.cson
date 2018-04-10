@@ -95,3 +95,7 @@
   "cmd-shift-right": "editor:select-to-next-word-boundary"
   "cmd-ctrl-alt-up": "editor:add-selection-above"
   "cmd-ctrl-alt-down": "editor:add-selection-below"
+
+  # Panes
+  "cmd-k shift-left": "window:move-active-item-to-pane-on-left"
+  "cmd-k shift-right": "window:move-active-item-to-pane-on-right"
