@@ -61,7 +61,7 @@ alias edw="atom -a -n ."
 
 # Gogland
 alias ged='goland $PWD'
-alias edg='golang $PWD'
+alias edg='goland $PWD'
 
 #
 # Git
