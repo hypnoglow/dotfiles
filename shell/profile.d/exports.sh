@@ -40,6 +40,10 @@ fi
 # set PATH so it includes user's private bin if it exists
 if [ -d "${HOME}/bin" ] ; then
     pathf_prepend "${HOME}/bin"
+
+    if [ -d "${HOME}/bin/local" ] ; then
+        pathf_prepend "${HOME}/bin/local"
+    fi
 fi
 
 # Workstation profile
@@ -71,6 +75,10 @@ else
     BROWSER=""
 fi
 export BROWSER
+
+if [ -x "$(which nvim 2>/dev/null)" ]; then
+    EDITOR="nvim"
+fi
 
 SOURCES_ROOT="${HOME}/sources"
 export SOURCES_ROOT

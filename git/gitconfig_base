@@ -2,7 +2,7 @@
 	name = Igor Zibarev
 	email = zibarev.i@gmail.com
 [core]
-	editor = vim
+	editor = nvim
 	eol = lf
 	autocrlf = false
 	quotepath = false

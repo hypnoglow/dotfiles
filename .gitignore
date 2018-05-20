@@ -14,3 +14,6 @@
 /zsh/zshrc.d/11-plugins_macos.sh
 /zsh/zshrc.d/21-aliases_macos.sh
 /zsh/zshrc.d/31-keybindings_macos.sh
+
+# local binaries
+/bin/local
