@@ -17,3 +17,7 @@ fi
 if type -f helm &> /dev/null; then
     source <(helm completion zsh)
 fi
+
+if type -f stern &> /dev/null; then
+    source <(stern --completion=zsh)
+fi

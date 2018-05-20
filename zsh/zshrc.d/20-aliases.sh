@@ -70,6 +70,7 @@ alias gsh="git status --short --branch"
 alias gst="git status"
 alias gbC="git checkout -B"
 alias gcom="git checkout master"
+alias gcomfr="git checkout master && git pull --rebase"
 alias gdt="git difftool"
 alias gpf="git push --force-with-lease"
 alias gpff="git push --force"
@@ -126,6 +127,8 @@ alias dvl="docker volume ls"
 alias dvc="docker volume create"
 alias dvi="docker volume inspect"
 
+alias dcrs="docker container run --rm -i -t --entrypoint /bin/sh"
+
 alias docker-clean-containers='docker ps --filter "status=exited" -a -q | xargs docker rm -v'
 alias docker-clean-images='docker images --filter "dangling=true" -q | xargs docker rmi'
 alias docker-clean-volumes='docker volume ls --filter dangling=true | xargs docker volume rm'
@@ -157,6 +160,12 @@ alias mikdu='eval $(minikube docker-env -u)'
 alias hel="helm list -a -d -r"
 alias heln='helm list -a -d -r --namespace $(kubectl config get-contexts | egrep "\*" | awk '"'"'{print $NF}'"'"')'
 alias hedp='helm delete --purge'
+
+#
+# Clouds
+#
+alias gcp="gcloud"
+alias t="terraform"
 
 #
 # Go tools
