@@ -17,7 +17,7 @@ alias cb='xclip -selection clipboard'
 alias tarls='tar t --exclude="*/*" -f'
 alias du1='du -d 1 -BM | sort -n -k1 -r | less -XSF'
 alias du2='du -d 2'
-alias tf='tail -f'
+#alias tf='tail -f'
 alias 1='watch -n1'
 
 alias tr1='tree -L 1'
@@ -52,7 +52,7 @@ alias reload-xresources="xrdb -load -quiet ~/.Xresources"
 alias psa="ps aux"
 alias psg="ps aux | grep"
 
-alias dss="cdiff -s -w 0 -c auto HEAD"
+alias dss="ydiff -s -w 0 -c auto HEAD"
 
 # Atom
 alias ed="atom ."
@@ -78,8 +78,8 @@ alias gcf="git commit --amend --reset-author --no-edit"
 alias gcF="git commit --amend --reset-author --verbose"
 alias gtr="git log --graph --all --date=relative --pretty=format:'%Cred%h %Creset%<|(50,trunc)%s %C(bold blue)<%an>%Creset %Cgreen(%cd)%Creset%C(auto)%d'"
 alias git-clean-merged-branches='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d ; git remote prune origin'
-alias gwds="cdiff -s -c always -w 0"
-alias gids="cdiff -s -c always -w 0 --staged"
+alias gwds="ydiff -s -c always -w 0"
+alias gids="ydiff -s -c always -w 0 --staged"
 alias grm="git rebase master"
 
 # gron: git rebase --onto $target HEAD~$number <current_branch>
@@ -166,6 +166,7 @@ alias hedp='helm delete --purge'
 #
 alias gcp="gcloud"
 alias t="terraform"
+alias tf="terraform"
 
 #
 # Go tools
