@@ -22,6 +22,18 @@ if [ -d "${HOME}/apps/n" ] ; then
     pathf_prepend "$N_PREFIX/bin"
 fi
 
+if [ -d "$HOME/Library/Python/3.7/bin" ]; then
+    pathf_prepend "$HOME/Library/Python/3.7/bin"
+fi
+
+if [ -d "$HOME/.linkerd2/bin" ]; then
+    pathf_append "$HOME/.linkerd2/bin"
+fi
+
+if [ -d "$HOME/.krew/bin" ]; then
+    pathf_append "$HOME/.krew/bin"
+fi
+
 # NGS binaries
 if [ -d "${HOME}/ngs/bin" ] ; then
     pathf_prepend "${HOME}/ngs/bin"
@@ -84,3 +96,6 @@ SOURCES_ROOT="${HOME}/sources"
 export SOURCES_ROOT
 DOTFILES_ROOT="$(dirname "$(dirname "$(readlink "${HOME}/.profile")")")"
 export DOTFILES_ROOT
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
