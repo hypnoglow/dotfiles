@@ -18,6 +18,12 @@ alias bri="brew install"
 alias brci="brew cask install"
 
 #
+# Remap macOS core utils to GNU
+#
+
+alias sed="gsed"
+
+#
 # macOS specific versions of commands
 #
 
@@ -62,6 +68,31 @@ tab-color-yellow() {
     tab-color 255 183 77
 }
 
+tab-color-indigo() {
+    tab-color 140 158 255
+}
+
+tab-color-teal() {
+    tab-color 167 255 235
+}
+
+tab-color-orange() {
+    tab-color 255 209 128
+}
+
+tab-color-blue() {
+    tab-color 130 177 255
+}
+
 tab-color-reset() {
     echo -ne "\033]6;1;bg;*;default\a"
 }
+
+#
+# Utilities
+#
+
+alias pcat="pygmentize -O style=native -g"
+alias pless="pcat | less -R"
+alias -g PC="| pcat"
+alias -g PL="| pless"

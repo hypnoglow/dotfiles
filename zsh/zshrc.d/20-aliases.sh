@@ -54,6 +54,9 @@ alias psg="ps aux | grep"
 
 alias dss="ydiff -s -w 0 -c auto HEAD"
 
+# Vim
+alias vim="nvim"
+
 # Atom
 alias ed="atom ."
 alias eda="atom -a ."
@@ -149,13 +152,27 @@ kusp() {
     # kubectl service port
     kubectl describe service $1 | grep "NodePort:" | cut -f 4 | cut -d "/" -f 1
 }
+alias kux="kubectl run -i -t interactive --image=alpine --restart=Never --rm -- sh"
 
 alias minikube="KUBECONFIG=$HOME/.kube/conf.d/minikube minikube"
-alias mik='KUBECONFIG=$HOME/.kube/conf.d/minikube minikube'
-alias miks='minikube start --vm-driver xhyve'
+alias mik="minikube"
 alias mikdb='chrome-cli open $(minikube dashboard --url)'
 alias mikds='eval $(minikube docker-env)'
 alias mikdu='eval $(minikube docker-env -u)'
+
+minikube-start() {
+    minikube start --logtostderr --v=3 --vm-driver=virtualbox \
+        --extra-config=kubelet.authentication-token-webhook=true \
+        --extra-config=kubelet.authorization-mode=Webhook
+}
+alias mikstart="minikube-start"
+alias mikstartver="minikube-start --kubernetes-version"
+
+minikube-push-image() {
+    [ -z "$1" ] && return 1
+    docker save $1 | (eval $(minikube docker-env) && docker load)
+}
+alias mikpi="minikube-push-image"
 
 alias hel="helm list -a -d -r"
 alias heln='helm list -a -d -r --namespace $(kubectl config get-contexts | egrep "\*" | awk '"'"'{print $NF}'"'"')'
@@ -195,6 +212,19 @@ alias gocoh='go test -coverprofile cover.out && go tool cover -html=cover.out'
 alias gocof='go test -coverprofile cover.out && go tool cover -func=cover.out'
 alias gofw='goimports -local ${PWD##$GOPATH/src/} -l -w .'
 alias gofd='goimports -local ${PWD##$GOPATH/src/} -l -d .'
+
+# See: https://github.com/y0ssar1an/q
+qq() {
+    clear
+    local gpath="${GOPATH:-$HOME/go}"
+    "${gpath%%:*}/src/github.com/y0ssar1an/q/q.sh" "$@"
+}
+rmqq() {
+    if [[ -f "$TMPDIR/q" ]]; then
+        rm "$TMPDIR/q"
+    fi
+    qq
+}
 
 #
 # Simple functions
