@@ -1,0 +1,6 @@
+#!/bin/bash
+
+#if [[ -r "$PWD/Gopkg.toml" && -r "$PWD/Gopkg.lock" ]]; then
+#    echo "[post-checkout] --> dep check"
+#    dep check
+#fi 

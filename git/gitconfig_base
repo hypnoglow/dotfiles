@@ -7,6 +7,7 @@
 	autocrlf = false
 	quotepath = false
 	excludesfile = ~/.gitexcludes
+	#hooksPath = ~/.githooks
 #[commit]
 #	template = ~/.gitcommit
 [push]
