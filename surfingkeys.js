@@ -6,8 +6,6 @@ mapkey('<Ctrl-y>', 'Show me the money', function() {
 // an example to replace `u` with `?`, click `Default mappings` to see how `u` works.
 //map('?', 'u');
 
-mapkey('u', '#2Scroll a page up', 'Normal.scroll("pageUp")', {repeatIgnore: true});
-
 mapkey('J', '#3Go one tab left', 'RUNTIME("previousTab")');
 mapkey('K', '#3Go one tab right', 'RUNTIME("nextTab")');
 

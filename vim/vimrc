@@ -62,7 +62,7 @@ set wildmenu
 " UI
 "
 
-set background=dark
+set background=light
 hi underlined cterm=underline
 hi LineNr ctermfg=238 ctermbg=none
 hi Cursor ctermbg=15 ctermfg=0
@@ -105,3 +105,9 @@ set sidescroll=1
 "
 
 set backspace=indent,eol,start
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'fatih/vim-go'
+
+call plug#end()
