@@ -11,3 +11,5 @@ application-build-*
 npm-debug.log
 .DS_Store
 .env
+.envrc
+tmp/
