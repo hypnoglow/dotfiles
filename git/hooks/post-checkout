@@ -1,6 +1,14 @@
 #!/bin/bash
 
+#if ! git symbolic-ref -q HEAD ; then
+#    return 0
+#fi
+
+#echo -e "\n==> Running post-checkout hook"
+
 #if [[ -r "$PWD/Gopkg.toml" && -r "$PWD/Gopkg.lock" ]]; then
 #    echo "[post-checkout] --> dep check"
 #    dep check
-#fi 
+#fi
+
+#echo -e "<==(post-checkout hook)\n"

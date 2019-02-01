@@ -1,0 +1,4 @@
+#!/bin/bash
+
+#echo -e "\n==> Running pre-commit hook"
+#echo -e "<==(pre-commit hook)\n"
