@@ -81,6 +81,8 @@
   'alt-\\': 'tree-view:toggle-focus'
   'alt-|': 'github:toggle-git-tab-focus'
   'cmd-|': 'github:toggle-git-tab'
+  "cmd-o": "fuzzy-finder:toggle-file-finder"
+  "cmd-alt-o": "application:open"
 
 ".platform-darwin atom-workspace atom-text-editor:not([mini])":
   "cmd-shift-up": "editor:move-line-up"
@@ -99,3 +101,5 @@
   # Panes
   "cmd-k shift-left": "window:move-active-item-to-pane-on-left"
   "cmd-k shift-right": "window:move-active-item-to-pane-on-right"
+
+  "ctrl-shift-E": "unset!"

@@ -36,6 +36,7 @@
     disabledPackages: [
       "linter"
       "ghost-text"
+      "emmet"
     ]
     ignoredNames: [
       ".git"
@@ -53,8 +54,8 @@
     ]
     telemetryConsent: "limited"
     themes: [
-      "city-lights-ui"
-      "city-lights-syntax"
+      "one-light-ui"
+      "one-light-syntax"
     ]
     warnOnLargeFileLimit: 8
   editor:
