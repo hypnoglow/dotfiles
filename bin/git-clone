@@ -26,6 +26,17 @@ main() {
     url="$1"
     path="$(trimSchemaAndSuffix $url)"
 
+    if [[ $path =~ ^git@ ]]; then
+        hostname="${path##*@}"
+        hostname="${hostname%%:*}"
+        namespace="${path##*:}"
+
+        git clone "$url" "${HOME}/sources/${hostname}/${namespace}"
+        echo -e -n "\nCloned! Directory:\n\n\t"
+        echo cd "~/sources/${hostname}/${namespace}"
+        return
+    fi
+
     reponame="$(basename "${path}")"
     path="${path%/${reponame}}"
 
