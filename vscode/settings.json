@@ -1,0 +1,13 @@
+{
+    // macos native tabs
+    "window.nativeTabs": true, 
+    "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "git.autofetch": true,
+    "[terraform]": {
+        "editor.formatOnSave": true,
+    },
+    "files.insertFinalNewline": true,
+    "window.zoomLevel": 0,
+    "explorer.confirmDragAndDrop": false,
+}
