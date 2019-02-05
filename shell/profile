@@ -20,7 +20,7 @@
 dot_logger_log "Loading ~/.profile"
 
 if [ ! -d "${HOME}/.profile.d" ]; then
-    echo "WARNING! ~/.profile.d not found." | tee -a "${HOME}/DOTS_ERRORS.log"
+    dot_logger_error "WARNING! ~/.profile.d not found."
     return
 fi
 

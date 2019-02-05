@@ -16,7 +16,7 @@ backup = "$HOME/.dotfiles~"
 [mapping]
 
 # Binaries
-"bin" = "bin"
+#"bin" = "bin"
 
 #
 # Shell
@@ -29,11 +29,11 @@ backup = "$HOME/.dotfiles~"
 "shell/libraries" = ".sh"
 
 # BASH
-"bash/bashrc.d" = ".bashrc.d"
-"bash/bashrc" = ".bashrc"
-"bash/bash_logout" = ".bash_logout"
-"bash/bash_profile" = ".bash_profile"
-".inputrc" = ".inputrc"
+#"bash/bashrc.d" = ".bashrc.d"
+#"bash/bashrc" = ".bashrc"
+#"bash/bash_logout" = ".bash_logout"
+#"bash/bash_profile" = ".bash_profile"
+#".inputrc" = ".inputrc"
 
 # ZSH
 "zsh/zprofile" = ".zprofile"
@@ -49,40 +49,40 @@ backup = "$HOME/.dotfiles~"
 #
 
 # Atom
-"atom/config.cson" = ".atom/config.cson"
-"atom/init.coffee" = ".atom/init.coffee"
-"atom/keymap.cson" = ".atom/keymap.cson"
-"atom/snippets.cson" = ".atom/snippets.cson"
-"atom/styles.less" = ".atom/styles.less"
-"atom/packages.list#linux" = ".atom/packages.list"
+#"atom/config.cson" = ".atom/config.cson"
+#"atom/init.coffee" = ".atom/init.coffee"
+#"atom/keymap.cson" = ".atom/keymap.cson"
+#"atom/snippets.cson" = ".atom/snippets.cson"
+#"atom/styles.less" = ".atom/styles.less"
+#"atom/packages.list#linux" = ".atom/packages.list"
 
 # Vim
-"vim/vimrc" = ".vimrc"
+#"vim/vimrc" = ".vimrc"
 
 #
 # Other
 #
-"autorandr" = ".autorandr"
+#"autorandr" = ".autorandr"
 
-".xinitrc" = ".xinitrc"
-".xprofile" = ".xprofile"
-".Xresources" = ".Xresources"
-"Xresources.d" = ".Xresources.d"
+#".xinitrc" = ".xinitrc"
+#".xprofile" = ".xprofile"
+#".Xresources" = ".Xresources"
+#"Xresources.d" = ".Xresources.d"
 
 "git/gitconfig_linux" = ".gitconfig"
 "git/gitconfig_base" = ".gitconfig_base"
 "git/gitcommit" = ".gitcommit"
 "git/gitexcludes" = ".gitexcludes"
 
-".keynavrc" = ".keynavrc"
-".mongorc.js" = ".mongorc.js"
-".screenrc" = ".screenrc"
-"coffeelint.json" = "coffeelint.json"
-"surfingkeys.js" = ".surfingkeys.js"
+#".keynavrc" = ".keynavrc"
+#".mongorc.js" = ".mongorc.js"
+#".screenrc" = ".screenrc"
+#"coffeelint.json" = "coffeelint.json"
+#"surfingkeys.js" = ".surfingkeys.js"
 
-"i3" = ".i3"
-"conky" = ".config/conky"
-"i3-scrot.conf" = ".config/i3-scrot.conf"
-"rofi" = ".config/rofi"
+#"i3" = ".i3"
+#"conky" = ".config/conky"
+#"i3-scrot.conf" = ".config/i3-scrot.conf"
+#"rofi" = ".config/rofi"
 
-".ctags" = ".ctags"
+#".ctags" = ".ctags"

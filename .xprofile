@@ -44,5 +44,5 @@ xset fp rehash
 # Prepare i3 config based on workstation profile
 if [ -x "$(which i3-generate-config 2>/dev/null)" ]; then
     dot_logger_log "Executing i3-generate-config with profile ${WS_PROFILE}"
-    i3-generate-config "${WS_PROFILE}" &>> "$(dot_logger_getlogfile)"
+    i3-generate-config "${WS_PROFILE}" &>> "$(dot_logger_outfile)"
 fi

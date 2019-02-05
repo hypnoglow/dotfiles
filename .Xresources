@@ -2,21 +2,13 @@
 ! Font
 !
 
-! Font Examples:
-! URxvt.font: 9x15
-! URxvt.font: xft:Terminus:size=12
-! URxvt.font: xft:Source Code Pro:Medium:pixelsize=12:antialias=true:hinting=true
-! URxvt.font: xft:Iosevka Term:size=12:antialias=true:hinting=true
-URxvt.font: -misc-tamzen-medium-r-normal--16-116-100-100-c-80-iso8859-1,\
-            -misc-tamzenforpowerline-medium-r-normal--16-116-100-100-c-80-iso10646-1,\
-            9x15
-URxvt.boldFont: -misc-tamzen-bold-r-normal--16-116-100-100-c-80-iso8859-1,\
-                -misc-tamzenforpowerline-bold-r-normal--16-116-100-100-c-80-iso10646-1,\
-                9x15
-URxvt.italicFont:
-URxvt.boldItalicFont:
+! check this: URxvt.font:                       9x15,xft:TerminessTTFNerdFontMono
 
-URxvt.letterSpace: 0
+URxvt.font: xft:Fira Mono:size=12:medium
+URxvt.boldFont: xft:Fira Mono:size=12:bold
+URxvt.italicFont: xft:Fira Mono:size=12:italic
+URxvt.boldItalicFont: xft:Fira Mono:size=12:bold:italic
+URxvt.letterSpace: -1
 URxvt.lineSpace: 0
 
 Xft.hinting: true
@@ -25,15 +17,13 @@ Xft.hintstyle: hintslight
 
 ! Xft.dpi: 96
 Xft.antialias: true
+Xft.hinting: true
 Xft.rgba: rgb
 Xft.lcdfilter: lcddefault
 
 !
 ! Opts
 !
-
-Xcursor.theme: Chameleon-Pearl-Regular-0.5
-Xcursor.size:  0
 
 URxvt.depth: 32
 URxvt*cursorBlink:                    true
@@ -177,7 +167,7 @@ URxvt.keysym.M-C-space: perl:aAtt:fuzzy-complete
 
 ! #include ".Xresources.d/scheme.dark.tomorrow_night"
 ! #include ".Xresources.d/scheme.dark.tomorrow_night_bright"
-#include ".Xresources.d/scheme.dark.tomorrow_night_eighties"
+! #include ".Xresources.d/scheme.dark.tomorrow_night_eighties"
 
 XTerm*background: #272827
 XTerm*foreground: #fdf6e3
