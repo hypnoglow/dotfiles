@@ -41,6 +41,7 @@ backup = "$HOME/.dotfiles~"
 "zsh/zimrc" = ".zimrc"
 "zsh/zlogin" = ".zlogin"
 "zsh/zshrc.d" = ".zshrc.d"
+"zsh/os-specific/exports_linux.sh" = ".zshrc.d/02-exports_linux.sh"
 "zsh/os-specific/plugins_linux.sh" = ".zshrc.d/11-plugins_linux.sh"
 "zsh/os-specific/aliases_linux.sh" = ".zshrc.d/21-aliases_linux.sh"
 
