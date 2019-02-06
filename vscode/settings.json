@@ -10,4 +10,5 @@
     "files.insertFinalNewline": true,
     "window.zoomLevel": 0,
     "explorer.confirmDragAndDrop": false,
+    "editor.minimap.enabled": false,
 }
