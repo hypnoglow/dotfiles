@@ -96,3 +96,8 @@ alias pcat="pygmentize -O style=native -g"
 alias pless="pcat | less -R"
 alias -g PC="| pcat"
 alias -g PL="| pless"
+
+#
+# Shortcuts
+#
+alias cdb='cd $SOURCES_ROOT/github.com/hypnoglow/macOS-bootstrap'

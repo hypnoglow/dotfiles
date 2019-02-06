@@ -37,11 +37,6 @@ alias -g PHPG='| egrep -v "^(;|$)"'
 
 alias cdd='cd $DOTFILES_ROOT'
 alias cdg='cd $GOPATH/src'
-if [[ "$OSTYPE" = *darwin* ]]; then
-    alias cdb='cd $SOURCES_ROOT/hypnoglow/macOS-bootstrap'
-else
-    alias cdb='cd $SOURCES_ROOT/hypnoglow/manjaro-bootstrap'
-fi
 alias cds='cd $SOURCES_ROOT'
 alias cdsh='cd $SOURCES_ROOT/hypnoglow'
 
