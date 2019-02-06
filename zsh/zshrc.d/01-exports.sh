@@ -6,3 +6,6 @@ for conf in $HOME/.kube/conf.d/* ; do
     export KUBECONFIG=$KUBECONFIG:$conf
 done
 
+export SOURCES_ROOT="${HOME}/sources"
+export DOTFILES_ROOT="${HOME}/sources/github.com/hypnoglow/dotfiles"
+export EDITOR=vim

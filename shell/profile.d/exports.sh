@@ -88,14 +88,5 @@ else
 fi
 export BROWSER
 
-if [ -x "$(which nvim 2>/dev/null)" ]; then
-    EDITOR="nvim"
-fi
-
-SOURCES_ROOT="${HOME}/sources"
-export SOURCES_ROOT
-DOTFILES_ROOT="$(dirname "$(dirname "$(readlink "${HOME}/.profile")")")"
-export DOTFILES_ROOT
-
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
