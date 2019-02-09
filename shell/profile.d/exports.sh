@@ -97,5 +97,6 @@ export SOURCES_ROOT
 DOTFILES_ROOT="$(dirname "$(dirname "$(readlink "${HOME}/.profile")")")"
 export DOTFILES_ROOT
 
+# TODO: remove this, as we use /etc/locale.conf
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
