@@ -147,7 +147,11 @@ kusp() {
     # kubectl service port
     kubectl describe service $1 | grep "NodePort:" | cut -f 4 | cut -d "/" -f 1
 }
-alias kux="kubectl run -i -t interactive --image=alpine --restart=Never --rm -- sh"
+kuri() { # kubectl run interactive
+    local image="${1:-alpine}"
+    local cmd="${2:-sh}"
+    kubectl run -i -t interactive --image=${image} --restart=Never --rm -- ${cmd}
+}
 
 alias minikube="KUBECONFIG=$HOME/.kube/conf.d/minikube minikube"
 alias mik="minikube"
