@@ -35,3 +35,4 @@ backup = "$HOME/.dotfiles~"
 "i3-reforged/config" = ".config/i3/config"
 "i3-reforged/i3blocks-config" = ".config/i3blocks/config"
 
+"compton.conf" = ".compton.conf"
