@@ -20,6 +20,9 @@ alias du2='du -d 2'
 #alias tf='tail -f'
 alias 1='watch -n1'
 
+# cat with separator
+alias cats='tail -n +1 *'
+
 alias tr1='tree -L 1'
 alias tr2='tree -L 2'
 
