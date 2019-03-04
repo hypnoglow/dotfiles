@@ -18,7 +18,7 @@ if type -f helm &> /dev/null; then
     source <(helm completion zsh)
 fi
 
-if type -f minikube &> /dev/null; then
+if [ -x "$(which minikube 2>/dev/null)" ]; then
     source <(minikube completion zsh)
 fi
 
