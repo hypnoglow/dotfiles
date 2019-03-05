@@ -58,6 +58,11 @@ if [ -d "${HOME}/bin" ] ; then
     fi
 fi
 
+if [ ! -d "${HOME}/.local/bin" ]; then
+    mkdir -p "${HOME}/.local/bin"
+fi
+pathf_prepend "${HOME}/.local/bin"
+
 # Workstation profile
 if [ -z "${WS_PROFILE}" ]; then
     WS_PROFILE="default"
