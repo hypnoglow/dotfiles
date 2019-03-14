@@ -36,3 +36,7 @@ backup = "$HOME/.dotfiles~"
 "i3-reforged/i3blocks-config" = ".config/i3blocks/config"
 
 "compton.conf" = ".compton.conf"
+
+"neovim/init.vim" = ".config/nvim/init.vim"
+"neovim/ftplugin/sh.vim" = ".config/nvim/ftplugin/sh.vim"
+"neovim/ftplugin/yaml.vim" = ".config/nvim/ftplugin/yaml.vim"
