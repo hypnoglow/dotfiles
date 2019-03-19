@@ -20,6 +20,10 @@
     // Explorer
     "explorer.confirmDragAndDrop": false,
     "explorer.openEditors.visible": 0,
+    // Terminal
+    "terminal.external.osxExec": " iTerm.app",
+    "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
+    "terminal.integrated.cursorBlinking": true,
     // Language-specific
     "[terraform]": {
         "editor.formatOnSave": true,
