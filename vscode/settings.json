@@ -1,16 +1,38 @@
 {
-    // macos native tabs
-    "window.nativeTabs": true,
+    // Editor
     "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
     "editor.fontLigatures": true,
-    "git.autofetch": true,
-    "[terraform]": {
-        "editor.formatOnSave": true,
-    },
+    "editor.rulers": [
+        80,
+        120
+    ],
+    "editor.formatOnSave": true,
+    "editor.renderWhitespace": "boundary",
+    "editor.renderControlCharacters": true,
+    "editor.minimap.enabled": false,
+    // Window
+    "window.nativeTabs": true,
+    "window.zoomLevel": 0,
+    // Files
     "files.trimTrailingWhitespace": true,
     "files.trimFinalNewlines": true,
     "files.insertFinalNewline": true,
-    "window.zoomLevel": 0,
+    // Explorer
     "explorer.confirmDragAndDrop": false,
-    "editor.minimap.enabled": false,
+    "explorer.openEditors.visible": 0,
+    // Language-specific
+    "[terraform]": {
+        "editor.formatOnSave": true,
+    },
+    "[markdown]": {
+        "editor.wordWrap": "bounded",
+        "editor.quickSuggestions": false,
+        "files.trimTrailingWhitespace": false,
+    },
+    // Miscellaneous
+    "git.autofetch": true,
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "workbench.colorTheme": "Shades of Purple",
+    "workbench.iconTheme": "vscode-great-icons",
 }
