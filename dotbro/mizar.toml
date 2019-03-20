@@ -21,6 +21,7 @@ backup = "$HOME/.dotfiles~"
 "zsh/zimrc" = ".zimrc"
 "zsh/zlogin" = ".zlogin"
 "zsh/zshrc.d" = ".zshrc.d"
+"zsh/os-specific/includes_linux.sh" = ".zshrc.d/00-includes_linux.sh"
 "zsh/os-specific/exports_linux.sh" = ".zshrc.d/02-exports_linux.sh"
 "zsh/os-specific/plugins_linux.sh" = ".zshrc.d/11-plugins_linux.sh"
 "zsh/os-specific/aliases_linux.sh" = ".zshrc.d/21-aliases_linux.sh"
@@ -36,7 +37,10 @@ backup = "$HOME/.dotfiles~"
 "i3-reforged/i3blocks-config" = ".config/i3blocks/config"
 
 "compton.conf" = ".compton.conf"
+"fontconfig/fonts.conf" = ".config/fontconfig/fonts.conf"
 
 "neovim/init.vim" = ".config/nvim/init.vim"
 "neovim/ftplugin/sh.vim" = ".config/nvim/ftplugin/sh.vim"
 "neovim/ftplugin/yaml.vim" = ".config/nvim/ftplugin/yaml.vim"
+
+"profiles/mizar/xinitrc" = ".xinitrc"
