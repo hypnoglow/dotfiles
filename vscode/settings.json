@@ -6,12 +6,12 @@
         80,
         120
     ],
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "editor.renderWhitespace": "boundary",
     "editor.renderControlCharacters": true,
     "editor.minimap.enabled": false,
     // Window
-    "window.nativeTabs": true,
+    "window.nativeTabs": true, // works only on macOS
     "window.zoomLevel": 0,
     // Files
     "files.trimTrailingWhitespace": true,
@@ -26,6 +26,7 @@
     "terminal.integrated.cursorBlinking": true,
     // Language-specific
     "[terraform]": {
+        "editor.tabSize": 2,
         "editor.formatOnSave": true,
     },
     "[markdown]": {
@@ -39,4 +40,9 @@
     "telemetry.enableCrashReporter": false,
     "workbench.colorTheme": "Shades of Purple",
     "workbench.iconTheme": "vscode-great-icons",
+    "vs-kubernetes": {
+        "disable-linters": [
+            "resource-limits",
+        ]
+    },
 }
