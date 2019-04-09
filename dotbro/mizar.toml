@@ -43,4 +43,7 @@ backup = "$HOME/.dotfiles~"
 "neovim/ftplugin/sh.vim" = ".config/nvim/ftplugin/sh.vim"
 "neovim/ftplugin/yaml.vim" = ".config/nvim/ftplugin/yaml.vim"
 
+"vscode/settings.json" = ".config/Code - OSS/User/settings.json"
+"vscode/keybindings-linux.json" = ".config/Code - OSS/User/keybindings.json"
+
 "profiles/mizar/xinitrc" = ".xinitrc"
