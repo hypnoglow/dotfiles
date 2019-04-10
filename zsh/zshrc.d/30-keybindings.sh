@@ -21,8 +21,10 @@ zle-custom-replace-last-word-of-last-command() {
 }
 zle -N zle-custom-replace-last-word-of-last-command
 
-bindkey "^[^?" zle-custom-backward-kill-subword
-bindkey "^H" backward-kill-word
-
-bindkey "^[" zle-custom-replace-first-word-of-last-command
-bindkey "^]" zle-custom-replace-last-word-of-last-command
+# Temporary disabled, need to investigate.
+#
+#bindkey "^[^?" zle-custom-backward-kill-subword
+#bindkey "^H" backward-kill-word
+#
+#bindkey "^[" zle-custom-replace-first-word-of-last-command
+#bindkey "^]" zle-custom-replace-last-word-of-last-command
