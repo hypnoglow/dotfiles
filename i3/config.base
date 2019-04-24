@@ -1,10 +1,9 @@
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-# Set mod key (Mod1=<Alt>, Mod4=<Super>)
-set $mod Mod4
-# Use Mouse+$mod to drag and resize floating windows
-floating_modifier $mod
+#
+# WARNING: this file is currently being destructing. DO NOT USE.
+#
 
 #
 ### Window ###
@@ -61,21 +60,8 @@ for_window [class="Keybase" title="Pinentry|UnlockFolders"] floating enable
 for_window [class="Keybase" title="^tracker - "] floating enable
 for_window [class="Thunderbird" title="Message Filters"] floating enable
 
-# start a terminal
-bindsym $mod+Return exec terminal
-# bindsym $mod+Return exec i3-sensible-terminal
-
-# kill focused window
-bindsym $mod+Shift+q kill
-
 # start program launcher
-bindsym $mod+p exec rofi -show combi
-bindsym $mod+c exec rofi -show window
 bindsym $mod+d exec --no-startup-id dmenu_recency
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 # Categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
 
@@ -123,34 +109,7 @@ bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 #bindsym --release $mod+x exec --no-startup-id import /tmp/latest-screenshot.png
 
-# App killer
-bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
-
 # focus_follows_mouse no
-
-# change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
-# move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
 
 # workspace back and forth (with/without active container)
 workspace_auto_back_and_forth yes
@@ -160,35 +119,12 @@ bindsym $mod+x exec --no-startup-id i3x output switch
 
 bindsym $mod+g split h; exec notify-send 'tile horizontally'
 bindsym $mod+v split v; exec notify-send 'tile vertically'
-bindsym $mod+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
 
 # toggle sticky
 bindsym $mod+Shift+s sticky toggle
 
-# focus the parent container
-bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
-
-# reload the configuration file
-bindsym $mod+Shift+c reload
 # restart i3 inplace
 bindsym $mod+Shift+r exec --no-startup-id i3-generate-config ; reload ; restart
-
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # TODO: try scratchpad?
 # https://i3wm.org/docs/userguide.html#_scratchpad
@@ -228,14 +164,6 @@ bindsym $mod+8 workspace number 8
 # Lock screen
 bindsym $mod+9 exec --no-startup-id "i3lock-custom"
 
-#navigate workspaces next / previous
-bindsym $mod+Ctrl+Right workspace next
-bindsym $mod+Ctrl+Left workspace prev
-bindsym $mod+Ctrl+j workspace prev
-bindsym $mod+Ctrl+h workspace prev
-bindsym $mod+Ctrl+k workspace next
-bindsym $mod+Ctrl+l workspace next
-
 # Move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace number 1
 bindsym $mod+Ctrl+2 move container to workspace number 2
@@ -258,30 +186,6 @@ bindsym $mod+Shift+8 move container to workspace number 8; workspace 8
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
-
-# Resize window (you can also use the mouse for that)
-bindsym $mod+r mode "resize"
-mode "resize" {
-	# These bindings trigger as soon as you enter the resize mode
-	# Pressing left will shrink the window’s width.
-	# Pressing right will grow the window’s width.
-	# Pressing up will shrink the window’s height.
-	# Pressing down will grow the window’s height.
-	bindsym h resize shrink width 5 px or 5 ppt
-	bindsym j resize grow height 5 px or 5 ppt
-	bindsym k resize shrink height 5 px or 5 ppt
-	bindsym l resize grow width 5 px or 5 ppt
-
-	# same bindings, but for the arrow keys
-	bindsym Left resize shrink width 10 px or 10 ppt
-	bindsym Down resize grow height 10 px or 10 ppt
-	bindsym Up resize shrink height 10 px or 10 ppt
-	bindsym Right resize grow width 10 px or 10 ppt
-
-	# exit resize mode: Enter or Escape
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
-}
 
 
 
@@ -407,56 +311,3 @@ client.background       #2B2C2B
 
 # Disable window titlebars entirely
 #for_window [class="^.*"] border pixel 2
-
-# Set inner/outer gaps
-gaps inner 10
-gaps outer 0
-
-# Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
-# gaps inner|outer current|all set|plus|minus <px>
-# gaps inner all set 10
-# gaps outer all plus 5
-
-# Smart gaps (gaps used if only more than one container on the workspace)
-smart_gaps on
-
-# Smart borders (draw borders around container only if it is not the only container on this workspace)
-# on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
-smart_borders on
-
-# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
-set $mode_gaps Gaps: (o) outer, (i) inner
-set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-bindsym $mod+Shift+g mode "$mode_gaps"
-
-mode "$mode_gaps" {
-	bindsym o	  mode "$mode_gaps_outer"
-	bindsym i	  mode "$mode_gaps_inner"
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
-}
-mode "$mode_gaps_inner" {
-	bindsym plus  gaps inner current plus 5
-	bindsym minus gaps inner current minus 5
-	bindsym 0	 gaps inner current set 0
-
-	bindsym Shift+plus  gaps inner all plus 5
-	bindsym Shift+minus gaps inner all minus 5
-	bindsym Shift+0	 gaps inner all set 0
-
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
-}
-mode "$mode_gaps_outer" {
-	bindsym plus  gaps outer current plus 5
-	bindsym minus gaps outer current minus 5
-	bindsym 0	 gaps outer current set 0
-
-	bindsym Shift+plus  gaps outer all plus 5
-	bindsym Shift+minus gaps outer all minus 5
-	bindsym Shift+0	 gaps outer all set 0
-
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
-}

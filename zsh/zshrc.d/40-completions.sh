@@ -15,7 +15,10 @@ if type -f kubectl &> /dev/null; then
 fi
 
 if type -f helm &> /dev/null; then
-    source <(helm completion zsh)
+    # Temporary fix.
+    # See: https://github.com/helm/helm/issues/5046#issuecomment-463576351
+    #source <(helm completion zsh)
+    source <(helm completion zsh | sed -E 's/\["(.+)"\]/\[\1\]/g')
 fi
 
 if [ -x "$(which minikube 2>/dev/null)" ]; then

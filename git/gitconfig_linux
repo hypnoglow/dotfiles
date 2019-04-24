@@ -1,6 +1,6 @@
 [include]
 	path = .gitconfig_base
 [credential]
-	helper = cache --timeout=3600
+	helper = libsecret
 [diff]
 	mnemonicprefix = true

@@ -78,10 +78,11 @@ alias gpff="git push --force"
 alias gcf="git commit --amend --reset-author --no-edit"
 alias gcF="git commit --amend --reset-author --verbose"
 alias gtr="git log --graph --all --date=relative --pretty=format:'%Cred%h %Creset%<|(50,trunc)%s %C(bold blue)<%an>%Creset %Cgreen(%cd)%Creset%C(auto)%d'"
-alias git-clean-merged-branches='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d ; git remote prune origin'
+alias gcmb='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d ; git remote prune origin'
 alias gwds="ydiff -s -c always -w 0"
 alias gids="ydiff -s -c always -w 0 --staged"
 alias grm="git rebase master"
+alias gMM="gcomfr && gcmb"
 
 # gron: git rebase --onto $target HEAD~$number <current_branch>
 #
@@ -152,7 +153,8 @@ kusp() {
 }
 kuri() { # kubectl run interactive
     local image="${1:-alpine}"
-    local cmd="${2:-sh}"
+    shift
+    local cmd="${*:-sh}"
     kubectl run -i -t interactive --image=${image} --restart=Never --rm -- ${cmd}
 }
 

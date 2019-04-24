@@ -1,0 +1,49 @@
+# Dotbro's configuration file.
+# See: https://github.com/hypnoglow/dotbro#configuration
+# Note that you can use $ENV_VARIABLE in paths.
+
+[directories]
+
+dotfiles = "$HOME/sources/github.com/hypnoglow/dotfiles"
+destination = "$HOME"
+backup = "$HOME/.dotfiles~"
+
+[mapping]
+
+"bin" = "bin"
+
+"shell/libraries" = ".sh"
+"shell/profile.d" = ".profile.d"
+"shell/profile" = ".profile"
+
+"zsh/zprofile" = ".zprofile"
+"zsh/zshrc" = ".zshrc"
+"zsh/zimrc" = ".zimrc"
+"zsh/zlogin" = ".zlogin"
+"zsh/zshrc.d" = ".zshrc.d"
+"zsh/os-specific/includes_linux.sh" = ".zshrc.d/00-includes_linux.sh"
+"zsh/os-specific/exports_linux.sh" = ".zshrc.d/02-exports_linux.sh"
+"zsh/os-specific/plugins_linux.sh" = ".zshrc.d/11-plugins_linux.sh"
+"zsh/os-specific/aliases_linux.sh" = ".zshrc.d/21-aliases_linux.sh"
+
+"git/gitconfig_linux" = ".gitconfig"
+"git/gitconfig_base" = ".gitconfig_base"
+"git/gitcommit" = ".gitcommit"
+"git/gitexcludes" = ".gitexcludes"
+
+"kitty/kitty.conf" = ".config/kitty/kitty.conf"
+
+"i3-reforged/config" = ".config/i3/config"
+"i3-reforged/i3blocks-config" = ".config/i3blocks/config"
+
+"compton.conf" = ".compton.conf"
+"fontconfig/fonts.conf" = ".config/fontconfig/fonts.conf"
+
+"neovim/init.vim" = ".config/nvim/init.vim"
+"neovim/ftplugin/sh.vim" = ".config/nvim/ftplugin/sh.vim"
+"neovim/ftplugin/yaml.vim" = ".config/nvim/ftplugin/yaml.vim"
+
+"vscode/settings.json" = ".config/Code - OSS/User/settings.json"
+"vscode/keybindings-linux.json" = ".config/Code - OSS/User/keybindings.json"
+
+"profiles/mizar/xinitrc" = ".xinitrc"
