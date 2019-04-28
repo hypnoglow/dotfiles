@@ -14,3 +14,4 @@ npm-debug.log
 .envrc
 tmp/
 _tmp/
+.secrets

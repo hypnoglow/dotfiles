@@ -90,4 +90,20 @@
         "key": "alt+cmd+n",
         "command": "explorer.newFolder"
     },
+    {
+        "key": "ctrl+shift+cmd+[",
+        "command": "workbench.action.showPreviousWindowTab"
+    },
+    {
+        "key": "ctrl+shift+cmd+]",
+        "command": "workbench.action.showNextWindowTab"
+    },
+    {
+        "key": "shift+cmd+r",
+        "command": "editor.action.startFindReplaceAction"
+    },
+    {
+        "key": "alt+cmd+f",
+        "command": "-editor.action.startFindReplaceAction"
+    },
 ]

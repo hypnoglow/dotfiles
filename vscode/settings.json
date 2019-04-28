@@ -25,6 +25,11 @@
     "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
     "terminal.integrated.cursorBlinking": true,
     // Language-specific
+    "[yaml]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": false
+    },
     "[terraform]": {
         "editor.tabSize": 2,
         "editor.formatOnSave": true,
@@ -34,15 +39,22 @@
         "editor.quickSuggestions": false,
         "files.trimTrailingWhitespace": false,
     },
+    "[rust]": {
+        "editor.formatOnSave": true,
+    },
+    "[helm]": {
+        "editor.tabSize": 2,
+    },
+    "vs-kubernetes": {
+        "disable-linters": [
+            "resource-limits",
+        ]
+    },
+    "[jinja]": {},
     // Miscellaneous
     "git.autofetch": true,
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
     "workbench.colorTheme": "Shades of Purple",
     "workbench.iconTheme": "vscode-great-icons",
-    "vs-kubernetes": {
-        "disable-linters": [
-            "resource-limits",
-        ]
-    },
 }
