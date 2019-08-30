@@ -23,7 +23,8 @@ zmodules=(
 
     syntax-highlighting
     history-substring-search # Should be after 'input' and 'syntax-highlighting'
-    prompt
+    # NOTE: temporary disabled while trying starship
+    #prompt
     completion # This should be the LAST module in this list
 )
 

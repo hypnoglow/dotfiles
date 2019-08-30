@@ -38,6 +38,7 @@ backup = "$HOME/.dotfiles~"
 
 "compton.conf" = ".compton.conf"
 "fontconfig/fonts.conf" = ".config/fontconfig/fonts.conf"
+"starship.toml" = ".config/starship.toml"
 
 "neovim/init.vim" = ".config/nvim/init.vim"
 "neovim/ftplugin/sh.vim" = ".config/nvim/ftplugin/sh.vim"

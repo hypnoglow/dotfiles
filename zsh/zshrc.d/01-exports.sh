@@ -15,7 +15,14 @@ export DOTFILES_ROOT="${HOME}/sources/github.com/hypnoglow/dotfiles"
 export EDITOR=vim
 
 # https://github.com/jonmosco/kube-ps1
+kube_ps1_precmd() {
+    PROMPT='$(kube_ps1)'$PROMPT
+}
 if [ "${KUBE_PS1_SHELL}" = "zsh" ]; then
     KUBE_PS1_SUFFIX=") " # Add space to separate prompt symbol
-    PROMPT='$(kube_ps1)'$PROMPT
+    if type -f starship &> /dev/null; then
+        precmd_functions+=(kube_ps1_precmd)
+    else
+        PROMPT='$(kube_ps1)'$PROMPT
+    fi
 fi

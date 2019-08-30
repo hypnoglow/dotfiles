@@ -1,0 +1,5 @@
+[character]
+symbol = "λ"
+
+[golang]
+disabled = true
