@@ -30,8 +30,8 @@ if [ -d "$HOME/.linkerd2/bin" ]; then
     pathf_append "$HOME/.linkerd2/bin"
 fi
 
-if [ -d "$HOME/.krew/bin" ]; then
-    pathf_append "$HOME/.krew/bin"
+if [ -d "${KREW_ROOT:-$HOME/.krew}/bin" ]; then
+    pathf_append "${KREW_ROOT:-$HOME/.krew}/bin"
 fi
 
 # NGS binaries
