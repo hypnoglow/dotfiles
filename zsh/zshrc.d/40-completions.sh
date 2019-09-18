@@ -4,11 +4,17 @@ aws_completion="/usr/local/bin/aws_zsh_completer.sh"
 if [ -e "$aws_completion" ]; then
     source "$aws_completion"
 fi
+unset aws_completion
 
 gcloud_completion="/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 if [ -e "$gcloud_completion" ]; then
     source "$gcloud_completion"
 fi
+gcloud_completion="/opt/google-cloud-sdk/completion.zsh.inc"
+if [ -e "$gcloud_completion" ]; then
+    source "$gcloud_completion"
+fi
+unset gcloud_completion
 
 if type -f kubectl &> /dev/null; then
     source <(kubectl completion zsh)
@@ -27,4 +33,8 @@ fi
 
 if type -f stern &> /dev/null; then
     source <(stern --completion=zsh)
+fi
+
+if type -f kitty &> /dev/null; then
+    kitty + complete setup zsh | source /dev/stdin
 fi

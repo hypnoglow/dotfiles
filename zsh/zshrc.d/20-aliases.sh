@@ -79,10 +79,11 @@ alias gcf="git commit --amend --reset-author --no-edit"
 alias gcF="git commit --amend --reset-author --verbose"
 alias gtr="git log --graph --all --date=relative --pretty=format:'%Cred%h %Creset%<|(50,trunc)%s %C(bold blue)<%an>%Creset %Cgreen(%cd)%Creset%C(auto)%d'"
 alias gcmb='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d ; git remote prune origin'
+alias gct='git fetch --tags --prune --prune-tags'
 alias gwds="ydiff -s -c always -w 0"
 alias gids="ydiff -s -c always -w 0 --staged"
 alias grm="git rebase master"
-alias gMM="gcomfr && gcmb"
+alias gMM="gcom && gct && gfr && gcmb"
 
 # gron: git rebase --onto $target HEAD~$number <current_branch>
 #
