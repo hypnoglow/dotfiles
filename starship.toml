@@ -1,5 +1,16 @@
 [character]
 symbol = "λ"
+style_success = "bold fg:202"
+
+[directory]
+style = "bold fg:99"
+
+[git_branch]
+style = "bold fg:213"
+
+[git_status]
+style = "bold fg:226"
+show_sync_count = true
 
 [golang]
 disabled = true
