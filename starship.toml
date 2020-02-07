@@ -14,3 +14,8 @@ show_sync_count = true
 
 [golang]
 disabled = true
+
+[kubernetes]
+symbol = "⎈ "
+style = "fg:#3371e3"
+disabled = true
