@@ -38,3 +38,7 @@ fi
 if type -f kitty &> /dev/null; then
     kitty + complete setup zsh | source /dev/stdin
 fi
+
+if type -f golangci-lint &> /dev/null; then
+    golangci-lint completion zsh | source /dev/stdin
+fi

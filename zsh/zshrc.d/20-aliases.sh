@@ -50,6 +50,10 @@ alias reload-xresources="xrdb -load -quiet ~/.Xresources"
 alias psa="ps aux"
 alias psg="ps aux | grep"
 
+openssl-view-cert() {
+    openssl x509 -in $1 -text -noout
+}
+
 alias dss="ydiff -s -w 0 -c auto HEAD"
 
 # Vim
@@ -205,6 +209,7 @@ alias gol='go list'
 alias gor='go run'
 alias got='go test'
 alias gota='go test ./...'
+alias gotf='go test -failfast ./...'
 alias gotav='go test -v ./...'
 alias gotv='go test $(go list ./... | grep -v "/vendor/")'
 alias gotvv='go test -v $(go list ./... | grep -v "/vendor/")'
