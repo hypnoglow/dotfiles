@@ -2,31 +2,73 @@
 # User configuration sourced by interactive shells
 #
 
-# Emacs mode
+########
+# Base #
+########
+
+# Set editor default keymap to emacs (`-e`) or vi (`-v`)
 bindkey -e
 
-#PURE_PROMPT_SYMBOL="ή"
-
-# Source zim framework
-[[ -d ~/.zim ]] || {
-    git clone --recursive https://github.com/zimfw/zimfw.git ${ZDOTDIR:-${HOME}}/.zim
-}
-source ${ZDOTDIR:-${HOME}}/.zim/init.zsh
+################
+# Zim pre-init #
+################
 
 #
-# Rewrite zim settings below
+# git
 #
+
+# Set a custom prefix for the generated aliases. The default prefix is 'G'.
+zstyle ':zim:git' aliases-prefix 'g'
+
+
+#
+# zsh-syntax-highlighting
+#
+
+# Set what highlighters will be used.
+# See https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters.md
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+
+############
+# Zim init #
+############
+
+if [[ ${ZIM_HOME}/init.zsh -ot ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
+  # Update static initialization script if it's outdated, before sourcing it
+  source ${ZIM_HOME}/zimfw.zsh init -q
+fi
+source ${ZIM_HOME}/init.zsh
+
+#################
+# Zim post-init #
+#################
+
+#################
+# Customization #
+#################
 
 # MORE history
 HISTFILE=~/.zhistory
 HISTSIZE=100000
 SAVEHIST=100000
 
-#
-# Custom
-#
+# Remove older command from the history if a duplicate is to be added.
+setopt HIST_IGNORE_ALL_DUPS
 
 setopt INTERACTIVE_COMMENTS
+
+# Prompt for spelling correction of commands.
+#setopt CORRECT
+
+# Customize spelling correction prompt.
+#SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
+
+# Remove path separator from WORDCHARS.
+#WORDCHARS=${WORDCHARS//[\/]}
+
+############
+# Includes #
+############
 
 # Include all .sh files from ~/.zshrc.d
 if [ -d ${HOME}/.zshrc.d ]; then
