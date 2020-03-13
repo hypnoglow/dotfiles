@@ -15,3 +15,4 @@ npm-debug.log
 tmp/
 _tmp/
 .secrets
+.tool-versions
