@@ -22,3 +22,6 @@ style = "fg:#3371e3"
 
 [aws]
 disabled = true
+
+[terraform]
+disabled = true
