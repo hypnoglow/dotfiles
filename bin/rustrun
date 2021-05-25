@@ -17,4 +17,4 @@ if [ $? -ne 0 ] ; then
     exit 2
 fi
 
-exec bin/${1%.rs}
+exec $PWD/bin/$(basename ${1%.rs})

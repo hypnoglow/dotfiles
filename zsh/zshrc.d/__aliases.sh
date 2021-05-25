@@ -152,6 +152,15 @@ alias dc="docker-compose"
 alias k="kubectl" # hardcore
 alias ku="kubectl"
 alias kucv="kubectl config view"
+
+# kall - shows ALL resources in current namespace.
+alias kall="kubectl api-resources --verbs=list --namespaced -o name | xargs -n 1 kubectl get --show-kind --ignore-not-found"
+
+# kalln - shows ALL resources in namespace.
+# Usage:
+#   kalln default
+alias kalln="kall -n"
+
 kusp() {
     # kubectl service port
     kubectl describe service $1 | grep "NodePort:" | cut -f 4 | cut -d "/" -f 1
