@@ -47,7 +47,10 @@
     },
     "vs-kubernetes": {
         "disable-linters": [
-            "resource-limits",
+            "resource-limits"
+        ],
+        "vs-kubernetes.knownKubeconfigs": [
+            "/home/hypnoglow/.kube/config"
         ]
     },
     "[jinja]": {},
@@ -57,4 +60,36 @@
     "telemetry.enableCrashReporter": false,
     "workbench.colorTheme": "Shades of Purple",
     "workbench.iconTheme": "vscode-great-icons",
+    "workbench.tree.renderIndentGuides": "always",
+    // "workbench.tree.indent": 16,
+    "files.autoGuessEncoding": true,
+    "terraform.indexing": {
+        "enabled": false,
+        "liveIndexing": false,
+        "delay": 500,
+        "exclude": [
+            ".terraform/**/*",
+            "**/.terraform/**/*"
+        ]
+    },
+    "terraform.languageServer": {
+        "external": true,
+        "args": [
+            "serve"
+        ]
+    },
+    "go.formatTool": "goimports",
+    "go.useLanguageServer": true,
+    "[dart]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.rulers": [
+            80
+        ],
+        "editor.selectionHighlight": false,
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.suggestSelection": "first",
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": false
+    },
 }
