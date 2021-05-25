@@ -11,8 +11,10 @@ application-build-*
 npm-debug.log
 .DS_Store
 .env
+.env-*env
 .envrc
 tmp/
 _tmp/
+_testdata/
 .secrets
 .tool-versions
