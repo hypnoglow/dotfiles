@@ -1,27 +1,29 @@
+[aws]
+disabled = true
+
 [character]
-symbol = "λ"
-style_success = "bold fg:#03DAC6"
-style_failure = "bold fg:#D50000"
+success_symbol = "[λ](bold fg:#03DAC6)"
+error_symbol = "[λ](bold fg:#D50000)"
 
 [directory]
 style = "bold fg:#7EC699"
+
+[gcloud]
+disabled = false
+format = 'on [$symbol$active]($style) '
 
 [git_branch]
 style = "bold fg:#FF33B8"
 
 [git_status]
 style = "bold fg:#E7C000"
-show_sync_count = true
 
 [golang]
-disabled = true
+disabled = false
 
 [kubernetes]
 symbol = "⎈ "
 style = "fg:#3371e3"
-
-[aws]
-disabled = true
 
 [terraform]
 disabled = true
