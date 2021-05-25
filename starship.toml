@@ -25,5 +25,8 @@ disabled = false
 symbol = "⎈ "
 style = "fg:#3371e3"
 
+[nodejs]
+disabled = true
+
 [terraform]
 disabled = true
