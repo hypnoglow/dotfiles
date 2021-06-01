@@ -26,3 +26,8 @@
 
 # local binaries
 /bin/local
+
+# Secrets
+.gitsecret/keys/random_seed
+.gitsecret/keys/**/*~
+!*.secret
