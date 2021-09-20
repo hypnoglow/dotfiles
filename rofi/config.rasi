@@ -1,0 +1,6 @@
+configuration {
+  modi: "window,run,ssh,windowcd,drun,combi";
+  combi-modi: "drun,window";
+  font: "Fira Code 24";
+  theme: "onedark";
+}
