@@ -159,11 +159,13 @@ unset aws_completion
 
 mlog::print "Loading 'gcloud' includes..."
 
-gcloud_completion="/opt/google-cloud-sdk/completion.zsh.inc"
-if [ -e "$gcloud_completion" ]; then
-    source "$gcloud_completion"
+gcloud_completion_Darwin="/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+gcloud_completion_Linux="/opt/google-cloud-sdk/completion.zsh.inc"
+if [ -e "$gcloud_completion_$(uname -s)" ]; then
+    source "$gcloud_completion_$(uname -s)"
 fi
-unset gcloud_completion
+
+unset gcloud_completion_Darwin gcloud_completion_Linux
 
 mlog::print "Loading 'kubectl' includes..."
 
@@ -211,25 +213,54 @@ if type -f golangci-lint &> /dev/null; then
     golangci-lint completion zsh | source /dev/stdin
 fi
 
-mlog::print "Loading '__includes.sh'..."
-
-. ${HOME}/.zshrc.d/$(uname -s)/__includes.sh
-
 mlog::print "Loading 'kube-ps1' includes..."
 
 # https://github.com/jonmosco/kube-ps1
-# NOTE: kube-ps1 must be included BEFORE this definition.
-kube_ps1_precmd() {
-    PROMPT='$(kube_ps1)'$PROMPT
+
+__include_kube_ps1_Darwin() {
+    if [ -f /usr/local/opt/kube-ps1/share/kube-ps1.sh ] ; then
+        . /usr/local/opt/kube-ps1/share/kube-ps1.sh
+    else
+        echo "kube-ps1 is not installed."
+    fi
 }
+
+__include_kube_ps1_Linux() {
+    if [ ! -d "${HOME}/sources/github.com/jonmosco/kube-ps1" ]; then
+        git clone --branch v0.7.0 https://github.com/jonmosco/kube-ps1.git ${HOME}/sources/github.com/jonmosco/kube-ps1
+    fi
+    . "${HOME}/sources/github.com/jonmosco/kube-ps1/kube-ps1.sh"
+}
+
+__include_kube_ps1_$(uname -s)
+unset -f __include_kube_ps1_Darwin __include_kube_ps1_Linux
+
 if [ "${KUBE_PS1_SHELL}" = "zsh" ]; then
     KUBE_PS1_SUFFIX=") " # Add space to separate prompt symbol
-    if type -f starship &> /dev/null; then
-        precmd_functions+=(kube_ps1_precmd)
-    else
-        PROMPT='$(kube_ps1)'$PROMPT
-    fi
+    PROMPT='$(kube_ps1)'$PROMPT
 fi
+
+mlog::print "Loading 'asdf-vm' includes..."
+
+# https://github.com/asdf-vm/asdf
+
+__include_asdf_vm_Darwin() {
+    # NOTE: more correct would be $(brew --prefix asdf) instead of "/usr/local/opt/asdf",
+    # but brew is tooooooooo slow.
+    if type -f asdf &> /dev/null && [ -f "/usr/local/opt/asdf/asdf.sh" ]; then
+        . /usr/local/opt/asdf/asdf.sh
+        . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
+    fi
+}
+
+__include_asdf_vm_Linux() {
+    if [ -e "/opt/asdf-vm" ]; then
+        . /opt/asdf-vm/asdf.sh
+    fi
+}
+
+__include_asdf_vm_$(uname -s)
+unset -f __include_asdf_vm_Darwin __include_asdf_vm_Linux
 
 ###########
 # Aliases #
