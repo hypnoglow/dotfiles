@@ -3,4 +3,5 @@
 #
 
 # Initialize Zim
+# DEPRECATED since 1.7.0.
 source ${ZIM_HOME}/login_init.zsh -q &!

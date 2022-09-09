@@ -10,6 +10,7 @@
 . ${HOME}/.zsh/lib/mlog.sh
 MLOG_ENABLED=${MLOG_ENABLED:-}
 mlog::start
+mlog::print "Logging enabled"
 
 ########
 # Base #
@@ -29,7 +30,6 @@ bindkey -e
 # Set a custom prefix for the generated aliases. The default prefix is 'G'.
 zstyle ':zim:git' aliases-prefix 'g'
 
-
 #
 # zsh-syntax-highlighting
 #
@@ -42,13 +42,15 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 # Zim init #
 ############
 
-if [[ ${ZIM_HOME}/init.zsh -ot ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
-  # Update static initialization script if it's outdated, before sourcing it
+mlog::print "Loading 'zimfw'..."
+
+if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
+  # Install missing modules, and update ${ZIM_HOME}/init.zsh if missing or outdated.
   source ${ZIM_HOME}/zimfw.zsh init -q
 fi
 source ${ZIM_HOME}/init.zsh
 
-mlog::print "Done Zim init"
+mlog::print "Loaded 'zimfw'."
 
 #################
 # Zim post-init #
@@ -102,18 +104,6 @@ mlog::print "Loading plugins..."
 }
 
 source ~/.zplug/init.zsh
-
-# Fish shell feature.
-# TODO: Check this. For now this is disabled, as zimfw manages it on its own.
-# if [ "$TERM" != "linux" ]; then
-#   zplug "zsh-users/zsh-autosuggestions"
-# fi
-
-# NOTE: these modules are loaded by zplug and not zim (zmanage), because otherwise
-# a strange bug occurs: "sort: cannot read: 1: No such file or directory".
-# See file 'zimrc'.
-zplug "zsh-users/zsh-syntax-highlighting"
-zplug "zsh-users/zsh-history-substring-search"
 
 . ${HOME}/.zshrc.d/$(uname -s)/__plugins.sh
 

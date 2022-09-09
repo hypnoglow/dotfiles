@@ -11,6 +11,9 @@ zmodule git
 # Applies correct bindkeys for input events.
 zmodule input
 
+# Sets a custom terminal title.
+#zmodule termtitle
+
 # Utility aliases and functions. Adds colour to ls, grep and less.
 zmodule utility
 
@@ -33,8 +36,8 @@ zmodule zsh-users/zsh-autosuggestions
 
 # Fish-like syntax highlighting for Zsh.
 # zsh-users/zsh-syntax-highlighting must be sourced after completion
-#zmodule zsh-users/zsh-syntax-highlighting
+zmodule zsh-users/zsh-syntax-highlighting
 
 # Fish-like history search (up arrow) for Zsh.
 # zsh-users/zsh-history-substring-search must be sourced after zsh-users/zsh-syntax-highlighting
-#zmodule zsh-users/zsh-history-substring-search
+zmodule zsh-users/zsh-history-substring-search

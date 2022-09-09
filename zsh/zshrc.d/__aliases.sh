@@ -60,9 +60,9 @@ alias dss="ydiff -s -w 0 -c auto HEAD"
 alias vim="nvim"
 
 # Atom
-alias ed="atom ."
-alias eda="atom -a ."
-alias edw="atom -a -n ."
+#alias ed="atom ."
+#alias eda="atom -a ."
+#alias edw="atom -a -n ."
 
 # Gogland
 alias ged='goland $PWD'
@@ -88,6 +88,9 @@ alias gwds="ydiff -s -c always -w 0"
 alias gids="ydiff -s -c always -w 0 --staged"
 alias grm="git rebase master"
 alias gMM="gcom && gct && gfr && gcmb"
+
+# Lazygit
+alias lg="lazygit"
 
 # gron: git rebase --onto $target HEAD~$number <current_branch>
 #
