@@ -59,11 +59,6 @@ alias dss="ydiff -s -w 0 -c auto HEAD"
 # Vim
 alias vim="nvim"
 
-# Atom
-#alias ed="atom ."
-#alias eda="atom -a ."
-#alias edw="atom -a -n ."
-
 # Gogland
 alias ged='goland $PWD'
 alias edg='goland $PWD'
@@ -82,7 +77,7 @@ alias gpff="git push --force"
 alias gcf="git commit --amend --reset-author --no-edit"
 alias gcF="git commit --amend --reset-author --verbose"
 alias gtr="git log --graph --all --date=relative --pretty=format:'%Cred%h %Creset%<|(50,trunc)%s %C(bold blue)<%an>%Creset %Cgreen(%cd)%Creset%C(auto)%d'"
-alias gcmb='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d ; git remote prune origin'
+alias gcmb='git branch --merged | grep -E -v "(^\*|master)" | xargs git branch -d ; git remote prune origin'
 alias gct='git fetch --tags --prune --prune-tags'
 alias gwds="ydiff -s -c always -w 0"
 alias gids="ydiff -s -c always -w 0 --staged"
@@ -196,7 +191,7 @@ minikube-push-image() {
 alias mikpi="minikube-push-image"
 
 alias hel="helm list -a -d -r"
-alias heln='helm list -a -d -r --namespace $(kubectl config get-contexts | egrep "\*" | awk '"'"'{print $NF}'"'"')'
+alias heln='helm list -a -d -r --namespace $(kubectl config get-contexts | grep -E "\*" | awk '"'"'{print $NF}'"'"')'
 alias hedp='helm delete --purge'
 
 #
