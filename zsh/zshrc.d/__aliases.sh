@@ -37,6 +37,7 @@ alias -g G='| grep'
 alias -g N1='| cat -n'
 alias -g N2='| cat -b'
 alias -g PHPG='| egrep -v "^(;|$)"'
+alias -g RNL='gsed -n -e "H;${x;s/\\n/\n/g;p;}"'
 
 alias cdd='cd $DOTFILES_ROOT'
 alias cdg='cd $GOPATH/src'
@@ -94,6 +95,8 @@ alias lg="lazygit"
 gron() {
     git rebase --onto $1 HEAD~$2 $(git branch | grep -e "^\*" | cut -d' ' -f 2)
 }
+
+alias lg="lazygit"
 
 #
 # Composer
