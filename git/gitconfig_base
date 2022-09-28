@@ -10,8 +10,31 @@
 	#hooksPath = ~/.githooks
 #[commit]
 #	template = ~/.gitcommit
+[fetch]
+	# Remove local branches that were deleted remotely.
+	prune = true
+[grep]
+	# Output line numbers on `git grep`.
+	lineNumber = true
+[pull]
+	# Prevent merge commits on pulls.
+	rebase = true
 [push]
+	# Push only the current branch.
 	default = simple
+	# Assume '--set-upstream' on push.
+	autoSetupRemote = true
+[pager]
+	diff = delta
+	show = delta
+	log = delta
+	reflog = delta
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	line-numbers = true
+	syntax-theme = Dracula
+	side-by-side = true
 [color]
 	ui = auto
 [i18n]

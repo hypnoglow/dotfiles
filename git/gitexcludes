@@ -17,4 +17,4 @@ tmp/
 _tmp/
 _testdata/
 .secrets
-.tool-versions
+#.tool-versions
