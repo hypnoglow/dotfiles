@@ -1,0 +1,6 @@
+# This file is included in execution of shell scripts.
+
+sed() {
+    gsed "$@"
+}
+export -f sed
