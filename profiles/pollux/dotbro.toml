@@ -40,5 +40,5 @@ backup = "$HOME/.dotfiles~"
 "git/gitexcludes" = ".gitexcludes"
 "git/hooks" = ".githooks"
 
-"macOS/karabiner" = ".config/karabiner"
+"profiles/pollux/karabiner" = ".config/karabiner"
 "starship.toml" = ".config/starship.toml"
