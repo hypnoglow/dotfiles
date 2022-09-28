@@ -6,7 +6,6 @@
         80,
         120
     ],
-    "editor.formatOnSave": false,
     "editor.renderWhitespace": "boundary",
     "editor.renderControlCharacters": true,
     "editor.minimap.enabled": false,
@@ -28,15 +27,25 @@
     "[yaml]": {
         "editor.insertSpaces": true,
         "editor.tabSize": 2,
-        "editor.autoIndent": false
+        "editor.autoIndent": "advanced"
     },
     "[terraform]": {
-        "editor.tabSize": 2,
+        "editor.defaultFormatter": "hashicorp.terraform",
         "editor.formatOnSave": true,
+        "editor.formatOnSaveMode": "file"
+    },
+    "[terraform-vars]": {
+        "editor.defaultFormatter": "hashicorp.terraform",
+        "editor.formatOnSave": true,
+        "editor.formatOnSaveMode": "file"
     },
     "[markdown]": {
         "editor.wordWrap": "off",
-        "editor.quickSuggestions": false,
+        "editor.quickSuggestions": {
+            "comments": "off",
+            "strings": "off",
+            "other": "off"
+        },
         "files.trimTrailingWhitespace": false,
     },
     "[rust]": {
@@ -92,4 +101,12 @@
         "editor.tabCompletion": "onlySnippets",
         "editor.wordBasedSuggestions": false
     },
+    "redhat.telemetry.enabled": false,
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": false,
+        "plaintext": false,
+        "markdown": true
+    },
+    "editor.inlineSuggest.enabled": true,
 }

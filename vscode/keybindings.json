@@ -106,4 +106,14 @@
         "key": "alt+cmd+f",
         "command": "-editor.action.startFindReplaceAction"
     },
+    {
+        "key": "ctrl+alt+,",
+        "command": "workbench.action.openSettingsJson",
+        "when": "isLinux"
+    },
+    {
+        "key": "cmd+alt+,",
+        "command": "workbench.action.openSettingsJson",
+        "when": "isMac"
+    }
 ]
