@@ -50,7 +50,11 @@ main() {
     hostname="${path##*@}"
 
     git clone "$url" "${HOME}/sources/${hostname}/${namespace}/${reponame}"
-    echo cd "~/sources/${hostname}/${namespace}/${reponame}"
+
+    echo 
+    echo ">>> Go to cloned repo directory:"
+    echo
+    echo "  cd ~/sources/${hostname}/${namespace}/${reponame}"
 }
 
 main "$@"
