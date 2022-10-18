@@ -3,7 +3,7 @@ declare -g __zshrc_mlog_last_time
 
 __zshrc_mlog_os="$(uname -s)"
 __zshrc_mlog_date_cmd="date"
-if [[ "${__zshrc_mlog_os}" == "Darwin" ]] ; then
+if [[ "${__zshrc_mlog_os}" == "Darwin" ]] && command -v gdate >/dev/null 2>&1 ; then
     __zshrc_mlog_date_cmd="gdate"
 fi
 

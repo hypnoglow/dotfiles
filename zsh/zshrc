@@ -44,6 +44,12 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
 mlog::print "Loading 'zimfw'..."
 
+# Download zimfw plugin manager if missing.
+if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
+  curl -fsSL --create-dirs -o ${ZIM_HOME}/zimfw.zsh \
+      https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
+fi
+
 if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
   # Install missing modules, and update ${ZIM_HOME}/init.zsh if missing or outdated.
   source ${ZIM_HOME}/zimfw.zsh init -q
@@ -210,8 +216,6 @@ mlog::print "Loading 'kube-ps1' includes..."
 __include_kube_ps1_Darwin() {
     if [ -f /usr/local/opt/kube-ps1/share/kube-ps1.sh ] ; then
         . /usr/local/opt/kube-ps1/share/kube-ps1.sh
-    else
-        echo "kube-ps1 is not installed."
     fi
 }
 
@@ -240,6 +244,9 @@ __include_asdf_vm_Darwin() {
     if type -f asdf &> /dev/null && [ -f "/usr/local/opt/asdf/asdf.sh" ]; then
         . /usr/local/opt/asdf/asdf.sh
         . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
+    fi
+    if type -f asdf &> /dev/null && [ -f "/opt/homebrew/opt/asdf/libexec/asdf.sh" ]; then
+        . /opt/homebrew/opt/asdf/libexec/asdf.sh
     fi
 }
 
