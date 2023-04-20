@@ -11,6 +11,7 @@
 
 **/*.local.sh
 /zsh/zshrc.d/local/*
+!/zsh/zshrc.d/local/stub.sh
 
 /zsh/zshrc.d/00-includes_macos.sh
 /zsh/zshrc.d/02-exports_macos.sh
