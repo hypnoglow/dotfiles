@@ -34,12 +34,8 @@ during shell login (see [here](https://github.com/hypnoglow/dotfiles/blob/master
 ### macOS
 
     # Install dotbro.
-    go get -v -t github.com/hypnoglow/dotbro
-    # Assuming $GOPATH/bin is not in PATH
-    # because dotfiles are not installed yet ;)
-    export GOPATH=$HOME/go
-    PATH=$GOPATH/bin:$PATH
+    go install github.com/hypnoglow/dotbro@latest
 
     export DOTFILES_ROOT="$HOME/sources/hypnoglow/dotfiles"
     git clone https://github.com/hypnoglow/dotfiles "$DOTFILES_ROOT"
-    dotbro -c $DOTFILES_ROOT/dotbro-macOS.toml
+    $(go env GOPATH)/bin/dotbro -c $DOTFILES_ROOT/profiles/<profile_name>/dotbro.toml

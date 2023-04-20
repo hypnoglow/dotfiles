@@ -67,22 +67,26 @@ alias edg='goland $PWD'
 #
 # Git
 #
+git_default_branch() {
+  [ -f "$(git rev-parse --show-toplevel)/.git/refs/heads/master" ] && echo master || echo main
+}
+
 alias gsh="git status --short --branch"
 alias gst="git status"
 alias gbC="git checkout -B"
-alias gcom="git checkout master"
-alias gcomfr="git checkout master && git pull --rebase"
+alias gcom='git checkout $(git_default_branch)'
+alias gcomfr='git checkout $(git_default_branch) && git pull --rebase'
 alias gdt="git difftool"
 alias gpf="git push --force-with-lease"
 alias gpff="git push --force"
 alias gcf="git commit --amend --reset-author --no-edit"
 alias gcF="git commit --amend --reset-author --verbose"
 alias gtr="git log --graph --all --date=relative --pretty=format:'%Cred%h %Creset%<|(50,trunc)%s %C(bold blue)<%an>%Creset %Cgreen(%cd)%Creset%C(auto)%d'"
-alias gcmb='git branch --merged | grep -E -v "(^\*|master)" | xargs git branch -d ; git remote prune origin'
+alias gcmb='git branch --merged | grep -E -v "(^\*|$(git_default_branch))" | xargs git branch -d ; git remote prune origin'
 alias gct='git fetch --tags --prune --prune-tags'
 alias gwds="ydiff -s -c always -w 0"
 alias gids="ydiff -s -c always -w 0 --staged"
-alias grm="git rebase master"
+alias grm='git rebase $(git_default_branch)'
 alias gMM="gcom && gct && gfr && gcmb"
 
 # Lazygit
@@ -171,6 +175,39 @@ kuri() { # kubectl run interactive
     shift
     local cmd="${*:-sh}"
     kubectl run -i -t interactive --image=${image} --restart=Never --rm -- ${cmd}
+}
+kudi() { # kubectl deploy interactive
+    local image="${1:-alpine}"
+    shift
+    local replicas="${1:-1}"
+
+    kubectl apply -f - <<EOF
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: interactive
+  labels:
+    app: interactive
+spec:
+  replicas: ${replicas}
+  selector:
+    matchLabels:
+      app: interactive
+  template:
+    metadata:
+      labels:
+        app: interactive
+    spec:
+      containers:
+      - name: interactive
+        image: ${image}
+        command:
+          - "sleep"
+          - "3600"
+EOF
+}
+kudi-cleanup() {
+    kubectl delete deploy interactive
 }
 
 alias minikube="KUBECONFIG=$HOME/.kube/conf.d/minikube minikube"

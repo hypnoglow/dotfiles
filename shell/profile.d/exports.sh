@@ -5,10 +5,7 @@
 ### EXPORTS & VARIABLES ###
 ################################################################################
 
-# Homebrew path
-if [ -d "/opt/homebrew/bin" ]; then
-    pathf_prepend "/opt/homebrew/bin"
-fi
+#echo "[dotfiles]==> Loading 'exports.sh' ..."
 
 # golang path
 if [ -x "$(which go 2>/dev/null)" ]; then

@@ -10,9 +10,8 @@
     "editor.renderControlCharacters": true,
     "editor.minimap.enabled": false,
     // Window
-    "window.nativeTabs": true, // works only on macOS
+    "window.nativeTabs": true,
     "window.zoomLevel": 0,
-    // Files
     "files.trimTrailingWhitespace": true,
     "files.trimFinalNewlines": true,
     "files.insertFinalNewline": true,
@@ -20,8 +19,7 @@
     "explorer.confirmDragAndDrop": false,
     "explorer.openEditors.visible": 0,
     // Terminal
-    "terminal.external.osxExec": " iTerm.app",
-    "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
+    "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.cursorBlinking": true,
     // Language-specific
     "[yaml]": {
@@ -60,7 +58,8 @@
         ],
         "vs-kubernetes.knownKubeconfigs": [
             "/home/hypnoglow/.kube/config"
-        ]
+        ],
+        "vs-kubernetes.kubeconfig": "/Users/hypnoglow/.kube/config",
     },
     "[jinja]": {},
     // Miscellaneous
@@ -68,9 +67,9 @@
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
     "workbench.colorTheme": "Shades of Purple",
-    "workbench.iconTheme": "vscode-great-icons",
+    "workbench.iconTheme": "vscode-icons",
     "workbench.tree.renderIndentGuides": "always",
-    // "workbench.tree.indent": 16,
+    "workbench.tree.indent": 12,
     "files.autoGuessEncoding": true,
     "terraform.indexing": {
         "enabled": false,
@@ -89,6 +88,18 @@
     },
     "go.formatTool": "goimports",
     "go.useLanguageServer": true,
+    "rust-client.enableMultiProjectSetup": true,
+    "cSpell.userWords": [
+        "ICMP",
+        "KUBE",
+        "KUBERNETES",
+        "gitlab",
+        "kubectl"
+    ],
+    "cSpell.enableFiletypes": [
+        "!markdown",
+        "!plaintext"
+    ],
     "[dart]": {
         "editor.formatOnSave": true,
         "editor.formatOnType": true,
@@ -101,6 +112,7 @@
         "editor.tabCompletion": "onlySnippets",
         "editor.wordBasedSuggestions": false
     },
+    "editor.unicodeHighlight.nonBasicASCII": false,
     "redhat.telemetry.enabled": false,
     "github.copilot.enable": {
         "*": true,
@@ -109,4 +121,9 @@
         "markdown": true
     },
     "editor.inlineSuggest.enabled": true,
+    "telemetry.telemetryLevel": "off",
+    "editor.tabSize": 2,
+    "[html]": {
+        "editor.tabSize": 2
+    },
 }

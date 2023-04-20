@@ -9,7 +9,7 @@ error_symbol = "[λ](bold fg:#D50000)"
 style = "bold fg:#7EC699"
 
 [gcloud]
-disabled = false
+disabled = true
 format = 'on [$symbol$active]($style) '
 
 [git_branch]

@@ -1,0 +1,44 @@
+# Dotbro's configuration file.
+# See: https://github.com/hypnoglow/dotbro#configuration
+# Note that you can use $ENV_VARIABLE in paths.
+
+[directories]
+
+dotfiles = "$HOME/sources/github.com/hypnoglow/dotfiles"
+destination = "$HOME"
+backup = "$HOME/.dotfiles~"
+
+[mapping]
+
+"bin" = "bin"
+
+"shell/libraries" = ".sh"
+"shell/profile.d" = ".profile.d"
+"shell/profile" = ".profile"
+
+"bash/bashenv" = ".bash_env"
+
+"zsh/lib" = ".zsh/lib"
+"zsh/zprofile" = ".zprofile"
+"zsh/zshrc" = ".zshrc"
+"zsh/zimrc" = ".zimrc"
+"zsh/zlogin" = ".zlogin"
+"zsh/zshenv" = ".zshenv"
+"zsh/zshrc.d" = ".zshrc.d"
+
+"vscode/keybindings.json" = "Library/Application Support/Code/User/keybindings.json"
+"vscode/settings.json" = "Library/Application Support/Code/User/settings.json"
+
+"vim/vimrc" = ".vimrc"
+
+"neovim/init.vim" = ".config/nvim/init.vim"
+"neovim/ftplugin/yaml.vim" = ".config/nvim/ftplugin/yaml.vim"
+
+"git/gitconfig_macos" = ".gitconfig"
+"git/gitconfig_base" = ".gitconfig_base"
+"git/gitcommit" = ".gitcommit"
+"git/gitexcludes" = ".gitexcludes"
+"git/hooks" = ".githooks"
+
+"profiles/rigel/karabiner" = ".config/karabiner"
+"starship.toml" = ".config/starship.toml"

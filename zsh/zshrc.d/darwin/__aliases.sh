@@ -34,6 +34,8 @@ alias stlis="sudo lsof -iTCP -sTCP:LISTEN -n -P"
 
 alias dns-flush="sudo killall -HUP mDNSResponder"
 
+alias ggc="git log --pretty=format:'%h' -1 | pbcopy"
+
 #
 # iTerm2
 #
@@ -96,6 +98,7 @@ alias pcat="pygmentize -O style=native -g"
 alias pless="pcat | less -R"
 alias -g PC="| pcat"
 alias -g PL="| pless"
+alias hollywood="docker run --rm -it bcbcarl/hollywood"
 
 #
 # Shortcuts

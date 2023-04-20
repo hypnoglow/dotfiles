@@ -209,13 +209,20 @@ if type -f golangci-lint &> /dev/null; then
     golangci-lint completion zsh | source /dev/stdin
 fi
 
+#
+# kube-ps1
+#
+
 mlog::print "Loading 'kube-ps1' includes..."
 
 # https://github.com/jonmosco/kube-ps1
 
 __include_kube_ps1_Darwin() {
-    if [ -f /usr/local/opt/kube-ps1/share/kube-ps1.sh ] ; then
+    if [ -f /usr/local/opt/kube-ps1/share/kube-ps1.sh ]; then
         . /usr/local/opt/kube-ps1/share/kube-ps1.sh
+    fi
+    if [ -f /opt/homebrew/opt/kube-ps1/share/kube-ps1.sh ]; then
+        . /opt/homebrew/opt/kube-ps1/share/kube-ps1.sh
     fi
 }
 
@@ -229,7 +236,7 @@ __include_kube_ps1_Linux() {
 __include_kube_ps1_$(uname -s)
 unset -f __include_kube_ps1_Darwin __include_kube_ps1_Linux
 
-if [ "${KUBE_PS1_SHELL}" = "zsh" ]; then
+if type -f kube_ps1 &> /dev/null; then
     KUBE_PS1_SUFFIX=") " # Add space to separate prompt symbol
     PROMPT='$(kube_ps1)'$PROMPT
 fi
