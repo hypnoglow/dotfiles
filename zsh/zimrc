@@ -18,7 +18,8 @@ zmodule input
 zmodule utility
 
 # Fast cd
-zmodule zimfw/fasd
+# Disabled: using https://github.com/ajeetdsouza/zoxide instead.
+#zmodule zimfw/fasd
 
 # Additional completion definitions for Zsh.
 zmodule zsh-users/zsh-completions

@@ -89,6 +89,9 @@ alias gids="ydiff -s -c always -w 0 --staged"
 alias grm='git rebase $(git_default_branch)'
 alias gMM="gcom && gct && gfr && gcmb"
 
+# Unset `gh` from zim as it conflicts with GitHub CLI.
+unalias gh
+
 # Lazygit
 alias lg="lazygit"
 
@@ -99,8 +102,6 @@ alias lg="lazygit"
 gron() {
     git rebase --onto $1 HEAD~$2 $(git branch | grep -e "^\*" | cut -d' ' -f 2)
 }
-
-alias lg="lazygit"
 
 #
 # Composer

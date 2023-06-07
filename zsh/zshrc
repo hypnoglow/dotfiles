@@ -2,9 +2,9 @@
 # User configuration sourced by interactive shells
 #
 
-########
-# init #
-########
+###########################
+# init base configuration #
+###########################
 
 # Start dotfiles debug log
 . ${HOME}/.zsh/lib/mlog.sh
@@ -12,59 +12,8 @@ MLOG_ENABLED=${MLOG_ENABLED:-}
 mlog::start
 mlog::print "Logging enabled"
 
-########
-# Base #
-########
-
 # Set editor default keymap to emacs (`-e`) or vi (`-v`)
 bindkey -e
-
-################
-# Zim pre-init #
-################
-
-#
-# git
-#
-
-# Set a custom prefix for the generated aliases. The default prefix is 'G'.
-zstyle ':zim:git' aliases-prefix 'g'
-
-#
-# zsh-syntax-highlighting
-#
-
-# Set what highlighters will be used.
-# See https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters.md
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
-
-############
-# Zim init #
-############
-
-mlog::print "Loading 'zimfw'..."
-
-# Download zimfw plugin manager if missing.
-if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
-  curl -fsSL --create-dirs -o ${ZIM_HOME}/zimfw.zsh \
-      https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
-fi
-
-if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
-  # Install missing modules, and update ${ZIM_HOME}/init.zsh if missing or outdated.
-  source ${ZIM_HOME}/zimfw.zsh init -q
-fi
-source ${ZIM_HOME}/init.zsh
-
-mlog::print "Loaded 'zimfw'."
-
-#################
-# Zim post-init #
-#################
-
-#####################
-# zsh customization #
-#####################
 
 # MORE history
 HISTFILE=~/.zhistory
@@ -76,14 +25,8 @@ setopt HIST_IGNORE_ALL_DUPS
 
 setopt INTERACTIVE_COMMENTS
 
-# Prompt for spelling correction of commands.
-#setopt CORRECT
-
-# Customize spelling correction prompt.
-#SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
-
-# Remove path separator from WORDCHARS.
-#WORDCHARS=${WORDCHARS//[\/]}
+# Also zim recommended default settings:
+# https://github.com/zimfw/install/blob/master/src/templates/zshrc
 
 ###########
 # Exports #
@@ -91,7 +34,7 @@ setopt INTERACTIVE_COMMENTS
 
 export BAT_THEME="OneHalfLight" # https://github.com/sharkdp/bat
 export PURE_PROMPT_SYMBOL="λ" # https://github.com/sindresorhus/pure
-export CLOUDSDK_PYTHON=python3
+export CLOUDSDK_PYTHON=python3.9
 export KUBECONFIG="$HOME/.kube/config"
 export EDITOR=vim
 
@@ -139,11 +82,11 @@ if type -f starship &> /dev/null; then
     eval "$(starship init zsh)"
 fi
 
-mlog::print "Loading 'autojump' includes..."
+mlog::print "Loading 'zoxide' includes..."
 
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+[ -x "$(which zoxide 2>/dev/null)" ] && eval "$(zoxide init zsh)"
 
-mlog::print "Loadiing 'direnv'..."
+mlog::print "Loading 'direnv'..."
 
 # https://github.com/direnv/direnv
 [ -x "$(which direnv 2>/dev/null)" ] && eval "$(direnv hook zsh)"
@@ -251,8 +194,8 @@ mlog::print "Loading 'asdf-vm' includes..."
 __include_asdf_vm_Darwin() {
     # NOTE: more correct would be $(brew --prefix asdf) instead of "/usr/local/opt/asdf",
     # but brew is tooooooooo slow.
-    if type -f asdf &> /dev/null && [ -f "/usr/local/opt/asdf/asdf.sh" ]; then
-        . /usr/local/opt/asdf/asdf.sh
+    if type -f asdf &> /dev/null && [ -f "/usr/local/opt/asdf/libexec/asdf.sh" ]; then
+        . /usr/local/opt/asdf/libexec/asdf.sh
         . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
     fi
     if type -f asdf &> /dev/null && [ -f "/opt/homebrew/opt/asdf/libexec/asdf.sh" ]; then
@@ -268,6 +211,51 @@ __include_asdf_vm_Linux() {
 
 __include_asdf_vm_$(uname -s)
 unset -f __include_asdf_vm_Darwin __include_asdf_vm_Linux
+
+################
+# Zim pre-init #
+################
+
+#
+# git
+#
+
+# Set a custom prefix for the generated aliases. The default prefix is 'G'.
+zstyle ':zim:git' aliases-prefix 'g'
+
+#
+# zsh-syntax-highlighting
+#
+
+# Set what highlighters will be used.
+# See https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters.md
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+
+############
+# Zim init #
+############
+
+mlog::print "Loading 'zimfw'..."
+
+# Download zimfw plugin manager if missing.
+if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
+  curl -fsSL --create-dirs -o ${ZIM_HOME}/zimfw.zsh \
+      https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
+fi
+
+if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
+  # Install missing modules, and update ${ZIM_HOME}/init.zsh if missing or outdated.
+  source ${ZIM_HOME}/zimfw.zsh init -q
+fi
+source ${ZIM_HOME}/init.zsh
+
+mlog::print "Loaded 'zimfw'."
+
+#################
+# Zim post-init #
+#################
+
+zmodload -F zsh/terminfo +p:terminfo
 
 ###########
 # Aliases #
@@ -312,3 +300,5 @@ fi
 mlog::print "Loaded all."
 mlog::cleanup
 unset MLOG_ENABLED
+
+### Stuff below this line is a junk added automatically by commands ###
