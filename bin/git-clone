@@ -18,12 +18,13 @@ trimSchemaAndSuffix() {
 }
 
 main() {
-    if [ $# -eq 0 ] || [ $# -gt 1 ]; then
+    if [ $# -eq 0 ] || [ $# -gt 2 ]; then
         git clone "$@"
         exit $?
     fi
 
     url="$1"
+    dir="${2:-sources}"
     path="$(trimSchemaAndSuffix $url)"
 
     if [[ $path =~ ^git@ ]]; then
@@ -31,9 +32,9 @@ main() {
         hostname="${hostname%%:*}"
         namespace="${path##*:}"
 
-        git clone "$url" "${HOME}/sources/${hostname}/${namespace}"
+        git clone "$url" "${HOME}/${dir}/${hostname}/${namespace}"
         echo -e -n "\nCloned! Directory:\n\n\t"
-        echo cd "~/sources/${hostname}/${namespace}"
+        echo cd "~/${dir}/${hostname}/${namespace}"
         return
     fi
 
@@ -49,12 +50,12 @@ main() {
 
     hostname="${path##*@}"
 
-    git clone "$url" "${HOME}/sources/${hostname}/${namespace}/${reponame}"
+    git clone "$url" "${HOME}/${dir}/${hostname}/${namespace}/${reponame}"
 
-    echo 
+    echo
     echo ">>> Go to cloned repo directory:"
     echo
-    echo "  cd ~/sources/${hostname}/${namespace}/${reponame}"
+    echo "  cd ~/${dir}/${hostname}/${namespace}/${reponame}"
 }
 
 main "$@"

@@ -103,4 +103,4 @@ alias hollywood="docker run --rm -it bcbcarl/hollywood"
 #
 # Shortcuts
 #
-alias cdb='cd $SOURCES_ROOT/github.com/hypnoglow/macOS-bootstrap'
+alias cdb='[ -d $SOURCES_ROOT/github.com/hypnoglow/macOS-bootstrap ] && cd $SOURCES_ROOT/github.com/hypnoglow/macOS-bootstrap || cd $CODE_ROOT/github.com/hypnoglow/macOS-bootstrap'

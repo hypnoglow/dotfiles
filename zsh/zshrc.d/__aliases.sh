@@ -41,8 +41,8 @@ alias -g RNL='gsed -n -e "H;${x;s/\\n/\n/g;p;}"'
 
 alias cdd='cd $DOTFILES_ROOT'
 alias cdg='cd $GOPATH/src'
+alias cdc='cd $CODE_ROOT'
 alias cds='cd $SOURCES_ROOT'
-alias cdsh='cd $SOURCES_ROOT/hypnoglow'
 
 alias bootstrap='(cdb && ./bootstrap ${WS_PROFILE})'
 alias reload-zsh=". ~/.zshrc"

@@ -93,9 +93,12 @@ export BAT_THEME="OneHalfLight" # https://github.com/sharkdp/bat
 export PURE_PROMPT_SYMBOL="λ" # https://github.com/sindresorhus/pure
 export CLOUDSDK_PYTHON=python3
 export KUBECONFIG="$HOME/.kube/config"
-export SOURCES_ROOT="${HOME}/sources"
-export DOTFILES_ROOT="${HOME}/sources/github.com/hypnoglow/dotfiles"
 export EDITOR=vim
+
+export SOURCES_ROOT="${HOME}/sources"
+export CODE_ROOT="${HOME}/code"
+[ -d "${SOURCES_ROOT}/github.com/hypnoglow/dotfiles" ] && export DOTFILES_ROOT="${SOURCES_ROOT}/github.com/hypnoglow/dotfiles"
+[ -d "${CODE_ROOT}/github.com/hypnoglow/dotfiles" ] && export DOTFILES_ROOT="${CODE_ROOT}/github.com/hypnoglow/dotfiles"
 
 . ${HOME}/.zshrc.d/$(uname -s)/__exports.sh
 
