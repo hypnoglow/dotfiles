@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+# Note: this script is based on the following resources:
+# - https://apple.stackexchange.com/a/432408/173973
+# - https://gist.github.com/wadey/1140259
+set \
+  -o errexit \
+  -o nounset \
+  -o pipefail
+
+color="${1:-random}"
+
+# Detect iTerm
+if ! [[ -n "${TERM_PROGRAM}" && ${TERM_PROGRAM} =~ ^iTerm ]]; then
+  echo >&2 "Only iTerm is supported for now."
+  exit 1
+fi
+
+prefix="\033]6;1;bg;"
+prefix_red="${prefix}red;brightness;"
+prefix_green="${prefix}green;brightness;"
+prefix_blue="${prefix}blue;brightness;"
+suffix="\a\r\033[A"
+
+function set_tab_color_random {
+  echo -e "${prefix_red}$((1 + $RANDOM % 255))\a${suffix}"
+  echo -e "${prefix_green}$((1 + $RANDOM % 255))\a${suffix}"
+  echo -e "${prefix_blue}$((1 + $RANDOM % 255))\a${suffix}"
+}
+
+function set_tab_color {
+  case $1 in
+    green)
+      echo -e "${prefix_red}57${suffix}"
+      echo -e "${prefix_green}197${suffix}"
+      echo -e "${prefix_blue}77${suffix}"
+    ;;
+    red)
+      echo -e "${prefix_red}270${suffix}"
+      echo -e "${prefix_green}60${suffix}"
+      echo -e "${prefix_blue}83${suffix}"
+    ;;
+    orange)
+      echo -e "${prefix_red}227${suffix}"
+      echo -e "${prefix_green}143${suffix}"
+      echo -e "${prefix_blue}10${suffix}"
+    ;;
+    blue)
+      echo -e "${prefix_red}79${suffix}"
+      echo -e "${prefix_green}195${suffix}"
+      echo -e "${prefix_blue}247${suffix}"
+    ;;
+    random)
+      set_tab_color_random
+    ;;
+    *)
+     echo >&2 "Unknown color"
+     exit 1
+  esac
+}
+
+set_tab_color ${color}

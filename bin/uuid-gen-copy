@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This script generates UUIDv4 and copies it to clipboard.
+# Only for MacOS.
+# Special thanks to AI.
+set \
+  -o errexit \
+  -o nounset \
+  -o pipefail
+
+uuidgen | tr '[:upper:]' '[:lower:]' | tr -d '\n' | pbcopy
