@@ -90,7 +90,9 @@ alias grm='git rebase $(git_default_branch)'
 alias gMM="gcom && gct && gfr && gcmb"
 
 # Unset `gh` from zim as it conflicts with GitHub CLI.
-unalias gh
+if alias gh &> /dev/null ; then
+    unalias gh
+fi
 
 # Lazygit
 alias lg="lazygit"
