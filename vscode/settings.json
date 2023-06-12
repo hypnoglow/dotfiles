@@ -116,9 +116,10 @@
     "redhat.telemetry.enabled": false,
     "github.copilot.enable": {
         "*": true,
-        "yaml": false,
         "plaintext": false,
-        "markdown": true
+        "markdown": true,
+        "scminput": false,
+        "yaml": true
     },
     "editor.inlineSuggest.enabled": true,
     "telemetry.telemetryLevel": "off",
@@ -126,4 +127,8 @@
     "[html]": {
         "editor.tabSize": 2
     },
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.currentLine.enabled": false,
+    "gitlens.codeLens.enabled": false,
+    "gitlens.defaultDateFormat": null,
 }
