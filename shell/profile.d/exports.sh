@@ -7,10 +7,9 @@
 
 #echo "[dotfiles]==> Loading 'exports.sh' ..."
 
-# golang path
-if [ -x "$(which go 2>/dev/null)" ]; then
-    export GOPATH="${HOME}/go"
-    pathf_prepend "${GOPATH}/bin"
+# Golang path
+if [ -d "${HOME}/go/bin" ]; then
+    pathf_prepend "${HOME}/go/bin"
 fi
 
 # Rust binaries path
