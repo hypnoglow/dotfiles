@@ -88,6 +88,7 @@ alias gwds="ydiff -s -c always -w 0"
 alias gids="ydiff -s -c always -w 0 --staged"
 alias grm='git rebase $(git_default_branch)'
 alias gMM="gcom && gct && gfr && gcmb"
+alias glp1="git log -p -1"
 
 # Unset `gh` from zim as it conflicts with GitHub CLI.
 if alias gh &> /dev/null ; then
