@@ -301,6 +301,13 @@ rmqq() {
 }
 
 #
+# Copilot
+#
+copilot-enable() {
+    eval "$(github-copilot-cli alias -- "$0")"
+}
+
+#
 # Simple functions
 #
 

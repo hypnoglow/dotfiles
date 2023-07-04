@@ -67,7 +67,6 @@
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
     "workbench.colorTheme": "Shades of Purple",
-    "workbench.iconTheme": "vscode-icons",
     "workbench.tree.renderIndentGuides": "always",
     "workbench.tree.indent": 12,
     "files.autoGuessEncoding": true,
@@ -131,4 +130,5 @@
     "gitlens.currentLine.enabled": false,
     "gitlens.codeLens.enabled": false,
     "gitlens.defaultDateFormat": null,
+    "workbench.iconTheme": "file-icons",
 }
