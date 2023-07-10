@@ -1,4 +1,10 @@
+# Config schema, useful for editor completions.
+"$schema" = 'https://starship.rs/config-schema.json'
+
 [aws]
+disabled = true
+
+[buf]
 disabled = true
 
 [character]
@@ -18,14 +24,23 @@ style = "bold fg:#FF33B8"
 [git_status]
 style = "bold fg:#E7C000"
 
-[golang]
+[git_metrics]
 disabled = false
+
+[golang]
+disabled = true
 
 [kubernetes]
 symbol = "⎈ "
 style = "fg:#3371e3"
 
 [nodejs]
+disabled = true
+
+[package]
+disabled = true
+
+[python]
 disabled = true
 
 [terraform]
