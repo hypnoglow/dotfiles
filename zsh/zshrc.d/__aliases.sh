@@ -170,10 +170,6 @@ alias kall="kubectl api-resources --verbs=list --namespaced -o name | xargs -n 1
 #   kalln default
 alias kalln="kall -n"
 
-kusp() {
-    # kubectl service port
-    kubectl describe service $1 | grep "NodePort:" | cut -f 4 | cut -d "/" -f 1
-}
 kuri() { # kubectl run interactive
     local image="${1:-alpine}"
     shift
@@ -213,6 +209,8 @@ EOF
 kudi-cleanup() {
     kubectl delete deploy interactive
 }
+
+alias k9sr="k9s --readonly"
 
 alias minikube="KUBECONFIG=$HOME/.kube/conf.d/minikube minikube"
 alias mik="minikube"
@@ -265,7 +263,7 @@ alias gotav='go test -v ./...'
 alias gotv='go test $(go list ./... | grep -v "/vendor/")'
 alias gotvv='go test -v $(go list ./... | grep -v "/vendor/")'
 alias gov='go vet'
-alias goml='gometalinter --concurrency=1 --deadline=30s ./...'
+alias goli='golangci-lint run'
 gocov() {
     go-carpet "$@" | less -R
 }
