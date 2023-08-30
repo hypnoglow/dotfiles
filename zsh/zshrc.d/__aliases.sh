@@ -239,9 +239,13 @@ alias hedp='helm delete --purge'
 #
 # Clouds
 #
+
 alias gcp="gcloud"
+
 alias t="terraform"
 alias tf="terraform"
+
+alias pu="pulumi"
 
 #
 # Go tools
