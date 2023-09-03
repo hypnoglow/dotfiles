@@ -74,6 +74,10 @@ mlog::print "Loaded plugins."
 # Includes #
 ############
 
+mlog::print "Loading brew prefix..."
+
+brew_prefix="$(brew --prefix)"
+
 mlog::print "Loading 'starship' includes..."
 
 # Prompt. Note that other plugins that modify prompt must not be included BEFORE
@@ -101,10 +105,15 @@ unset aws_completion
 
 mlog::print "Loading 'gcloud' includes..."
 
-gcloud_completion_Darwin="/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+# NOTE:
+# File $(brew --prefix)/share/google-cloud-sdk/path.zsh.inc contains a PATH export
+# for all bins. We don't need them most of the time, so we don't source it.
+
+gcloud_completion_Darwin="${brew_prefix}/share/google-cloud-sdk/completion.zsh.inc"
 gcloud_completion_Linux="/opt/google-cloud-sdk/completion.zsh.inc"
-if [ -e "$gcloud_completion_$(uname -s)" ]; then
-    source "$gcloud_completion_$(uname -s)"
+gcloud_completion="gcloud_completion_$(uname -s)"
+if [ -e "${(P)gcloud_completion}" ]; then
+    source "${(P)gcloud_completion}"
 fi
 
 unset gcloud_completion_Darwin gcloud_completion_Linux
