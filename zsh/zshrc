@@ -57,6 +57,10 @@ mlog::print "Loading plugins..."
 
 source ~/.zplug/init.zsh
 
+# Universal plugins
+zplug "MichaelAquilina/zsh-you-should-use"
+
+# OS-dependent plugins
 . ${HOME}/.zshrc.d/$(uname -s)/__plugins.sh
 
 if ! zplug check --verbose; then
