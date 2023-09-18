@@ -40,5 +40,6 @@ backup = "$HOME/.dotfiles~"
 "git/gitexcludes" = ".gitexcludes"
 "git/hooks" = ".githooks"
 
+"bat/config" = ".config/bat/config"
 "profiles/rigel/karabiner" = ".config/karabiner"
 "starship.toml" = ".config/starship.toml"
