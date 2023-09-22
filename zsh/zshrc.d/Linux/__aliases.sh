@@ -1,5 +1,11 @@
+# Linux specific aliases.
+
+alias cb='xclip -selection clipboard'
+
 alias wfl='nmcli device wifi list'
 alias wfc='nmcli device wifi con'
+
+alias reload-xresources="xrdb -load -quiet ~/.Xresources"
 
 #
 # Shortcuts

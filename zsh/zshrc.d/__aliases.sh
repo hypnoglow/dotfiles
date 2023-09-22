@@ -11,9 +11,7 @@ alias free="free -m"
 #
 # Shortcuts
 #
-alias als='less ${HOME}/.zshrc.d/aliases.sh'
 alias h='history'
-alias cb='xclip -selection clipboard'
 alias tarls='tar t --exclude="*/*" -f'
 alias du1='du -d 1 -BM | sort -n -k1 -r | less -XSF'
 alias du2='du -d 2'
@@ -46,7 +44,6 @@ alias cds='cd $SOURCES_ROOT'
 
 alias bootstrap='(cdb && ./bootstrap ${WS_PROFILE})'
 alias reload-zsh=". ~/.zshrc"
-alias reload-xresources="xrdb -load -quiet ~/.Xresources"
 
 alias psa="ps aux"
 alias psg="ps aux | grep"
@@ -60,7 +57,7 @@ alias dss="ydiff -s -w 0 -c auto HEAD"
 # Vim
 alias vim="nvim"
 
-# Gogland
+# Goland
 alias ged='goland $PWD'
 alias edg='goland $PWD'
 
@@ -84,8 +81,8 @@ alias gcF="git commit --amend --reset-author --verbose"
 alias gtr="git log --graph --all --date=relative --pretty=format:'%Cred%h %Creset%<|(50,trunc)%s %C(bold blue)<%an>%Creset %Cgreen(%cd)%Creset%C(auto)%d'"
 alias gcmb='git branch --merged | grep -E -v "(^\*|$(git_default_branch))" | xargs git branch -d ; git remote prune origin'
 alias gct='git fetch --tags --prune --prune-tags'
-alias gwds="ydiff -s -c always -w 0"
-alias gids="ydiff -s -c always -w 0 --staged"
+alias gwds="gwd"
+alias gids="gid"
 alias grm='git rebase $(git_default_branch)'
 alias gMM="gcom && gct && gfr && gcmb"
 alias glp1="git log -p -1"
@@ -273,8 +270,6 @@ gocov() {
 }
 alias gocoh='go test -coverprofile cover.out && go tool cover -html=cover.out'
 alias gocof='go test -coverprofile cover.out && go tool cover -func=cover.out'
-alias gofw='goimports -local ${PWD##$GOPATH/src/} -l -w .'
-alias gofd='goimports -local ${PWD##$GOPATH/src/} -l -d .'
 
 # See: https://github.com/y0ssar1an/q
 qq() {
