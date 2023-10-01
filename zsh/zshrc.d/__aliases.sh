@@ -326,7 +326,8 @@ ex() {
     fi
 
     if [ ! -f "$1" ] ; then
-        echo "'$1' is not a valid file"
+        echo >&2 "'$1' is not a valid file"
+        return 1
     fi
 
     case $1 in

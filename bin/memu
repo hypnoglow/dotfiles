@@ -1,3 +1,9 @@
 #!/bin/bash
 
-ps -e -orss=,pid=,args= | sort -nr | head|awk '{print $2"\t"$1/1024"\tMB\t"$3;}'
+ps -e -o rss=,pid=,args= | sort -nr | head | awk '{
+  printf $2"\t"$1/1024"\tMB\t";
+  for (i = 3; i <= NF; i++) {
+    printf "%s ", $i
+  };
+  printf "\n"
+}'
