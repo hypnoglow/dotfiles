@@ -1,6 +1,9 @@
 # Config schema, useful for editor completions.
 "$schema" = 'https://starship.rs/config-schema.json'
 
+# Increased timeout related to .git/index.lock issue (see below).
+command_timeout = 2000
+
 [aws]
 disabled = true
 
@@ -24,6 +27,9 @@ style = "bold fg:#FF33B8"
 [git_status]
 style = "bold fg:#E7C000"
 
+# NOTE: If configured with low timeout, git_metrics breaks big repositories by
+# creating .git/index.lock file.
+# See: https://github.com/starship/starship/issues/3522
 [git_metrics]
 disabled = false
 
