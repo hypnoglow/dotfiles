@@ -171,7 +171,7 @@ kuri() { # kubectl run interactive
     local image="${1:-alpine}"
     shift
     local cmd="${*:-sh}"
-    kubectl run -i -t interactive --image=${image} --restart=Never --rm -- ${cmd}
+    kubectl run -i -t interactive --image=${image} --restart=Never --rm --command -- ${cmd}
 }
 kudi() { # kubectl deploy interactive
     local image="${1:-alpine}"
