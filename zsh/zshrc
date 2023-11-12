@@ -224,6 +224,11 @@ __include_asdf_vm_Linux() {
 __include_asdf_vm_$(uname -s)
 unset -f __include_asdf_vm_Darwin __include_asdf_vm_Linux
 
+# iTerm2 Shell Integration
+if [ -f ${HOME}/.iterm2_shell_integration.zsh ]; then
+    source ${HOME}/.iterm2_shell_integration.zsh
+fi
+
 ################
 # Zim pre-init #
 ################
