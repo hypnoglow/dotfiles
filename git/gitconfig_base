@@ -42,6 +42,7 @@
 	logoutputencoding = utf-8
 [rebase]
 	autostash = true
+	updateRefs = true
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
