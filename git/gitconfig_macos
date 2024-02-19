@@ -2,5 +2,3 @@
 	path = .gitconfig_base
 [credential]
 	helper = osxkeychain
-[init]
-	defaultBranch = main

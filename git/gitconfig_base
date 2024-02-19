@@ -8,6 +8,8 @@
 	quotepath = false
 	excludesfile = ~/.gitexcludes
 	#hooksPath = ~/.githooks
+[init]
+	defaultBranch = main
 #[commit]
 #	template = ~/.gitcommit
 [fetch]
@@ -16,6 +18,8 @@
 [grep]
 	# Output line numbers on `git grep`.
 	lineNumber = true
+[diff]
+	algorithm = histogram
 [pull]
 	# Prevent merge commits on pulls.
 	rebase = true
@@ -24,6 +28,11 @@
 	default = simple
 	# Assume '--set-upstream' on push.
 	autoSetupRemote = true
+[merge]
+	conflictStyle = zdiff3
+[rebase]
+	autostash = true
+	updateRefs = true
 [pager]
 	diff = delta
 	show = delta
@@ -40,9 +49,6 @@
 [i18n]
 	commitencoding = utf-8
 	logoutputencoding = utf-8
-[rebase]
-	autostash = true
-	updateRefs = true
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
