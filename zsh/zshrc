@@ -229,6 +229,26 @@ if [ -f ${HOME}/.iterm2_shell_integration.zsh ]; then
     source ${HOME}/.iterm2_shell_integration.zsh
 fi
 
+#
+# lazygit
+#
+
+lazygit_configs=(
+    "${HOME}/Library/Application Support/lazygit/config.yml"
+    "${HOME}/Library/Application Support/lazygit/config.custom.yml"
+)
+
+export LG_CONFIG_FILE=""
+
+for lazygit_config in "${lazygit_configs[@]}"; do
+    if [ -f "${lazygit_config}" ]; then
+        LG_CONFIG_FILE="${LG_CONFIG_FILE},${lazygit_config}"
+    fi
+done
+LG_CONFIG_FILE="${LG_CONFIG_FILE#,}"
+
+unset lazygit_configs lazygit_config
+
 ################
 # Zim pre-init #
 ################
