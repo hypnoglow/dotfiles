@@ -73,9 +73,9 @@ zplug load
 
 mlog::print "Loaded plugins."
 
-############
-# Includes #
-############
+####################
+# Pre-Zim Includes #
+####################
 
 mlog::print "Loading brew prefix..."
 
@@ -88,10 +88,6 @@ mlog::print "Loading 'starship' includes..."
 if type -f starship &> /dev/null; then
     eval "$(starship init zsh)"
 fi
-
-mlog::print "Loading 'zoxide' includes..."
-
-[ -x "$(which zoxide 2>/dev/null)" ] && eval "$(zoxide init zsh)"
 
 mlog::print "Loading 'direnv'..."
 
@@ -293,6 +289,17 @@ mlog::print "Loaded 'zimfw'."
 #################
 
 zmodload -F zsh/terminfo +p:terminfo
+
+#####################
+# Post-Zim Includes #
+#####################
+
+# Note: some scripts require enabling after compinit for completions to work.
+#       So, we load them after zimfw.
+
+mlog::print "Loading 'zoxide' includes..."
+
+[ -x "$(which zoxide 2>/dev/null)" ] && eval "$(zoxide init zsh)"
 
 ###########
 # Aliases #
