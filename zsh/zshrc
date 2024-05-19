@@ -297,9 +297,19 @@ zmodload -F zsh/terminfo +p:terminfo
 # Note: some scripts require enabling after compinit for completions to work.
 #       So, we load them after zimfw.
 
-mlog::print "Loading 'zoxide' includes..."
+mlog::print "Loading 'zoxide' ..."
 
 [ -x "$(which zoxide 2>/dev/null)" ] && eval "$(zoxide init zsh)"
+
+# Reference:
+# https://carapace-sh.github.io/carapace-bin/setup.html
+mlog::print "Loading 'carapace' ..."
+
+if [ -x "$(which carapace 2>/dev/null)" ]; then
+  export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
+  zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+  source <(carapace _carapace)
+fi
 
 ###########
 # Aliases #
