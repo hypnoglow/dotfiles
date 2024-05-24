@@ -15,13 +15,31 @@ mlog::print "Logging enabled"
 # Set editor default keymap to emacs (`-e`) or vi (`-v`)
 bindkey -e
 
-# MORE history
-HISTFILE=~/.zhistory
-HISTSIZE=100000
-SAVEHIST=100000
+#
+# history
+#
 
-# Remove older command from the history if a duplicate is to be added.
-setopt HIST_IGNORE_ALL_DUPS
+HISTFILE=~/.zhistory
+HISTSIZE=10000000
+SAVEHIST=10000000
+HISTORY_IGNORE='([bf]g *|cd ..|l[alsh]#( *)#|less *|(n)vim *|cd|pwd|exit|z(i) *)'
+
+# https://zsh.sourceforge.io/Doc/Release/Options.html (16.2.4 History)
+setopt EXTENDED_HISTORY      # Write the history file in the ':start:elapsed;command' format.
+setopt INC_APPEND_HISTORY    # Write to the history file immediately, not when the shell exits.
+setopt SHARE_HISTORY         # Share history between all sessions.
+setopt HIST_IGNORE_DUPS      # Do not record an event that was just recorded again.
+setopt HIST_IGNORE_ALL_DUPS  # Delete an old recorded event if a new event is a duplicate.
+setopt HIST_IGNORE_SPACE     # Do not record an event starting with a space.
+setopt HIST_SAVE_NO_DUPS     # Do not write a duplicate event to the history file.
+setopt HIST_VERIFY           # Do not execute immediately upon history expansion.
+setopt APPEND_HISTORY        # append to history file (Default)
+setopt HIST_NO_STORE         # Don't store history commands
+setopt HIST_REDUCE_BLANKS    # Remove superfluous blanks from each command line being added to the history.
+
+#
+# misc
+#
 
 setopt INTERACTIVE_COMMENTS
 
@@ -43,35 +61,6 @@ export CODE_ROOT="${HOME}/code"
 [ -d "${CODE_ROOT}/github.com/hypnoglow/dotfiles" ] && export DOTFILES_ROOT="${CODE_ROOT}/github.com/hypnoglow/dotfiles"
 
 . ${HOME}/.zshrc.d/$(uname -s)/__exports.sh
-
-###########
-# Plugins #
-###########
-
-mlog::print "Loading plugins..."
-
-[[ -d ~/.zplug ]] || {
-    git clone https://github.com/zplug/zplug ${ZPLUG_HOME:-"${HOME}/.zplug"}
-}
-
-source ~/.zplug/init.zsh
-
-# Universal plugins
-zplug "MichaelAquilina/zsh-you-should-use"
-
-# OS-dependent plugins
-. ${HOME}/.zshrc.d/$(uname -s)/__plugins.sh
-
-if ! zplug check --verbose; then
-  printf "Install zsh plugins? [y/N]: "
-  if read -q; then
-    echo; zplug install
-  fi
-fi
-
-zplug load
-
-mlog::print "Loaded plugins."
 
 ####################
 # Pre-Zim Includes #
