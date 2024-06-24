@@ -68,6 +68,7 @@ export CODE_ROOT="${HOME}/code"
 
 mlog::print "Loading brew prefix..."
 
+# TODO: clean after all loaded
 brew_prefix="$(brew --prefix)"
 
 mlog::print "Loading 'starship' includes..."
@@ -156,31 +157,6 @@ if type -f kube_ps1 &> /dev/null; then
     KUBE_PS1_SUFFIX=") " # Add space to separate prompt symbol
     PROMPT='$(kube_ps1)'$PROMPT
 fi
-
-mlog::print "Loading 'asdf-vm' includes..."
-
-# https://github.com/asdf-vm/asdf
-
-__include_asdf_vm_Darwin() {
-    # NOTE: more correct would be $(brew --prefix asdf) instead of "/usr/local/opt/asdf",
-    # but brew is tooooooooo slow.
-    if type -f asdf &> /dev/null && [ -f "/usr/local/opt/asdf/libexec/asdf.sh" ]; then
-        . /usr/local/opt/asdf/libexec/asdf.sh
-        . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
-    fi
-    if type -f asdf &> /dev/null && [ -f "/opt/homebrew/opt/asdf/libexec/asdf.sh" ]; then
-        . /opt/homebrew/opt/asdf/libexec/asdf.sh
-    fi
-}
-
-__include_asdf_vm_Linux() {
-    if [ -e "/opt/asdf-vm" ]; then
-        . /opt/asdf-vm/asdf.sh
-    fi
-}
-
-__include_asdf_vm_$(uname -s)
-unset -f __include_asdf_vm_Darwin __include_asdf_vm_Linux
 
 # iTerm2 Shell Integration
 if [ -f ${HOME}/.iterm2_shell_integration.zsh ]; then
@@ -271,6 +247,20 @@ if [ -x "$(which carapace 2>/dev/null)" ]; then
   export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
   zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
   source <(carapace _carapace)
+fi
+
+# Reference:
+# https://github.com/asdf-vm/asdf
+mlog::print "Loading 'asdf-vm' ..."
+
+if [ "$(uname -s)" = "Darwin" ]; then
+    if [ -e "$(brew --prefix asdf)/libexec/asdf.sh" ]; then
+        . $(brew --prefix asdf)/libexec/asdf.sh
+    fi
+elif [ "$(uname -s)" = "Linux" ]; then
+    if [ -e "/opt/asdf-vm" ]; then
+        . /opt/asdf-vm/asdf.sh
+    fi
 fi
 
 mlog::print "Loading 'kubectl' ..."
