@@ -40,10 +40,6 @@
 	reflog = delta
 [interactive]
 	diffFilter = delta --color-only
-[delta]
-	line-numbers = true
-	syntax-theme = Dracula
-	side-by-side = true
 [color]
 	ui = auto
 [i18n]
@@ -54,5 +50,22 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+
+#
+# External tools
+#
+
+[delta]
+	line-numbers = true
+	side-by-side = true
+
+[ghq]
+	root = ~/code
+	root = ~/sources
+
+#
+# Includes
+#
+
 [include]
 	path = .gitconfig_local
