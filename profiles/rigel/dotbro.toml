@@ -40,6 +40,8 @@ backup = "$HOME/.dotfiles~"
 "git/gitexcludes" = ".gitexcludes"
 "git/hooks" = ".githooks"
 
+"lazygit/config.yml" = "Library/Application Support/lazygit/config.custom.yml"
+
 "bat/config" = ".config/bat/config"
 "profiles/rigel/karabiner" = ".config/karabiner"
 "starship.toml" = ".config/starship.toml"
