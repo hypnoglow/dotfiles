@@ -60,6 +60,10 @@ export CODE_ROOT="${HOME}/code"
 [ -d "${SOURCES_ROOT}/github.com/hypnoglow/dotfiles" ] && export DOTFILES_ROOT="${SOURCES_ROOT}/github.com/hypnoglow/dotfiles"
 [ -d "${CODE_ROOT}/github.com/hypnoglow/dotfiles" ] && export DOTFILES_ROOT="${CODE_ROOT}/github.com/hypnoglow/dotfiles"
 
+# If not set, then asdf will install modules inside the particular version directory,
+# which results in duplication of the same module in different versions.
+export GOPATH="${HOME}/go"
+
 . ${HOME}/.zshrc.d/$(uname -s)/__exports.sh
 
 ####################
