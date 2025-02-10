@@ -2,7 +2,9 @@
 .idea/
 *.sublime-project
 *.sublime-workspace
-.vscode
+
+# Project-specific files that might be useful to commit
+# .vscode
 
 .tags
 .realsync
