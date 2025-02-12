@@ -89,11 +89,13 @@
     "go.useLanguageServer": true,
     "rust-client.enableMultiProjectSetup": true,
     "cSpell.userWords": [
+        "asynqmon",
+        "gitlab",
         "ICMP",
         "KUBE",
+        "kubectl",
         "KUBERNETES",
-        "gitlab",
-        "kubectl"
+        "platacard"
     ],
     "cSpell.enableFiletypes": [
         "!markdown",
@@ -109,13 +111,13 @@
         "editor.suggest.snippetsPreventQuickSuggestions": false,
         "editor.suggestSelection": "first",
         "editor.tabCompletion": "onlySnippets",
-        "editor.wordBasedSuggestions": false
+        "editor.wordBasedSuggestions": "off"
     },
     "editor.unicodeHighlight.nonBasicASCII": false,
     "redhat.telemetry.enabled": false,
     "github.copilot.enable": {
         "*": true,
-        "plaintext": false,
+        "plaintext": true,
         "markdown": true,
         "scminput": false,
         "yaml": true
@@ -131,4 +133,9 @@
     "gitlens.codeLens.enabled": false,
     "gitlens.defaultDateFormat": null,
     "workbench.iconTheme": "file-icons",
+    "github.copilot.editor.enableAutoCompletions": true,
+    "vsicons.dontShowNewVersionMessage": true,
+    "gitlab.duoCodeSuggestions.enabled": false,
+    "gitlab.duoChat.enabled": false,
+    "gitlens.hovers.enabled": false,
 }
