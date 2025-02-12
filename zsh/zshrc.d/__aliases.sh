@@ -79,6 +79,7 @@ alias gpff="git push --force"
 alias gcf="git commit --amend --reset-author --no-edit"
 alias gcF="git commit --amend --reset-author --verbose"
 alias gtr="git log --graph --all --date=relative --pretty=format:'%Cred%h %Creset%<|(50,trunc)%s %C(bold blue)<%an>%Creset %Cgreen(%cd)%Creset%C(auto)%d'"
+alias gtro="git log --graph --date=relative --pretty=format:'%Cred%h %Creset%<|(50,trunc)%s %C(bold blue)<%an>%Creset %Cgreen(%cd)%Creset%C(auto)%d'"
 alias gcmb='git branch --merged | grep -E -v "(^\*|$(git_default_branch))" | xargs git branch -d ; git remote prune origin'
 alias gct='git fetch --tags --prune --prune-tags'
 alias gwds="gwd"

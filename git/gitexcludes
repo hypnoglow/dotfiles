@@ -18,3 +18,10 @@ _tmp/
 _testdata/
 .secrets
 #.tool-versions
+
+#
+# Cursor
+#
+
+# Exclude cursor rules by default.
+.cursor
