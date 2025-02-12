@@ -1,0 +1,7 @@
+init: |
+  \echo welcome to the jungle `date`
+  \set SYNTAX_HL_STYLE paraiso-dark
+  \set AUTOCOMMIT off
+  \pset null '<null>'
+  \pset linestyle unicode
+  \setenv LESS '-S -I -R'

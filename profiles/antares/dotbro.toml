@@ -44,3 +44,4 @@ backup = "$HOME/.dotfiles~"
 
 "profiles/antares/karabiner" = ".config/karabiner"
 "starship.toml" = ".config/starship.toml"
+"usql/config.yaml" = "Library/Application Support/usql/config.yaml"
