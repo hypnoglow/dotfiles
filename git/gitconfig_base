@@ -45,6 +45,21 @@
 [i18n]
 	commitencoding = utf-8
 	logoutputencoding = utf-8
+[alias]
+	todo = "!git --no-pager diff -U0 main | \
+		grep '^+.*TODO' | \
+		sed 's/^+//' | \
+		git --no-pager grep -nFf - 2> /dev/null"
+	s = "!sh -c ' \
+    	[ $GIT_PREFIX ] && cd $GIT_PREFIX; \
+    	git status --short --branch $*; \
+    	git --no-pager diff -U0 main | \
+    	grep \"^+.*TODO\" | \
+    	sed \"s/^+//\" | \
+    	git --no-pager grep -nFf - 2> /dev/null' -"
+	sw = "switch"
+	swm = "switch main"
+	pr = "pull --rebase"
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
