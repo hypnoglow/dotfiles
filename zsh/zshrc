@@ -60,11 +60,30 @@ export CODE_ROOT="${HOME}/code"
 [ -d "${SOURCES_ROOT}/github.com/hypnoglow/dotfiles" ] && export DOTFILES_ROOT="${SOURCES_ROOT}/github.com/hypnoglow/dotfiles"
 [ -d "${CODE_ROOT}/github.com/hypnoglow/dotfiles" ] && export DOTFILES_ROOT="${CODE_ROOT}/github.com/hypnoglow/dotfiles"
 
+. ${HOME}/.zshrc.d/$(uname -s)/__exports.sh
+
+#
+# Go
+#
+
 # If not set, then asdf will install modules inside the particular version directory,
 # which results in duplication of the same module in different versions.
 export GOPATH="${HOME}/go"
 
-. ${HOME}/.zshrc.d/$(uname -s)/__exports.sh
+if [ "$(uname -s)" = "Darwin" ]; then
+  # See: https://github.com/golang/go/issues/61229#issuecomment-1988965927
+  # See: https://github.com/golang/go/issues/63135
+  export CGO_LDFLAGS="-Wl,-no_warn_duplicate_libraries"
+fi
+
+#
+# usql
+#
+
+if [ "$(uname -s)" = "Darwin" ]; then
+  # See: https://github.com/xo/usql?tab=readme-ov-file#terminal-graphics
+  export USQL_TERM_GRAPHICS="iterm"
+fi
 
 ####################
 # Pre-Zim Includes #
@@ -111,23 +130,12 @@ fi
 
 unset gcloud_completion_Darwin gcloud_completion_Linux
 
-mlog::print "Loading 'terraform' includes..."
 
-if type -f terraform &> /dev/null; then
-    autoload -U +X bashcompinit && bashcompinit
-    complete -o nospace -C $(which terraform) terraform
-fi
 
 mlog::print "Loading 'kitty' includes..."
 
 if type -f kitty &> /dev/null; then
     kitty + complete setup zsh | source /dev/stdin
-fi
-
-mlog::print "Loading 'golangci-lint' includes..."
-
-if type -f golangci-lint &> /dev/null; then
-    golangci-lint completion zsh | source /dev/stdin
 fi
 
 #
@@ -267,6 +275,12 @@ elif [ "$(uname -s)" = "Linux" ]; then
     fi
 fi
 
+mlog::print "Loading 'golangci-lint' ..."
+
+if type -f golangci-lint &> /dev/null; then
+    golangci-lint completion zsh | source /dev/stdin
+fi
+
 mlog::print "Loading 'kubectl' ..."
 
 if type -f kubectl &> /dev/null; then
@@ -292,6 +306,13 @@ mlog::print "Loading 'stern' ..."
 
 if type -f stern &> /dev/null; then
     source <(stern --completion=zsh)
+fi
+
+mlog::print "Loading 'terraform' ..."
+
+if type -f terraform &> /dev/null; then
+    autoload -U +X bashcompinit && bashcompinit
+    complete -o nospace -C $(which terraform) terraform
 fi
 
 ###########
@@ -337,5 +358,16 @@ fi
 mlog::print "Loaded all."
 mlog::cleanup
 unset MLOG_ENABLED
+
+######################################
+# Show iTerm2 tip right before start #
+######################################
+
+if type -f it2tip &> /dev/null; then
+    _color_orange="\e[33m"
+    _color_reset="\e[0m"
+    echo "\n${_color_orange}$(it2tip) ${_color_reset}\n"
+    unset _color_orange _color_reset
+fi
 
 ### Stuff below this line is a junk added automatically by commands ###
