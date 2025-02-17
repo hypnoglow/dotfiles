@@ -275,6 +275,8 @@ elif [ "$(uname -s)" = "Linux" ]; then
     fi
 fi
 
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+
 mlog::print "Loading 'golangci-lint' ..."
 
 if type -f golangci-lint &> /dev/null; then
