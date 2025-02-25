@@ -1,22 +1,99 @@
 {
+    //
+    // General
+    //
+    "window.autoDetectColorScheme": false,
+    "window.systemColorTheme": "dark",
+    "window.nativeTabs": false,
+    "workbench.colorTheme": "Shades of Purple",
+    "workbench.iconTheme": "file-icons",
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.patterns": {
+        "go.mod": "go.sum"
+    },
+    "explorer.confirmDragAndDrop": false,
+    "zenMode.fullScreen": false,
+    //
     // Editor
-    "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
+    //
+    "editor.fontSize": 14,
+    "editor.fontFamily": "Jetbrains Mono, 'Fira Code', monospace",
     "editor.fontLigatures": true,
     "editor.rulers": [
         80,
         120
     ],
-    "editor.renderWhitespace": "boundary",
-    "editor.renderControlCharacters": true,
-    "editor.minimap.enabled": false,
-    // Window
-    "window.nativeTabs": true,
-    "window.zoomLevel": 0,
     "files.trimTrailingWhitespace": true,
     "files.trimFinalNewlines": true,
     "files.insertFinalNewline": true,
+    //
+    // Copilot
+    //
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": true,
+        "markdown": true,
+        "scminput": false,
+        "yaml": true
+    },
+    "github.copilot.editor.enableAutoCompletions": true,
+    //
+    // Git
+    //
+    "git.allowForcePush": true,
+    "git.autoStash": true,
+    "git.confirmSync": false,
+    "git.rebaseWhenSync": true,
+    "git.supportCancellation": true,
+    "git.enableSmartCommit": true,
+    //
+    // Go
+    //
+    "gopls": {
+        "ui.semanticTokens": true,
+        "formatting.local": ""
+    },
+    "go.inlayHints.constantValues": true,
+    "go.gopath": "~/go",
+    "go.lintTool": "golangci-lint",
+    "go.lintFlags": [
+        "--fast"
+    ],
+    "go.toolsManagement.autoUpdate": false,
+    //
+    // Other extensions
+    //
+    "task": {
+        "outputTo": "terminal"
+    },
+    //
+    // Unsorted
+    //
+    "[graphql]": {},
+    "gitlab.duoCodeSuggestions.enabled": false,
+    "gitlab.duoChat.enabled": false,
+    "gitlab.duo.enabledWithoutGitlabProject": false,
+    "gitlab.keybindingHints.enabled": false,
+    "gitlab.duoCodeSuggestions.openTabsContext": false,
+    "gitlab.real-timeSecurityScan.scanFileOnSave": false,
+    "diffEditor.ignoreTrimWhitespace": true,
+    "diffEditor.experimental.showMoves": true,
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    "workbench.editor.enablePreview": true,
+    "gitlens.views.commitDetails.files.layout": "tree",
+    "gitlens.graph.minimap.enabled": false,
+    "gitlens.plusFeatures.enabled": false,
+    "gitlens.currentLine.enabled": false,
+    "gitlens.codeLens.enabled": false,
+    "git.confirmForcePush": false,
+    "git.useEditorAsCommitInput": false,
+    //////////////// OLD BELOW //////////////////////
+    // Editor
+    "editor.renderWhitespace": "boundary",
+    "editor.renderControlCharacters": true,
+    "editor.minimap.enabled": false,
+    "window.zoomLevel": 0,
     // Explorer
-    "explorer.confirmDragAndDrop": false,
     "explorer.openEditors.visible": 0,
     // Terminal
     "terminal.external.osxExec": "iTerm.app",
@@ -66,25 +143,9 @@
     "git.autofetch": true,
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
-    "workbench.colorTheme": "Shades of Purple",
     "workbench.tree.renderIndentGuides": "always",
     "workbench.tree.indent": 12,
     "files.autoGuessEncoding": true,
-    "terraform.indexing": {
-        "enabled": false,
-        "liveIndexing": false,
-        "delay": 500,
-        "exclude": [
-            ".terraform/**/*",
-            "**/.terraform/**/*"
-        ]
-    },
-    "terraform.languageServer": {
-        "external": true,
-        "args": [
-            "serve"
-        ]
-    },
     "go.formatTool": "goimports",
     "go.useLanguageServer": true,
     "rust-client.enableMultiProjectSetup": true,
@@ -114,14 +175,6 @@
         "editor.wordBasedSuggestions": "off"
     },
     "editor.unicodeHighlight.nonBasicASCII": false,
-    "redhat.telemetry.enabled": false,
-    "github.copilot.enable": {
-        "*": true,
-        "plaintext": true,
-        "markdown": true,
-        "scminput": false,
-        "yaml": true
-    },
     "editor.inlineSuggest.enabled": true,
     "telemetry.telemetryLevel": "off",
     "editor.tabSize": 2,
@@ -132,8 +185,6 @@
     "gitlens.currentLine.enabled": false,
     "gitlens.codeLens.enabled": false,
     "gitlens.defaultDateFormat": null,
-    "workbench.iconTheme": "file-icons",
-    "github.copilot.editor.enableAutoCompletions": true,
     "vsicons.dontShowNewVersionMessage": true,
     "gitlab.duoCodeSuggestions.enabled": false,
     "gitlab.duoChat.enabled": false,
