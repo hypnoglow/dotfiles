@@ -26,9 +26,6 @@ backup = "$HOME/.dotfiles~"
 "zsh/zshenv" = ".zshenv"
 "zsh/zshrc.d" = ".zshrc.d"
 
-"vscode/keybindings.json" = "Library/Application Support/Code/User/keybindings.json"
-"vscode/settings.json" = "Library/Application Support/Code/User/settings.json"
-
 "vim/vimrc" = ".vimrc"
 
 "neovim/init.vim" = ".config/nvim/init.vim"
