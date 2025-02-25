@@ -17,6 +17,15 @@ trimSchemaAndSuffix() {
     echo $path
 }
 
+tip_gqh() {
+    echo "Please also try cloning with 'ghq'"
+    echo "Examples:"
+    echo
+    echo "  ghq clone $1"
+    echo
+    echo "  GHQ_ROOT=~/code ghq clone $1"
+}
+
 main() {
     if [ $# -eq 0 ] || [ $# -gt 2 ]; then
         git clone "$@"
@@ -56,6 +65,9 @@ main() {
     echo ">>> Go to cloned repo directory:"
     echo
     echo "  cd ~/${dir}/${hostname}/${namespace}/${reponame}"
+    echo
+
+    tip_gqh "${url}"
 }
 
 main "$@"
