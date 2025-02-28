@@ -1,0 +1,32 @@
+# IDE and editor
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+.tags
+.realsync
+.magicindex.json
+application-build-*
+npm-debug.log
+.DS_Store
+.env
+.env-*env
+.envrc
+tmp/
+_tmp/
+_testdata/
+.secrets
+#.tool-versions
+
+#
+# VS Code
+#
+
+.vscode/
+
+#
+# Cursor
+#
+
+# Exclude cursor rules by default.
+.cursor/
