@@ -45,6 +45,8 @@
 [i18n]
 	commitencoding = utf-8
 	logoutputencoding = utf-8
+[help]
+	autocorrect = prompt
 [alias]
 	todo = "!git --no-pager diff -U0 main | \
 		grep '^+.*TODO' | \
