@@ -12,14 +12,30 @@
 	defaultBranch = main
 #[commit]
 #	template = ~/.gitcommit
+[branch]
+	# Most recent branch first.
+	sort = -committerdate
+[tag]
+	# Version-aware sorting.
+	sort = version:refname
 [fetch]
 	# Remove local branches that were deleted remotely.
 	prune = true
+	# Remove local tags that were deleted remotely.
+	pruneTags = true
+	# Fetch all remotes.
+	all = true
 [grep]
 	# Output line numbers on `git grep`.
 	lineNumber = true
 [diff]
+	# Best algorithm for diffs.
 	algorithm = histogram
+	# Separate color for moves and edits.
+	colorMoved = true
+	# Change a/b to i/w/c (index/working tree/commit).
+	mnemonicPrefix = true
+	renames = true
 [pull]
 	# Prevent merge commits on pulls.
 	rebase = true
@@ -28,11 +44,21 @@
 	default = simple
 	# Assume '--set-upstream' on push.
 	autoSetupRemote = true
+	# Push all tags, every time you push anything.
+	; followTags = true
 [merge]
 	conflictStyle = zdiff3
 [rebase]
 	autostash = true
+	# https://blog.gitbutler.com/git-autosquash/
+	autosquash = true
+	# Move all refs (branches) with the rebase.
 	updateRefs = true
+[rerere]
+	# Record the before and after states of rebase conflicts.
+	enabled = true
+	# Automatically re-apply the resolutions if it sees them again.
+	autoupdate = true
 [pager]
 	diff = delta
 	show = delta
@@ -41,6 +67,7 @@
 [interactive]
 	diffFilter = delta --color-only
 [color]
+	# Just better looks.
 	ui = auto
 [i18n]
 	commitencoding = utf-8
