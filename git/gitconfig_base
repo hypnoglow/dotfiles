@@ -17,7 +17,7 @@
 	sort = -committerdate
 [tag]
 	# Version-aware sorting.
-	sort = version:refname
+	sort = -version:refname
 [fetch]
 	# Remove local branches that were deleted remotely.
 	prune = true
