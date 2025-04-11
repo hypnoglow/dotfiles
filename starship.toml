@@ -2,7 +2,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 # Increased timeout related to .git/index.lock issue (see below).
-command_timeout = 2000
+command_timeout = 5000
 
 [aws]
 disabled = true
