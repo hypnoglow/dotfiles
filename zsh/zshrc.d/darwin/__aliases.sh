@@ -103,4 +103,20 @@ alias hollywood="docker run --rm -it bcbcarl/hollywood"
 #
 # Shortcuts
 #
-alias cdb='[ -d $SOURCES_ROOT/github.com/hypnoglow/macOS-bootstrap ] && cd $SOURCES_ROOT/github.com/hypnoglow/macOS-bootstrap || cd $CODE_ROOT/github.com/hypnoglow/macOS-bootstrap'
+
+cdb() {
+    dirs=(
+        $SOURCES_ROOT/github.com/hypnoglow/macOS-bootstrap
+        $CODE_ROOT/github.com/hypnoglow/macOS-bootstrap
+        $HOME/Developer/github.com/hypnoglow/macOS-bootstrap
+    )
+
+    for dir in "${dirs[@]}"; do
+        if [ -d "$dir" ]; then
+            cd "$dir"
+            return
+        fi
+    done
+
+    echo "No macOS-bootstrap directory found in any of the expected locations."
+}

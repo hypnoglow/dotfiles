@@ -59,6 +59,7 @@ export SOURCES_ROOT="${HOME}/sources"
 export CODE_ROOT="${HOME}/code"
 [ -d "${SOURCES_ROOT}/github.com/hypnoglow/dotfiles" ] && export DOTFILES_ROOT="${SOURCES_ROOT}/github.com/hypnoglow/dotfiles"
 [ -d "${CODE_ROOT}/github.com/hypnoglow/dotfiles" ] && export DOTFILES_ROOT="${CODE_ROOT}/github.com/hypnoglow/dotfiles"
+[ -d "${HOME}/Developer/github.com/hypnoglow/dotfiles" ] && export DOTFILES_ROOT="${HOME}/Developer/github.com/hypnoglow/dotfiles"
 
 . ${HOME}/.zshrc.d/$(uname -s)/__exports.sh
 
