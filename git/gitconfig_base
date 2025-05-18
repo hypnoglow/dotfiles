@@ -106,6 +106,7 @@
 [ghq]
 	root = ~/code
 	root = ~/sources
+	root = ~/Developer
 
 #
 # Includes
