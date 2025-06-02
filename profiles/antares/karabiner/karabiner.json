@@ -1,7 +1,41 @@
 {
-    "global": { "show_in_menu_bar": false },
     "profiles": [
         {
+            "complex_modifications": {
+                "rules": [
+                    {
+                        "description": "CapsLock -> EN, Shift+CapsLock -> RU",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": {}
+                                },
+                                "to": [
+                                    {
+                                        "modifiers": [],
+                                        "select_input_source": { "input_source_id": "com.apple.keylayout.ABC" }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "mandatory": ["left_shift"] }
+                                },
+                                "to": [
+                                    {
+                                        "modifiers": [],
+                                        "select_input_source": { "input_source_id": "com.apple.keylayout.Russian" }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    }
+                ]
+            },
             "devices": [
                 {
                     "identifiers": {
@@ -63,16 +97,12 @@
             "selected": true,
             "simple_modifications": [
                 {
-                    "from": { "key_code": "caps_lock" },
-                    "to": [{ "key_code": "f13" }]
-                },
-                {
-                    "from": { "key_code": "fn" },
+                    "from": { "apple_vendor_top_case_key_code": "keyboard_fn" },
                     "to": [{ "key_code": "left_control" }]
                 },
                 {
                     "from": { "key_code": "left_control" },
-                    "to": [{ "key_code": "fn" }]
+                    "to": [{ "apple_vendor_top_case_key_code": "keyboard_fn" }]
                 },
                 {
                     "from": { "key_code": "non_us_backslash" },
