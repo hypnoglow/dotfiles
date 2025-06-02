@@ -104,6 +104,7 @@
 	side-by-side = true
 
 [ghq]
+	root = ~/Developer
 	root = ~/code
 	root = ~/sources
 	root = ~/Developer
