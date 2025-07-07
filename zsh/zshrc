@@ -328,6 +328,10 @@ mlog::print "Loading aliases..."
 . ${HOME}/.zshrc.d/__aliases.sh
 . ${HOME}/.zshrc.d/$(uname -s)/__aliases.sh
 
+if [ -x "$HOME/.claude/local/claude" ]; then
+    alias claude="/Users/hypnoglow/.claude/local/claude"
+fi
+
 mlog::print "Loaded aliases."
 
 ###############
