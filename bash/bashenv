@@ -1,5 +1,9 @@
 # This file is included in execution of shell scripts.
 
+if [ -f "$HOME/.bash/env" ]; then
+	. "$HOME/.bash/env"
+fi
+
 sed() {
     gsed "$@"
 }

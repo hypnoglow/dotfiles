@@ -18,6 +18,10 @@ if [ -r "${HOME}/.bashrc.local" ]; then
     . "${HOME}/.bashrc.local"
 fi
 
+if [ -f "$HOME/.bash/env" ]; then
+	. "$HOME/.bash/env"
+fi
+
 # VARIABLES
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)

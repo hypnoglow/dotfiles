@@ -17,6 +17,7 @@ backup = "$HOME/.dotfiles~"
 "shell/profile" = ".profile"
 
 "bash/bashenv" = ".bash_env"
+"bash/env" = ".bash/env"
 
 "zsh/lib" = ".zsh/lib"
 "zsh/zprofile" = ".zprofile"
