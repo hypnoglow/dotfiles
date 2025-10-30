@@ -12,6 +12,10 @@ MLOG_ENABLED=${MLOG_ENABLED:-}
 mlog::start
 mlog::print "Logging enabled"
 
+# Cache system information
+_os="$(uname -s)"
+[ "$_os" = "Darwin" ] && _brew_prefix="$(brew --prefix 2>/dev/null || echo '')"
+
 # Set editor default keymap to emacs (`-e`) or vi (`-v`)
 bindkey -e
 
@@ -62,7 +66,7 @@ export CODE_ROOT="${HOME}/code"
 [ -d "${CODE_ROOT}/github.com/hypnoglow/dotfiles" ] && export DOTFILES_ROOT="${CODE_ROOT}/github.com/hypnoglow/dotfiles"
 [ -d "${HOME}/Developer/github.com/hypnoglow/dotfiles" ] && export DOTFILES_ROOT="${HOME}/Developer/github.com/hypnoglow/dotfiles"
 
-. ${HOME}/.zshrc.d/$(uname -s)/__exports.sh
+. ${HOME}/.zshrc.d/$_os/__exports.sh
 
 #
 # Go
@@ -72,7 +76,7 @@ export CODE_ROOT="${HOME}/code"
 # which results in duplication of the same module in different versions.
 export GOPATH="${HOME}/go"
 
-if [ "$(uname -s)" = "Darwin" ]; then
+if [ "$_os" = "Darwin" ]; then
   # See: https://github.com/golang/go/issues/61229#issuecomment-1988965927
   # See: https://github.com/golang/go/issues/63135
   export CGO_LDFLAGS="-Wl,-no_warn_duplicate_libraries"
@@ -82,7 +86,7 @@ fi
 # usql
 #
 
-if [ "$(uname -s)" = "Darwin" ]; then
+if [ "$_os" = "Darwin" ]; then
   # See: https://github.com/xo/usql?tab=readme-ov-file#terminal-graphics
   export USQL_TERM_GRAPHICS="iterm"
 fi
@@ -91,52 +95,22 @@ fi
 # Pre-Zim Includes #
 ####################
 
-mlog::print "Loading brew prefix..."
-
-# TODO: clean after all loaded
-brew_prefix="$(brew --prefix)"
-
 mlog::print "Loading 'starship' includes..."
 
 # Prompt. Note that other plugins that modify prompt must not be included BEFORE
 # this, otherwise they will not take effect.
-if type -f starship &> /dev/null; then
+if command -v starship &> /dev/null; then
     eval "$(starship init zsh)"
 fi
 
 mlog::print "Loading 'direnv'..."
 
 # https://github.com/direnv/direnv
-[ -x "$(which direnv 2>/dev/null)" ] && eval "$(direnv hook zsh)"
-
-mlog::print "Loading 'aws cli' includes..."
-
-aws_completion="/usr/local/bin/aws_zsh_completer.sh"
-if [ -e "$aws_completion" ]; then
-    source "$aws_completion"
-fi
-unset aws_completion
-
-mlog::print "Loading 'gcloud' includes..."
-
-# NOTE:
-# File $(brew --prefix)/share/google-cloud-sdk/path.zsh.inc contains a PATH export
-# for all bins. We don't need them most of the time, so we don't source it.
-
-gcloud_completion_Darwin="${brew_prefix}/share/google-cloud-sdk/completion.zsh.inc"
-gcloud_completion_Linux="/opt/google-cloud-sdk/completion.zsh.inc"
-gcloud_completion="gcloud_completion_$(uname -s)"
-if [ -e "${(P)gcloud_completion}" ]; then
-    source "${(P)gcloud_completion}"
-fi
-
-unset gcloud_completion_Darwin gcloud_completion_Linux
-
-
+[ -x "$(command -v direnv 2>/dev/null)" ] && eval "$(direnv hook zsh)"
 
 mlog::print "Loading 'kitty' includes..."
 
-if type -f kitty &> /dev/null; then
+if command -v kitty &> /dev/null; then
     kitty + complete setup zsh | source /dev/stdin
 fi
 
@@ -164,10 +138,11 @@ __include_kube_ps1_Linux() {
     . "${HOME}/sources/github.com/jonmosco/kube-ps1/kube-ps1.sh"
 }
 
-__include_kube_ps1_$(uname -s)
+__include_kube_ps1_$_os
 unset -f __include_kube_ps1_Darwin __include_kube_ps1_Linux
 
-if type -f kube_ps1 &> /dev/null; then
+if command -v kube_ps1 &> /dev/null; then
+    KUBE_PS1_ENABLED="off"
     KUBE_PS1_SUFFIX=") " # Add space to separate prompt symbol
     PROMPT='$(kube_ps1)'$PROMPT
 fi
@@ -224,14 +199,18 @@ mlog::print "Loading 'zimfw'..."
 
 # Download zimfw plugin manager if missing.
 if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
+  mlog::print "Downloading zimfw ..."
   curl -fsSL --create-dirs -o ${ZIM_HOME}/zimfw.zsh \
       https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
 fi
 
 if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
   # Install missing modules, and update ${ZIM_HOME}/init.zsh if missing or outdated.
+  mlog::print "Installing zimfw modules and updating init.zsh ..."
   source ${ZIM_HOME}/zimfw.zsh init -q
 fi
+
+mlog::print "Loading zimfw init.zsh ..."
 source ${ZIM_HOME}/init.zsh
 
 mlog::print "Loaded 'zimfw'."
@@ -251,13 +230,13 @@ zmodload -F zsh/terminfo +p:terminfo
 
 mlog::print "Loading 'zoxide' ..."
 
-[ -x "$(which zoxide 2>/dev/null)" ] && eval "$(zoxide init zsh)"
+[ -x "$(command -v zoxide 2>/dev/null)" ] && eval "$(zoxide init zsh)"
 
 # Reference:
 # https://carapace-sh.github.io/carapace-bin/setup.html
 mlog::print "Loading 'carapace' ..."
 
-if [ -x "$(which carapace 2>/dev/null)" ]; then
+if [ -x "$(command -v carapace 2>/dev/null)" ]; then
   export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
   zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
   source <(carapace _carapace)
@@ -267,57 +246,17 @@ fi
 # https://github.com/asdf-vm/asdf
 mlog::print "Loading 'asdf-vm' ..."
 
-if [ "$(uname -s)" = "Darwin" ]; then
-    if [ -e "$(brew --prefix asdf)/libexec/asdf.sh" ]; then
-        . $(brew --prefix asdf)/libexec/asdf.sh
+if [ "$_os" = "Darwin" ]; then
+    if [ -e "${_brew_prefix}/asdf/libexec/asdf.sh" ]; then
+        . ${_brew_prefix}/asdf/libexec/asdf.sh
     fi
-elif [ "$(uname -s)" = "Linux" ]; then
+elif [ "$_os" = "Linux" ]; then
     if [ -e "/opt/asdf-vm" ]; then
         . /opt/asdf-vm/asdf.sh
     fi
 fi
 
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-
-mlog::print "Loading 'golangci-lint' ..."
-
-if type -f golangci-lint &> /dev/null; then
-    golangci-lint completion zsh | source /dev/stdin
-fi
-
-mlog::print "Loading 'kubectl' ..."
-
-if type -f kubectl &> /dev/null; then
-    source <(kubectl completion zsh)
-fi
-
-mlog::print "Loading 'helm' ..."
-
-if type -f helm &> /dev/null; then
-    # Temporary fix.
-    # See: https://github.com/helm/helm/issues/5046#issuecomment-463576351
-    #source <(helm completion zsh)
-    source <(helm completion zsh)
-fi
-
-mlog::print "Loading 'minikube' ..."
-
-if [ -x "$(which minikube 2>/dev/null)" ]; then
-    source <(minikube completion zsh)
-fi
-
-mlog::print "Loading 'stern' ..."
-
-if type -f stern &> /dev/null; then
-    source <(stern --completion=zsh)
-fi
-
-mlog::print "Loading 'terraform' ..."
-
-if type -f terraform &> /dev/null; then
-    autoload -U +X bashcompinit && bashcompinit
-    complete -o nospace -C $(which terraform) terraform
-fi
 
 ###########
 # Aliases #
@@ -326,7 +265,7 @@ fi
 mlog::print "Loading aliases..."
 
 . ${HOME}/.zshrc.d/__aliases.sh
-. ${HOME}/.zshrc.d/$(uname -s)/__aliases.sh
+. ${HOME}/.zshrc.d/$_os/__aliases.sh
 
 if [ -x "$HOME/.claude/local/claude" ]; then
     alias claude="/Users/hypnoglow/.claude/local/claude"
@@ -341,7 +280,7 @@ mlog::print "Loaded aliases."
 mlog::print "Loading keybindings..."
 
 . ${HOME}/.zshrc.d/__keybindings.sh
-. ${HOME}/.zshrc.d/$(uname -s)/__keybindings.sh
+. ${HOME}/.zshrc.d/$_os/__keybindings.sh
 
 mlog::print "Loaded keybindings."
 
@@ -365,13 +304,13 @@ fi
 
 mlog::print "Loaded all."
 mlog::cleanup
-unset MLOG_ENABLED
+unset MLOG_ENABLED _os _brew_prefix
 
 ######################################
 # Show iTerm2 tip right before start #
 ######################################
 
-if type -f it2tip &> /dev/null; then
+if command -v it2tip &> /dev/null; then
     _color_orange="\e[33m"
     _color_reset="\e[0m"
     echo "\n${_color_orange}$(it2tip) ${_color_reset}\n"
