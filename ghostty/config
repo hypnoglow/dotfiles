@@ -4,10 +4,11 @@
 #   ghostty +show-config --default --docs
 
 font-size = 14
-theme = Raycast Dark
-background-opacity = 0.7
+theme = Catppuccin Macchiato
+background-opacity = 0.8
 background-blur = true
 shell-integration-features = ssh-terminfo
 window-padding-x = 4
 window-padding-y = 4
 window-inherit-working-directory = false
+maximize = false

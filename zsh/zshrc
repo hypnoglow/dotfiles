@@ -158,7 +158,7 @@ fi
 
 lazygit_configs=(
     "${HOME}/Library/Application Support/lazygit/config.yml"
-    "${HOME}/Library/Application Support/lazygit/config.custom.yml"
+    ${HOME}/Library/Application\ Support/lazygit/config.*.yml(N)
 )
 
 export LG_CONFIG_FILE=""
