@@ -43,3 +43,4 @@ backup = "$HOME/.dotfiles~"
 "starship.toml" = ".config/starship.toml"
 
 "profiles/acrux/karabiner/complex_modifications/capslock-input.json" = ".config/karabiner/assets/complex_modifications/capslock-input.json"
+"ghostty/config" = "Library/Application Support/com.mitchellh.ghostty/config"
