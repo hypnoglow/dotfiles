@@ -14,6 +14,10 @@ customCommands:
     command: 'git fetch --prune'
     context: 'localBranches'
     output: log
+  - key: '<c-u>'
+    command: 'glab mr view --web'
+    context: 'localBranches'
+    output: 'log'
 
 os:
   editPreset: "vscode"

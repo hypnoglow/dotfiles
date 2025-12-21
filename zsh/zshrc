@@ -148,7 +148,7 @@ if command -v kube_ps1 &> /dev/null; then
 fi
 
 # iTerm2 Shell Integration
-if [ -f ${HOME}/.iterm2_shell_integration.zsh ]; then
+if [[ -n "${TERM}" && -f "${HOME}/.iterm2_shell_integration.zsh" ]]; then
     source ${HOME}/.iterm2_shell_integration.zsh
 fi
 
@@ -305,16 +305,5 @@ fi
 mlog::print "Loaded all."
 mlog::cleanup
 unset MLOG_ENABLED _os _brew_prefix
-
-######################################
-# Show iTerm2 tip right before start #
-######################################
-
-if command -v it2tip &> /dev/null; then
-    _color_orange="\e[33m"
-    _color_reset="\e[0m"
-    echo "\n${_color_orange}$(it2tip) ${_color_reset}\n"
-    unset _color_orange _color_reset
-fi
 
 ### Stuff below this line is a junk added automatically by commands ###
