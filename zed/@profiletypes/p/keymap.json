@@ -1,0 +1,27 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "bindings": {
+      "cmd-alt-p": ["task::Spawn", { "task_name": "Project Finder" }],
+    },
+  },
+  {
+    "bindings": {
+      "cmd-alt-shift-p": [
+        "task::Spawn",
+        { "task_name": "Project Finder (New Window)" },
+      ],
+    },
+  },
+  {
+    "bindings": {
+      "cmd-ctrl-l": ["task::Spawn", { "task_name": "Lazygit" }],
+    },
+  },
+]

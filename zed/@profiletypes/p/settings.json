@@ -1,0 +1,66 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "tabs": {
+    "git_status": true,
+  },
+  "session": {
+    "trust_all_worktrees": true,
+  },
+  "features": {
+    "edit_prediction_provider": "copilot",
+  },
+  "auto_signature_help": true,
+  "agent": {
+    "default_profile": "write",
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gemini-3-pro-preview",
+    },
+    "model_parameters": [],
+  },
+  "show_edit_predictions": true,
+  "show_signature_help_after_edits": true,
+  "base_keymap": "VSCode",
+  "icon_theme": "Zed (Default)",
+  "use_system_path_prompts": false,
+  "when_closing_with_no_tabs": "keep_window_open",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "theme": {
+    "mode": "system",
+    "light": "Ayu Light",
+    "dark": "Ayu Dark",
+  },
+  "languages": {
+    "JavaScript": {
+      "prettier": {
+        "singleQuote": true,
+      },
+    },
+    "TypeScript": {
+      "prettier": {
+        "singleQuote": true,
+      },
+    },
+  },
+  "terminal": {
+    "env": {
+      "EDITOR": "zed --wait",
+      "VISUAL": "zed --wait",
+    },
+  },
+  "auto_install_extensions": {
+    "toml": true,
+  },
+}

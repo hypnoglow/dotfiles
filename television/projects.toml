@@ -1,0 +1,31 @@
+[metadata]
+name = "projects"
+requirements = ["fd", "git"]
+description = """
+A channel to select from git repositories.
+"""
+
+[source]
+command = "fd --glob .git --hidden --follow --type directory --max-depth 10 --prune ~/Developer/ --exec dirname '{}'"
+display = "{regex_extract:.*/Developer/(.*):1}"
+
+[preview]
+command = "cd '{}'; git log -n 200 --pretty=medium --all --graph --color"
+
+[ui.preview_panel]
+hidden = true
+
+[keybindings]
+shortcut = "f1"
+ctrl-j = "actions:cd"
+ctrl-m = "actions:zed"
+
+[actions.cd]
+description = "Go to directory"
+command = "sh -c \"cd {}; $SHELL\""
+mode = "execute"
+
+[actions.zed]
+description = "Open project into Zed"
+command = "zed {}"
+mode = "execute"

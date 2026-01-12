@@ -1,0 +1,18 @@
+# TODO: doesn't work well
+#
+[metadata]
+name = "k8s"
+requirements = ["fd", "bat"]
+description = """
+Channel to select from Kubernetes configuration files.
+"""
+
+[source]
+command = "fd kubeconfig ~/Developer/ --exec dirname '{}'"
+# display = "{split:/:-1}"
+
+[preview]
+command = "bat {0}"
+
+[ui.preview_panel]
+hidden = true
