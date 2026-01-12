@@ -7,16 +7,55 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "tabs": {
-    "git_status": true,
-  },
+  // (
+
+  // General
+
   "session": {
     "trust_all_worktrees": true,
   },
+  "base_keymap": "VSCode",
+  "use_system_path_prompts": false,
+  "when_closing_with_no_tabs": "keep_window_open",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+
+  // Appearance
+
+  "theme": {
+    "mode": "system",
+    "light": "Ayu Light",
+    "dark": "Ayu Dark",
+  },
+  "icon_theme": "Zed (Default)",
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+
+  // Editor
+
+  "auto_signature_help": true,
+  "show_signature_help_after_edits": true,
+  "show_wrap_guides": true,
+  "wrap_guides": [80, 120],
+
+  // Git
+
+  "tabs": {
+    "git_status": true,
+  },
+
+  "git_panel": {
+    "tree_view": true,
+  },
+
+  // AI
+
+  "show_edit_predictions": true,
   "features": {
     "edit_prediction_provider": "copilot",
   },
-  "auto_signature_help": true,
   "agent": {
     "default_profile": "write",
     "default_model": {
@@ -25,23 +64,9 @@
     },
     "model_parameters": [],
   },
-  "show_edit_predictions": true,
-  "show_signature_help_after_edits": true,
-  "base_keymap": "VSCode",
-  "icon_theme": "Zed (Default)",
-  "use_system_path_prompts": false,
-  "when_closing_with_no_tabs": "keep_window_open",
-  "telemetry": {
-    "diagnostics": false,
-    "metrics": false,
-  },
-  "ui_font_size": 16,
-  "buffer_font_size": 15,
-  "theme": {
-    "mode": "system",
-    "light": "Ayu Light",
-    "dark": "Ayu Dark",
-  },
+
+  // Languages
+
   "languages": {
     "JavaScript": {
       "prettier": {
@@ -54,6 +79,9 @@
       },
     },
   },
+
+  // Other
+
   "terminal": {
     "env": {
       "EDITOR": "zed --wait",
@@ -63,4 +91,6 @@
   "auto_install_extensions": {
     "toml": true,
   },
+
+  // )
 }
