@@ -7,6 +7,42 @@
 // from the command palette.
 [
   {
+    "context": "Editor",
+    "bindings": {
+      "alt-left": "editor::MoveToPreviousSubwordStart",
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-shift-left": "editor::SelectToPreviousSubwordStart",
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-right": "editor::MoveToNextSubwordEnd",
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-shift-right": "editor::SelectToNextSubwordEnd",
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-delete": "editor::DeleteToNextSubwordEnd",
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-backspace": "editor::DeleteToPreviousSubwordStart",
+    },
+  },
+  {
     "bindings": {
       "cmd-alt-p": ["task::Spawn", { "task_name": "Project Finder" }],
     },

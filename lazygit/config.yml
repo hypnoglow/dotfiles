@@ -20,7 +20,7 @@ customCommands:
     output: 'log'
 
 os:
-  editPreset: "vscode"
+  editPreset: "zed"
 promptToReturnFromSubprocess: false
 
 # Custom pull request urls, see: https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#custom-pull-request-urls

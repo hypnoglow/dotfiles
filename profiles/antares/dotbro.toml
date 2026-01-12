@@ -4,7 +4,7 @@
 
 [directories]
 
-dotfiles = "$HOME/code/github.com/hypnoglow/dotfiles"
+dotfiles = "$HOME/Developer/github.com/hypnoglow/dotfiles"
 destination = "$HOME"
 backup = "$HOME/.dotfiles~"
 
