@@ -6,8 +6,8 @@ A channel to select from git repositories.
 """
 
 [source]
-command = "fd --glob .git --hidden --follow --type directory --max-depth 10 --prune ~/Developer/ --exec dirname '{}'"
-display = "{regex_extract:.*/Developer/(.*):1}"
+command = "fd --glob .git --hidden --follow --type directory --max-depth 10 --prune ~/Developer/ ~/code/ ~/sources/ --exec dirname '{}'"
+display = "{regex_extract:(?:Developer|code|sources)/(.*):1}"
 
 [preview]
 command = "cd '{}'; git log -n 200 --pretty=medium --all --graph --color"
