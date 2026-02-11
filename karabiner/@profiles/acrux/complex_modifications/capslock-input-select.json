@@ -1,5 +1,5 @@
 {
-  "title": "CapsLock Input Source Switcher",
+  "title": "CapsLock Input Source Select",
   "rules": [
     {
       "description": "CapsLock -> EN, Shift+CapsLock -> RU",
@@ -23,9 +23,7 @@
           "from": {
             "key_code": "caps_lock",
             "modifiers": {
-              "mandatory": [
-                "left_shift"
-              ]
+              "mandatory": ["left_shift"]
             }
           },
           "to": [
