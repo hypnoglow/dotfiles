@@ -89,6 +89,55 @@
 	sw = "switch"
 	swm = "switch main"
 	pr = "pull --rebase"
+	fix = "!f() { \
+		git status && \
+		git add . && \
+		git commit --amend --reset-author --no-edit && \
+		git status ; \
+	}; f"
+	browse = "!f() { \
+		open `git remote -v \
+		| awk '/fetch/{print $2}' \
+		| sed -Ee 's#(git@|git://)#http://#' -e 's@com:@com/@'` \
+		| head -n1; \
+	}; f"
+	set-next-tag-patch = "!f() { \
+		latest=$(git tag --sort=-version:refname | head -n1); \
+		if [ -z \"$latest\" ]; then \
+			echo \"No tags found\"; \
+			exit 1; \
+		fi; \
+		major=$(echo $latest | cut -d. -f1 | sed 's/v//'); \
+		minor=$(echo $latest | cut -d. -f2); \
+		current_patch=$(echo $latest | cut -d. -f3); \
+		next_patch=$((current_patch + 1)); \
+		next_tag=\"v$major.$minor.$next_patch\"; \
+		git tag $next_tag; \
+		echo \"Created tag: $next_tag\"; \
+	}; f"
+	set-next-tag-minor = "!f() { \
+		latest=$(git tag --sort=-version:refname | head -n1); \
+		if [ -z \"$latest\" ]; then \
+			echo \"No tags found\"; \
+			exit 1; \
+		fi; \
+		major=$(echo $latest | cut -d. -f1 | sed 's/v//'); \
+		current_minor=$(echo $latest | cut -d. -f2); \
+		next_minor=$((current_minor + 1)); \
+		next_tag=\"v$major.$next_minor.0\"; \
+		git tag $next_tag; \
+		echo \"Created tag: $next_tag\"; \
+	}; f"
+	# Creates a worktree in a sibling directory named <repo>-<prefix>,
+	# with a new branch from the argument.
+	# Usage: git worktree-switch ABC-123/feature
+	# Result: git worktree add ./../<repo>-ABC-123 -b ABC-123/feature
+	worktree-switch = "!f() { \
+		branch=\"$1\"; \
+		prefix=$(echo \"$branch\" | cut -d'/' -f1); \
+		dirName=$(basename \"$(git rev-parse --show-toplevel)\"); \
+		git worktree add \"./../${dirName}-${prefix}\" -b \"$branch\"; \
+	}; f"
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f

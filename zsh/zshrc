@@ -57,7 +57,7 @@ setopt INTERACTIVE_COMMENTS
 export PURE_PROMPT_SYMBOL="λ" # https://github.com/sindresorhus/pure
 export CLOUDSDK_PYTHON=python3.9
 export KUBECONFIG="$HOME/.kube/config"
-export EDITOR="zed"
+export EDITOR="zed --wait"
 export LESS='--chop-long-lines --ignore-case --jump-target=4 --LONG-PROMPT --no-init --quit-if-one-screen --RAW-CONTROL-CHARS'
 
 export SOURCES_ROOT="${HOME}/sources"
