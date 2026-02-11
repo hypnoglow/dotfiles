@@ -17,6 +17,7 @@ npm-debug.log
 .envrc
 tmp/
 _tmp/
+@tmp/
 _testdata/
 .secrets
 #.tool-versions
@@ -34,3 +35,12 @@ trees/
 
 # Exclude cursor rules by default.
 .cursor
+
+#
+# Claude Code
+#
+
+# Local files.
+# See: https://code.claude.com/docs/en/settings#settings-files
+.claude/settings.local.json
+CLAUDE.local.md

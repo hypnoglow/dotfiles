@@ -10,14 +10,14 @@ git:
     - git log --color=always --graph --all --date=relative --pretty=format:'%C(auto)%h %C(reset)%<|(50,trunc)%s %C(bold blue)<%an>%C(reset) %C(green)(%cd)%C(reset)%C(auto)%d'
 
 customCommands:
-  - key: 'F'
-    command: 'git fetch --prune'
-    context: 'localBranches'
+  - key: "F"
+    command: "git fetch --prune"
+    context: "localBranches"
     output: log
-  - key: '<c-u>'
-    command: 'glab mr view --web'
-    context: 'localBranches'
-    output: 'log'
+  - key: "<c-u>"
+    command: "glab mr view --web"
+    context: "localBranches"
+    output: "log"
 
 os:
   editPreset: "zed"
