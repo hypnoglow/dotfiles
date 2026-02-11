@@ -44,8 +44,7 @@ backup = "$HOME/.dotfiles~"
 "television/k8s.toml" = ".config/television/cable/k8s.toml"
 "television/projects.toml" = ".config/television/cable/projects.toml"
 
-"karabiner/@profiles/acrux/complex_modifications/capslock-input-select.json" = ".config/karabiner/assets/complex_modifications/capslock-input-select.json"
-"karabiner/@profiles/acrux/complex_modifications/capslock-input-switch.json" = ".config/karabiner/assets/complex_modifications/capslock-input-switch.json"
+"karabiner/complex_modifications/" = ".config/karabiner/assets/complex_modifications/"
 "ghostty/config" = "Library/Application Support/com.mitchellh.ghostty/config"
 
 "zed/settings.json" = ".config/zed/settings.json"
