@@ -69,7 +69,7 @@
   },
   {
     "label": "Lazygit",
-    "command": "lazygit -p $ZED_WORKTREE_ROOT",
+    "command": "lazygit -p \"$ZED_WORKTREE_ROOT\"",
     "use_new_terminal": false,
     "allow_concurrent_runs": false,
     "reveal_target": "center",

@@ -17,6 +17,7 @@ alias du1='du -d 1 -BM | sort -n -k1 -r | less -XSF'
 alias du2='du -d 2'
 #alias tf='tail -f'
 alias 1='watch -n1'
+alias e='${EDITOR:-vim} ${1:-.}'
 
 # cat with separator
 alias cats='tail -n +1 *'

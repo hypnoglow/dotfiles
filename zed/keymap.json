@@ -57,7 +57,18 @@
   },
   {
     "bindings": {
-      "cmd-ctrl-l": ["task::Spawn", { "task_name": "Lazygit" }],
+      "ctrl-shift-l": [
+        "task::Spawn",
+        {
+          "task_name": "Lazygit",
+        },
+      ],
     },
   },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-shift-f12": "editor::GoToNextReference"
+    }
+  }
 ]
