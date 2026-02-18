@@ -1,0 +1,87 @@
+#!/bin/bash
+#
+# Relocate the current git repository to ~/Developer/<host>/<path> structure.
+# If the repo is already under ~/Developer, does nothing.
+
+set -euo pipefail
+
+TARGET_ROOT="${HOME}/Developer"
+
+main() {
+    # Ensure we are inside a git repository.
+    if ! git rev-parse --show-toplevel &>/dev/null; then
+        echo "Error: not inside a git repository." >&2
+        exit 1
+    fi
+
+    repo_root="$(git rev-parse --show-toplevel)"
+
+    # Check if already under TARGET_ROOT.
+    if [[ "$repo_root" == "$TARGET_ROOT"/* ]]; then
+        echo "Already in the right place: $repo_root"
+        exit 0
+    fi
+
+    # Determine the remote URL to compute the destination path.
+    remote_url="$(git remote get-url origin 2>/dev/null || true)"
+    if [ -z "$remote_url" ]; then
+        echo "Error: no 'origin' remote found." >&2
+        exit 1
+    fi
+
+    rel_path="$(url_to_path "$remote_url")"
+    dest="${TARGET_ROOT}/${rel_path}"
+
+    if [ -e "$dest" ]; then
+        echo "Error: destination already exists: $dest" >&2
+        exit 1
+    fi
+
+    echo "Moving:"
+    echo "  from: $repo_root"
+    echo "  to:   $dest"
+    echo
+
+    read -r -p "Proceed? [y/N] " answer
+    if [[ ! "$answer" =~ ^[Yy]$ ]]; then
+        echo "Aborted."
+        exit 0
+    fi
+
+    mkdir -p "$(dirname "$dest")"
+    mv "$repo_root" "$dest"
+
+    echo
+    echo "Done! Go to the new location:"
+    echo
+    echo "  cd $dest"
+}
+
+# Convert a git remote URL to a relative path like host/namespace/repo.
+url_to_path() {
+    local url="$1"
+
+    # SSH: git@host:namespace/repo.git
+    if [[ "$url" =~ ^git@ ]]; then
+        local host="${url##*@}"
+        host="${host%%:*}"
+        local path="${url##*:}"
+        path="${path%.git}"
+        echo "${host}/${path}"
+        return
+    fi
+
+    # HTTPS: https://host/namespace/repo.git
+    if [[ "$url" =~ ^https?:// ]]; then
+        local path="${url#https://}"
+        path="${path#http://}"
+        path="${path%.git}"
+        echo "$path"
+        return
+    fi
+
+    echo "Error: unsupported remote URL format: $url" >&2
+    exit 1
+}
+
+main
