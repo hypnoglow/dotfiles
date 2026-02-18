@@ -64,6 +64,7 @@
     "disabled_globs": ["*.journal"],
   },
   "agent": {
+    "play_sound_when_agent_done": true,
     "default_profile": "ask",
     "default_model": {
       "provider": "copilot_chat",
