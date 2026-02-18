@@ -35,7 +35,6 @@ backup = "$HOME/.dotfiles~"
 "git/gitconfig_macos" = ".gitconfig"
 "git/gitconfig_base" = ".gitconfig_base"
 "git/gitcommit" = ".gitcommit"
-"profiles/antares/git/gitexcludes" = ".gitexcludes"
 "git/hooks" = ".githooks"
 
 "lazygit/config.yml" = "Library/Application Support/lazygit/config.yml"
