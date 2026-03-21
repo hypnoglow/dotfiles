@@ -1,10 +1,3 @@
-# i3 config is generated dynamically
-/i3/config
-
-
-# Dynamically generated files for multi OS purposes
-/atom/packages.list
-
 #
 # bash & zsh symlinks and local includes
 #
