@@ -32,8 +32,7 @@ backup = "$HOME/.dotfiles~"
 "neovim/init.vim" = ".config/nvim/init.vim"
 "neovim/ftplugin/yaml.vim" = ".config/nvim/ftplugin/yaml.vim"
 
-"git/gitconfig_base" = ".gitconfig_base"
-"git/gitcommit" = ".gitcommit"
+"git/gitconfig_base" = ".config/git/config_base"
 
 "lazygit/config.yml" = "Library/Application Support/lazygit/config.yml"
 "television/projects.toml" = ".config/television/cable/projects.toml"
