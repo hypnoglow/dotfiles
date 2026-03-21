@@ -11,6 +11,18 @@
 
   // General
 
+  "agent_servers": {
+    "claude-acp": {
+      "type": "registry"
+    },
+    "opencode": {
+      "favorite_models": [
+        "ollama/qwen3.5:27b",
+        "ollama/qwen3.5:35b"
+      ],
+      "type": "registry"
+    }
+  },
   "session": {
     "trust_all_worktrees": true,
   },
@@ -26,8 +38,8 @@
 
   "theme": {
     "mode": "system",
-    "light": "Nord Light",
-    "dark": "Tokyo Night Storm",
+    "light": "Catppuccin Latte - No Italics",
+    "dark": "Catppuccin Macchiato - No Italics",
   },
   "icon_theme": {
     "mode": "system",
@@ -58,17 +70,33 @@
 
   // AI
 
-  "show_edit_predictions": true,
+  "show_edit_predictions": false,
   "edit_predictions": {
     "provider": "zed",
     "disabled_globs": ["*.journal"],
   },
   "agent": {
+    "profiles": {
+      
+    },
+    "favorite_models": [
+      {
+        "provider": "ollama",
+        "model": "qwen3.5:27b",
+        "enable_thinking": false
+      },
+      {
+        "provider": "ollama",
+        "model": "qwen3.5:9b",
+        "enable_thinking": false
+      }
+    ],
     "play_sound_when_agent_done": true,
-    "default_profile": "ask",
+    "default_profile": "write",
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "gemini-3-flash-preview",
+      "enable_thinking": true,
+      "provider": "ollama",
+      "model": "qwen3.5:35b",
     },
     "model_parameters": [],
   },

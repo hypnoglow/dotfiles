@@ -5,9 +5,9 @@
 
 font-size = 14
 
-# theme = "light:Catppuccin Latte,dark:Catppuccin Frappe"
-theme = "Catppuccin Frappe"
-background-opacity = 0.9
+# theme = "light:Catppuccin Latte,dark:Catppuccin Macchiato"
+theme = "Catppuccin Macchiato"
+background-opacity = 0.85
 background-blur = true
 minimum-contrast = 1
 
