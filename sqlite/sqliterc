@@ -1,0 +1,3 @@
+.mode box          -- default: list
+.timer on          -- show time stat
+.changes on        -- show changes stat
