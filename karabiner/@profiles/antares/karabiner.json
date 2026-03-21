@@ -4,12 +4,18 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "CapsLock -> EN, Shift+CapsLock -> RU",
+                        "description": "CapsLock -> Switch between EN and RU",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "input_sources": [{ "input_source_id": "com.apple.keylayout.Russian" }],
+                                        "type": "input_source_if"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "caps_lock",
-                                    "modifiers": {}
+                                    "modifiers": { "optional": ["left_shift"] }
                                 },
                                 "to": [
                                     {
@@ -20,9 +26,15 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "input_sources": [{ "input_source_id": "com.apple.keylayout.ABC" }],
+                                        "type": "input_source_if"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "caps_lock",
-                                    "modifiers": { "mandatory": ["left_shift"] }
+                                    "modifiers": { "optional": ["left_shift"] }
                                 },
                                 "to": [
                                     {
