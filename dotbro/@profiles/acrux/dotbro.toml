@@ -31,11 +31,9 @@ backup = "$HOME/.dotfiles~"
 "neovim/init.vim" = ".config/nvim/init.vim"
 "neovim/ftplugin/yaml.vim" = ".config/nvim/ftplugin/yaml.vim"
 
-"git/gitconfig_macos" = ".gitconfig"
-"git/gitconfig_base" = ".gitconfig_base"
-"git/gitcommit" = ".gitcommit"
-"git/gitexcludes" = ".gitexcludes"
-"git/hooks" = ".githooks"
+"git/@profiles/acrux/config" = ".config/git/config"
+"git/gitconfig_base" = ".config/git/config_base"
+"git/ignore" = ".config/git/ignore"
 
 "lazygit/config.yml" = "Library/Application Support/lazygit/config.yml"
 

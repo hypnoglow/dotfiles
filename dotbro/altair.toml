@@ -36,7 +36,6 @@ backup = "$HOME/.dotfiles~"
 "git/gitconfig_macos" = ".gitconfig"
 "git/gitconfig_base" = ".gitconfig_base"
 "git/gitcommit" = ".gitcommit"
-"git/gitexcludes" = ".gitexcludes"
-"git/hooks" = ".githooks"
+"git/ignore" = ".gitexcludes"
 
 "macOS/karabiner" = ".config/karabiner"

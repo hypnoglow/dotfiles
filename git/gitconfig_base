@@ -6,7 +6,6 @@
 	eol = lf
 	autocrlf = false
 	quotepath = false
-	excludesfile = ~/.gitexcludes
 	#hooksPath = ~/.githooks
 [init]
 	defaultBranch = main

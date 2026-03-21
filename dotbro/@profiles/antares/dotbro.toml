@@ -34,7 +34,6 @@ backup = "$HOME/.dotfiles~"
 
 "git/gitconfig_base" = ".gitconfig_base"
 "git/gitcommit" = ".gitcommit"
-"git/hooks" = ".githooks"
 
 "lazygit/config.yml" = "Library/Application Support/lazygit/config.yml"
 "television/projects.toml" = ".config/television/cable/projects.toml"
