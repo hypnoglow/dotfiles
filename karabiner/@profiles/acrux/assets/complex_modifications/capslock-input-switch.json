@@ -1,0 +1,60 @@
+{
+  "title": "CapsLock Input Source Switch",
+  "rules": [
+    {
+      "description": "CapsLock -> Switch between EN and RU",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "caps_lock",
+            "modifiers": {
+              "optional": ["left_shift"]
+            }
+          },
+          "to": [
+            {
+              "modifiers": [],
+              "select_input_source": {
+                "input_source_id": "com.apple.keylayout.ABC"
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "input_sources": [
+                { "input_source_id": "com.apple.keylayout.Russian" }
+              ],
+              "type": "input_source_if"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "caps_lock",
+            "modifiers": {
+              "optional": ["left_shift"]
+            }
+          },
+          "to": [
+            {
+              "modifiers": [],
+              "select_input_source": {
+                "input_source_id": "com.apple.keylayout.Russian"
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "input_sources": [
+                { "input_source_id": "com.apple.keylayout.ABC" }
+              ],
+              "type": "input_source_if"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -44,7 +44,7 @@ backup = "$HOME/.dotfiles~"
 "television/k8s.toml" = ".config/television/cable/k8s.toml"
 "television/projects.toml" = ".config/television/cable/projects.toml"
 
-"karabiner/complex_modifications/" = ".config/karabiner/assets/complex_modifications/"
+"karabiner/@profiles/acrux" = ".config/karabiner"
 "ghostty/config" = "Library/Application Support/com.mitchellh.ghostty/config"
 
 "zed/settings.json" = ".config/zed/settings.json"
