@@ -6,6 +6,11 @@
 # init base configuration #
 ###########################
 
+# See: https://youtrack.jetbrains.com/articles/SUPPORT-A-1727/Shell-Environment-Loading
+if [[ -n "${INTELLIJ_ENVIRONMENT_READER}" ]]; then
+    return
+fi
+
 # Start dotfiles debug log
 . ${HOME}/.zsh/lib/mlog.sh
 MLOG_ENABLED=${MLOG_ENABLED:-}
