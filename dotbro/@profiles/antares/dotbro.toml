@@ -32,7 +32,6 @@ backup = "$HOME/.dotfiles~"
 "neovim/init.vim" = ".config/nvim/init.vim"
 "neovim/ftplugin/yaml.vim" = ".config/nvim/ftplugin/yaml.vim"
 
-"git/gitconfig_macos" = ".gitconfig"
 "git/gitconfig_base" = ".gitconfig_base"
 "git/gitcommit" = ".gitcommit"
 "git/hooks" = ".githooks"
