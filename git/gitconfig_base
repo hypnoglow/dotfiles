@@ -143,6 +143,9 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 
+[credential]
+	helper = osxkeychain
+
 #
 # External tools
 #
@@ -162,4 +165,4 @@
 #
 
 [include]
-	path = .gitconfig_local
+	path = config_local

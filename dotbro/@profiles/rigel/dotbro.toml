@@ -4,7 +4,7 @@
 
 [directories]
 
-dotfiles = "$HOME/sources/github.com/hypnoglow/dotfiles"
+dotfiles = "$HOME/Developer/github.com/hypnoglow/dotfiles"
 destination = "$HOME"
 backup = "$HOME/.dotfiles~"
 
@@ -31,13 +31,14 @@ backup = "$HOME/.dotfiles~"
 "neovim/init.vim" = ".config/nvim/init.vim"
 "neovim/ftplugin/yaml.vim" = ".config/nvim/ftplugin/yaml.vim"
 
-"git/gitconfig_macos" = ".gitconfig"
-"git/gitconfig_base" = ".gitconfig_base"
-"git/gitcommit" = ".gitcommit"
-"git/ignore" = ".gitexcludes"
+"git/@profiles/rigel/config" = ".config/git/config"
+"git/gitconfig_base" = ".config/git/config_base"
+"git/ignore" = ".config/git/ignore"
 
 "lazygit/config.yml" = "Library/Application Support/lazygit/config.custom.yml"
 
+"karabiner/@profiles/rigel" = ".config/karabiner"
+"ghostty/config" = "Library/Application Support/com.mitchellh.ghostty/config"
+
 "bat/config" = ".config/bat/config"
-"profiles/rigel/karabiner" = ".config/karabiner"
 "starship.toml" = ".config/starship.toml"
