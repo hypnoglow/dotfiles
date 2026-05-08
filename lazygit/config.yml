@@ -14,8 +14,8 @@ customCommands:
     command: "git fetch --prune"
     context: "localBranches"
     output: log
-  - key: "<c-u>"
-    command: "glab mr view --web"
+  - key: "V"
+    command: "glab mr view --web {{ .SelectedLocalBranch.Name }}"
     context: "localBranches"
     output: "log"
 
