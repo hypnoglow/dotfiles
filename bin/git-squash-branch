@@ -1,0 +1,128 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Squash all commits from the current branch into one, relative to a base branch.
+# Handles branches with merge commits from the base branch.
+# Supports resuming after conflict resolution.
+#
+# Usage:
+#   git squash-branch [-b base_branch] [-m "commit message"]   start squash
+#   git squash-branch --continue [-m "commit message"]          resume after conflict resolution
+#   git squash-branch --abort                                   abort and return to original branch
+
+state_dir="$(git rev-parse --git-dir)/squash-branch"
+
+finish() {
+  local branch="$1" tmp_branch="$2"
+  git branch -f "$branch" HEAD
+  git checkout "$branch"
+  git branch -D "$tmp_branch"
+  rm -rf "$state_dir"
+  echo ""
+  echo "Done. Branch '$branch' is now a single squashed commit."
+}
+
+# --abort: restore original state
+if [ "${1:-}" = "--abort" ]; then
+  if [ ! -d "$state_dir" ]; then
+    echo "Error: no squash in progress" >&2
+    exit 1
+  fi
+  branch=$(cat "$state_dir/branch")
+  tmp_branch=$(cat "$state_dir/tmp_branch")
+  git merge --abort 2>/dev/null || true
+  git checkout "$branch"
+  git branch -D "$tmp_branch" 2>/dev/null || true
+  rm -rf "$state_dir"
+  echo "Aborted. Back on '$branch'."
+  exit 0
+fi
+
+# --continue: finish after conflict resolution
+if [ "${1:-}" = "--continue" ]; then
+  if [ ! -d "$state_dir" ]; then
+    echo "Error: no squash in progress" >&2
+    exit 1
+  fi
+  shift
+  message=""
+  while getopts "m:" opt; do
+    case $opt in
+      m) message="$OPTARG" ;;
+      *) echo "Usage: git squash-branch --continue [-m \"commit message\"]" >&2; exit 1 ;;
+    esac
+  done
+  branch=$(cat "$state_dir/branch")
+  tmp_branch=$(cat "$state_dir/tmp_branch")
+
+  if [ -n "$(git diff --name-only --diff-filter=U)" ]; then
+    echo "Error: unresolved conflicts remain" >&2
+    exit 1
+  fi
+
+  git add -A
+  if [ -n "$message" ]; then
+    git commit -m "$message"
+  else
+    git commit --no-edit
+  fi
+
+  finish "$branch" "$tmp_branch"
+  exit 0
+fi
+
+# --- Start new squash ---
+
+if [ -d "$state_dir" ]; then
+  echo "Error: squash already in progress. Use --continue or --abort" >&2
+  exit 1
+fi
+
+base_branch="main"
+branch=$(git branch --show-current)
+
+message=""
+while getopts "b:m:" opt; do
+  case $opt in
+    b) base_branch="$OPTARG" ;;
+    m) message="$OPTARG" ;;
+    *) echo "Usage: git squash-branch [-b base_branch] [-m \"commit message\"]" >&2; exit 1 ;;
+  esac
+done
+
+if [ -z "$branch" ] || [ "$branch" = "$base_branch" ]; then
+  echo "Error: must be on a feature branch, not $base_branch" >&2
+  exit 1
+fi
+
+if [ -n "$(git status --porcelain)" ]; then
+  echo "Error: working tree is not clean" >&2
+  exit 1
+fi
+
+tmp_branch="tmp/squash-$$"
+
+git fetch origin "$base_branch"
+git checkout -b "$tmp_branch" "origin/$base_branch"
+
+if ! git merge --squash "$branch"; then
+  # Save state for --continue / --abort
+  mkdir -p "$state_dir"
+  echo "$branch" > "$state_dir/branch"
+  echo "$tmp_branch" > "$state_dir/tmp_branch"
+  echo ""
+  echo "Conflicts detected. Resolve them, then run:"
+  echo "  git squash-branch --continue -m \"your message\""
+  echo ""
+  echo "To abort:"
+  echo "  git squash-branch --abort"
+  exit 1
+fi
+
+if [ -n "$message" ]; then
+  git commit -m "$message"
+else
+  git commit --no-edit
+fi
+
+finish "$branch" "$tmp_branch"
