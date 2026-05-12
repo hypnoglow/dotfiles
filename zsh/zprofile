@@ -1,6 +1,11 @@
+# ~/.zprofile is sourced for login shells (both interactive and the rare non-interactive sessions).
+# MacOS uses this to set up the shell for any new terminal window.
+# Subshells that start within the terminal window inherit settings but don't load ~/.zprofile again.
 #
-# ~/.zprofile is executed by zsh at login.
-#
+# Homebrew recommends setting the PATH variable here. There's a reason PATH
+# should be set in ~/.zprofile and not the universal ~/.zshenv file: the macOS
+# runs a utility path_helper (from /etc/zprofile) that sets the PATH order
+# before ~/.zprofile is loaded.
 
 rm -f ${HOME}/.zcompdump ${HOME}/.zcompdump.zwc
 

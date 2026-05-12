@@ -1,6 +1,5 @@
-#
-# User configuration sourced by interactive shells
-#
+# ~/.zshrc is sourced only for interactive shell sessions.
+# It is loaded whenever you open a new terminal window or launch a subshell from a terminal window.
 
 ###########################
 # init base configuration #

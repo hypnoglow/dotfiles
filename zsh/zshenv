@@ -1,6 +1,6 @@
-#
-# User configuration sourced by all invocations of the shell
-#
+# ~/.zshenv is sourced universally for all types of shell sessions (interactive or non-interactive, login or non-login).
+# It is the only configuration file that gets loaded for non-interactive and non-login scripts like cron jobs.
+# However, macOS overrides this for PATH settings for interactive shells.
 
 # Define Zim location
 : ${ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim}

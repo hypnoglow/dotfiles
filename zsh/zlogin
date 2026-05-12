@@ -1,6 +1,5 @@
-#
-# User configuration sourced by login shells
-#
+# ~/.zlogin is sourced only for login shell configurations, loaded after ~/.zprofile.
+# This is loaded whenever you open a new terminal window.
 
 # Initialize Zim
 # DEPRECATED since 1.7.0.
