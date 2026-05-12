@@ -4,3 +4,7 @@
 
 # Define Zim location
 : ${ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim}
+
+# https://github.blog/changelog/2026-04-22-github-cli-opt-out-usage-telemetry/
+export GH_TELEMETRY=false
+export DO_NOT_TRACK=true
