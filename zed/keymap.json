@@ -6,57 +6,26 @@
 // To see the default key bindings run `zed: open default keymap`
 // from the command palette.
 [
+  // Subword navigation and deletion in editors.
   {
     "context": "Editor",
     "bindings": {
       "alt-left": "editor::MoveToPreviousSubwordStart",
-    },
-  },
-  {
-    "context": "Editor",
-    "bindings": {
       "alt-shift-left": "editor::SelectToPreviousSubwordStart",
-    },
-  },
-  {
-    "context": "Editor",
-    "bindings": {
       "alt-right": "editor::MoveToNextSubwordEnd",
-    },
-  },
-  {
-    "context": "Editor",
-    "bindings": {
       "alt-shift-right": "editor::SelectToNextSubwordEnd",
-    },
-  },
-  {
-    "context": "Editor",
-    "bindings": {
       "alt-delete": "editor::DeleteToNextSubwordEnd",
-    },
-  },
-  {
-    "context": "Editor",
-    "bindings": {
       "alt-backspace": "editor::DeleteToPreviousSubwordStart",
     },
   },
+  // Tasks
   {
     "bindings": {
       "cmd-alt-p": ["task::Spawn", { "task_name": "Project Finder" }],
-    },
-  },
-  {
-    "bindings": {
       "cmd-alt-shift-p": [
         "task::Spawn",
         { "task_name": "Project Finder (New Window)" },
       ],
-    },
-  },
-  {
-    "bindings": {
       "ctrl-shift-l": [
         "task::Spawn",
         {
@@ -66,9 +35,37 @@
     },
   },
   {
+    // TODO: practice!
     "context": "Editor",
     "bindings": {
-      "ctrl-shift-f12": "editor::GoToNextReference"
-    }
-  }
+      "ctrl-shift-f12": "editor::GoToNextReference",
+    },
+  },
+  {
+    "bindings": {
+      "ctrl-alt-cmd-n": "multi_workspace::NextProject",
+    },
+  },
+  // Closing project / window.
+  // Override default `workspace::CloseWindow` (cmd-shift-w) to close the
+  // project instead; keep window-closing under a more deliberate chord.
+  {
+    "bindings": {
+      "alt-w": ["action::Sequence", [["workspace::CloseProject", 0]]],
+      "cmd-shift-w": "workspace::CloseProject",
+      "ctrl-cmd-shift-w": "workspace::CloseWindow",
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-}": "multi_workspace::NextProject",
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-{": "multi_workspace::PreviousProject",
+    },
+  },
 ]

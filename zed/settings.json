@@ -1,7 +1,4 @@
-// Zed settings
-//
-// For information on how to configure Zed, see the Zed
-// documentation: https://zed.dev/docs/configuring-zed
+// Reference: https://zed.dev/docs/reference/all-settings
 //
 // To see all of Zed's default settings without changing your
 // custom settings, run `zed: open default settings` from the
@@ -11,43 +8,41 @@
 
   // General
 
-  "agent_servers": {
-    "claude-acp": {
-      "type": "registry"
-    },
-    "opencode": {
-      "favorite_models": [
-        "ollama/qwen3.5:27b",
-        "ollama/qwen3.5:35b"
-      ],
-      "type": "registry"
-    }
-  },
+  "cli_default_open_behavior": "existing_window",
+  "autosave": "on_focus_change",
+  "use_system_path_prompts": true,
+  "when_closing_with_no_tabs": "keep_window_open",
+
   "session": {
     "trust_all_worktrees": true,
   },
-  "base_keymap": "VSCode",
-  "use_system_path_prompts": false,
-  "when_closing_with_no_tabs": "keep_window_open",
+
   "telemetry": {
     "diagnostics": false,
     "metrics": false,
   },
 
+  "feature_flags": {
+    // https://github.com/zed-industries/zed/blob/main/crates/feature_flags/src/flags.rs
+    "acp-beta": "off",
+  },
+
   // Appearance
 
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+
   "theme": {
-    "mode": "system",
+    "mode": "dark",
     "light": "Catppuccin Latte - No Italics",
     "dark": "Catppuccin Macchiato - No Italics",
   },
+
   "icon_theme": {
-    "mode": "system",
+    "mode": "dark",
     "light": "Colored Zed Icons Theme Light",
     "dark": "Colored Zed Icons Theme Dark",
   },
-  "ui_font_size": 16,
-  "buffer_font_size": 15,
 
   // Editor
 
@@ -57,48 +52,68 @@
   "wrap_guides": [80, 120],
   "excerpt_context_lines": 5,
   "expand_excerpt_lines": 10,
+  "semantic_tokens": "combined", // https://zed.dev/docs/semantic-tokens
 
   // Git
+
+  "diff_view_style": "split",
 
   "tabs": {
     "git_status": true,
   },
 
   "git_panel": {
+    "dock": "right",
     "tree_view": true,
+  },
+
+  "git": {
+    "inline_blame": {
+      "show_commit_summary": true,
+    },
   },
 
   // AI
 
-  "show_edit_predictions": false,
+  "show_edit_predictions": true,
   "edit_predictions": {
     "provider": "zed",
     "disabled_globs": ["*.journal"],
   },
+
   "agent": {
-    "profiles": {
-      
-    },
-    "favorite_models": [
-      {
-        "provider": "ollama",
-        "model": "qwen3.5:27b",
-        "enable_thinking": false
-      },
-      {
-        "provider": "ollama",
-        "model": "qwen3.5:9b",
-        "enable_thinking": false
-      }
-    ],
-    "play_sound_when_agent_done": true,
+    "play_sound_when_agent_done": "always",
+    "notify_when_agent_waiting": "primary_screen",
+    "profiles": {},
     "default_profile": "write",
     "default_model": {
       "enable_thinking": true,
       "provider": "ollama",
-      "model": "qwen3.5:35b",
+      "model": "qwen3.5:35b-a3b-coding-nvfp4",
     },
     "model_parameters": [],
+  },
+
+  "agent_servers": {
+    "codex-acp": {
+      "type": "registry",
+    },
+    "pi-acp": {
+      "type": "registry",
+    },
+    "github-copilot-cli": {
+      "type": "registry",
+    },
+    "claude-acp": {
+      "default_config_options": {
+        "effort": "high",
+        "model": "opus",
+      },
+      "type": "registry",
+    },
+    "opencode": {
+      "type": "registry",
+    },
   },
 
   // Languages
@@ -127,8 +142,10 @@
       "VISUAL": "zed --wait",
     },
   },
+
   "auto_install_extensions": {
     "toml": true,
+    "sql": true,
   },
 
   // )
