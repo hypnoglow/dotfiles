@@ -40,7 +40,8 @@ zmodule zsh-users/zsh-syntax-highlighting
 zmodule zsh-users/zsh-history-substring-search
 
 # Alias tips.
-zmodule "MichaelAquilina/zsh-you-should-use"
+# 2026-04 disabled, I ignore these messages.
+#zmodule "MichaelAquilina/zsh-you-should-use"
 
 # Provides kuctx and kuns commands.
 zmodule hypnoglow/kubezsh

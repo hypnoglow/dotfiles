@@ -16,6 +16,8 @@ shell-integration-features = ssh-terminfo
 window-padding-x = 4
 window-padding-y = 4
 window-inherit-working-directory = false
+window-new-tab-position = end
 maximize = false
 
 keybind = shift+enter=text:\n
+cursor-click-to-move = true

@@ -118,7 +118,7 @@
                     ]
                 }
             ],
-            "name": "hypnoglow",
+            "name": "hypnoglow@acrux",
             "selected": true,
             "virtual_hid_keyboard": {
                 "indicate_sticky_modifier_keys_state": false,
