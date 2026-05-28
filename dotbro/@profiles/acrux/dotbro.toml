@@ -38,7 +38,7 @@ backup = "$HOME/.dotfiles~"
 "lazygit/config.yml" = "Library/Application Support/lazygit/config.yml"
 
 "bat/config" = ".config/bat/config"
-"starship.toml" = ".config/starship.toml"
+"starship/starship.toml" = ".config/starship.toml"
 "television/k8s.toml" = ".config/television/cable/k8s.toml"
 "television/projects.toml" = ".config/television/cable/projects.toml"
 

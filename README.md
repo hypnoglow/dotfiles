@@ -1,4 +1,4 @@
-# .files
+# dotfiles
 
 My dotfiles. \o/ :metal:
 

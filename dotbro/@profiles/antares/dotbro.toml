@@ -38,6 +38,6 @@ backup = "$HOME/.dotfiles~"
 "television/projects.toml" = ".config/television/cable/projects.toml"
 
 "karabiner/@profiles/antares" = ".config/karabiner"
-"starship.toml" = ".config/starship.toml"
+"starship/starship.toml" = ".config/starship.toml"
 "usql/config.yaml" = "Library/Application Support/usql/config.yaml"
 "ghostty/config" = "Library/Application Support/com.mitchellh.ghostty/config"
