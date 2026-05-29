@@ -73,6 +73,7 @@
 	logoutputencoding = utf-8
 [help]
 	autocorrect = prompt
+
 [alias]
 	todo = "!git --no-pager diff -U0 main | \
 		grep '^+.*TODO' | \
@@ -100,6 +101,7 @@
 		| sed -Ee 's#(git@|git://)#http://#' -e 's@com:@com/@'` \
 		| head -n1; \
 	}; f"
+
 	set-next-tag-patch = "!f() { \
 		latest=$(git tag --sort=-version:refname | head -n1); \
 		if [ -z \"$latest\" ]; then \
@@ -114,6 +116,9 @@
 		git tag $next_tag; \
 		echo \"Created tag: $next_tag\"; \
 	}; f"
+
+	tp = set-next-tag-patch
+
 	set-next-tag-minor = "!f() { \
 		latest=$(git tag --sort=-version:refname | head -n1); \
 		if [ -z \"$latest\" ]; then \
@@ -127,6 +132,9 @@
 		git tag $next_tag; \
 		echo \"Created tag: $next_tag\"; \
 	}; f"
+
+	tm = set-next-tag-minor
+
 	# Creates a worktree in a sibling directory named <repo>-<prefix>,
 	# with a new branch from the argument.
 	# Usage: git worktree-switch ABC-123/feature
@@ -137,6 +145,7 @@
 		dirName=$(basename \"$(git rev-parse --show-toplevel)\"); \
 		git worktree add \"./../${dirName}-${prefix}\" -b \"$branch\"; \
 	}; f"
+
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
