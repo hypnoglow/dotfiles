@@ -62,9 +62,9 @@ if [ "${1:-}" = "--continue" ]; then
 
   git add -A
   if [ -n "$message" ]; then
-    git commit -m "$message"
+    git commit -m "$message" --allow-empty
   else
-    git commit --no-edit
+    git commit --no-edit --allow-empty
   fi
 
   finish "$branch" "$tmp_branch"
