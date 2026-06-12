@@ -89,6 +89,11 @@
 	sw = "switch"
 	swm = "switch main"
 	pr = "pull --rebase"
+
+	# m is for main
+	# default-sync is git-default-sync custom binary.
+	m = "default-sync"
+
 	fix = "!f() { \
 		git status && \
 		git add . && \
