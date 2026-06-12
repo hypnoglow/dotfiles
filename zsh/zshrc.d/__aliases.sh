@@ -43,9 +43,6 @@ alias cdg='cd $GOPATH/src'
 alias cdc='cd $CODE_ROOT'
 alias cds='cd $SOURCES_ROOT'
 
-alias bootstrap='(cdb && ./bootstrap ${WS_PROFILE})'
-alias reload-zsh=". ~/.zshrc"
-
 alias psa="ps aux"
 alias psg="ps aux | grep"
 
