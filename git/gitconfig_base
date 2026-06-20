@@ -94,6 +94,11 @@
 	# default-sync is git-default-sync custom binary.
 	m = "default-sync"
 
+	diff-staged = "diff --cached"
+
+	commit-amend = "commit --amend --reset-author --no-edit"
+	commit-amend-interactive = "commit --amend --reset-author --verbose"
+
 	fix = "!f() { \
 		git status && \
 		git add . && \

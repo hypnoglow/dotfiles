@@ -63,23 +63,37 @@ alias edg='goland $PWD'
 # Git
 #
 git_default_branch() {
-  [ -f "$(git rev-parse --show-toplevel)/.git/refs/heads/master" ] && echo master || echo main
+  local branch
+
+  branch="$(git symbolic-ref --quiet --short refs/remotes/origin/HEAD 2>/dev/null)"
+  if [ -n "$branch" ]; then
+    echo "${branch#origin/}"
+    return
+  fi
+
+  if git show-ref --verify --quiet refs/heads/main; then
+    echo main
+  elif git show-ref --verify --quiet refs/heads/master; then
+    echo master
+  else
+    echo main
+  fi
 }
 
 alias gsh="git status --short --branch"
 alias gst="git status"
 alias gbC="git checkout -B"
-alias gcom='git checkout $(git_default_branch)'
-alias gcomfr='git checkout $(git_default_branch) && git pull --rebase'
+alias gcom='git switch $(git_default_branch)'
+alias gcomfr='git switch $(git_default_branch) && git pull --rebase'
 alias gdt="git difftool"
 alias gpf="git push --force-with-lease"
 alias gpff="git push --force"
-alias gcf="git commit --amend --reset-author --no-edit"
-alias gcF="git commit --amend --reset-author --verbose"
+alias gcf="git commit --amend --reset-author --no-edit" # Use git commit-amend
+alias gcF="git commit-amend-interactive" # Use git commit-amend-interactive
 alias gtr="git log --graph --all --date=relative --pretty=format:'%Cred%h %Creset%<|(50,trunc)%s %C(bold blue)<%an>%Creset %Cgreen(%cd)%Creset%C(auto)%d'"
 alias gtro="git log --graph --date=relative --pretty=format:'%Cred%h %Creset%<|(50,trunc)%s %C(bold blue)<%an>%Creset %Cgreen(%cd)%Creset%C(auto)%d'"
-alias gwds="gwd"
-alias gids="gid"
+alias gwds="gwd" # Use git diff
+alias gids="gid" # use git diff-staged
 alias grm='git rebase $(git_default_branch)'
 alias glp1="git log -p -1"
 
