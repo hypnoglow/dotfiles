@@ -33,13 +33,13 @@
   "buffer_font_size": 15,
 
   "theme": {
-    "mode": "dark",
+    "mode": "system",
     "light": "Catppuccin Latte - No Italics",
     "dark": "Catppuccin Macchiato - No Italics",
   },
 
   "icon_theme": {
-    "mode": "dark",
+    "mode": "system",
     "light": "Colored Zed Icons Theme Light",
     "dark": "Colored Zed Icons Theme Dark",
   },
@@ -56,7 +56,7 @@
 
   // Git
 
-  "diff_view_style": "split",
+  "diff_view_style": "unified",
 
   "tabs": {
     "git_status": true,
@@ -82,23 +82,29 @@
   },
 
   "agent": {
+    "favorite_models": [
+      {
+        "provider": "openai-subscribed",
+        "model": "gpt-5.5",
+        "enable_thinking": true,
+        "effort": "medium"
+      }
+    ],
     "play_sound_when_agent_done": "always",
     "notify_when_agent_waiting": "primary_screen",
     "profiles": {},
     "default_profile": "write",
     "default_model": {
+      "effort": "medium",
       "enable_thinking": true,
-      "provider": "ollama",
-      "model": "qwen3.5:35b-a3b-coding-nvfp4",
+      "provider": "openai-subscribed",
+      "model": "gpt-5.5",
     },
     "model_parameters": [],
   },
 
   "agent_servers": {
     "codex-acp": {
-      "type": "registry",
-    },
-    "pi-acp": {
       "type": "registry",
     },
     "github-copilot-cli": {
