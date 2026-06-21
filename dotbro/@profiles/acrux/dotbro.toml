@@ -31,9 +31,9 @@ backup = "$HOME/.dotfiles~"
 "neovim/init.vim" = ".config/nvim/init.vim"
 "neovim/ftplugin/yaml.vim" = ".config/nvim/ftplugin/yaml.vim"
 
-"git/@profiles/acrux/config" = ".config/git/config"
-"git/gitconfig_base" = ".config/git/config_base"
-"git/ignore" = ".config/git/ignore"
+# "git/@profiles/acrux/config" = ".config/git/config"
+# "git/gitconfig_base" = ".config/git/config_base"
+# "git/ignore" = ".config/git/ignore"
 
 "lazygit/config.yml" = "Library/Application Support/lazygit/config.yml"
 
@@ -44,6 +44,6 @@ backup = "$HOME/.dotfiles~"
 
 "karabiner/@profiles/acrux" = ".config/karabiner"
 
-"zed/settings.json" = ".config/zed/settings.json"
-"zed/keymap.json" = ".config/zed/keymap.json"
-"zed/tasks.json" = ".config/zed/tasks.json"
+# "zed/settings.json" = ".config/zed/settings.json"
+# "zed/keymap.json" = ".config/zed/keymap.json"
+# "zed/tasks.json" = ".config/zed/tasks.json"
