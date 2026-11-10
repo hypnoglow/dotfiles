@@ -1,5 +1,8 @@
 # dotfiles
 
+> [!WARNING]
+> **Deprecated.** This repository is no longer maintained.
+
 My dotfiles. \o/ :metal:
 
 If you barely understand what it is, or if you want an in-depth tutorial about organizing your dotfiles,
