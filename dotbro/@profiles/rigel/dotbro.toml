@@ -35,9 +35,6 @@ backup = "$HOME/.dotfiles~"
 "git/gitconfig_base" = ".config/git/config_base"
 "git/ignore" = ".config/git/ignore"
 
-"lazygit/config.yml" = "Library/Application Support/lazygit/config.custom.yml"
-
-"bat/config" = ".config/bat/config"
 "starship/starship.toml" = ".config/starship.toml"
 
 "karabiner/@profiles/rigel" = ".config/karabiner"
