@@ -32,6 +32,5 @@ backup = "$HOME/.dotfiles~"
 "neovim/init.vim" = ".config/nvim/init.vim"
 "neovim/ftplugin/yaml.vim" = ".config/nvim/ftplugin/yaml.vim"
 
-"karabiner/@profiles/antares" = ".config/karabiner"
 "starship/starship.toml" = ".config/starship.toml"
 "usql/config.yaml" = "Library/Application Support/usql/config.yaml"
